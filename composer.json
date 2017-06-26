@@ -1,0 +1,20 @@
+{
+    "name": "ecweb/utils",
+    "description": "Basic components for EC",
+    "homepage": "https://github.com/ec-web/utils",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ecweb",
+            "email": "php@ecqun.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"EC\\Utils\\": "src/"}
+    }
+}
