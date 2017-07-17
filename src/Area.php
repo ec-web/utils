@@ -359,16 +359,16 @@ class Area {
     }
 
     /**
-     * 确认区号
+     * 区号过滤
      *
      * @param string $code
-     * @return bool
+     * @return string|bool
      */
-    public static function validateAreaCode($code) {
+    public static function filterAreaCode($code) {
         $code = self::formatCode($code);
 
         if ($code && isset(self::AREA_CODES[$code])) {
-            return true;
+            return $code;
         }
 
         return false;
