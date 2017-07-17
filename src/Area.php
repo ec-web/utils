@@ -11,7 +11,7 @@ class Area {
     /**
      * 省份
      */
-    const PROVINCES = [
+    public static $provinces = [
         110000 => "北京市", 120000 => "天津市", 310000 => "上海市", 500000 => "重庆市", 130000 => "河北省", 140000 => "山西省",
         150000 => "内蒙古自治区", 210000 => "辽宁省", 220000 => "吉林省", 230000 => "黑龙江省", 320000 => "江苏省", 330000 => "浙江省",
         340000 => "安徽省", 350000 => "福建省", 360000 => "江西省", 370000 => "山东省", 410000 => "河南省", 420000 => "湖北省",
@@ -23,7 +23,7 @@ class Area {
     /**
      * 市、区、州、县
      */
-    const CITYS = [
+    public static $cities = [
         //北京市
         110101 => "东城区", 110102 => "西城区", 110103 => "崇文区", 110104 => "宣武区", 110105 => "朝阳区", 110106 => "丰台区",
         110107 => "石景山区", 110108 => "海淀区", 110109 => "门头沟区", 110111 => "房山区", 110112 => "通州区", 110113 => "顺义区",
@@ -189,7 +189,10 @@ class Area {
         820000 => "澳门"
     ];
 
-    const AREA_CODES = [
+    /**
+     * 区号
+     */
+    public static $area_codes = [
         "010" => "北京市", "021" => "上海市", "022" => "天津市", "023" => "重庆市",
 
         //河北省
@@ -327,7 +330,7 @@ class Area {
      * @return string
      */
     public static function getProvince($id) {
-        return isset(self::PROVINCES[$id]) ? self::PROVINCES[$id] : '';
+        return isset(self::$provinces[$id]) ? self::$provinces[$id] : '';
     }
 
     /**
@@ -337,11 +340,11 @@ class Area {
      * @return string
      */
     public static function getProvinceByCity($id) {
-        if (isset(self::CITYS[$id])) {
+        if (isset(self::$cities[$id])) {
             $pid = intval($id/10000) * 10000;
 
-            if (isset(self::PROVINCES[$pid])) {
-                return self::PROVINCES[$pid];
+            if (isset(self::$provinces[$pid])) {
+                return self::$provinces[$pid];
             }
         }
 
@@ -355,7 +358,7 @@ class Area {
      * @return string
      */
     public static function getCity($id) {
-        return isset(self::CITYS[$id]) ? self::CITYS[$id] : '';
+        return isset(self::$cities[$id]) ? self::$cities[$id] : '';
     }
 
     /**
@@ -367,7 +370,7 @@ class Area {
     public static function filterAreaCode($code) {
         $code = self::formatCode($code);
 
-        if ($code && isset(self::AREA_CODES[$code])) {
+        if ($code && isset(self::$area_codes[$code])) {
             return $code;
         }
 
@@ -383,7 +386,7 @@ class Area {
     public static function getAreaByCode($code) {
         $code = self::formatCode($code);
 
-        return isset(self::AREA_CODES[$code]) ? self::AREA_CODES[$code] : '';
+        return isset(self::$area_codes[$code]) ? self::$area_codes[$code] : '';
     }
 
     /**
@@ -400,7 +403,7 @@ class Area {
         }
 
         $code = '';
-        foreach (self::AREA_CODES as $code => $item) {
+        foreach (self::$area_codes as $code => $item) {
             $item = is_array($item) ? $item : [$item];
 
             foreach ($item as $value) {

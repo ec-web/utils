@@ -14,8 +14,8 @@ class Vocation {
     |--------------------------------------------------------------------------
     |
     | 映射关系：
-    |    一级 = floor(二级/100)
-    |    其他 = 一级/100
+    |    一级 = intval(二级/100)
+    |    其他 = 一级*100
     |
     */
 
@@ -24,7 +24,7 @@ class Vocation {
      *
      * @var array
      */
-    const VOC_GROUPS = [
+    public static $voc_groups = [
         11 => 'IT/通信/电子/互联网',
         12 => '金融业',
         13 => '房地产/建筑业',
@@ -50,7 +50,7 @@ class Vocation {
      *
      * @var array
      */
-    const VOC_ITEMS = [
+    public static $voc_items = [
         //一级=11
         1101 => ['name' => '互联网/电子商务', 'include' => [7]],
         1102 => ['name' => 'IT服务（系统/数据/维护）', 'include' => [23]],
@@ -252,7 +252,7 @@ class Vocation {
      *
      * @var array
      */
-    const OLD_MAPS = [
+    public static $old_maps = [
         1 => 1109, 2 => 1103, 3 => 1105, 4 => 1107, 5 => 1110, 6 => 1108, 7 => 1101, 8 => 1106, 9 => 1112, 10 => 1111,
         11 => 1104, 12 => 1112, 13 => 1401, 14 => 1402, 15 => 1502, 16 => 1503, 17 => 1504, 18 => 1501, 19 => 1505, 20 => 1506,
         21 => 1508, 22 => 1507, 23 => 1102, 24 => 1512, 25 => 1501, 26 => 1601, 27 => 1602, 28 => 1603, 29 => 1604, 30 => 1605,
@@ -290,8 +290,8 @@ class Vocation {
     public static function getParentInfo($id) {
         $parentId = self::getParentId($id);
 
-        $info = isset(self::VOC_GROUPS[$parentId]) ?
-            ['id' => $parentId, 'name' => self::VOC_GROUPS[$parentId]] : [];
+        $info = isset(self::$voc_groups[$parentId]) ?
+            ['id' => $parentId, 'name' => self::$voc_groups[$parentId]] : [];
 
         return $info;
     }
@@ -304,7 +304,7 @@ class Vocation {
      */
     public static function getName($id) {
         $id = self::convert($id);
-        $name = isset(self::VOC_ITEMS[$id]['name']) ? self::VOC_ITEMS[$id]['name'] : '';
+        $name = isset(self::$voc_items[$id]['name']) ? self::$voc_items[$id]['name'] : '';
 
         return $name;
     }
@@ -317,7 +317,7 @@ class Vocation {
      * @return array
      */
     public static function getInclude($id, $withSelf = true) {
-        $include = isset(self::VOC_ITEMS[$id]['include']) ? self::VOC_ITEMS[$id]['include'] : [];
+        $include = isset(self::$voc_items[$id]['include']) ? self::$voc_items[$id]['include'] : [];
 
         if ($withSelf) {
             array_push($include, $id);
@@ -333,8 +333,8 @@ class Vocation {
      * @return int
      */
     public static function convert($id) {
-        if (isset(self::OLD_MAPS[$id])) {
-            $id = self::OLD_MAPS[$id];
+        if (isset(self::$old_maps[$id])) {
+            $id = self::$old_maps[$id];
         }
 
         return $id;
