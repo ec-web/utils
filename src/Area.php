@@ -190,7 +190,7 @@ class Area {
     ];
 
     const AREA_CODES = [
-        "010" => "北京市", "021" => "上海市", "022" => "天津市", "023" => "重庆市", "852" => "香港", "853" => "澳门",
+        "010" => "北京市", "021" => "上海市", "022" => "天津市", "023" => "重庆市",
 
         //河北省
         "0311" => "石家庄市", "0312" => "保定市", "0313" => "张家口市", "0314" => "承德市", "0315" => "唐山市",
@@ -384,6 +384,35 @@ class Area {
         $code = self::formatCode($code);
 
         return isset(self::AREA_CODES[$code]) ? self::AREA_CODES[$code] : '';
+    }
+
+    /**
+     * 获取地区区号
+     *
+     * @param string $area 最少2个字，采取包含获取 如：
+     *                     1. 玉树、玉树藏族、玉树藏族自治州 => 玉树藏族自治州
+     *                     2. 深圳、深圳市、广东省深圳市 => 深圳市
+     * @return string
+     */
+    public static function getCodeByArea($area) {
+        if (empty($area) || mb_strlen($area) < 2) {
+            return '';
+        }
+
+        $code = '';
+        foreach (self::AREA_CODES as $code => $item) {
+            $item = is_array($item) ? $item : [$item];
+
+            foreach ($item as $value) {
+                if ($value == $area || strpos($value, $area) !== false
+                    || strpos($area, str_replace(['市', '地区', '自治州'], '', $value)) !== false) {
+
+                    return $code;
+                }
+            }
+        }
+
+        return $code;
     }
 
     /**

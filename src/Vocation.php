@@ -302,7 +302,7 @@ class Vocation {
      * @param int $id
      * @return string
      */
-    public function getName($id) {
+    public static function getName($id) {
         $id = self::convert($id);
         $name = isset(self::VOC_ITEMS[$id]['name']) ? self::VOC_ITEMS[$id]['name'] : '';
 
