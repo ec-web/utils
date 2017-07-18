@@ -366,7 +366,7 @@ class Area {
      * @param string $code
      * @return string|bool
      */
-    public static function filterAreaCode($code) {
+    public static function filterCode($code) {
         $code = self::formatCode($code);
 
         if ($code && isset(self::$area_codes[$code])) {
