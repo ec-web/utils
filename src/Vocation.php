@@ -46,11 +46,11 @@ class Vocation {
     ];
 
     /**
-     * 二级行业：行业分组子项
+     * 二级行业：行业项
      *
      * @var array
      */
-    public static $voc_items = [
+    public static $vocations = [
         //一级=11
         1101 => ['name' => '互联网/电子商务', 'include' => [7]],
         1102 => ['name' => 'IT服务（系统/数据/维护）', 'include' => [23]],
@@ -270,6 +270,35 @@ class Vocation {
     ];
 
     /**
+     * 获取行业分组
+     *
+     * @return array
+     */
+    public static function getGroups() {
+        $groups = [];
+        foreach (self::$voc_groups as $id => $name) {
+            $groups[] = ['id' => $id, 'name' => $name];
+        }
+
+        return $groups;
+    }
+
+    /**
+     * 获取行业项
+     *
+     * @return array
+     */
+    public static function getVocations() {
+        $vocations = [];
+
+        foreach (self::$vocations as $id => $item) {
+            $vocations[] = array_merge(['id' => $id], $item);
+        }
+
+        return $vocations;
+    }
+
+    /**
      * 根据ID获取分组ID
      *
      * @param int $id
@@ -304,7 +333,7 @@ class Vocation {
      */
     public static function getName($id) {
         $id = self::convert($id);
-        $name = isset(self::$voc_items[$id]['name']) ? self::$voc_items[$id]['name'] : '';
+        $name = isset(self::$vocations[$id]['name']) ? self::$vocations[$id]['name'] : '';
 
         return $name;
     }
@@ -317,7 +346,7 @@ class Vocation {
      * @return array
      */
     public static function getInclude($id, $withSelf = true) {
-        $include = isset(self::$voc_items[$id]['include']) ? self::$voc_items[$id]['include'] : [];
+        $include = isset(self::$vocations[$id]['include']) ? self::$vocations[$id]['include'] : [];
 
         if ($withSelf) {
             array_push($include, $id);
@@ -337,6 +366,6 @@ class Vocation {
             $id = self::$old_maps[$id];
         }
 
-        return $id;
+        return isset(self::$vocations[$id]) ? $id : 0;
     }
 }
