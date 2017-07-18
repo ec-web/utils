@@ -292,7 +292,7 @@ class Vocation {
         $vocations = [];
 
         foreach (self::$vocations as $id => $item) {
-            $vocations[] = array_merge(['id' => $id], $item);
+            $vocations[] = ['id' => $id, 'name' => $item['name']];
         }
 
         return $vocations;
