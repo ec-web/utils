@@ -79,7 +79,7 @@ class Currency {
 
     /**
      * 组合中、英文文本
-     * 
+     *
      * @param array $data
      * @return string
      */
