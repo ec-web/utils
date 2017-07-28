@@ -341,15 +341,26 @@ class Vocation {
     /**
      * 获取包含的旧项
      *
-     * @param int $id
+     * @param string|array $ids
      * @param bool $withSelf 是否包含自身
      * @return array
      */
-    public static function getInclude($id, $withSelf = true) {
-        $include = isset(self::$vocations[$id]['include']) ? self::$vocations[$id]['include'] : [];
+    public static function getInclude($ids, $withSelf = true) {
+        if (!is_array($ids)) {
+            $ids = explode(',', $ids);
+        }
 
-        if ($withSelf) {
-            array_push($include, $id);
+        $include = [];
+        foreach ($ids as $id) {
+            if (isset(self::$vocations[$id])) {
+                if (isset(self::$vocations[$id]['include'])) {
+                    $include = array_merge($include, self::$vocations[$id]['include']);
+                }
+
+                if ($withSelf) {
+                    array_push($include, $id);
+                }
+            }
         }
 
         return $include;
