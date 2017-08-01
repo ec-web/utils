@@ -356,10 +356,10 @@ class Vocation {
                 if (isset(self::$vocations[$id]['include'])) {
                     $include = array_merge($include, self::$vocations[$id]['include']);
                 }
+            }
 
-                if ($withSelf) {
-                    array_push($include, $id);
-                }
+            if ($withSelf) {
+                array_push($include, $id);
             }
         }
 
