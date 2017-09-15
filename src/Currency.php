@@ -8,7 +8,12 @@
 namespace EC\Utils;
 
 class Currency {
-    public static $currencies = [
+    /**
+     * 货币
+     *
+     * @var array
+     */
+    protected static $currencies = [
         1 => ['cn' => '人民币', 'en' => 'CNY'],
         2 => ['cn' => '港币', 'en' => 'HKD'],
         3 => ['cn' => '澳门元', 'en' => 'MOP'],
