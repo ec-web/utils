@@ -338,12 +338,12 @@ class Area {
         if (!empty(self::$areas)) {
             return [];
         }
-        $data = json_decode(file_get_contents("./area.json"), true);
+        $data = json_decode(file_get_contents("./areas.json"), true);
         if (empty($data)) {
             return [];
         }
         foreach ($data as $val) {
-            self::$areas[$val['f_id']] = $val;
+            self::$areas[$val['id']] = $val;
         }
         return self::$areas;
     }
@@ -368,7 +368,7 @@ class Area {
     public static function getAreaNameByID($id) {
         self::setAreas();
         if ($id && isset(self::$areas[$id])) {
-            return self::$areas[$id]['f_name'];
+            return self::$areas[$id]['name'];
         }
         return '';
     }
