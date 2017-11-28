@@ -8,6 +8,8 @@
 
 namespace EC\Utils;
 
+use EC\Utils\AreaData;
+
 class Area {
     /**
      * 省份
@@ -338,7 +340,7 @@ class Area {
         if (!empty(self::$areas)) {
             return [];
         }
-        $data = json_decode(file_get_contents("./areas.json"), true);
+        $data = AreaData::getAreas();
         if (empty($data)) {
             return [];
         }
@@ -516,5 +518,29 @@ class Area {
         }
 
         return strpos($code, '0') === 0 ? $code : '0' . $code;
+    }
+
+    /**
+     * 根据新旧数据获取最新的城市ID
+     * @param $area
+     * @return array
+     */
+    public static function getNewAreaId($area) {
+        if (!isset($area['province']) || !isset($area['city'])) {
+            return ['country' => 0, 'province' => 0, 'city' => 0, 'region' => 0];
+        }
+        $area['country'] = isset($area['country']) ? $area['country'] : '0';
+        $area['region'] = isset($area['region']) ? $area['region'] : '0';
+        if ($area['province'] && strlen($area['province']) == 6) {
+            $area['country'] = 100000;
+        }
+        //北京市 天津市 上海市 重庆市
+        if (in_array($area['province'], [110000, 120000, 310000, 500000])) {
+            if ($area['city']) {
+                $area['region'] = $area['city'];
+                $area['city'] = substr($area['province'], 0, 3) . '100';
+            }
+        }
+        return $area;
     }
 }
