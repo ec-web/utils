@@ -1,0 +1,71256 @@
+<?php
+/**
+ * 地区表数据
+ */
+
+namespace EC\Utils;
+
+class AreaData {
+    private static $areas = <<<'EOT'
+[
+{
+"id":100000,
+"name":"中国",
+"pid":0,
+"code":null,
+"pinyin":"China",
+"ccode":"cn",
+"level":1
+},
+    {
+        "id":110000,
+"name":"北京",
+"pid":100000,
+"code":null,
+"pinyin":"Beijing",
+"ccode":null,
+"level":2
+},
+    {
+        "id":110100,
+"name":"北京市",
+"pid":110000,
+"code":"010",
+"pinyin":"Beijing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":110101,
+"name":"东城区",
+"pid":110100,
+"code":"010",
+"pinyin":"Dongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110102,
+"name":"西城区",
+"pid":110100,
+"code":"010",
+"pinyin":"Xicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110105,
+"name":"朝阳区",
+"pid":110100,
+"code":"010",
+"pinyin":"Chaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110106,
+"name":"丰台区",
+"pid":110100,
+"code":"010",
+"pinyin":"Fengtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110107,
+"name":"石景山区",
+"pid":110100,
+"code":"010",
+"pinyin":"Shijingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110108,
+"name":"海淀区",
+"pid":110100,
+"code":"010",
+"pinyin":"Haidian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110109,
+"name":"门头沟区",
+"pid":110100,
+"code":"010",
+"pinyin":"Mentougou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110111,
+"name":"房山区",
+"pid":110100,
+"code":"010",
+"pinyin":"Fangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110112,
+"name":"通州区",
+"pid":110100,
+"code":"010",
+"pinyin":"Tongzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110113,
+"name":"顺义区",
+"pid":110100,
+"code":"010",
+"pinyin":"Shunyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110114,
+"name":"昌平区",
+"pid":110100,
+"code":"010",
+"pinyin":"Changping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110115,
+"name":"大兴区",
+"pid":110100,
+"code":"010",
+"pinyin":"Daxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110116,
+"name":"怀柔区",
+"pid":110100,
+"code":"010",
+"pinyin":"Huairou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110117,
+"name":"平谷区",
+"pid":110100,
+"code":"010",
+"pinyin":"Pinggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110118,
+"name":"密云区",
+"pid":110100,
+"code":"010",
+"pinyin":"Miyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110119,
+"name":"延庆区",
+"pid":110100,
+"code":"010",
+"pinyin":"Yanqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":110120,
+"name":"中关村科技园区",
+"pid":110100,
+"code":"010",
+"pinyin":"Zhongguancun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120000,
+"name":"天津",
+"pid":100000,
+"code":null,
+"pinyin":"Tianjin",
+"ccode":null,
+"level":2
+},
+    {
+        "id":120100,
+"name":"天津市",
+"pid":120000,
+"code":"022",
+"pinyin":"Tianjin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":120101,
+"name":"和平区",
+"pid":120100,
+"code":"022",
+"pinyin":"Heping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120102,
+"name":"河东区",
+"pid":120100,
+"code":"022",
+"pinyin":"Hedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120103,
+"name":"河西区",
+"pid":120100,
+"code":"022",
+"pinyin":"Hexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120104,
+"name":"南开区",
+"pid":120100,
+"code":"022",
+"pinyin":"Nankai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120105,
+"name":"河北区",
+"pid":120100,
+"code":"022",
+"pinyin":"Hebei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120106,
+"name":"红桥区",
+"pid":120100,
+"code":"022",
+"pinyin":"Hongqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120110,
+"name":"东丽区",
+"pid":120100,
+"code":"022",
+"pinyin":"Dongli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120111,
+"name":"西青区",
+"pid":120100,
+"code":"022",
+"pinyin":"Xiqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120112,
+"name":"津南区",
+"pid":120100,
+"code":"022",
+"pinyin":"Jinnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120113,
+"name":"北辰区",
+"pid":120100,
+"code":"022",
+"pinyin":"Beichen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120114,
+"name":"武清区",
+"pid":120100,
+"code":"022",
+"pinyin":"Wuqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120115,
+"name":"宝坻区",
+"pid":120100,
+"code":"022",
+"pinyin":"Baodi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120116,
+"name":"滨海新区",
+"pid":120100,
+"code":"022",
+"pinyin":"Binhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120117,
+"name":"宁河区",
+"pid":120100,
+"code":"022",
+"pinyin":"Ninghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120118,
+"name":"静海区",
+"pid":120100,
+"code":"022",
+"pinyin":"Jinghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120119,
+"name":"蓟州区",
+"pid":120100,
+"code":"022",
+"pinyin":"Jizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":120120,
+"name":"滨海高新区",
+"pid":120100,
+"code":"022",
+"pinyin":"Binhaigaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130000,
+"name":"河北省",
+"pid":100000,
+"code":null,
+"pinyin":"Hebei",
+"ccode":null,
+"level":2
+},
+    {
+        "id":130100,
+"name":"石家庄市",
+"pid":130000,
+"code":"0311",
+"pinyin":"Shijiazhuang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130102,
+"name":"长安区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Chang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130104,
+"name":"桥西区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Qiaoxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130105,
+"name":"新华区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130107,
+"name":"井陉矿区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Jingxingkuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130108,
+"name":"裕华区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Yuhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130109,
+"name":"藁城区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Gaocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130110,
+"name":"鹿泉区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Luquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130111,
+"name":"栾城区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Luancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130121,
+"name":"井陉县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Jingxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130123,
+"name":"正定新区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Zhengding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130125,
+"name":"行唐县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Xingtang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130126,
+"name":"灵寿县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Lingshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130127,
+"name":"高邑县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Gaoyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130128,
+"name":"深泽县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Shenze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130129,
+"name":"赞皇县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Zanhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130130,
+"name":"无极县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Wuji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130131,
+"name":"平山县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Pingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130132,
+"name":"元氏县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Yuanshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130133,
+"name":"赵县",
+"pid":130100,
+"code":"0311",
+"pinyin":"Zhaoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130181,
+"name":"辛集市",
+"pid":130100,
+"code":"0311",
+"pinyin":"Xinji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130183,
+"name":"晋州市",
+"pid":130100,
+"code":"0311",
+"pinyin":"Jinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130184,
+"name":"新乐市",
+"pid":130100,
+"code":"0311",
+"pinyin":"Xinle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130185,
+"name":"高新区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130186,
+"name":"经济技术开发区",
+"pid":130100,
+"code":"0311",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130200,
+"name":"唐山市",
+"pid":130000,
+"code":"0315",
+"pinyin":"Tangshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130202,
+"name":"路南区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Lunan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130203,
+"name":"路北区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Lubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130204,
+"name":"古冶区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Guye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130205,
+"name":"开平区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Kaiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130207,
+"name":"丰南区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Fengnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130208,
+"name":"丰润区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Fengrun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130209,
+"name":"曹妃甸区",
+"pid":130200,
+"code":"0315",
+"pinyin":"Caofeidian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130223,
+"name":"滦县",
+"pid":130200,
+"code":"0315",
+"pinyin":"Luanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130224,
+"name":"滦南县",
+"pid":130200,
+"code":"0315",
+"pinyin":"Luannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130225,
+"name":"乐亭县",
+"pid":130200,
+"code":"0315",
+"pinyin":"Laoting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130227,
+"name":"迁西县",
+"pid":130200,
+"code":"0315",
+"pinyin":"Qianxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130229,
+"name":"玉田县",
+"pid":130200,
+"code":"0315",
+"pinyin":"Yutian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130281,
+"name":"遵化市",
+"pid":130200,
+"code":"0315",
+"pinyin":"Zunhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130283,
+"name":"迁安市",
+"pid":130200,
+"code":"0315",
+"pinyin":"Qian'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130300,
+"name":"秦皇岛市",
+"pid":130000,
+"code":"0335",
+"pinyin":"Qinhuangdao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130302,
+"name":"海港区",
+"pid":130300,
+"code":"0335",
+"pinyin":"Haigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130303,
+"name":"山海关区",
+"pid":130300,
+"code":"0335",
+"pinyin":"Shanhaiguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130304,
+"name":"北戴河区",
+"pid":130300,
+"code":"0335",
+"pinyin":"Beidaihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130306,
+"name":"抚宁区",
+"pid":130300,
+"code":"0335",
+"pinyin":"Funing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130321,
+"name":"青龙满族自治县",
+"pid":130300,
+"code":"0335",
+"pinyin":"Qinglong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130322,
+"name":"昌黎县",
+"pid":130300,
+"code":"0335",
+"pinyin":"Changli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130324,
+"name":"卢龙县",
+"pid":130300,
+"code":"0335",
+"pinyin":"Lulong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130325,
+"name":"北戴河新区",
+"pid":130300,
+"code":"0335",
+"pinyin":"Beidaihexinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130400,
+"name":"邯郸市",
+"pid":130000,
+"code":"0310",
+"pinyin":"Handan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130402,
+"name":"邯山区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Hanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130403,
+"name":"丛台区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Congtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130404,
+"name":"复兴区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Fuxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130406,
+"name":"峰峰矿区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Fengfengkuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130407,
+"name":"肥乡区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Feixiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130408,
+"name":"永年区",
+"pid":130400,
+"code":"0310",
+"pinyin":"Yongnian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130423,
+"name":"临漳县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Linzhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130424,
+"name":"成安县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Cheng'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130425,
+"name":"大名县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Daming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130426,
+"name":"涉县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Shexian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130427,
+"name":"磁县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Cixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130430,
+"name":"邱县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Qiuxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130431,
+"name":"鸡泽县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Jize",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130432,
+"name":"广平县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Guangping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130433,
+"name":"馆陶县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Guantao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130434,
+"name":"魏县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Weixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130435,
+"name":"曲周县",
+"pid":130400,
+"code":"0310",
+"pinyin":"Quzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130481,
+"name":"武安市",
+"pid":130400,
+"code":"0310",
+"pinyin":"Wu'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130482,
+"name":"高新技术产业开发区",
+"pid":130400,
+"code":"0310",
+"pinyin":"GaoXinKaiFaQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130500,
+"name":"邢台市",
+"pid":130000,
+"code":"0319",
+"pinyin":"Xingtai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130502,
+"name":"桥东区",
+"pid":130500,
+"code":"0319",
+"pinyin":"Qiaodong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130503,
+"name":"桥西区",
+"pid":130500,
+"code":"0319",
+"pinyin":"Qiaoxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130521,
+"name":"邢台县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Xingtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130522,
+"name":"临城县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Lincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130523,
+"name":"内丘县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Neiqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130524,
+"name":"柏乡县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Baixiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130525,
+"name":"隆尧县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Longyao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130526,
+"name":"任县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Renxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130527,
+"name":"南和县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Nanhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130528,
+"name":"宁晋县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Ningjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130529,
+"name":"巨鹿县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Julu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130530,
+"name":"新河县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Xinhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130531,
+"name":"广宗县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Guangzong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130532,
+"name":"平乡县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Pingxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130533,
+"name":"威县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Weixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130534,
+"name":"清河县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Qinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130535,
+"name":"临西县",
+"pid":130500,
+"code":"0319",
+"pinyin":"Linxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130581,
+"name":"南宫市",
+"pid":130500,
+"code":"0319",
+"pinyin":"Nangong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130582,
+"name":"沙河市",
+"pid":130500,
+"code":"0319",
+"pinyin":"Shahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130600,
+"name":"保定市",
+"pid":130000,
+"code":"0312",
+"pinyin":"Baoding",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130602,
+"name":"竞秀区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Jingxiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130606,
+"name":"莲池区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Lianchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130607,
+"name":"满城区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Mancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130608,
+"name":"清苑区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Qingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130609,
+"name":"徐水区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Xushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130623,
+"name":"涞水县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Laishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130624,
+"name":"阜平县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Fuping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130626,
+"name":"定兴县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Dingxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130627,
+"name":"唐县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Tangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130628,
+"name":"高阳县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Gaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130629,
+"name":"容城县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Rongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130630,
+"name":"涞源县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Laiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130631,
+"name":"望都县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Wangdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130632,
+"name":"安新县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Anxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130633,
+"name":"易县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Yixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130634,
+"name":"曲阳县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Quyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130635,
+"name":"蠡县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Lixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130636,
+"name":"顺平县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Shunping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130637,
+"name":"博野县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Boye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130638,
+"name":"雄县",
+"pid":130600,
+"code":"0312",
+"pinyin":"Xiongxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130681,
+"name":"涿州市",
+"pid":130600,
+"code":"0312",
+"pinyin":"Zhuozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130682,
+"name":"定州市",
+"pid":130600,
+"code":"0312",
+"pinyin":"Dingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130683,
+"name":"安国市",
+"pid":130600,
+"code":"0312",
+"pinyin":"Anguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130684,
+"name":"高碑店市",
+"pid":130600,
+"code":"0312",
+"pinyin":"Gaobeidian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130685,
+"name":"雄安新区",
+"pid":130600,
+"code":"0312",
+"pinyin":"XionganXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130686,
+"name":"高新区",
+"pid":130600,
+"code":"0312",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130700,
+"name":"张家口市",
+"pid":130000,
+"code":"0313",
+"pinyin":"Zhangjiakou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130702,
+"name":"桥东区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Qiaodong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130703,
+"name":"桥西区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Qiaoxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130705,
+"name":"宣化区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Xuanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130706,
+"name":"下花园区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Xiahuayuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130708,
+"name":"万全区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Wanquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130709,
+"name":"崇礼区",
+"pid":130700,
+"code":"0313",
+"pinyin":"Chongli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130722,
+"name":"张北县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Zhangbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130723,
+"name":"康保县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Kangbao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130724,
+"name":"沽源县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Guyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130725,
+"name":"尚义县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Shangyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130726,
+"name":"蔚县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Yuxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130727,
+"name":"阳原县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Yangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130728,
+"name":"怀安县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Huai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130730,
+"name":"怀来县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Huailai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130731,
+"name":"涿鹿县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Zhuolu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130732,
+"name":"赤城县",
+"pid":130700,
+"code":"0313",
+"pinyin":"Chicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130800,
+"name":"承德市",
+"pid":130000,
+"code":"0314",
+"pinyin":"Chengde",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130802,
+"name":"双桥区",
+"pid":130800,
+"code":"0314",
+"pinyin":"Shuangqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130803,
+"name":"双滦区",
+"pid":130800,
+"code":"0314",
+"pinyin":"Shuangluan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130804,
+"name":"鹰手营子矿区",
+"pid":130800,
+"code":"0314",
+"pinyin":"Yingshouyingzikuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130821,
+"name":"承德县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Chengde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130822,
+"name":"兴隆县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Xinglong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130824,
+"name":"滦平县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Luanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130825,
+"name":"隆化县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Longhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130826,
+"name":"丰宁满族自治县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Fengning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130827,
+"name":"宽城满族自治县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Kuancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130828,
+"name":"围场满族蒙古族自治县",
+"pid":130800,
+"code":"0314",
+"pinyin":"Weichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130881,
+"name":"平泉市",
+"pid":130800,
+"code":"0314",
+"pinyin":"Pingquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130900,
+"name":"沧州市",
+"pid":130000,
+"code":"0317",
+"pinyin":"Cangzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":130902,
+"name":"新华区",
+"pid":130900,
+"code":"0317",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130903,
+"name":"运河区",
+"pid":130900,
+"code":"0317",
+"pinyin":"Yunhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130921,
+"name":"沧县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Cangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130922,
+"name":"青县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Qingxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130923,
+"name":"东光县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Dongguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130924,
+"name":"海兴县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Haixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130925,
+"name":"盐山县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Yanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130926,
+"name":"肃宁县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Suning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130927,
+"name":"南皮县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Nanpi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130928,
+"name":"吴桥县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Wuqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130929,
+"name":"献县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Xianxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130930,
+"name":"孟村回族自治县",
+"pid":130900,
+"code":"0317",
+"pinyin":"Mengcun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130981,
+"name":"泊头市",
+"pid":130900,
+"code":"0317",
+"pinyin":"Botou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130982,
+"name":"任丘市",
+"pid":130900,
+"code":"0317",
+"pinyin":"Renqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130983,
+"name":"黄骅市",
+"pid":130900,
+"code":"0317",
+"pinyin":"Huanghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130984,
+"name":"河间市",
+"pid":130900,
+"code":"0317",
+"pinyin":"Hejian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130985,
+"name":"渤海新区",
+"pid":130900,
+"code":"0317",
+"pinyin":"Bohaixinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":130986,
+"name":"临港经济技术开发区",
+"pid":130900,
+"code":"0317",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131000,
+"name":"廊坊市",
+"pid":130000,
+"code":"0316",
+"pinyin":"Langfang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":131002,
+"name":"安次区",
+"pid":131000,
+"code":"0316",
+"pinyin":"Anci",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131003,
+"name":"广阳区",
+"pid":131000,
+"code":"0316",
+"pinyin":"Guangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131022,
+"name":"固安县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Gu'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131023,
+"name":"永清县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Yongqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131024,
+"name":"香河县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Xianghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131025,
+"name":"大城县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Daicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131026,
+"name":"文安县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Wen'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131028,
+"name":"大厂回族自治县",
+"pid":131000,
+"code":"0316",
+"pinyin":"Dachang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131081,
+"name":"霸州市",
+"pid":131000,
+"code":"0316",
+"pinyin":"Bazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131082,
+"name":"三河市",
+"pid":131000,
+"code":"0316",
+"pinyin":"Sanhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131083,
+"name":"经济技术开发区",
+"pid":131000,
+"code":"0316",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131100,
+"name":"衡水市",
+"pid":130000,
+"code":"0318",
+"pinyin":"Hengshui",
+"ccode":null,
+"level":3
+},
+    {
+        "id":131102,
+"name":"桃城区",
+"pid":131100,
+"code":"0318",
+"pinyin":"Taocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131103,
+"name":"冀州区",
+"pid":131100,
+"code":"0318",
+"pinyin":"Jizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131121,
+"name":"枣强县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Zaoqiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131122,
+"name":"武邑县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Wuyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131123,
+"name":"武强县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Wuqiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131124,
+"name":"饶阳县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Raoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131125,
+"name":"安平县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Anping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131126,
+"name":"故城县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Gucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131127,
+"name":"景县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Jingxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131128,
+"name":"阜城县",
+"pid":131100,
+"code":"0318",
+"pinyin":"Fucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":131182,
+"name":"深州市",
+"pid":131100,
+"code":"0318",
+"pinyin":"Shenzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140000,
+"name":"山西省",
+"pid":100000,
+"code":null,
+"pinyin":"Shanxi",
+"ccode":null,
+"level":2
+},
+    {
+        "id":140100,
+"name":"太原市",
+"pid":140000,
+"code":"0351",
+"pinyin":"Taiyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140105,
+"name":"小店区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Xiaodian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140106,
+"name":"迎泽区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Yingze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140107,
+"name":"杏花岭区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Xinghualing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140108,
+"name":"尖草坪区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Jiancaoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140109,
+"name":"万柏林区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Wanbailin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140110,
+"name":"晋源区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Jinyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140121,
+"name":"清徐县",
+"pid":140100,
+"code":"0351",
+"pinyin":"Qingxu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140122,
+"name":"阳曲县",
+"pid":140100,
+"code":"0351",
+"pinyin":"Yangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140123,
+"name":"娄烦县",
+"pid":140100,
+"code":"0351",
+"pinyin":"Loufan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140181,
+"name":"古交市",
+"pid":140100,
+"code":"0351",
+"pinyin":"Gujiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140182,
+"name":"高新阳曲园区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Yangquyuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140183,
+"name":"高新汾东园区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Fendongyuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140184,
+"name":"高新姚村园区",
+"pid":140100,
+"code":"0351",
+"pinyin":"Yaocunyuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140200,
+"name":"大同市",
+"pid":140000,
+"code":"0352",
+"pinyin":"Datong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140202,
+"name":"城区",
+"pid":140200,
+"code":"0352",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140203,
+"name":"矿区",
+"pid":140200,
+"code":"0352",
+"pinyin":"Kuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140211,
+"name":"南郊区",
+"pid":140200,
+"code":"0352",
+"pinyin":"Nanjiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140212,
+"name":"新荣区",
+"pid":140200,
+"code":"0352",
+"pinyin":"Xinrong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140221,
+"name":"阳高县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Yanggao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140222,
+"name":"天镇县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Tianzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140223,
+"name":"广灵县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Guangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140224,
+"name":"灵丘县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Lingqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140225,
+"name":"浑源县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Hunyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140226,
+"name":"左云县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Zuoyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140227,
+"name":"大同县",
+"pid":140200,
+"code":"0352",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140228,
+"name":"经济开发区",
+"pid":140200,
+"code":"0352",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140300,
+"name":"阳泉市",
+"pid":140000,
+"code":"0353",
+"pinyin":"Yangquan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140302,
+"name":"城区",
+"pid":140300,
+"code":"0353",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140303,
+"name":"矿区",
+"pid":140300,
+"code":"0353",
+"pinyin":"Kuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140311,
+"name":"郊区",
+"pid":140300,
+"code":"0353",
+"pinyin":"Jiaoqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140321,
+"name":"平定县",
+"pid":140300,
+"code":"0353",
+"pinyin":"Pingding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140322,
+"name":"盂县",
+"pid":140300,
+"code":"0353",
+"pinyin":"Yuxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140400,
+"name":"长治市",
+"pid":140000,
+"code":"0355",
+"pinyin":"Changzhi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140402,
+"name":"城区",
+"pid":140400,
+"code":"0355",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140411,
+"name":"郊区",
+"pid":140400,
+"code":"0355",
+"pinyin":"Jiaoqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140421,
+"name":"长治县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Changzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140423,
+"name":"襄垣县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Xiangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140424,
+"name":"屯留县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Tunliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140425,
+"name":"平顺县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Pingshun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140426,
+"name":"黎城县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Licheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140427,
+"name":"壶关县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Huguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140428,
+"name":"长子县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Zhangzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140429,
+"name":"武乡县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Wuxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140430,
+"name":"沁县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Qinxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140431,
+"name":"沁源县",
+"pid":140400,
+"code":"0355",
+"pinyin":"Qinyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140481,
+"name":"潞城市",
+"pid":140400,
+"code":"0355",
+"pinyin":"Lucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140500,
+"name":"晋城市",
+"pid":140000,
+"code":"0356",
+"pinyin":"Jincheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140502,
+"name":"城区",
+"pid":140500,
+"code":"0356",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140521,
+"name":"沁水县",
+"pid":140500,
+"code":"0356",
+"pinyin":"Qinshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140522,
+"name":"阳城县",
+"pid":140500,
+"code":"0356",
+"pinyin":"Yangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140524,
+"name":"陵川县",
+"pid":140500,
+"code":"0356",
+"pinyin":"Lingchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140525,
+"name":"泽州县",
+"pid":140500,
+"code":"0356",
+"pinyin":"Zezhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140581,
+"name":"高平市",
+"pid":140500,
+"code":"0356",
+"pinyin":"Gaoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140582,
+"name":"经济开发区",
+"pid":140500,
+"code":"0356",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140600,
+"name":"朔州市",
+"pid":140000,
+"code":"0349",
+"pinyin":"Shuozhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140602,
+"name":"朔城区",
+"pid":140600,
+"code":"0349",
+"pinyin":"Shuocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140603,
+"name":"平鲁区",
+"pid":140600,
+"code":"0349",
+"pinyin":"Pinglu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140621,
+"name":"山阴县",
+"pid":140600,
+"code":"0349",
+"pinyin":"Shanyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140622,
+"name":"应县",
+"pid":140600,
+"code":"0349",
+"pinyin":"Yingxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140623,
+"name":"右玉县",
+"pid":140600,
+"code":"0349",
+"pinyin":"Youyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140624,
+"name":"怀仁县",
+"pid":140600,
+"code":"0349",
+"pinyin":"Huairen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140700,
+"name":"晋中市",
+"pid":140000,
+"code":"0354",
+"pinyin":"Jinzhong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140702,
+"name":"榆次区",
+"pid":140700,
+"code":"0354",
+"pinyin":"Yuci",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140721,
+"name":"榆社县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Yushe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140722,
+"name":"左权县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Zuoquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140723,
+"name":"和顺县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Heshun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140724,
+"name":"昔阳县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Xiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140725,
+"name":"寿阳县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Shouyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140726,
+"name":"太谷县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Taigu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140727,
+"name":"祁县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Qixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140728,
+"name":"平遥县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Pingyao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140729,
+"name":"灵石县",
+"pid":140700,
+"code":"0354",
+"pinyin":"Lingshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140781,
+"name":"介休市",
+"pid":140700,
+"code":"0354",
+"pinyin":"Jiexiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140800,
+"name":"运城市",
+"pid":140000,
+"code":"0359",
+"pinyin":"Yuncheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140802,
+"name":"盐湖区",
+"pid":140800,
+"code":"0359",
+"pinyin":"Yanhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140821,
+"name":"临猗县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Linyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140822,
+"name":"万荣县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Wanrong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140823,
+"name":"闻喜县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Wenxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140824,
+"name":"稷山县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Jishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140825,
+"name":"新绛县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Xinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140826,
+"name":"绛县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Jiangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140827,
+"name":"垣曲县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Yuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140828,
+"name":"夏县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Xiaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140829,
+"name":"平陆县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Pinglu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140830,
+"name":"芮城县",
+"pid":140800,
+"code":"0359",
+"pinyin":"Ruicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140881,
+"name":"永济市",
+"pid":140800,
+"code":"0359",
+"pinyin":"Yongji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140882,
+"name":"河津市",
+"pid":140800,
+"code":"0359",
+"pinyin":"Hejin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140900,
+"name":"忻州市",
+"pid":140000,
+"code":"0350",
+"pinyin":"Xinzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":140902,
+"name":"忻府区",
+"pid":140900,
+"code":"0350",
+"pinyin":"Xinfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140921,
+"name":"定襄县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Dingxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140922,
+"name":"五台县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Wutai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140923,
+"name":"代县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Daixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140924,
+"name":"繁峙县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Fanshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140925,
+"name":"宁武县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Ningwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140926,
+"name":"静乐县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Jingle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140927,
+"name":"神池县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Shenchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140928,
+"name":"五寨县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Wuzhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140929,
+"name":"岢岚县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Kelan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140930,
+"name":"河曲县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Hequ",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140931,
+"name":"保德县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Baode",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140932,
+"name":"偏关县",
+"pid":140900,
+"code":"0350",
+"pinyin":"Pianguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":140981,
+"name":"原平市",
+"pid":140900,
+"code":"0350",
+"pinyin":"Yuanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141000,
+"name":"临汾市",
+"pid":140000,
+"code":"0357",
+"pinyin":"Linfen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":141002,
+"name":"尧都区",
+"pid":141000,
+"code":"0357",
+"pinyin":"Yaodu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141021,
+"name":"曲沃县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Quwo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141022,
+"name":"翼城县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Yicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141023,
+"name":"襄汾县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Xiangfen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141024,
+"name":"洪洞县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Hongtong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141025,
+"name":"古县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Guxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141026,
+"name":"安泽县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Anze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141027,
+"name":"浮山县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Fushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141028,
+"name":"吉县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Jixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141029,
+"name":"乡宁县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Xiangning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141030,
+"name":"大宁县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Daning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141031,
+"name":"隰县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Xixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141032,
+"name":"永和县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Yonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141033,
+"name":"蒲县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Puxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141034,
+"name":"汾西县",
+"pid":141000,
+"code":"0357",
+"pinyin":"Fenxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141081,
+"name":"侯马市",
+"pid":141000,
+"code":"0357",
+"pinyin":"Houma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141082,
+"name":"霍州市",
+"pid":141000,
+"code":"0357",
+"pinyin":"Huozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141100,
+"name":"吕梁市",
+"pid":140000,
+"code":"0358",
+"pinyin":"Lvliang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":141102,
+"name":"离石区",
+"pid":141100,
+"code":"0358",
+"pinyin":"Lishi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141121,
+"name":"文水县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Wenshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141122,
+"name":"交城县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Jiaocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141123,
+"name":"兴县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Xingxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141124,
+"name":"临县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Linxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141125,
+"name":"柳林县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Liulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141126,
+"name":"石楼县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Shilou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141127,
+"name":"岚县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Lanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141128,
+"name":"方山县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Fangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141129,
+"name":"中阳县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Zhongyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141130,
+"name":"交口县",
+"pid":141100,
+"code":"0358",
+"pinyin":"Jiaokou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141181,
+"name":"孝义市",
+"pid":141100,
+"code":"0358",
+"pinyin":"Xiaoyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":141182,
+"name":"汾阳市",
+"pid":141100,
+"code":"0358",
+"pinyin":"Fenyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150000,
+"name":"内蒙古自治区",
+"pid":100000,
+"code":null,
+"pinyin":"Inner Mongolia",
+"ccode":null,
+"level":2
+},
+    {
+        "id":150100,
+"name":"呼和浩特市",
+"pid":150000,
+"code":"0471",
+"pinyin":"Hohhot",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150102,
+"name":"新城区",
+"pid":150100,
+"code":"0471",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150103,
+"name":"回民区",
+"pid":150100,
+"code":"0471",
+"pinyin":"Huimin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150104,
+"name":"玉泉区",
+"pid":150100,
+"code":"0471",
+"pinyin":"Yuquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150105,
+"name":"赛罕区",
+"pid":150100,
+"code":"0471",
+"pinyin":"Saihan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150121,
+"name":"土默特左旗",
+"pid":150100,
+"code":"0471",
+"pinyin":"Tuzuoqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150122,
+"name":"托克托县",
+"pid":150100,
+"code":"0471",
+"pinyin":"Tuoketuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150123,
+"name":"和林格尔县",
+"pid":150100,
+"code":"0471",
+"pinyin":"Helingeer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150124,
+"name":"清水河县",
+"pid":150100,
+"code":"0471",
+"pinyin":"Qingshuihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150125,
+"name":"武川县",
+"pid":150100,
+"code":"0471",
+"pinyin":"Wuchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150200,
+"name":"包头市",
+"pid":150000,
+"code":"0472",
+"pinyin":"Baotou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150202,
+"name":"东河区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Donghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150203,
+"name":"昆都仑区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Kundulun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150204,
+"name":"青山区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Qingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150205,
+"name":"石拐区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Shiguai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150206,
+"name":"白云鄂博矿区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Baiyunkuangqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150207,
+"name":"九原区",
+"pid":150200,
+"code":"0472",
+"pinyin":"Jiuyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150221,
+"name":"土默特右旗",
+"pid":150200,
+"code":"0472",
+"pinyin":"Tuyouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150222,
+"name":"固阳县",
+"pid":150200,
+"code":"0472",
+"pinyin":"Guyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150223,
+"name":"达尔罕茂明安联合旗",
+"pid":150200,
+"code":"0472",
+"pinyin":"Damaoqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150300,
+"name":"乌海市",
+"pid":150000,
+"code":"0473",
+"pinyin":"Wuhai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150302,
+"name":"海勃湾区",
+"pid":150300,
+"code":"0473",
+"pinyin":"Haibowan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150303,
+"name":"海南区",
+"pid":150300,
+"code":"0473",
+"pinyin":"Hainan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150304,
+"name":"乌达区",
+"pid":150300,
+"code":"0473",
+"pinyin":"Wuda",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150400,
+"name":"赤峰市",
+"pid":150000,
+"code":"0476",
+"pinyin":"Chifeng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150402,
+"name":"红山区",
+"pid":150400,
+"code":"0476",
+"pinyin":"Hongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150403,
+"name":"元宝山区",
+"pid":150400,
+"code":"0476",
+"pinyin":"Yuanbaoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150404,
+"name":"松山区",
+"pid":150400,
+"code":"0476",
+"pinyin":"Songshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150421,
+"name":"阿鲁科尔沁旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Aqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150422,
+"name":"巴林左旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Zuoqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150423,
+"name":"巴林右旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Youqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150424,
+"name":"林西县",
+"pid":150400,
+"code":"0476",
+"pinyin":"Linxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150425,
+"name":"克什克腾旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Keqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150426,
+"name":"翁牛特旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Wengqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150428,
+"name":"喀喇沁旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Kaqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150429,
+"name":"宁城县",
+"pid":150400,
+"code":"0476",
+"pinyin":"Ningcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150430,
+"name":"敖汉旗",
+"pid":150400,
+"code":"0476",
+"pinyin":"Aohan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150500,
+"name":"通辽市",
+"pid":150000,
+"code":"0475",
+"pinyin":"Tongliao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150502,
+"name":"科尔沁区",
+"pid":150500,
+"code":"0475",
+"pinyin":"Keerqin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150521,
+"name":"科尔沁左翼中旗",
+"pid":150500,
+"code":"0475",
+"pinyin":"Kezuozhongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150522,
+"name":"科尔沁左翼后旗",
+"pid":150500,
+"code":"0475",
+"pinyin":"Kezuohouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150523,
+"name":"开鲁县",
+"pid":150500,
+"code":"0475",
+"pinyin":"Kailu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150524,
+"name":"库伦旗",
+"pid":150500,
+"code":"0475",
+"pinyin":"Kulun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150525,
+"name":"奈曼旗",
+"pid":150500,
+"code":"0475",
+"pinyin":"Naiman",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150526,
+"name":"扎鲁特旗",
+"pid":150500,
+"code":"0475",
+"pinyin":"Zhalute",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150581,
+"name":"霍林郭勒市",
+"pid":150500,
+"code":"0475",
+"pinyin":"Huolinguole",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150600,
+"name":"鄂尔多斯市",
+"pid":150000,
+"code":"0477",
+"pinyin":"Ordos",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150602,
+"name":"东胜区",
+"pid":150600,
+"code":"0477",
+"pinyin":"Dongsheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150603,
+"name":"康巴什区",
+"pid":150600,
+"code":"0477",
+"pinyin":"Kangbashen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150621,
+"name":"达拉特旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Dalate",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150622,
+"name":"准格尔旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Zhungeer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150623,
+"name":"鄂托克前旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Eqianqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150624,
+"name":"鄂托克旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Etuoke",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150625,
+"name":"杭锦旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Hangjinqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150626,
+"name":"乌审旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Wushenqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150627,
+"name":"伊金霍洛旗",
+"pid":150600,
+"code":"0477",
+"pinyin":"Yijinhuoluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150700,
+"name":"呼伦贝尔市",
+"pid":150000,
+"code":"0470",
+"pinyin":"Hulunber",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150702,
+"name":"海拉尔区",
+"pid":150700,
+"code":"0470",
+"pinyin":"Hailaer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150703,
+"name":"扎赉诺尔区",
+"pid":150700,
+"code":"0470",
+"pinyin":"Zhalainuoer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150721,
+"name":"阿荣旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Arongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150722,
+"name":"莫力达瓦达斡尔族自治旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Moqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150723,
+"name":"鄂伦春自治旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Elunchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150724,
+"name":"鄂温克族自治旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Ewenkeqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150725,
+"name":"陈巴尔虎旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Chenqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150726,
+"name":"新巴尔虎左旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Xinzuoqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150727,
+"name":"新巴尔虎右旗",
+"pid":150700,
+"code":"0470",
+"pinyin":"Xinyouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150781,
+"name":"满洲里市",
+"pid":150700,
+"code":"0470",
+"pinyin":"Manzhouli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150782,
+"name":"牙克石市",
+"pid":150700,
+"code":"0470",
+"pinyin":"Yakeshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150783,
+"name":"扎兰屯市",
+"pid":150700,
+"code":"0470",
+"pinyin":"Zhalantun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150784,
+"name":"额尔古纳市",
+"pid":150700,
+"code":"0470",
+"pinyin":"Eerguna",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150785,
+"name":"根河市",
+"pid":150700,
+"code":"0470",
+"pinyin":"Genhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150800,
+"name":"巴彦淖尔市",
+"pid":150000,
+"code":"0478",
+"pinyin":"Bayan Nur",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150802,
+"name":"临河区",
+"pid":150800,
+"code":"0478",
+"pinyin":"Linhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150821,
+"name":"五原县",
+"pid":150800,
+"code":"0478",
+"pinyin":"Wuyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150822,
+"name":"磴口县",
+"pid":150800,
+"code":"0478",
+"pinyin":"Dengkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150823,
+"name":"乌拉特前旗",
+"pid":150800,
+"code":"0478",
+"pinyin":"Wuqianqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150824,
+"name":"乌拉特中旗",
+"pid":150800,
+"code":"0478",
+"pinyin":"Wuzhongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150825,
+"name":"乌拉特后旗",
+"pid":150800,
+"code":"0478",
+"pinyin":"Wuhouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150826,
+"name":"杭锦后旗",
+"pid":150800,
+"code":"0478",
+"pinyin":"Hangjinhouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150900,
+"name":"乌兰察布市",
+"pid":150000,
+"code":"0474",
+"pinyin":"Ulanqab",
+"ccode":null,
+"level":3
+},
+    {
+        "id":150902,
+"name":"集宁区",
+"pid":150900,
+"code":"0474",
+"pinyin":"Jining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150921,
+"name":"卓资县",
+"pid":150900,
+"code":"0474",
+"pinyin":"Zhuozi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150922,
+"name":"化德县",
+"pid":150900,
+"code":"0474",
+"pinyin":"Huade",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150923,
+"name":"商都县",
+"pid":150900,
+"code":"0474",
+"pinyin":"Shangdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150924,
+"name":"兴和县",
+"pid":150900,
+"code":"0474",
+"pinyin":"Xinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150925,
+"name":"凉城县",
+"pid":150900,
+"code":"0474",
+"pinyin":"Liangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150926,
+"name":"察哈尔右翼前旗",
+"pid":150900,
+"code":"0474",
+"pinyin":"Chayouqianqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150927,
+"name":"察哈尔右翼中旗",
+"pid":150900,
+"code":"0474",
+"pinyin":"Chayouzhongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150928,
+"name":"察哈尔右翼后旗",
+"pid":150900,
+"code":"0474",
+"pinyin":"Chayouhouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150929,
+"name":"四子王旗",
+"pid":150900,
+"code":"0474",
+"pinyin":"Siziwangqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":150981,
+"name":"丰镇市",
+"pid":150900,
+"code":"0474",
+"pinyin":"Fengzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152200,
+"name":"兴安盟",
+"pid":150000,
+"code":"0482",
+"pinyin":"Hinggan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":152201,
+"name":"乌兰浩特市",
+"pid":152200,
+"code":"0482",
+"pinyin":"Wulanhaote",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152202,
+"name":"阿尔山市",
+"pid":152200,
+"code":"0482",
+"pinyin":"Aershan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152221,
+"name":"科尔沁右翼前旗",
+"pid":152200,
+"code":"0482",
+"pinyin":"Keyouqianqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152222,
+"name":"科尔沁右翼中旗",
+"pid":152200,
+"code":"0482",
+"pinyin":"Keyouzhongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152223,
+"name":"扎赉特旗",
+"pid":152200,
+"code":"0482",
+"pinyin":"Zhalaiteqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152224,
+"name":"突泉县",
+"pid":152200,
+"code":"0482",
+"pinyin":"Tuquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152500,
+"name":"锡林郭勒盟",
+"pid":150000,
+"code":"0479",
+"pinyin":"Xilin Gol",
+"ccode":null,
+"level":3
+},
+    {
+        "id":152501,
+"name":"二连浩特市",
+"pid":152500,
+"code":"0479",
+"pinyin":"Erlianhaote",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152502,
+"name":"锡林浩特市",
+"pid":152500,
+"code":"0479",
+"pinyin":"Xilinhaote",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152522,
+"name":"阿巴嘎旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Abagaqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152523,
+"name":"苏尼特左旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Dongsuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152524,
+"name":"苏尼特右旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Xisuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152525,
+"name":"东乌珠穆沁旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Dongwuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152526,
+"name":"西乌珠穆沁旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Xiwuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152527,
+"name":"太仆寺旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Taiqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152528,
+"name":"镶黄旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Xianghuangqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152529,
+"name":"正镶白旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Zhengxiangbaiqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152530,
+"name":"正蓝旗",
+"pid":152500,
+"code":"0479",
+"pinyin":"Zhenglanqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152531,
+"name":"多伦县",
+"pid":152500,
+"code":"0479",
+"pinyin":"Duolun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152900,
+"name":"阿拉善盟",
+"pid":150000,
+"code":"0483",
+"pinyin":"Alxa",
+"ccode":null,
+"level":3
+},
+    {
+        "id":152921,
+"name":"阿拉善左旗",
+"pid":152900,
+"code":"0483",
+"pinyin":"Azuoqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152922,
+"name":"阿拉善右旗",
+"pid":152900,
+"code":"0483",
+"pinyin":"Ayouqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":152923,
+"name":"额济纳旗",
+"pid":152900,
+"code":"0483",
+"pinyin":"Ejina",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210000,
+"name":"辽宁省",
+"pid":100000,
+"code":null,
+"pinyin":"Liaoning",
+"ccode":null,
+"level":2
+},
+    {
+        "id":210100,
+"name":"沈阳市",
+"pid":210000,
+"code":"024",
+"pinyin":"Shenyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210102,
+"name":"和平区",
+"pid":210100,
+"code":"024",
+"pinyin":"Heping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210103,
+"name":"沈河区",
+"pid":210100,
+"code":"024",
+"pinyin":"Shenhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210104,
+"name":"大东区",
+"pid":210100,
+"code":"024",
+"pinyin":"Dadong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210105,
+"name":"皇姑区",
+"pid":210100,
+"code":"024",
+"pinyin":"Huanggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210106,
+"name":"铁西区",
+"pid":210100,
+"code":"024",
+"pinyin":"Tiexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210111,
+"name":"苏家屯区",
+"pid":210100,
+"code":"024",
+"pinyin":"Sujiatun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210112,
+"name":"浑南区",
+"pid":210100,
+"code":"024",
+"pinyin":"Hunnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210113,
+"name":"沈北新区",
+"pid":210100,
+"code":"024",
+"pinyin":"Shenbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210114,
+"name":"于洪区",
+"pid":210100,
+"code":"024",
+"pinyin":"Yuhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210115,
+"name":"辽中区",
+"pid":210100,
+"code":"024",
+"pinyin":"Liaozhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210123,
+"name":"康平县",
+"pid":210100,
+"code":"024",
+"pinyin":"Kangping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210124,
+"name":"法库县",
+"pid":210100,
+"code":"024",
+"pinyin":"Faku",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210181,
+"name":"新民市",
+"pid":210100,
+"code":"024",
+"pinyin":"Xinmin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210182,
+"name":"高新区",
+"pid":210100,
+"code":"024",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210200,
+"name":"大连市",
+"pid":210000,
+"code":"0411",
+"pinyin":"Dalian",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210202,
+"name":"中山区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210203,
+"name":"西岗区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Xigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210204,
+"name":"沙河口区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Shahekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210211,
+"name":"甘井子区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Ganjingzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210212,
+"name":"旅顺口区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Lvshunkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210213,
+"name":"金州区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Jinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210214,
+"name":"普兰店区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Pulandian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210224,
+"name":"长海县",
+"pid":210200,
+"code":"0411",
+"pinyin":"Changhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210281,
+"name":"瓦房店市",
+"pid":210200,
+"code":"0411",
+"pinyin":"Wafangdian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210283,
+"name":"庄河市",
+"pid":210200,
+"code":"0411",
+"pinyin":"Zhuanghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210284,
+"name":"高新区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210285,
+"name":"经济开发区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210286,
+"name":"金普新区",
+"pid":210200,
+"code":"0411",
+"pinyin":"Jinpuxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210300,
+"name":"鞍山市",
+"pid":210000,
+"code":"0412",
+"pinyin":"Anshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210302,
+"name":"铁东区",
+"pid":210300,
+"code":"0412",
+"pinyin":"Tiedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210303,
+"name":"铁西区",
+"pid":210300,
+"code":"0412",
+"pinyin":"Tiexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210304,
+"name":"立山区",
+"pid":210300,
+"code":"0412",
+"pinyin":"Lishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210311,
+"name":"千山区",
+"pid":210300,
+"code":"0412",
+"pinyin":"Qianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210321,
+"name":"台安县",
+"pid":210300,
+"code":"0412",
+"pinyin":"Tai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210323,
+"name":"岫岩满族自治县",
+"pid":210300,
+"code":"0412",
+"pinyin":"Xiuyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210381,
+"name":"海城市",
+"pid":210300,
+"code":"0412",
+"pinyin":"Haicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210382,
+"name":"高新区",
+"pid":210300,
+"code":"0412",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210400,
+"name":"抚顺市",
+"pid":210000,
+"code":"024",
+"pinyin":"Fushun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210402,
+"name":"新抚区",
+"pid":210400,
+"code":"024",
+"pinyin":"Xinfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210403,
+"name":"东洲区",
+"pid":210400,
+"code":"024",
+"pinyin":"Dongzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210404,
+"name":"望花区",
+"pid":210400,
+"code":"024",
+"pinyin":"Wanghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210411,
+"name":"顺城区",
+"pid":210400,
+"code":"024",
+"pinyin":"Shuncheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210421,
+"name":"抚顺县",
+"pid":210400,
+"code":"024",
+"pinyin":"Fushun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210422,
+"name":"新宾满族自治县",
+"pid":210400,
+"code":"024",
+"pinyin":"Xinbin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210423,
+"name":"清原满族自治县",
+"pid":210400,
+"code":"024",
+"pinyin":"Qingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210500,
+"name":"本溪市",
+"pid":210000,
+"code":"024",
+"pinyin":"Benxi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210502,
+"name":"平山区",
+"pid":210500,
+"code":"024",
+"pinyin":"Pingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210503,
+"name":"溪湖区",
+"pid":210500,
+"code":"024",
+"pinyin":"Xihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210504,
+"name":"明山区",
+"pid":210500,
+"code":"024",
+"pinyin":"Mingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210505,
+"name":"南芬区",
+"pid":210500,
+"code":"024",
+"pinyin":"Nanfen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210521,
+"name":"本溪满族自治县",
+"pid":210500,
+"code":"024",
+"pinyin":"Benxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210522,
+"name":"桓仁满族自治县",
+"pid":210500,
+"code":"024",
+"pinyin":"Huanren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210600,
+"name":"丹东市",
+"pid":210000,
+"code":"0415",
+"pinyin":"Dandong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210602,
+"name":"元宝区",
+"pid":210600,
+"code":"0415",
+"pinyin":"Yuanbao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210603,
+"name":"振兴区",
+"pid":210600,
+"code":"0415",
+"pinyin":"Zhenxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210604,
+"name":"振安区",
+"pid":210600,
+"code":"0415",
+"pinyin":"Zhen'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210624,
+"name":"宽甸满族自治县",
+"pid":210600,
+"code":"0415",
+"pinyin":"Kuandian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210681,
+"name":"东港市",
+"pid":210600,
+"code":"0415",
+"pinyin":"Donggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210682,
+"name":"凤城市",
+"pid":210600,
+"code":"0415",
+"pinyin":"Fengcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210700,
+"name":"锦州市",
+"pid":210000,
+"code":"0416",
+"pinyin":"Jinzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210702,
+"name":"古塔区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Guta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210703,
+"name":"凌河区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Linghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210711,
+"name":"太和区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Taihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210726,
+"name":"黑山县",
+"pid":210700,
+"code":"0416",
+"pinyin":"Heishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210727,
+"name":"义县",
+"pid":210700,
+"code":"0416",
+"pinyin":"Yixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210781,
+"name":"凌海市",
+"pid":210700,
+"code":"0416",
+"pinyin":"Linghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210782,
+"name":"北镇市",
+"pid":210700,
+"code":"0416",
+"pinyin":"Beizhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210783,
+"name":"松山新区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Songshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210784,
+"name":"龙栖湾新区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Longxiwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210785,
+"name":"经济技术开发区",
+"pid":210700,
+"code":"0416",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210800,
+"name":"营口市",
+"pid":210000,
+"code":"0417",
+"pinyin":"Yingkou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210802,
+"name":"站前区",
+"pid":210800,
+"code":"0417",
+"pinyin":"Zhanqian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210803,
+"name":"西市区",
+"pid":210800,
+"code":"0417",
+"pinyin":"Xishi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210804,
+"name":"鲅鱼圈区",
+"pid":210800,
+"code":"0417",
+"pinyin":"Bayuquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210811,
+"name":"老边区",
+"pid":210800,
+"code":"0417",
+"pinyin":"Laobian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210881,
+"name":"盖州市",
+"pid":210800,
+"code":"0417",
+"pinyin":"Gaizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210882,
+"name":"大石桥市",
+"pid":210800,
+"code":"0417",
+"pinyin":"Dashiqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210900,
+"name":"阜新市",
+"pid":210000,
+"code":"0418",
+"pinyin":"Fuxin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":210902,
+"name":"海州区",
+"pid":210900,
+"code":"0418",
+"pinyin":"Haizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210903,
+"name":"新邱区",
+"pid":210900,
+"code":"0418",
+"pinyin":"Xinqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210904,
+"name":"太平区",
+"pid":210900,
+"code":"0418",
+"pinyin":"Taiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210905,
+"name":"清河门区",
+"pid":210900,
+"code":"0418",
+"pinyin":"Qinghemen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210911,
+"name":"细河区",
+"pid":210900,
+"code":"0418",
+"pinyin":"Xihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210921,
+"name":"阜新蒙古族自治县",
+"pid":210900,
+"code":"0418",
+"pinyin":"Fuxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":210922,
+"name":"彰武县",
+"pid":210900,
+"code":"0418",
+"pinyin":"Zhangwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211000,
+"name":"辽阳市",
+"pid":210000,
+"code":"0419",
+"pinyin":"Liaoyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":211002,
+"name":"白塔区",
+"pid":211000,
+"code":"0419",
+"pinyin":"Baita",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211003,
+"name":"文圣区",
+"pid":211000,
+"code":"0419",
+"pinyin":"Wensheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211004,
+"name":"宏伟区",
+"pid":211000,
+"code":"0419",
+"pinyin":"Hongwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211005,
+"name":"弓长岭区",
+"pid":211000,
+"code":"0419",
+"pinyin":"Gongchangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211011,
+"name":"太子河区",
+"pid":211000,
+"code":"0419",
+"pinyin":"Taizihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211021,
+"name":"辽阳县",
+"pid":211000,
+"code":"0419",
+"pinyin":"Liaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211081,
+"name":"灯塔市",
+"pid":211000,
+"code":"0419",
+"pinyin":"Dengta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211100,
+"name":"盘锦市",
+"pid":210000,
+"code":"0427",
+"pinyin":"Panjin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":211102,
+"name":"双台子区",
+"pid":211100,
+"code":"0427",
+"pinyin":"Shuangtaizi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211103,
+"name":"兴隆台区",
+"pid":211100,
+"code":"0427",
+"pinyin":"Xinglongtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211104,
+"name":"大洼区",
+"pid":211100,
+"code":"0427",
+"pinyin":"Dawa",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211122,
+"name":"盘山县",
+"pid":211100,
+"code":"0427",
+"pinyin":"Panshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211200,
+"name":"铁岭市",
+"pid":210000,
+"code":"024",
+"pinyin":"Tieling",
+"ccode":null,
+"level":3
+},
+    {
+        "id":211202,
+"name":"银州区",
+"pid":211200,
+"code":"024",
+"pinyin":"Yinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211204,
+"name":"清河区",
+"pid":211200,
+"code":"024",
+"pinyin":"Qinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211221,
+"name":"铁岭县",
+"pid":211200,
+"code":"024",
+"pinyin":"Tieling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211223,
+"name":"西丰县",
+"pid":211200,
+"code":"024",
+"pinyin":"Xifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211224,
+"name":"昌图县",
+"pid":211200,
+"code":"024",
+"pinyin":"Changtu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211281,
+"name":"调兵山市",
+"pid":211200,
+"code":"024",
+"pinyin":"Diaobingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211282,
+"name":"开原市",
+"pid":211200,
+"code":"024",
+"pinyin":"Kaiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211300,
+"name":"朝阳市",
+"pid":210000,
+"code":"0421",
+"pinyin":"Chaoyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":211302,
+"name":"双塔区",
+"pid":211300,
+"code":"0421",
+"pinyin":"Shuangta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211303,
+"name":"龙城区",
+"pid":211300,
+"code":"0421",
+"pinyin":"Longcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211321,
+"name":"朝阳县",
+"pid":211300,
+"code":"0421",
+"pinyin":"Chaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211322,
+"name":"建平县",
+"pid":211300,
+"code":"0421",
+"pinyin":"Jianping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211324,
+"name":"喀喇沁左翼蒙古族自治县",
+"pid":211300,
+"code":"0421",
+"pinyin":"Kalaqinzuoyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211381,
+"name":"北票市",
+"pid":211300,
+"code":"0421",
+"pinyin":"Beipiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211382,
+"name":"凌源市",
+"pid":211300,
+"code":"0421",
+"pinyin":"Lingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211400,
+"name":"葫芦岛市",
+"pid":210000,
+"code":"0429",
+"pinyin":"Huludao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":211402,
+"name":"连山区",
+"pid":211400,
+"code":"0429",
+"pinyin":"Lianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211403,
+"name":"龙港区",
+"pid":211400,
+"code":"0429",
+"pinyin":"Longgang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211404,
+"name":"南票区",
+"pid":211400,
+"code":"0429",
+"pinyin":"Nanpiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211421,
+"name":"绥中县",
+"pid":211400,
+"code":"0429",
+"pinyin":"Suizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211422,
+"name":"建昌县",
+"pid":211400,
+"code":"0429",
+"pinyin":"Jianchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":211481,
+"name":"兴城市",
+"pid":211400,
+"code":"0429",
+"pinyin":"Xingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220000,
+"name":"吉林省",
+"pid":100000,
+"code":null,
+"pinyin":"Jilin",
+"ccode":null,
+"level":2
+},
+    {
+        "id":220100,
+"name":"长春市",
+"pid":220000,
+"code":"0431",
+"pinyin":"Changchun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220102,
+"name":"南关区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Nanguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220103,
+"name":"宽城区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Kuancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220104,
+"name":"朝阳区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Chaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220105,
+"name":"二道区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Erdao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220106,
+"name":"绿园区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Lvyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220112,
+"name":"双阳区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Shuangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220113,
+"name":"九台区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Jiutai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220122,
+"name":"农安县",
+"pid":220100,
+"code":"0431",
+"pinyin":"Nong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220182,
+"name":"榆树市",
+"pid":220100,
+"code":"0431",
+"pinyin":"Yushu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220183,
+"name":"德惠市",
+"pid":220100,
+"code":"0431",
+"pinyin":"Dehui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220184,
+"name":"长春新区",
+"pid":220100,
+"code":"0431",
+"pinyin":"ChangChunXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220185,
+"name":"高新技术产业开发区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220186,
+"name":"经济技术开发区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220187,
+"name":"汽车产业开发区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Qichechanyekaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220188,
+"name":"兴隆综合保税区",
+"pid":220100,
+"code":"0431",
+"pinyin":"Baoshuiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220200,
+"name":"吉林市",
+"pid":220000,
+"code":"0432",
+"pinyin":"Jilin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220202,
+"name":"昌邑区",
+"pid":220200,
+"code":"0432",
+"pinyin":"Changyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220203,
+"name":"龙潭区",
+"pid":220200,
+"code":"0432",
+"pinyin":"Longtan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220204,
+"name":"船营区",
+"pid":220200,
+"code":"0432",
+"pinyin":"Chuanying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220211,
+"name":"丰满区",
+"pid":220200,
+"code":"0432",
+"pinyin":"Fengman",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220221,
+"name":"永吉县",
+"pid":220200,
+"code":"0432",
+"pinyin":"Yongji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220281,
+"name":"蛟河市",
+"pid":220200,
+"code":"0432",
+"pinyin":"Jiaohe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220282,
+"name":"桦甸市",
+"pid":220200,
+"code":"0432",
+"pinyin":"Huadian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220283,
+"name":"舒兰市",
+"pid":220200,
+"code":"0432",
+"pinyin":"Shulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220284,
+"name":"磐石市",
+"pid":220200,
+"code":"0432",
+"pinyin":"Panshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220285,
+"name":"高新区",
+"pid":220200,
+"code":"0432",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220300,
+"name":"四平市",
+"pid":220000,
+"code":"0434",
+"pinyin":"Siping",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220302,
+"name":"铁西区",
+"pid":220300,
+"code":"0434",
+"pinyin":"Tiexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220303,
+"name":"铁东区",
+"pid":220300,
+"code":"0434",
+"pinyin":"Tiedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220322,
+"name":"梨树县",
+"pid":220300,
+"code":"0434",
+"pinyin":"Lishu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220323,
+"name":"伊通满族自治县",
+"pid":220300,
+"code":"0434",
+"pinyin":"Yitong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220381,
+"name":"公主岭市",
+"pid":220300,
+"code":"0434",
+"pinyin":"Gongzhuling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220382,
+"name":"双辽市",
+"pid":220300,
+"code":"0434",
+"pinyin":"Shuangliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220400,
+"name":"辽源市",
+"pid":220000,
+"code":"0437",
+"pinyin":"Liaoyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220402,
+"name":"龙山区",
+"pid":220400,
+"code":"0437",
+"pinyin":"Longshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220403,
+"name":"西安区",
+"pid":220400,
+"code":"0437",
+"pinyin":"Xi'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220421,
+"name":"东丰县",
+"pid":220400,
+"code":"0437",
+"pinyin":"Dongfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220422,
+"name":"东辽县",
+"pid":220400,
+"code":"0437",
+"pinyin":"Dongliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220500,
+"name":"通化市",
+"pid":220000,
+"code":"0435",
+"pinyin":"Tonghua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220502,
+"name":"东昌区",
+"pid":220500,
+"code":"0435",
+"pinyin":"Dongchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220503,
+"name":"二道江区",
+"pid":220500,
+"code":"0435",
+"pinyin":"Erdaojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220521,
+"name":"通化县",
+"pid":220500,
+"code":"0435",
+"pinyin":"Tonghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220523,
+"name":"辉南县",
+"pid":220500,
+"code":"0435",
+"pinyin":"Huinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220524,
+"name":"柳河县",
+"pid":220500,
+"code":"0435",
+"pinyin":"Liuhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220581,
+"name":"梅河口市",
+"pid":220500,
+"code":"0435",
+"pinyin":"Meihekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220582,
+"name":"集安市",
+"pid":220500,
+"code":"0435",
+"pinyin":"Ji'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220600,
+"name":"白山市",
+"pid":220000,
+"code":"0439",
+"pinyin":"Baishan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220602,
+"name":"浑江区",
+"pid":220600,
+"code":"0439",
+"pinyin":"Hunjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220605,
+"name":"江源区",
+"pid":220600,
+"code":"0439",
+"pinyin":"Jiangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220621,
+"name":"抚松县",
+"pid":220600,
+"code":"0439",
+"pinyin":"Fusong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220622,
+"name":"靖宇县",
+"pid":220600,
+"code":"0439",
+"pinyin":"Jingyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220623,
+"name":"长白朝鲜族自治县",
+"pid":220600,
+"code":"0439",
+"pinyin":"Changbai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220681,
+"name":"临江市",
+"pid":220600,
+"code":"0439",
+"pinyin":"Linjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220700,
+"name":"松原市",
+"pid":220000,
+"code":"0438",
+"pinyin":"Songyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220702,
+"name":"宁江区",
+"pid":220700,
+"code":"0438",
+"pinyin":"Ningjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220721,
+"name":"前郭尔罗斯蒙古族自治县",
+"pid":220700,
+"code":"0438",
+"pinyin":"Qianguoerluosi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220722,
+"name":"长岭县",
+"pid":220700,
+"code":"0438",
+"pinyin":"Changling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220723,
+"name":"乾安县",
+"pid":220700,
+"code":"0438",
+"pinyin":"Qian'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220781,
+"name":"扶余市",
+"pid":220700,
+"code":"0438",
+"pinyin":"Fuyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220800,
+"name":"白城市",
+"pid":220000,
+"code":"0436",
+"pinyin":"Baicheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":220802,
+"name":"洮北区",
+"pid":220800,
+"code":"0436",
+"pinyin":"Taobei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220821,
+"name":"镇赉县",
+"pid":220800,
+"code":"0436",
+"pinyin":"Zhenlai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220822,
+"name":"通榆县",
+"pid":220800,
+"code":"0436",
+"pinyin":"Tongyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220881,
+"name":"洮南市",
+"pid":220800,
+"code":"0436",
+"pinyin":"Taonan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":220882,
+"name":"大安市",
+"pid":220800,
+"code":"0436",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222400,
+"name":"延边朝鲜族自治州",
+"pid":220000,
+"code":"0433",
+"pinyin":"Yanbian",
+"ccode":null,
+"level":3
+},
+    {
+        "id":222401,
+"name":"延吉市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Yanji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222402,
+"name":"图们市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Tumen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222403,
+"name":"敦化市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Dunhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222404,
+"name":"珲春市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Hunchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222405,
+"name":"龙井市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Longjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222406,
+"name":"和龙市",
+"pid":222400,
+"code":"0433",
+"pinyin":"Helong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222424,
+"name":"汪清县",
+"pid":222400,
+"code":"0433",
+"pinyin":"Wangqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":222426,
+"name":"安图县",
+"pid":222400,
+"code":"0433",
+"pinyin":"Antu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230000,
+"name":"黑龙江省",
+"pid":100000,
+"code":null,
+"pinyin":"Heilongjiang",
+"ccode":null,
+"level":2
+},
+    {
+        "id":230100,
+"name":"哈尔滨市",
+"pid":230000,
+"code":"0451",
+"pinyin":"Harbin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230102,
+"name":"道里区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Daoli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230103,
+"name":"南岗区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Nangang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230104,
+"name":"道外区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Daowai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230108,
+"name":"平房区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Pingfang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230109,
+"name":"松北区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Songbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230110,
+"name":"香坊区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Xiangfang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230111,
+"name":"呼兰区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Hulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230112,
+"name":"阿城区",
+"pid":230100,
+"code":"0451",
+"pinyin":"A'cheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230113,
+"name":"双城区",
+"pid":230100,
+"code":"0451",
+"pinyin":"Shuangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230123,
+"name":"依兰县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Yilan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230124,
+"name":"方正县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Fangzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230125,
+"name":"宾县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Binxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230126,
+"name":"巴彦县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Bayan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230127,
+"name":"木兰县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Mulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230128,
+"name":"通河县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Tonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230129,
+"name":"延寿县",
+"pid":230100,
+"code":"0451",
+"pinyin":"Yanshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230183,
+"name":"尚志市",
+"pid":230100,
+"code":"0451",
+"pinyin":"Shangzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230184,
+"name":"五常市",
+"pid":230100,
+"code":"0451",
+"pinyin":"Wuchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230185,
+"name":"哈尔滨新区",
+"pid":230100,
+"code":"0451",
+"pinyin":"HarbinXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230186,
+"name":"高新区",
+"pid":230100,
+"code":"0451",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230200,
+"name":"齐齐哈尔市",
+"pid":230000,
+"code":"0452",
+"pinyin":"Qiqihar",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230202,
+"name":"龙沙区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Longsha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230203,
+"name":"建华区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Jianhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230204,
+"name":"铁锋区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Tiefeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230205,
+"name":"昂昂溪区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Angangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230206,
+"name":"富拉尔基区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Fulaerji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230207,
+"name":"碾子山区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Nianzishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230208,
+"name":"梅里斯达斡尔族区",
+"pid":230200,
+"code":"0452",
+"pinyin":"Meilisi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230221,
+"name":"龙江县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Longjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230223,
+"name":"依安县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Yi'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230224,
+"name":"泰来县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Tailai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230225,
+"name":"甘南县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Gannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230227,
+"name":"富裕县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Fuyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230229,
+"name":"克山县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Keshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230230,
+"name":"克东县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Kedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230231,
+"name":"拜泉县",
+"pid":230200,
+"code":"0452",
+"pinyin":"Baiquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230281,
+"name":"讷河市",
+"pid":230200,
+"code":"0452",
+"pinyin":"Nehe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230282,
+"name":"高新区",
+"pid":230200,
+"code":"0452",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230300,
+"name":"鸡西市",
+"pid":230000,
+"code":"0467",
+"pinyin":"Jixi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230302,
+"name":"鸡冠区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Jiguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230303,
+"name":"恒山区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Hengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230304,
+"name":"滴道区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Didao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230305,
+"name":"梨树区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Lishu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230306,
+"name":"城子河区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Chengzihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230307,
+"name":"麻山区",
+"pid":230300,
+"code":"0467",
+"pinyin":"Mashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230321,
+"name":"鸡东县",
+"pid":230300,
+"code":"0467",
+"pinyin":"Jidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230381,
+"name":"虎林市",
+"pid":230300,
+"code":"0467",
+"pinyin":"Hulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230382,
+"name":"密山市",
+"pid":230300,
+"code":"0467",
+"pinyin":"Mishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230400,
+"name":"鹤岗市",
+"pid":230000,
+"code":"0468",
+"pinyin":"Hegang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230402,
+"name":"向阳区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Xiangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230403,
+"name":"工农区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Gongnong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230404,
+"name":"南山区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Nanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230405,
+"name":"兴安区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Xing'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230406,
+"name":"东山区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Dongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230407,
+"name":"兴山区",
+"pid":230400,
+"code":"0468",
+"pinyin":"Xingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230421,
+"name":"萝北县",
+"pid":230400,
+"code":"0468",
+"pinyin":"Luobei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230422,
+"name":"绥滨县",
+"pid":230400,
+"code":"0468",
+"pinyin":"Suibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230500,
+"name":"双鸭山市",
+"pid":230000,
+"code":"0469",
+"pinyin":"Shuangyashan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230502,
+"name":"尖山区",
+"pid":230500,
+"code":"0469",
+"pinyin":"Jianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230503,
+"name":"岭东区",
+"pid":230500,
+"code":"0469",
+"pinyin":"Lingdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230505,
+"name":"四方台区",
+"pid":230500,
+"code":"0469",
+"pinyin":"Sifangtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230506,
+"name":"宝山区",
+"pid":230500,
+"code":"0469",
+"pinyin":"Baoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230521,
+"name":"集贤县",
+"pid":230500,
+"code":"0469",
+"pinyin":"Jixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230522,
+"name":"友谊县",
+"pid":230500,
+"code":"0469",
+"pinyin":"Youyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230523,
+"name":"宝清县",
+"pid":230500,
+"code":"0469",
+"pinyin":"Baoqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230524,
+"name":"饶河县",
+"pid":230500,
+"code":"0469",
+"pinyin":"Raohe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230600,
+"name":"大庆市",
+"pid":230000,
+"code":"0459",
+"pinyin":"Daqing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230602,
+"name":"萨尔图区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Saertu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230603,
+"name":"龙凤区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Longfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230604,
+"name":"让胡路区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Ranghulu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230605,
+"name":"红岗区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Honggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230606,
+"name":"大同区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230621,
+"name":"肇州县",
+"pid":230600,
+"code":"0459",
+"pinyin":"Zhaozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230622,
+"name":"肇源县",
+"pid":230600,
+"code":"0459",
+"pinyin":"Zhaoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230623,
+"name":"林甸县",
+"pid":230600,
+"code":"0459",
+"pinyin":"Lindian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230624,
+"name":"杜尔伯特蒙古族自治县",
+"pid":230600,
+"code":"0459",
+"pinyin":"Duerbote",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230625,
+"name":"高新区",
+"pid":230600,
+"code":"0459",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230700,
+"name":"伊春市",
+"pid":230000,
+"code":"0458",
+"pinyin":"Yichun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230702,
+"name":"伊春区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Yichun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230703,
+"name":"南岔区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Nancha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230704,
+"name":"友好区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Youhao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230705,
+"name":"西林区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Xilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230706,
+"name":"翠峦区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Cuiluan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230707,
+"name":"新青区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Xinqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230708,
+"name":"美溪区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Meixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230709,
+"name":"金山屯区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Jinshantun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230710,
+"name":"五营区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Wuying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230711,
+"name":"乌马河区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Wumahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230712,
+"name":"汤旺河区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Tangwanghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230713,
+"name":"带岭区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Dailing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230714,
+"name":"乌伊岭区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Wuyiling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230715,
+"name":"红星区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Hongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230716,
+"name":"上甘岭区",
+"pid":230700,
+"code":"0458",
+"pinyin":"Shangganling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230722,
+"name":"嘉荫县",
+"pid":230700,
+"code":"0458",
+"pinyin":"Jiayin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230781,
+"name":"铁力市",
+"pid":230700,
+"code":"0458",
+"pinyin":"Tieli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230800,
+"name":"佳木斯市",
+"pid":230000,
+"code":"0454",
+"pinyin":"Jiamusi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230803,
+"name":"向阳区",
+"pid":230800,
+"code":"0454",
+"pinyin":"Xiangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230804,
+"name":"前进区",
+"pid":230800,
+"code":"0454",
+"pinyin":"Qianjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230805,
+"name":"东风区",
+"pid":230800,
+"code":"0454",
+"pinyin":"Dongfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230811,
+"name":"郊区",
+"pid":230800,
+"code":"0454",
+"pinyin":"Jiaoqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230822,
+"name":"桦南县",
+"pid":230800,
+"code":"0454",
+"pinyin":"Huanan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230826,
+"name":"桦川县",
+"pid":230800,
+"code":"0454",
+"pinyin":"Huachuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230828,
+"name":"汤原县",
+"pid":230800,
+"code":"0454",
+"pinyin":"Tangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230881,
+"name":"同江市",
+"pid":230800,
+"code":"0454",
+"pinyin":"Tongjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230882,
+"name":"富锦市",
+"pid":230800,
+"code":"0454",
+"pinyin":"Fujin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230883,
+"name":"抚远市",
+"pid":230800,
+"code":"0454",
+"pinyin":"Fuyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230900,
+"name":"七台河市",
+"pid":230000,
+"code":"0464",
+"pinyin":"Qitaihe",
+"ccode":null,
+"level":3
+},
+    {
+        "id":230902,
+"name":"新兴区",
+"pid":230900,
+"code":"0464",
+"pinyin":"Xinxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230903,
+"name":"桃山区",
+"pid":230900,
+"code":"0464",
+"pinyin":"Taoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230904,
+"name":"茄子河区",
+"pid":230900,
+"code":"0464",
+"pinyin":"Qiezihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":230921,
+"name":"勃利县",
+"pid":230900,
+"code":"0464",
+"pinyin":"Boli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231000,
+"name":"牡丹江市",
+"pid":230000,
+"code":"0453",
+"pinyin":"Mudanjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":231002,
+"name":"东安区",
+"pid":231000,
+"code":"0453",
+"pinyin":"Dong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231003,
+"name":"阳明区",
+"pid":231000,
+"code":"0453",
+"pinyin":"Yangming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231004,
+"name":"爱民区",
+"pid":231000,
+"code":"0453",
+"pinyin":"Aimin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231005,
+"name":"西安区",
+"pid":231000,
+"code":"0453",
+"pinyin":"Xi'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231025,
+"name":"林口县",
+"pid":231000,
+"code":"0453",
+"pinyin":"Linkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231081,
+"name":"绥芬河市",
+"pid":231000,
+"code":"0453",
+"pinyin":"Suifenhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231083,
+"name":"海林市",
+"pid":231000,
+"code":"0453",
+"pinyin":"Hailin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231084,
+"name":"宁安市",
+"pid":231000,
+"code":"0453",
+"pinyin":"Ning'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231085,
+"name":"穆棱市",
+"pid":231000,
+"code":"0453",
+"pinyin":"Muling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231086,
+"name":"东宁市",
+"pid":231000,
+"code":"0453",
+"pinyin":"Dongning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231100,
+"name":"黑河市",
+"pid":230000,
+"code":"0456",
+"pinyin":"Heihe",
+"ccode":null,
+"level":3
+},
+    {
+        "id":231102,
+"name":"爱辉区",
+"pid":231100,
+"code":"0456",
+"pinyin":"Aihui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231121,
+"name":"嫩江县",
+"pid":231100,
+"code":"0456",
+"pinyin":"Nenjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231123,
+"name":"逊克县",
+"pid":231100,
+"code":"0456",
+"pinyin":"Xunke",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231124,
+"name":"孙吴县",
+"pid":231100,
+"code":"0456",
+"pinyin":"Sunwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231181,
+"name":"北安市",
+"pid":231100,
+"code":"0456",
+"pinyin":"Bei'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231182,
+"name":"五大连池市",
+"pid":231100,
+"code":"0456",
+"pinyin":"Wudalianchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231200,
+"name":"绥化市",
+"pid":230000,
+"code":"0455",
+"pinyin":"Suihua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":231202,
+"name":"北林区",
+"pid":231200,
+"code":"0455",
+"pinyin":"Beilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231221,
+"name":"望奎县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Wangkui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231222,
+"name":"兰西县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Lanxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231223,
+"name":"青冈县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Qinggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231224,
+"name":"庆安县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Qing'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231225,
+"name":"明水县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Mingshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231226,
+"name":"绥棱县",
+"pid":231200,
+"code":"0455",
+"pinyin":"Suileng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231281,
+"name":"安达市",
+"pid":231200,
+"code":"0455",
+"pinyin":"Anda",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231282,
+"name":"肇东市",
+"pid":231200,
+"code":"0455",
+"pinyin":"Zhaodong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":231283,
+"name":"海伦市",
+"pid":231200,
+"code":"0455",
+"pinyin":"Hailun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232700,
+"name":"大兴安岭地区",
+"pid":230000,
+"code":"0457",
+"pinyin":"DaXingAnLing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":232701,
+"name":"加格达奇区",
+"pid":232700,
+"code":"0457",
+"pinyin":"Jiagedaqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232702,
+"name":"新林区",
+"pid":232700,
+"code":"0457",
+"pinyin":"Xinlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232703,
+"name":"松岭区",
+"pid":232700,
+"code":"0457",
+"pinyin":"Songling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232704,
+"name":"呼中区",
+"pid":232700,
+"code":"0457",
+"pinyin":"Huzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232721,
+"name":"呼玛县",
+"pid":232700,
+"code":"0457",
+"pinyin":"Huma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232722,
+"name":"塔河县",
+"pid":232700,
+"code":"0457",
+"pinyin":"Tahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":232723,
+"name":"漠河县",
+"pid":232700,
+"code":"0457",
+"pinyin":"Mohe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310000,
+"name":"上海",
+"pid":100000,
+"code":null,
+"pinyin":"Shanghai",
+"ccode":null,
+"level":2
+},
+    {
+        "id":310100,
+"name":"上海市",
+"pid":310000,
+"code":"021",
+"pinyin":"Shanghai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":310101,
+"name":"黄浦区",
+"pid":310100,
+"code":"021",
+"pinyin":"Huangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310104,
+"name":"徐汇区",
+"pid":310100,
+"code":"021",
+"pinyin":"Xuhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310105,
+"name":"长宁区",
+"pid":310100,
+"code":"021",
+"pinyin":"Changning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310106,
+"name":"静安区",
+"pid":310100,
+"code":"021",
+"pinyin":"Jing'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310107,
+"name":"普陀区",
+"pid":310100,
+"code":"021",
+"pinyin":"Putuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310109,
+"name":"虹口区",
+"pid":310100,
+"code":"021",
+"pinyin":"Hongkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310110,
+"name":"杨浦区",
+"pid":310100,
+"code":"021",
+"pinyin":"Yangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310112,
+"name":"闵行区",
+"pid":310100,
+"code":"021",
+"pinyin":"Minhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310113,
+"name":"宝山区",
+"pid":310100,
+"code":"021",
+"pinyin":"Baoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310114,
+"name":"嘉定区",
+"pid":310100,
+"code":"021",
+"pinyin":"Jiading",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310115,
+"name":"浦东新区",
+"pid":310100,
+"code":"021",
+"pinyin":"Pudong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310116,
+"name":"金山区",
+"pid":310100,
+"code":"021",
+"pinyin":"Jinshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310117,
+"name":"松江区",
+"pid":310100,
+"code":"021",
+"pinyin":"Songjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310118,
+"name":"青浦区",
+"pid":310100,
+"code":"021",
+"pinyin":"Qingpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310120,
+"name":"奉贤区",
+"pid":310100,
+"code":"021",
+"pinyin":"Fengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310151,
+"name":"崇明区",
+"pid":310100,
+"code":"021",
+"pinyin":"Chongming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310231,
+"name":"张江高新区",
+"pid":310100,
+"code":"021",
+"pinyin":"Zhangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310232,
+"name":"紫竹高新区",
+"pid":310100,
+"code":"021",
+"pinyin":"Zizhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":310233,
+"name":"漕河泾开发区",
+"pid":310100,
+"code":"021",
+"pinyin":"Caohejing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320000,
+"name":"江苏省",
+"pid":100000,
+"code":null,
+"pinyin":"Jiangsu",
+"ccode":null,
+"level":2
+},
+    {
+        "id":320100,
+"name":"南京市",
+"pid":320000,
+"code":"025",
+"pinyin":"Nanjing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320102,
+"name":"玄武区",
+"pid":320100,
+"code":"025",
+"pinyin":"Xuanwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320104,
+"name":"秦淮区",
+"pid":320100,
+"code":"025",
+"pinyin":"Qinhuai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320105,
+"name":"建邺区",
+"pid":320100,
+"code":"025",
+"pinyin":"Jianye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320106,
+"name":"鼓楼区",
+"pid":320100,
+"code":"025",
+"pinyin":"Gulou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320111,
+"name":"浦口区",
+"pid":320100,
+"code":"025",
+"pinyin":"Pukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320113,
+"name":"栖霞区",
+"pid":320100,
+"code":"025",
+"pinyin":"Qixia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320114,
+"name":"雨花台区",
+"pid":320100,
+"code":"025",
+"pinyin":"Yuhuatai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320115,
+"name":"江宁区",
+"pid":320100,
+"code":"025",
+"pinyin":"Jiangning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320116,
+"name":"六合区",
+"pid":320100,
+"code":"025",
+"pinyin":"Luhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320117,
+"name":"溧水区",
+"pid":320100,
+"code":"025",
+"pinyin":"Lishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320118,
+"name":"高淳区",
+"pid":320100,
+"code":"025",
+"pinyin":"Gaochun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320119,
+"name":"江北新区",
+"pid":320100,
+"code":"025",
+"pinyin":"JiangbeiXinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320120,
+"name":"高新区",
+"pid":320100,
+"code":"025",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320200,
+"name":"无锡市",
+"pid":320000,
+"code":"0510",
+"pinyin":"Wuxi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320205,
+"name":"锡山区",
+"pid":320200,
+"code":"0510",
+"pinyin":"Xishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320206,
+"name":"惠山区",
+"pid":320200,
+"code":"0510",
+"pinyin":"Huishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320211,
+"name":"滨湖区",
+"pid":320200,
+"code":"0510",
+"pinyin":"Binhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320213,
+"name":"梁溪区",
+"pid":320200,
+"code":"0510",
+"pinyin":"LiangXi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320214,
+"name":"新吴区",
+"pid":320200,
+"code":"0510",
+"pinyin":"XinWu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320281,
+"name":"江阴市",
+"pid":320200,
+"code":"0510",
+"pinyin":"Jiangyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320282,
+"name":"宜兴市",
+"pid":320200,
+"code":"0510",
+"pinyin":"Yixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320300,
+"name":"徐州市",
+"pid":320000,
+"code":"0516",
+"pinyin":"Xuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320302,
+"name":"鼓楼区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Gulou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320303,
+"name":"云龙区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Yunlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320305,
+"name":"贾汪区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Jiawang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320311,
+"name":"泉山区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Quanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320312,
+"name":"铜山区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Tongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320321,
+"name":"丰县",
+"pid":320300,
+"code":"0516",
+"pinyin":"Fengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320322,
+"name":"沛县",
+"pid":320300,
+"code":"0516",
+"pinyin":"Peixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320324,
+"name":"睢宁县",
+"pid":320300,
+"code":"0516",
+"pinyin":"Suining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320381,
+"name":"新沂市",
+"pid":320300,
+"code":"0516",
+"pinyin":"Xinyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320382,
+"name":"邳州市",
+"pid":320300,
+"code":"0516",
+"pinyin":"Pizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320383,
+"name":"经济技术开发区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320384,
+"name":"高新技术产业开发区",
+"pid":320300,
+"code":"0516",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320385,
+"name":"软件园",
+"pid":320300,
+"code":"0516",
+"pinyin":"Ruanjianyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320400,
+"name":"常州市",
+"pid":320000,
+"code":"0519",
+"pinyin":"Changzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320402,
+"name":"天宁区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Tianning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320404,
+"name":"钟楼区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Zhonglou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320411,
+"name":"新北区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Xinbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320412,
+"name":"武进区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Wujin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320413,
+"name":"金坛区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Jintan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320481,
+"name":"溧阳市",
+"pid":320400,
+"code":"0519",
+"pinyin":"Liyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320482,
+"name":"高新区",
+"pid":320400,
+"code":"0519",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320500,
+"name":"苏州市",
+"pid":320000,
+"code":"0512",
+"pinyin":"Suzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320505,
+"name":"虎丘区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Huqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320506,
+"name":"吴中区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Wuzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320507,
+"name":"相城区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320508,
+"name":"姑苏区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Gusu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320509,
+"name":"吴江区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Wujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320581,
+"name":"常熟市",
+"pid":320500,
+"code":"0512",
+"pinyin":"Changshu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320582,
+"name":"张家港市",
+"pid":320500,
+"code":"0512",
+"pinyin":"Zhangjiagang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320583,
+"name":"昆山市",
+"pid":320500,
+"code":"0512",
+"pinyin":"Kunshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320585,
+"name":"太仓市",
+"pid":320500,
+"code":"0512",
+"pinyin":"Taicang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320586,
+"name":"苏州新区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Suzhouxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320587,
+"name":"工业园区",
+"pid":320500,
+"code":"0512",
+"pinyin":"GongyeYuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320588,
+"name":"高新区",
+"pid":320500,
+"code":"0512",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320600,
+"name":"南通市",
+"pid":320000,
+"code":"0513",
+"pinyin":"Nantong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320602,
+"name":"崇川区",
+"pid":320600,
+"code":"0513",
+"pinyin":"Chongchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320611,
+"name":"港闸区",
+"pid":320600,
+"code":"0513",
+"pinyin":"Gangzha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320612,
+"name":"通州区",
+"pid":320600,
+"code":"0513",
+"pinyin":"Tongzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320621,
+"name":"海安县",
+"pid":320600,
+"code":"0513",
+"pinyin":"Hai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320623,
+"name":"如东县",
+"pid":320600,
+"code":"0513",
+"pinyin":"Rudong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320681,
+"name":"启东市",
+"pid":320600,
+"code":"0513",
+"pinyin":"Qidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320682,
+"name":"如皋市",
+"pid":320600,
+"code":"0513",
+"pinyin":"Rugao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320684,
+"name":"海门市",
+"pid":320600,
+"code":"0513",
+"pinyin":"Haimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320685,
+"name":"经济技术开发区",
+"pid":320600,
+"code":"0513",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320700,
+"name":"连云港市",
+"pid":320000,
+"code":"0518",
+"pinyin":"Lianyungang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320703,
+"name":"连云区",
+"pid":320700,
+"code":"0518",
+"pinyin":"Lianyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320706,
+"name":"海州区",
+"pid":320700,
+"code":"0518",
+"pinyin":"Haizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320707,
+"name":"赣榆区",
+"pid":320700,
+"code":"0518",
+"pinyin":"Ganyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320722,
+"name":"东海县",
+"pid":320700,
+"code":"0518",
+"pinyin":"Donghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320723,
+"name":"灌云县",
+"pid":320700,
+"code":"0518",
+"pinyin":"Guanyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320724,
+"name":"灌南县",
+"pid":320700,
+"code":"0518",
+"pinyin":"Guannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320725,
+"name":"新海新区",
+"pid":320700,
+"code":"0518",
+"pinyin":"XinhaiXinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320726,
+"name":"连云新城",
+"pid":320700,
+"code":"0518",
+"pinyin":"LianyunXincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320727,
+"name":"徐圩新区",
+"pid":320700,
+"code":"0518",
+"pinyin":"XuWeiXinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320728,
+"name":"济技术开发区",
+"pid":320700,
+"code":"0518",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320800,
+"name":"淮安市",
+"pid":320000,
+"code":"0517",
+"pinyin":"Huai'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320803,
+"name":"淮安区",
+"pid":320800,
+"code":"0517",
+"pinyin":"Huai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320804,
+"name":"淮阴区",
+"pid":320800,
+"code":"0517",
+"pinyin":"Huaiyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320812,
+"name":"清江浦区",
+"pid":320800,
+"code":"0517",
+"pinyin":"Qingjiangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320813,
+"name":"洪泽区",
+"pid":320800,
+"code":"0517",
+"pinyin":"Hongze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320826,
+"name":"涟水县",
+"pid":320800,
+"code":"0517",
+"pinyin":"Lianshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320830,
+"name":"盱眙县",
+"pid":320800,
+"code":"0517",
+"pinyin":"Xuyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320831,
+"name":"金湖县",
+"pid":320800,
+"code":"0517",
+"pinyin":"Jinhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320832,
+"name":"经济开发区",
+"pid":320800,
+"code":"0517",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320900,
+"name":"盐城市",
+"pid":320000,
+"code":"0515",
+"pinyin":"Yancheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":320902,
+"name":"亭湖区",
+"pid":320900,
+"code":"0515",
+"pinyin":"Tinghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320903,
+"name":"盐都区",
+"pid":320900,
+"code":"0515",
+"pinyin":"Yandu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320904,
+"name":"大丰区",
+"pid":320900,
+"code":"0515",
+"pinyin":"Dafeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320921,
+"name":"响水县",
+"pid":320900,
+"code":"0515",
+"pinyin":"Xiangshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320922,
+"name":"滨海县",
+"pid":320900,
+"code":"0515",
+"pinyin":"Binhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320923,
+"name":"阜宁县",
+"pid":320900,
+"code":"0515",
+"pinyin":"Funing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320924,
+"name":"射阳县",
+"pid":320900,
+"code":"0515",
+"pinyin":"Sheyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320925,
+"name":"建湖县",
+"pid":320900,
+"code":"0515",
+"pinyin":"Jianhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":320981,
+"name":"东台市",
+"pid":320900,
+"code":"0515",
+"pinyin":"Dongtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321000,
+"name":"扬州市",
+"pid":320000,
+"code":"0514",
+"pinyin":"Yangzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":321002,
+"name":"广陵区",
+"pid":321000,
+"code":"0514",
+"pinyin":"Guangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321003,
+"name":"邗江区",
+"pid":321000,
+"code":"0514",
+"pinyin":"Hanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321012,
+"name":"江都区",
+"pid":321000,
+"code":"0514",
+"pinyin":"Jiangdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321023,
+"name":"宝应县",
+"pid":321000,
+"code":"0514",
+"pinyin":"Baoying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321081,
+"name":"仪征市",
+"pid":321000,
+"code":"0514",
+"pinyin":"Yizheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321084,
+"name":"高邮市",
+"pid":321000,
+"code":"0514",
+"pinyin":"Gaoyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321100,
+"name":"镇江市",
+"pid":320000,
+"code":"0511",
+"pinyin":"Zhenjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":321102,
+"name":"京口区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Jingkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321111,
+"name":"润州区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Runzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321112,
+"name":"丹徒区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Dantu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321181,
+"name":"丹阳市",
+"pid":321100,
+"code":"0511",
+"pinyin":"Danyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321182,
+"name":"扬中市",
+"pid":321100,
+"code":"0511",
+"pinyin":"Yangzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321183,
+"name":"句容市",
+"pid":321100,
+"code":"0511",
+"pinyin":"Jurong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321184,
+"name":"镇江新区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Zhenjiangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321185,
+"name":"镇江新区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Dantuxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321186,
+"name":"经济开发区",
+"pid":321100,
+"code":"0511",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321200,
+"name":"泰州市",
+"pid":320000,
+"code":"0523",
+"pinyin":"Taizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":321202,
+"name":"海陵区",
+"pid":321200,
+"code":"0523",
+"pinyin":"Hailing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321203,
+"name":"高港区",
+"pid":321200,
+"code":"0523",
+"pinyin":"Gaogang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321204,
+"name":"姜堰区",
+"pid":321200,
+"code":"0523",
+"pinyin":"Jiangyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321281,
+"name":"兴化市",
+"pid":321200,
+"code":"0523",
+"pinyin":"Xinghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321282,
+"name":"靖江市",
+"pid":321200,
+"code":"0523",
+"pinyin":"Jingjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321283,
+"name":"泰兴市",
+"pid":321200,
+"code":"0523",
+"pinyin":"Taixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321300,
+"name":"宿迁市",
+"pid":320000,
+"code":"0527",
+"pinyin":"Suqian",
+"ccode":null,
+"level":3
+},
+    {
+        "id":321302,
+"name":"宿城区",
+"pid":321300,
+"code":"0527",
+"pinyin":"Sucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321311,
+"name":"宿豫区",
+"pid":321300,
+"code":"0527",
+"pinyin":"Suyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321322,
+"name":"沭阳县",
+"pid":321300,
+"code":"0527",
+"pinyin":"Shuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321323,
+"name":"泗阳县",
+"pid":321300,
+"code":"0527",
+"pinyin":"Siyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321324,
+"name":"泗洪县",
+"pid":321300,
+"code":"0527",
+"pinyin":"Sihong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":321325,
+"name":"高新区",
+"pid":321300,
+"code":"0527",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330000,
+"name":"浙江省",
+"pid":100000,
+"code":null,
+"pinyin":"Zhejiang",
+"ccode":null,
+"level":2
+},
+    {
+        "id":330100,
+"name":"杭州市",
+"pid":330000,
+"code":"0571",
+"pinyin":"Hangzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330102,
+"name":"上城区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Shangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330103,
+"name":"下城区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Xiacheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330104,
+"name":"江干区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Jianggan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330105,
+"name":"拱墅区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Gongshu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330106,
+"name":"西湖区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Xihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330108,
+"name":"滨江区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Binjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330109,
+"name":"萧山区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Xiaoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330110,
+"name":"余杭区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Yuhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330111,
+"name":"富阳区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Fuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330112,
+"name":"临安区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Lin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330122,
+"name":"桐庐县",
+"pid":330100,
+"code":"0571",
+"pinyin":"Tonglu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330127,
+"name":"淳安县",
+"pid":330100,
+"code":"0571",
+"pinyin":"Chun'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330182,
+"name":"建德市",
+"pid":330100,
+"code":"0571",
+"pinyin":"Jiande",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330186,
+"name":"高新区",
+"pid":330100,
+"code":"0571",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330200,
+"name":"宁波市",
+"pid":330000,
+"code":"0574",
+"pinyin":"Ningbo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330203,
+"name":"海曙区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Haishu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330205,
+"name":"江北区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Jiangbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330206,
+"name":"北仑区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Beilun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330211,
+"name":"镇海区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Zhenhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330212,
+"name":"鄞州区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Yinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330213,
+"name":"奉化区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Fenghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330225,
+"name":"象山县",
+"pid":330200,
+"code":"0574",
+"pinyin":"Xiangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330226,
+"name":"宁海县",
+"pid":330200,
+"code":"0574",
+"pinyin":"Ninghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330281,
+"name":"余姚市",
+"pid":330200,
+"code":"0574",
+"pinyin":"Yuyao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330282,
+"name":"慈溪市",
+"pid":330200,
+"code":"0574",
+"pinyin":"Cixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330284,
+"name":"杭州湾新区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Hangzhouwanxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330285,
+"name":"高新区",
+"pid":330200,
+"code":"0574",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330300,
+"name":"温州市",
+"pid":330000,
+"code":"0577",
+"pinyin":"Wenzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330302,
+"name":"鹿城区",
+"pid":330300,
+"code":"0577",
+"pinyin":"Lucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330303,
+"name":"龙湾区",
+"pid":330300,
+"code":"0577",
+"pinyin":"Longwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330304,
+"name":"瓯海区",
+"pid":330300,
+"code":"0577",
+"pinyin":"Ouhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330305,
+"name":"洞头区",
+"pid":330300,
+"code":"0577",
+"pinyin":"Dongtou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330324,
+"name":"永嘉县",
+"pid":330300,
+"code":"0577",
+"pinyin":"Yongjia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330326,
+"name":"平阳县",
+"pid":330300,
+"code":"0577",
+"pinyin":"Pingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330327,
+"name":"苍南县",
+"pid":330300,
+"code":"0577",
+"pinyin":"Cangnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330328,
+"name":"文成县",
+"pid":330300,
+"code":"0577",
+"pinyin":"Wencheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330329,
+"name":"泰顺县",
+"pid":330300,
+"code":"0577",
+"pinyin":"Taishun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330381,
+"name":"瑞安市",
+"pid":330300,
+"code":"0577",
+"pinyin":"Rui'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330382,
+"name":"乐清市",
+"pid":330300,
+"code":"0577",
+"pinyin":"Yueqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330400,
+"name":"嘉兴市",
+"pid":330000,
+"code":"0573",
+"pinyin":"Jiaxing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330402,
+"name":"南湖区",
+"pid":330400,
+"code":"0573",
+"pinyin":"Nanhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330411,
+"name":"秀洲区",
+"pid":330400,
+"code":"0573",
+"pinyin":"Xiuzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330421,
+"name":"嘉善县",
+"pid":330400,
+"code":"0573",
+"pinyin":"Jiashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330424,
+"name":"海盐县",
+"pid":330400,
+"code":"0573",
+"pinyin":"Haiyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330481,
+"name":"海宁市",
+"pid":330400,
+"code":"0573",
+"pinyin":"Haining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330482,
+"name":"平湖市",
+"pid":330400,
+"code":"0573",
+"pinyin":"Pinghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330483,
+"name":"桐乡市",
+"pid":330400,
+"code":"0573",
+"pinyin":"Tongxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330500,
+"name":"湖州市",
+"pid":330000,
+"code":"0572",
+"pinyin":"Huzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330502,
+"name":"吴兴区",
+"pid":330500,
+"code":"0572",
+"pinyin":"Wuxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330503,
+"name":"南浔区",
+"pid":330500,
+"code":"0572",
+"pinyin":"Nanxun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330521,
+"name":"德清县",
+"pid":330500,
+"code":"0572",
+"pinyin":"Deqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330522,
+"name":"长兴县",
+"pid":330500,
+"code":"0572",
+"pinyin":"Changxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330523,
+"name":"安吉县",
+"pid":330500,
+"code":"0572",
+"pinyin":"Anji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330600,
+"name":"绍兴市",
+"pid":330000,
+"code":"0575",
+"pinyin":"Shaoxing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330602,
+"name":"越城区",
+"pid":330600,
+"code":"0575",
+"pinyin":"Yuecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330603,
+"name":"柯桥区",
+"pid":330600,
+"code":"0575",
+"pinyin":"Keqiao ",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330604,
+"name":"上虞区",
+"pid":330600,
+"code":"0575",
+"pinyin":"Shangyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330624,
+"name":"新昌县",
+"pid":330600,
+"code":"0575",
+"pinyin":"Xinchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330681,
+"name":"诸暨市",
+"pid":330600,
+"code":"0575",
+"pinyin":"Zhuji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330683,
+"name":"嵊州市",
+"pid":330600,
+"code":"0575",
+"pinyin":"Shengzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330700,
+"name":"金华市",
+"pid":330000,
+"code":"0579",
+"pinyin":"Jinhua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330702,
+"name":"婺城区",
+"pid":330700,
+"code":"0579",
+"pinyin":"Wucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330703,
+"name":"金东区",
+"pid":330700,
+"code":"0579",
+"pinyin":"Jindong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330723,
+"name":"武义县",
+"pid":330700,
+"code":"0579",
+"pinyin":"Wuyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330726,
+"name":"浦江县",
+"pid":330700,
+"code":"0579",
+"pinyin":"Pujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330727,
+"name":"磐安县",
+"pid":330700,
+"code":"0579",
+"pinyin":"Pan'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330781,
+"name":"兰溪市",
+"pid":330700,
+"code":"0579",
+"pinyin":"Lanxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330782,
+"name":"义乌市",
+"pid":330700,
+"code":"0579",
+"pinyin":"Yiwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330783,
+"name":"东阳市",
+"pid":330700,
+"code":"0579",
+"pinyin":"Dongyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330784,
+"name":"永康市",
+"pid":330700,
+"code":"0579",
+"pinyin":"Yongkang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330800,
+"name":"衢州市",
+"pid":330000,
+"code":"0570",
+"pinyin":"Quzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330802,
+"name":"柯城区",
+"pid":330800,
+"code":"0570",
+"pinyin":"Kecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330803,
+"name":"衢江区",
+"pid":330800,
+"code":"0570",
+"pinyin":"Qujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330822,
+"name":"常山县",
+"pid":330800,
+"code":"0570",
+"pinyin":"Changshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330824,
+"name":"开化县",
+"pid":330800,
+"code":"0570",
+"pinyin":"Kaihua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330825,
+"name":"龙游县",
+"pid":330800,
+"code":"0570",
+"pinyin":"Longyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330881,
+"name":"江山市",
+"pid":330800,
+"code":"0570",
+"pinyin":"Jiangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330900,
+"name":"舟山市",
+"pid":330000,
+"code":"0580",
+"pinyin":"Zhoushan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":330902,
+"name":"定海区",
+"pid":330900,
+"code":"0580",
+"pinyin":"Dinghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330903,
+"name":"普陀区",
+"pid":330900,
+"code":"0580",
+"pinyin":"Putuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330921,
+"name":"岱山县",
+"pid":330900,
+"code":"0580",
+"pinyin":"Daishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":330922,
+"name":"嵊泗县",
+"pid":330900,
+"code":"0580",
+"pinyin":"Shengsi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331000,
+"name":"台州市",
+"pid":330000,
+"code":"0576",
+"pinyin":"Taizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":331002,
+"name":"椒江区",
+"pid":331000,
+"code":"0576",
+"pinyin":"Jiaojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331003,
+"name":"黄岩区",
+"pid":331000,
+"code":"0576",
+"pinyin":"Huangyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331004,
+"name":"路桥区",
+"pid":331000,
+"code":"0576",
+"pinyin":"Luqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331022,
+"name":"三门县",
+"pid":331000,
+"code":"0576",
+"pinyin":"Sanmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331023,
+"name":"天台县",
+"pid":331000,
+"code":"0576",
+"pinyin":"Tiantai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331024,
+"name":"仙居县",
+"pid":331000,
+"code":"0576",
+"pinyin":"Xianju",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331081,
+"name":"温岭市",
+"pid":331000,
+"code":"0576",
+"pinyin":"Wenling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331082,
+"name":"临海市",
+"pid":331000,
+"code":"0576",
+"pinyin":"Linhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331083,
+"name":"玉环市",
+"pid":331000,
+"code":"0576",
+"pinyin":"Yuhuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331100,
+"name":"丽水市",
+"pid":330000,
+"code":"0578",
+"pinyin":"Lishui",
+"ccode":null,
+"level":3
+},
+    {
+        "id":331102,
+"name":"莲都区",
+"pid":331100,
+"code":"0578",
+"pinyin":"Liandu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331121,
+"name":"青田县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Qingtian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331122,
+"name":"缙云县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Jinyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331123,
+"name":"遂昌县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Suichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331124,
+"name":"松阳县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Songyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331125,
+"name":"云和县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Yunhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331126,
+"name":"庆元县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Qingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331127,
+"name":"景宁畲族自治县",
+"pid":331100,
+"code":"0578",
+"pinyin":"Jingning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331181,
+"name":"龙泉市",
+"pid":331100,
+"code":"0578",
+"pinyin":"Longquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331200,
+"name":"舟山群岛新区",
+"pid":330000,
+"code":"0580",
+"pinyin":"Zhoushan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":331201,
+"name":"金塘岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Jintang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331202,
+"name":"六横岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Liuheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331203,
+"name":"衢山岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Qushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331204,
+"name":"舟山本岛西北部",
+"pid":331200,
+"code":"0580",
+"pinyin":"Zhoushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331205,
+"name":"岱山岛西南部",
+"pid":331200,
+"code":"0580",
+"pinyin":"Daishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331206,
+"name":"泗礁岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Sijiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331207,
+"name":"朱家尖岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Zhujiajian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331208,
+"name":"洋山岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Yangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331209,
+"name":"长涂岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Changtu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":331210,
+"name":"虾峙岛",
+"pid":331200,
+"code":"0580",
+"pinyin":"Xiazhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340000,
+"name":"安徽省",
+"pid":100000,
+"code":null,
+"pinyin":"Anhui",
+"ccode":null,
+"level":2
+},
+    {
+        "id":340100,
+"name":"合肥市",
+"pid":340000,
+"code":"0551",
+"pinyin":"Hefei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340102,
+"name":"瑶海区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Yaohai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340103,
+"name":"庐阳区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Luyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340104,
+"name":"蜀山区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Shushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340111,
+"name":"包河区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Baohe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340121,
+"name":"长丰县",
+"pid":340100,
+"code":"0551",
+"pinyin":"Changfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340122,
+"name":"肥东县",
+"pid":340100,
+"code":"0551",
+"pinyin":"Feidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340123,
+"name":"肥西县",
+"pid":340100,
+"code":"0551",
+"pinyin":"Feixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340124,
+"name":"庐江县",
+"pid":340100,
+"code":"0551",
+"pinyin":"Lujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340181,
+"name":"巢湖市",
+"pid":340100,
+"code":"0551",
+"pinyin":"Chaohu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340184,
+"name":"经济技术开发区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340185,
+"name":"高新技术开发区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Gaoxinkaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340186,
+"name":"北城新区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Beicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340187,
+"name":"滨湖新区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Binhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340188,
+"name":"政务文化新区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Zhengwuwenhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340189,
+"name":"新站综合开发试验区",
+"pid":340100,
+"code":"0551",
+"pinyin":"Xinzhan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340200,
+"name":"芜湖市",
+"pid":340000,
+"code":"0553",
+"pinyin":"Wuhu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340202,
+"name":"镜湖区",
+"pid":340200,
+"code":"0553",
+"pinyin":"Jinghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340203,
+"name":"弋江区",
+"pid":340200,
+"code":"0553",
+"pinyin":"Yijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340207,
+"name":"鸠江区",
+"pid":340200,
+"code":"0553",
+"pinyin":"Jiujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340208,
+"name":"三山区",
+"pid":340200,
+"code":"0553",
+"pinyin":"Sanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340221,
+"name":"芜湖县",
+"pid":340200,
+"code":"0553",
+"pinyin":"Wuhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340222,
+"name":"繁昌县",
+"pid":340200,
+"code":"0553",
+"pinyin":"Fanchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340223,
+"name":"南陵县",
+"pid":340200,
+"code":"0553",
+"pinyin":"Nanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340225,
+"name":"无为县",
+"pid":340200,
+"code":"0553",
+"pinyin":"Wuwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340226,
+"name":"经济技术开发区",
+"pid":340200,
+"code":"0553",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340300,
+"name":"蚌埠市",
+"pid":340000,
+"code":"0552",
+"pinyin":"Bengbu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340302,
+"name":"龙子湖区",
+"pid":340300,
+"code":"0552",
+"pinyin":"Longzihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340303,
+"name":"蚌山区",
+"pid":340300,
+"code":"0552",
+"pinyin":"Bengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340304,
+"name":"禹会区",
+"pid":340300,
+"code":"0552",
+"pinyin":"Yuhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340311,
+"name":"淮上区",
+"pid":340300,
+"code":"0552",
+"pinyin":"Huaishang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340321,
+"name":"怀远县",
+"pid":340300,
+"code":"0552",
+"pinyin":"Huaiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340322,
+"name":"五河县",
+"pid":340300,
+"code":"0552",
+"pinyin":"Wuhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340323,
+"name":"固镇县",
+"pid":340300,
+"code":"0552",
+"pinyin":"Guzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340324,
+"name":"高新区",
+"pid":340300,
+"code":"0552",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340400,
+"name":"淮南市",
+"pid":340000,
+"code":"0554",
+"pinyin":"Huainan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340402,
+"name":"大通区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340403,
+"name":"田家庵区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Tianjiaan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340404,
+"name":"谢家集区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Xiejiaji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340405,
+"name":"八公山区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Bagongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340406,
+"name":"潘集区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Panji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340421,
+"name":"凤台县",
+"pid":340400,
+"code":"0554",
+"pinyin":"Fengtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340422,
+"name":"寿县",
+"pid":340400,
+"code":"0554",
+"pinyin":"Shouxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340423,
+"name":"山南新区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Shannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340424,
+"name":"毛集实验区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Maoji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340425,
+"name":"经济开发区",
+"pid":340400,
+"code":"0554",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340500,
+"name":"马鞍山市",
+"pid":340000,
+"code":"0555",
+"pinyin":"Ma'anshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340503,
+"name":"花山区",
+"pid":340500,
+"code":"0555",
+"pinyin":"Huashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340504,
+"name":"雨山区",
+"pid":340500,
+"code":"0555",
+"pinyin":"Yushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340506,
+"name":"博望区",
+"pid":340500,
+"code":"0555",
+"pinyin":"Bowang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340521,
+"name":"当涂县",
+"pid":340500,
+"code":"0555",
+"pinyin":"Dangtu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340522,
+"name":"含山县",
+"pid":340500,
+"code":"0555",
+"pinyin":"Hanshan ",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340523,
+"name":"和县",
+"pid":340500,
+"code":"0555",
+"pinyin":"Hexian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340600,
+"name":"淮北市",
+"pid":340000,
+"code":"0561",
+"pinyin":"Huaibei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340602,
+"name":"杜集区",
+"pid":340600,
+"code":"0561",
+"pinyin":"Duji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340603,
+"name":"相山区",
+"pid":340600,
+"code":"0561",
+"pinyin":"Xiangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340604,
+"name":"烈山区",
+"pid":340600,
+"code":"0561",
+"pinyin":"Lieshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340621,
+"name":"濉溪县",
+"pid":340600,
+"code":"0561",
+"pinyin":"Suixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340700,
+"name":"铜陵市",
+"pid":340000,
+"code":"0562",
+"pinyin":"Tongling",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340705,
+"name":"铜官区",
+"pid":340700,
+"code":"0562",
+"pinyin":"Tongguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340706,
+"name":"义安区",
+"pid":340700,
+"code":"0562",
+"pinyin":"Yi'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340711,
+"name":"郊区",
+"pid":340700,
+"code":"0562",
+"pinyin":"Jiaoqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340722,
+"name":"枞阳县",
+"pid":340700,
+"code":"0562",
+"pinyin":"Zongyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340800,
+"name":"安庆市",
+"pid":340000,
+"code":"0556",
+"pinyin":"Anqing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":340802,
+"name":"迎江区",
+"pid":340800,
+"code":"0556",
+"pinyin":"Yingjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340803,
+"name":"大观区",
+"pid":340800,
+"code":"0556",
+"pinyin":"Daguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340811,
+"name":"宜秀区",
+"pid":340800,
+"code":"0556",
+"pinyin":"Yixiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340822,
+"name":"怀宁县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Huaining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340824,
+"name":"潜山县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Qianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340825,
+"name":"太湖县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Taihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340826,
+"name":"宿松县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Susong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340827,
+"name":"望江县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Wangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340828,
+"name":"岳西县",
+"pid":340800,
+"code":"0556",
+"pinyin":"Yuexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":340881,
+"name":"桐城市",
+"pid":340800,
+"code":"0556",
+"pinyin":"Tongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341000,
+"name":"黄山市",
+"pid":340000,
+"code":"0559",
+"pinyin":"Huangshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341002,
+"name":"屯溪区",
+"pid":341000,
+"code":"0559",
+"pinyin":"Tunxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341003,
+"name":"黄山区",
+"pid":341000,
+"code":"0559",
+"pinyin":"Huangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341004,
+"name":"徽州区",
+"pid":341000,
+"code":"0559",
+"pinyin":"Huizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341021,
+"name":"歙县",
+"pid":341000,
+"code":"0559",
+"pinyin":"Shexian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341022,
+"name":"休宁县",
+"pid":341000,
+"code":"0559",
+"pinyin":"Xiuning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341023,
+"name":"黟县",
+"pid":341000,
+"code":"0559",
+"pinyin":"Yixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341024,
+"name":"祁门县",
+"pid":341000,
+"code":"0559",
+"pinyin":"Qimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341100,
+"name":"滁州市",
+"pid":340000,
+"code":"0550",
+"pinyin":"Chuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341102,
+"name":"琅琊区",
+"pid":341100,
+"code":"0550",
+"pinyin":"Langya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341103,
+"name":"南谯区",
+"pid":341100,
+"code":"0550",
+"pinyin":"Nanqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341122,
+"name":"来安县",
+"pid":341100,
+"code":"0550",
+"pinyin":"Lai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341124,
+"name":"全椒县",
+"pid":341100,
+"code":"0550",
+"pinyin":"Quanjiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341125,
+"name":"定远县",
+"pid":341100,
+"code":"0550",
+"pinyin":"Dingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341126,
+"name":"凤阳县",
+"pid":341100,
+"code":"0550",
+"pinyin":"Fengyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341181,
+"name":"天长市",
+"pid":341100,
+"code":"0550",
+"pinyin":"Tianchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341182,
+"name":"明光市",
+"pid":341100,
+"code":"0550",
+"pinyin":"Mingguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341200,
+"name":"阜阳市",
+"pid":340000,
+"code":"0558",
+"pinyin":"Fuyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341202,
+"name":"颍州区",
+"pid":341200,
+"code":"0558",
+"pinyin":"Yingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341203,
+"name":"颍东区",
+"pid":341200,
+"code":"0558",
+"pinyin":"Yingdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341204,
+"name":"颍泉区",
+"pid":341200,
+"code":"0558",
+"pinyin":"Yingquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341221,
+"name":"临泉县",
+"pid":341200,
+"code":"0558",
+"pinyin":"Linquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341222,
+"name":"太和县",
+"pid":341200,
+"code":"0558",
+"pinyin":"Taihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341225,
+"name":"阜南县",
+"pid":341200,
+"code":"0558",
+"pinyin":"Funan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341226,
+"name":"颍上县",
+"pid":341200,
+"code":"0558",
+"pinyin":"Yingshang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341282,
+"name":"界首市",
+"pid":341200,
+"code":"0558",
+"pinyin":"Jieshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341283,
+"name":"经济开发区",
+"pid":341200,
+"code":"0558",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341300,
+"name":"宿州市",
+"pid":340000,
+"code":"0557",
+"pinyin":"Suzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341302,
+"name":"埇桥区",
+"pid":341300,
+"code":"0557",
+"pinyin":"Yongqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341321,
+"name":"砀山县",
+"pid":341300,
+"code":"0557",
+"pinyin":"Dangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341322,
+"name":"萧县",
+"pid":341300,
+"code":"0557",
+"pinyin":"Xiaoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341323,
+"name":"灵璧县",
+"pid":341300,
+"code":"0557",
+"pinyin":"Lingbi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341324,
+"name":"泗县",
+"pid":341300,
+"code":"0557",
+"pinyin":"Sixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341325,
+"name":"经济开发区",
+"pid":341300,
+"code":"0557",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341500,
+"name":"六安市",
+"pid":340000,
+"code":"0564",
+"pinyin":"Lu'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341502,
+"name":"金安区",
+"pid":341500,
+"code":"0564",
+"pinyin":"Jin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341503,
+"name":"裕安区",
+"pid":341500,
+"code":"0564",
+"pinyin":"Yu'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341504,
+"name":"叶集区",
+"pid":341500,
+"code":"0564",
+"pinyin":"Yeji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341522,
+"name":"霍邱县",
+"pid":341500,
+"code":"0564",
+"pinyin":"Huoqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341523,
+"name":"舒城县",
+"pid":341500,
+"code":"0564",
+"pinyin":"Shucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341524,
+"name":"金寨县",
+"pid":341500,
+"code":"0564",
+"pinyin":"Jinzhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341525,
+"name":"霍山县",
+"pid":341500,
+"code":"0564",
+"pinyin":"Huoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341600,
+"name":"亳州市",
+"pid":340000,
+"code":"0558",
+"pinyin":"Bozhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341602,
+"name":"谯城区",
+"pid":341600,
+"code":"0558",
+"pinyin":"Qiaocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341621,
+"name":"涡阳县",
+"pid":341600,
+"code":"0558",
+"pinyin":"Guoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341622,
+"name":"蒙城县",
+"pid":341600,
+"code":"0558",
+"pinyin":"Mengcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341623,
+"name":"利辛县",
+"pid":341600,
+"code":"0558",
+"pinyin":"Lixin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341700,
+"name":"池州市",
+"pid":340000,
+"code":"0566",
+"pinyin":"Chizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341702,
+"name":"贵池区",
+"pid":341700,
+"code":"0566",
+"pinyin":"Guichi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341721,
+"name":"东至县",
+"pid":341700,
+"code":"0566",
+"pinyin":"Dongzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341722,
+"name":"石台县",
+"pid":341700,
+"code":"0566",
+"pinyin":"Shitai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341723,
+"name":"青阳县",
+"pid":341700,
+"code":"0566",
+"pinyin":"Qingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341800,
+"name":"宣城市",
+"pid":340000,
+"code":"0563",
+"pinyin":"Xuancheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":341802,
+"name":"宣州区",
+"pid":341800,
+"code":"0563",
+"pinyin":"Xuanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341821,
+"name":"郎溪县",
+"pid":341800,
+"code":"0563",
+"pinyin":"Langxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341822,
+"name":"广德县",
+"pid":341800,
+"code":"0563",
+"pinyin":"Guangde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341823,
+"name":"泾县",
+"pid":341800,
+"code":"0563",
+"pinyin":"Jingxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341824,
+"name":"绩溪县",
+"pid":341800,
+"code":"0563",
+"pinyin":"Jixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341825,
+"name":"旌德县",
+"pid":341800,
+"code":"0563",
+"pinyin":"Jingde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":341881,
+"name":"宁国市",
+"pid":341800,
+"code":"0563",
+"pinyin":"Ningguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350000,
+"name":"福建省",
+"pid":100000,
+"code":null,
+"pinyin":"Fujian",
+"ccode":null,
+"level":2
+},
+    {
+        "id":350100,
+"name":"福州市",
+"pid":350000,
+"code":"0591",
+"pinyin":"Fuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350102,
+"name":"鼓楼区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Gulou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350103,
+"name":"台江区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Taijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350104,
+"name":"仓山区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Cangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350105,
+"name":"马尾区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Mawei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350111,
+"name":"晋安区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Jin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350121,
+"name":"闽侯县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Minhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350122,
+"name":"连江县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Lianjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350123,
+"name":"罗源县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Luoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350124,
+"name":"闽清县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Minqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350125,
+"name":"永泰县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Yongtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350128,
+"name":"平潭县",
+"pid":350100,
+"code":"0591",
+"pinyin":"Pingtan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350181,
+"name":"福清市",
+"pid":350100,
+"code":"0591",
+"pinyin":"Fuqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350182,
+"name":"长乐区",
+"pid":350100,
+"code":"0591",
+"pinyin":"Changle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350183,
+"name":"福州新区",
+"pid":350100,
+"code":"0591",
+"pinyin":"FuzhouXinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350200,
+"name":"厦门市",
+"pid":350000,
+"code":"0592",
+"pinyin":"Xiamen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350203,
+"name":"思明区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Siming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350205,
+"name":"海沧区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Haicang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350206,
+"name":"湖里区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Huli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350211,
+"name":"集美区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Jimei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350212,
+"name":"同安区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Tong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350213,
+"name":"翔安区",
+"pid":350200,
+"code":"0592",
+"pinyin":"Xiang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350300,
+"name":"莆田市",
+"pid":350000,
+"code":"0594",
+"pinyin":"Putian",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350302,
+"name":"城厢区",
+"pid":350300,
+"code":"0594",
+"pinyin":"Chengxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350303,
+"name":"涵江区",
+"pid":350300,
+"code":"0594",
+"pinyin":"Hanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350304,
+"name":"荔城区",
+"pid":350300,
+"code":"0594",
+"pinyin":"Licheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350305,
+"name":"秀屿区",
+"pid":350300,
+"code":"0594",
+"pinyin":"Xiuyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350322,
+"name":"仙游县",
+"pid":350300,
+"code":"0594",
+"pinyin":"Xianyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350400,
+"name":"三明市",
+"pid":350000,
+"code":"0598",
+"pinyin":"Sanming",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350402,
+"name":"梅列区",
+"pid":350400,
+"code":"0598",
+"pinyin":"Meilie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350403,
+"name":"三元区",
+"pid":350400,
+"code":"0598",
+"pinyin":"Sanyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350421,
+"name":"明溪县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Mingxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350423,
+"name":"清流县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Qingliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350424,
+"name":"宁化县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Ninghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350425,
+"name":"大田县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Datian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350426,
+"name":"尤溪县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Youxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350427,
+"name":"沙县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Shaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350428,
+"name":"将乐县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Jiangle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350429,
+"name":"泰宁县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Taining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350430,
+"name":"建宁县",
+"pid":350400,
+"code":"0598",
+"pinyin":"Jianning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350481,
+"name":"永安市",
+"pid":350400,
+"code":"0598",
+"pinyin":"Yong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350500,
+"name":"泉州市",
+"pid":350000,
+"code":"0595",
+"pinyin":"Quanzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350502,
+"name":"鲤城区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Licheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350503,
+"name":"丰泽区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Fengze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350504,
+"name":"洛江区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Luojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350505,
+"name":"泉港区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Quangang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350521,
+"name":"惠安县",
+"pid":350500,
+"code":"0595",
+"pinyin":"Hui'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350524,
+"name":"安溪县",
+"pid":350500,
+"code":"0595",
+"pinyin":"Anxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350525,
+"name":"永春县",
+"pid":350500,
+"code":"0595",
+"pinyin":"Yongchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350526,
+"name":"德化县",
+"pid":350500,
+"code":"0595",
+"pinyin":"Dehua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350527,
+"name":"金门县",
+"pid":350500,
+"code":"0595",
+"pinyin":"Jinmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350581,
+"name":"石狮市",
+"pid":350500,
+"code":"0595",
+"pinyin":"Shishi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350582,
+"name":"晋江市",
+"pid":350500,
+"code":"0595",
+"pinyin":"Jinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350583,
+"name":"南安市",
+"pid":350500,
+"code":"0595",
+"pinyin":"Nan'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350584,
+"name":"台商投资区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Taishangtouziqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350585,
+"name":"经济技术开发区",
+"pid":350500,
+"code":"0595",
+"pinyin":"JingJi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350586,
+"name":"高新技术开发区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Gaoxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350587,
+"name":"综合保税区",
+"pid":350500,
+"code":"0595",
+"pinyin":"Baoshuiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350600,
+"name":"漳州市",
+"pid":350000,
+"code":"0596",
+"pinyin":"Zhangzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350602,
+"name":"芗城区",
+"pid":350600,
+"code":"0596",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350603,
+"name":"龙文区",
+"pid":350600,
+"code":"0596",
+"pinyin":"Longwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350622,
+"name":"云霄县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Yunxiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350623,
+"name":"漳浦县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Zhangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350624,
+"name":"诏安县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Zhao'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350625,
+"name":"长泰县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Changtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350626,
+"name":"东山县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Dongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350627,
+"name":"南靖县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Nanjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350628,
+"name":"平和县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Pinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350629,
+"name":"华安县",
+"pid":350600,
+"code":"0596",
+"pinyin":"Hua'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350681,
+"name":"龙海市",
+"pid":350600,
+"code":"0596",
+"pinyin":"Longhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350700,
+"name":"南平市",
+"pid":350000,
+"code":"0599",
+"pinyin":"Nanping",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350702,
+"name":"延平区",
+"pid":350700,
+"code":"0599",
+"pinyin":"Yanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350703,
+"name":"建阳区",
+"pid":350700,
+"code":"0599",
+"pinyin":"Jianyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350721,
+"name":"顺昌县",
+"pid":350700,
+"code":"0599",
+"pinyin":"Shunchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350722,
+"name":"浦城县",
+"pid":350700,
+"code":"0599",
+"pinyin":"Pucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350723,
+"name":"光泽县",
+"pid":350700,
+"code":"0599",
+"pinyin":"Guangze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350724,
+"name":"松溪县",
+"pid":350700,
+"code":"0599",
+"pinyin":"Songxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350725,
+"name":"政和县",
+"pid":350700,
+"code":"0599",
+"pinyin":"Zhenghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350781,
+"name":"邵武市",
+"pid":350700,
+"code":"0599",
+"pinyin":"Shaowu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350782,
+"name":"武夷山市",
+"pid":350700,
+"code":"0599",
+"pinyin":"Wuyishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350783,
+"name":"建瓯市",
+"pid":350700,
+"code":"0599",
+"pinyin":"Jianou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350800,
+"name":"龙岩市",
+"pid":350000,
+"code":"0597",
+"pinyin":"Longyan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350802,
+"name":"新罗区",
+"pid":350800,
+"code":"0597",
+"pinyin":"Xinluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350803,
+"name":"永定区",
+"pid":350800,
+"code":"0597",
+"pinyin":"Yongding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350821,
+"name":"长汀县",
+"pid":350800,
+"code":"0597",
+"pinyin":"Changting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350823,
+"name":"上杭县",
+"pid":350800,
+"code":"0597",
+"pinyin":"Shanghang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350824,
+"name":"武平县",
+"pid":350800,
+"code":"0597",
+"pinyin":"Wuping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350825,
+"name":"连城县",
+"pid":350800,
+"code":"0597",
+"pinyin":"Liancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350881,
+"name":"漳平市",
+"pid":350800,
+"code":"0597",
+"pinyin":"Zhangping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350900,
+"name":"宁德市",
+"pid":350000,
+"code":"0593",
+"pinyin":"Ningde",
+"ccode":null,
+"level":3
+},
+    {
+        "id":350902,
+"name":"蕉城区",
+"pid":350900,
+"code":"0593",
+"pinyin":"Jiaocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350921,
+"name":"霞浦县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Xiapu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350922,
+"name":"古田县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Gutian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350923,
+"name":"屏南县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Pingnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350924,
+"name":"寿宁县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Shouning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350925,
+"name":"周宁县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Zhouning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350926,
+"name":"柘荣县",
+"pid":350900,
+"code":"0593",
+"pinyin":"Zherong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350981,
+"name":"福安市",
+"pid":350900,
+"code":"0593",
+"pinyin":"Fu'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350982,
+"name":"福鼎市",
+"pid":350900,
+"code":"0593",
+"pinyin":"Fuding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":350983,
+"name":"东侨开发区",
+"pid":350900,
+"code":"0593",
+"pinyin":"Dongqiaokaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360000,
+"name":"江西省",
+"pid":100000,
+"code":null,
+"pinyin":"Jiangxi",
+"ccode":null,
+"level":2
+},
+    {
+        "id":360100,
+"name":"南昌市",
+"pid":360000,
+"code":"0791",
+"pinyin":"Nanchang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360102,
+"name":"东湖区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Donghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360103,
+"name":"西湖区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Xihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360104,
+"name":"青云谱区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Qingyunpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360105,
+"name":"湾里区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Wanli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360111,
+"name":"青山湖区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Qingshanhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360112,
+"name":"新建区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Xinjian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360121,
+"name":"南昌县",
+"pid":360100,
+"code":"0791",
+"pinyin":"Nanchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360123,
+"name":"安义县",
+"pid":360100,
+"code":"0791",
+"pinyin":"Anyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360124,
+"name":"进贤县",
+"pid":360100,
+"code":"0791",
+"pinyin":"Jinxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360125,
+"name":"红谷滩新区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Honggutanxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360126,
+"name":"高新区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360127,
+"name":"经济开发区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360128,
+"name":"小蓝开发区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Xiaolankaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360129,
+"name":"桑海开发区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Shanhaikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360130,
+"name":"望城新区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Wangchengxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360131,
+"name":"赣江新区",
+"pid":360100,
+"code":"0791",
+"pinyin":"Ganjiangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360200,
+"name":"景德镇市",
+"pid":360000,
+"code":"0798",
+"pinyin":"Jingdezhen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360202,
+"name":"昌江区",
+"pid":360200,
+"code":"0798",
+"pinyin":"Changjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360203,
+"name":"珠山区",
+"pid":360200,
+"code":"0798",
+"pinyin":"Zhushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360222,
+"name":"浮梁县",
+"pid":360200,
+"code":"0798",
+"pinyin":"Fuliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360281,
+"name":"乐平市",
+"pid":360200,
+"code":"0798",
+"pinyin":"Leping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360300,
+"name":"萍乡市",
+"pid":360000,
+"code":"0799",
+"pinyin":"Pingxiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360302,
+"name":"安源区",
+"pid":360300,
+"code":"0799",
+"pinyin":"Anyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360313,
+"name":"湘东区",
+"pid":360300,
+"code":"0799",
+"pinyin":"Xiangdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360321,
+"name":"莲花县",
+"pid":360300,
+"code":"0799",
+"pinyin":"Lianhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360322,
+"name":"上栗县",
+"pid":360300,
+"code":"0799",
+"pinyin":"Shangli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360323,
+"name":"芦溪县",
+"pid":360300,
+"code":"0799",
+"pinyin":"Luxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360400,
+"name":"九江市",
+"pid":360000,
+"code":"0792",
+"pinyin":"Jiujiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360402,
+"name":"濂溪区",
+"pid":360400,
+"code":"0792",
+"pinyin":"LianXi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360403,
+"name":"浔阳区",
+"pid":360400,
+"code":"0792",
+"pinyin":"Xunyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360421,
+"name":"柴桑区",
+"pid":360400,
+"code":"0792",
+"pinyin":"Chaisang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360423,
+"name":"武宁县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Wuning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360424,
+"name":"修水县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Xiushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360425,
+"name":"永修县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Yongxiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360426,
+"name":"德安县",
+"pid":360400,
+"code":"0792",
+"pinyin":"De'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360428,
+"name":"都昌县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Duchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360429,
+"name":"湖口县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Hukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360430,
+"name":"彭泽县",
+"pid":360400,
+"code":"0792",
+"pinyin":"Pengze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360481,
+"name":"瑞昌市",
+"pid":360400,
+"code":"0792",
+"pinyin":"Ruichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360482,
+"name":"共青城市",
+"pid":360400,
+"code":"0792",
+"pinyin":"Gongqingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360483,
+"name":"庐山市",
+"pid":360400,
+"code":"0792",
+"pinyin":"Lushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360484,
+"name":"经济技术开发区",
+"pid":360400,
+"code":"0792",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360485,
+"name":"八里湖新区",
+"pid":360400,
+"code":"0792",
+"pinyin":"Balihuxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360486,
+"name":"庐山风景名胜区",
+"pid":360400,
+"code":"0792",
+"pinyin":"Lushanfengjingqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360500,
+"name":"新余市",
+"pid":360000,
+"code":"0790",
+"pinyin":"Xinyu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360502,
+"name":"渝水区",
+"pid":360500,
+"code":"0790",
+"pinyin":"Yushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360521,
+"name":"分宜县",
+"pid":360500,
+"code":"0790",
+"pinyin":"Fenyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360600,
+"name":"鹰潭市",
+"pid":360000,
+"code":"0701",
+"pinyin":"Yingtan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360602,
+"name":"月湖区",
+"pid":360600,
+"code":"0701",
+"pinyin":"Yuehu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360622,
+"name":"余江县",
+"pid":360600,
+"code":"0701",
+"pinyin":"Yujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360681,
+"name":"贵溪市",
+"pid":360600,
+"code":"0701",
+"pinyin":"Guixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360682,
+"name":"高新区",
+"pid":360600,
+"code":"0701",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360700,
+"name":"赣州市",
+"pid":360000,
+"code":"0797",
+"pinyin":"Ganzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360702,
+"name":"章贡区",
+"pid":360700,
+"code":"0797",
+"pinyin":"Zhanggong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360703,
+"name":"南康区",
+"pid":360700,
+"code":"0797",
+"pinyin":"Nankang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360704,
+"name":"赣县区",
+"pid":360700,
+"code":"0797",
+"pinyin":"Ganxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360722,
+"name":"信丰县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Xinfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360723,
+"name":"大余县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Dayu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360724,
+"name":"上犹县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Shangyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360725,
+"name":"崇义县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Chongyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360726,
+"name":"安远县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Anyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360727,
+"name":"龙南县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Longnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360728,
+"name":"定南县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Dingnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360729,
+"name":"全南县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Quannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360730,
+"name":"宁都县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Ningdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360731,
+"name":"于都县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Yudu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360732,
+"name":"兴国县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Xingguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360733,
+"name":"会昌县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Huichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360734,
+"name":"寻乌县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Xunwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360735,
+"name":"石城县",
+"pid":360700,
+"code":"0797",
+"pinyin":"Shicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360781,
+"name":"瑞金市",
+"pid":360700,
+"code":"0797",
+"pinyin":"Ruijin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360782,
+"name":"章康新区",
+"pid":360700,
+"code":"0797",
+"pinyin":"Zhangkangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360800,
+"name":"吉安市",
+"pid":360000,
+"code":"0796",
+"pinyin":"Ji'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360802,
+"name":"吉州区",
+"pid":360800,
+"code":"0796",
+"pinyin":"Jizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360803,
+"name":"青原区",
+"pid":360800,
+"code":"0796",
+"pinyin":"Qingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360821,
+"name":"吉安县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Ji'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360822,
+"name":"吉水县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Jishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360823,
+"name":"峡江县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Xiajiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360824,
+"name":"新干县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Xingan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360825,
+"name":"永丰县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Yongfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360826,
+"name":"泰和县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Taihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360827,
+"name":"遂川县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Suichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360828,
+"name":"万安县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Wan'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360829,
+"name":"安福县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Anfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360830,
+"name":"永新县",
+"pid":360800,
+"code":"0796",
+"pinyin":"Yongxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360881,
+"name":"井冈山市",
+"pid":360800,
+"code":"0796",
+"pinyin":"Jinggangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360900,
+"name":"宜春市",
+"pid":360000,
+"code":"0795",
+"pinyin":"Yichun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":360902,
+"name":"袁州区",
+"pid":360900,
+"code":"0795",
+"pinyin":"Yuanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360921,
+"name":"奉新县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Fengxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360922,
+"name":"万载县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Wanzai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360923,
+"name":"上高县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Shanggao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360924,
+"name":"宜丰县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Yifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360925,
+"name":"靖安县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Jing'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360926,
+"name":"铜鼓县",
+"pid":360900,
+"code":"0795",
+"pinyin":"Tonggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360981,
+"name":"丰城市",
+"pid":360900,
+"code":"0795",
+"pinyin":"Fengcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360982,
+"name":"樟树市",
+"pid":360900,
+"code":"0795",
+"pinyin":"Zhangshu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":360983,
+"name":"高安市",
+"pid":360900,
+"code":"0795",
+"pinyin":"Gao'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361000,
+"name":"抚州市",
+"pid":360000,
+"code":"0794",
+"pinyin":"Fuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":361002,
+"name":"临川区",
+"pid":361000,
+"code":"0794",
+"pinyin":"Linchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361003,
+"name":"东乡区",
+"pid":361000,
+"code":"0794",
+"pinyin":"Dongxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361021,
+"name":"南城县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Nancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361022,
+"name":"黎川县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Lichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361023,
+"name":"南丰县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Nanfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361024,
+"name":"崇仁县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Chongren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361025,
+"name":"乐安县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Le'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361026,
+"name":"宜黄县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Yihuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361027,
+"name":"金溪县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Jinxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361028,
+"name":"资溪县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Zixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361030,
+"name":"广昌县",
+"pid":361000,
+"code":"0794",
+"pinyin":"Guangchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361100,
+"name":"上饶市",
+"pid":360000,
+"code":"0793",
+"pinyin":"Shangrao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":361102,
+"name":"信州区",
+"pid":361100,
+"code":"0793",
+"pinyin":"Xinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361103,
+"name":"广丰区",
+"pid":361100,
+"code":"0793",
+"pinyin":"Guangfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361121,
+"name":"上饶县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Shangrao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361123,
+"name":"玉山县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Yushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361124,
+"name":"铅山县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Yanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361125,
+"name":"横峰县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Hengfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361126,
+"name":"弋阳县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Yiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361127,
+"name":"余干县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Yugan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361128,
+"name":"鄱阳县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Poyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361129,
+"name":"万年县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Wannian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361130,
+"name":"婺源县",
+"pid":361100,
+"code":"0793",
+"pinyin":"Wuyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":361181,
+"name":"德兴市",
+"pid":361100,
+"code":"0793",
+"pinyin":"Dexing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370000,
+"name":"山东省",
+"pid":100000,
+"code":null,
+"pinyin":"Shandong",
+"ccode":null,
+"level":2
+},
+    {
+        "id":370100,
+"name":"济南市",
+"pid":370000,
+"code":"0531",
+"pinyin":"Jinan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370102,
+"name":"历下区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Lixia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370103,
+"name":"市中区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Shizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370104,
+"name":"槐荫区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Huaiyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370105,
+"name":"天桥区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Tianqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370112,
+"name":"历城区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Licheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370113,
+"name":"长清区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Changqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370114,
+"name":"章丘区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Zhangqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370124,
+"name":"平阴县",
+"pid":370100,
+"code":"0531",
+"pinyin":"Pingyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370125,
+"name":"济阳县",
+"pid":370100,
+"code":"0531",
+"pinyin":"Jiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370126,
+"name":"商河县",
+"pid":370100,
+"code":"0531",
+"pinyin":"Shanghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370182,
+"name":"高新区",
+"pid":370100,
+"code":"0531",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370200,
+"name":"青岛市",
+"pid":370000,
+"code":"0532",
+"pinyin":"Qingdao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370202,
+"name":"市南区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Shinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370203,
+"name":"市北区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Shibei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370211,
+"name":"黄岛区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Huangdao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370212,
+"name":"崂山区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Laoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370213,
+"name":"李沧区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Licang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370214,
+"name":"城阳区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Chengyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370281,
+"name":"胶州市",
+"pid":370200,
+"code":"0532",
+"pinyin":"Jiaozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370282,
+"name":"即墨区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Jimo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370283,
+"name":"平度市",
+"pid":370200,
+"code":"0532",
+"pinyin":"Pingdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370285,
+"name":"莱西市",
+"pid":370200,
+"code":"0532",
+"pinyin":"Laixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370286,
+"name":"西海岸新区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Xihai'anXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370287,
+"name":"高新区",
+"pid":370200,
+"code":"0532",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370300,
+"name":"淄博市",
+"pid":370000,
+"code":"0533",
+"pinyin":"Zibo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370302,
+"name":"淄川区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Zichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370303,
+"name":"张店区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Zhangdian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370304,
+"name":"博山区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Boshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370305,
+"name":"临淄区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Linzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370306,
+"name":"周村区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Zhoucun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370321,
+"name":"桓台县",
+"pid":370300,
+"code":"0533",
+"pinyin":"Huantai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370322,
+"name":"高青县",
+"pid":370300,
+"code":"0533",
+"pinyin":"Gaoqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370323,
+"name":"沂源县",
+"pid":370300,
+"code":"0533",
+"pinyin":"Yiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370324,
+"name":"高新区",
+"pid":370300,
+"code":"0533",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370400,
+"name":"枣庄市",
+"pid":370000,
+"code":"0632",
+"pinyin":"Zaozhuang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370402,
+"name":"市中区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Shizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370403,
+"name":"薛城区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Xuecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370404,
+"name":"峄城区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Yicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370405,
+"name":"台儿庄区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Taierzhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370406,
+"name":"山亭区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Shanting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370481,
+"name":"滕州市",
+"pid":370400,
+"code":"0632",
+"pinyin":"Tengzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370482,
+"name":"高新区",
+"pid":370400,
+"code":"0632",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370500,
+"name":"东营市",
+"pid":370000,
+"code":"0546",
+"pinyin":"Dongying",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370502,
+"name":"东营区",
+"pid":370500,
+"code":"0546",
+"pinyin":"Dongying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370503,
+"name":"河口区",
+"pid":370500,
+"code":"0546",
+"pinyin":"Hekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370505,
+"name":"垦利区",
+"pid":370500,
+"code":"0546",
+"pinyin":"Kenli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370522,
+"name":"利津县",
+"pid":370500,
+"code":"0546",
+"pinyin":"Lijin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370523,
+"name":"广饶县",
+"pid":370500,
+"code":"0546",
+"pinyin":"Guangrao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370600,
+"name":"烟台市",
+"pid":370000,
+"code":"0535",
+"pinyin":"Yantai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370602,
+"name":"芝罘区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Zhifu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370611,
+"name":"福山区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Fushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370612,
+"name":"牟平区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Muping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370613,
+"name":"莱山区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Laishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370634,
+"name":"长岛县",
+"pid":370600,
+"code":"0535",
+"pinyin":"Changdao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370681,
+"name":"龙口市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Longkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370682,
+"name":"莱阳市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Laiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370683,
+"name":"莱州市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Laizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370684,
+"name":"蓬莱市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Penglai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370685,
+"name":"招远市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Zhaoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370686,
+"name":"栖霞市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Qixia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370687,
+"name":"海阳市",
+"pid":370600,
+"code":"0535",
+"pinyin":"Haiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370688,
+"name":"高新区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370689,
+"name":"经济开发区",
+"pid":370600,
+"code":"0535",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370700,
+"name":"潍坊市",
+"pid":370000,
+"code":"0536",
+"pinyin":"Weifang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370702,
+"name":"潍城区",
+"pid":370700,
+"code":"0536",
+"pinyin":"Weicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370703,
+"name":"寒亭区",
+"pid":370700,
+"code":"0536",
+"pinyin":"Hanting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370704,
+"name":"坊子区",
+"pid":370700,
+"code":"0536",
+"pinyin":"Fangzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370705,
+"name":"奎文区",
+"pid":370700,
+"code":"0536",
+"pinyin":"Kuiwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370724,
+"name":"临朐县",
+"pid":370700,
+"code":"0536",
+"pinyin":"Linqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370725,
+"name":"昌乐县",
+"pid":370700,
+"code":"0536",
+"pinyin":"Changle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370781,
+"name":"青州市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Qingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370782,
+"name":"诸城市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Zhucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370783,
+"name":"寿光市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Shouguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370784,
+"name":"安丘市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Anqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370785,
+"name":"高密市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Gaomi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370786,
+"name":"昌邑市",
+"pid":370700,
+"code":"0536",
+"pinyin":"Changyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370787,
+"name":"高新区",
+"pid":370700,
+"code":"0536",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370800,
+"name":"济宁市",
+"pid":370000,
+"code":"0537",
+"pinyin":"Jining",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370811,
+"name":"任城区",
+"pid":370800,
+"code":"0537",
+"pinyin":"Rencheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370812,
+"name":"兖州区",
+"pid":370800,
+"code":"0537",
+"pinyin":"Yanzhou ",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370826,
+"name":"微山县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Weishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370827,
+"name":"鱼台县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Yutai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370828,
+"name":"金乡县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Jinxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370829,
+"name":"嘉祥县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Jiaxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370830,
+"name":"汶上县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Wenshang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370831,
+"name":"泗水县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Sishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370832,
+"name":"梁山县",
+"pid":370800,
+"code":"0537",
+"pinyin":"Liangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370881,
+"name":"曲阜市",
+"pid":370800,
+"code":"0537",
+"pinyin":"Qufu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370883,
+"name":"邹城市",
+"pid":370800,
+"code":"0537",
+"pinyin":"Zoucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370884,
+"name":"高新区",
+"pid":370800,
+"code":"0537",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370900,
+"name":"泰安市",
+"pid":370000,
+"code":"0538",
+"pinyin":"Tai'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":370902,
+"name":"泰山区",
+"pid":370900,
+"code":"0538",
+"pinyin":"Taishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370911,
+"name":"岱岳区",
+"pid":370900,
+"code":"0538",
+"pinyin":"Daiyue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370921,
+"name":"宁阳县",
+"pid":370900,
+"code":"0538",
+"pinyin":"Ningyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370923,
+"name":"东平县",
+"pid":370900,
+"code":"0538",
+"pinyin":"Dongping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370982,
+"name":"新泰市",
+"pid":370900,
+"code":"0538",
+"pinyin":"Xintai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":370983,
+"name":"肥城市",
+"pid":370900,
+"code":"0538",
+"pinyin":"Feicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371000,
+"name":"威海市",
+"pid":370000,
+"code":"0631",
+"pinyin":"Weihai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371002,
+"name":"环翠区",
+"pid":371000,
+"code":"0631",
+"pinyin":"Huancui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371003,
+"name":"文登区",
+"pid":371000,
+"code":"0631",
+"pinyin":"Wendeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371082,
+"name":"荣成市",
+"pid":371000,
+"code":"0631",
+"pinyin":"Rongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371083,
+"name":"乳山市",
+"pid":371000,
+"code":"0631",
+"pinyin":"Rushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371100,
+"name":"日照市",
+"pid":370000,
+"code":"0633",
+"pinyin":"Rizhao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371102,
+"name":"东港区",
+"pid":371100,
+"code":"0633",
+"pinyin":"Donggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371103,
+"name":"岚山区",
+"pid":371100,
+"code":"0633",
+"pinyin":"Lanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371121,
+"name":"五莲县",
+"pid":371100,
+"code":"0633",
+"pinyin":"Wulian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371122,
+"name":"莒县",
+"pid":371100,
+"code":"0633",
+"pinyin":"Juxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371200,
+"name":"莱芜市",
+"pid":370000,
+"code":"0634",
+"pinyin":"Laiwu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371202,
+"name":"莱城区",
+"pid":371200,
+"code":"0634",
+"pinyin":"Laicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371203,
+"name":"钢城区",
+"pid":371200,
+"code":"0634",
+"pinyin":"Gangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371300,
+"name":"临沂市",
+"pid":370000,
+"code":"0539",
+"pinyin":"Linyi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371302,
+"name":"兰山区",
+"pid":371300,
+"code":"0539",
+"pinyin":"Lanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371311,
+"name":"罗庄区",
+"pid":371300,
+"code":"0539",
+"pinyin":"Luozhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371312,
+"name":"河东区",
+"pid":371300,
+"code":"0539",
+"pinyin":"Hedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371321,
+"name":"沂南县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Yinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371322,
+"name":"郯城县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Tancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371323,
+"name":"沂水县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Yishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371324,
+"name":"兰陵县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Lanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371325,
+"name":"费县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Feixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371326,
+"name":"平邑县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Pingyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371327,
+"name":"莒南县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Junan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371328,
+"name":"蒙阴县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Mengyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371329,
+"name":"临沭县",
+"pid":371300,
+"code":"0539",
+"pinyin":"Linshu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371400,
+"name":"德州市",
+"pid":370000,
+"code":"0534",
+"pinyin":"Dezhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371402,
+"name":"德城区",
+"pid":371400,
+"code":"0534",
+"pinyin":"Decheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371403,
+"name":"陵城区",
+"pid":371400,
+"code":"0534",
+"pinyin":"Lingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371422,
+"name":"宁津县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Ningjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371423,
+"name":"庆云县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Qingyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371424,
+"name":"临邑县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Linyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371425,
+"name":"齐河县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Qihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371426,
+"name":"平原县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Pingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371427,
+"name":"夏津县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Xiajin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371428,
+"name":"武城县",
+"pid":371400,
+"code":"0534",
+"pinyin":"Wucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371481,
+"name":"乐陵市",
+"pid":371400,
+"code":"0534",
+"pinyin":"Leling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371482,
+"name":"禹城市",
+"pid":371400,
+"code":"0534",
+"pinyin":"Yucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371500,
+"name":"聊城市",
+"pid":370000,
+"code":"0635",
+"pinyin":"Liaocheng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371502,
+"name":"东昌府区",
+"pid":371500,
+"code":"0635",
+"pinyin":"Dongchangfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371521,
+"name":"阳谷县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Yanggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371522,
+"name":"莘县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Shenxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371523,
+"name":"茌平县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Chiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371524,
+"name":"东阿县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Dong'e",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371525,
+"name":"冠县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Guanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371526,
+"name":"高唐县",
+"pid":371500,
+"code":"0635",
+"pinyin":"Gaotang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371581,
+"name":"临清市",
+"pid":371500,
+"code":"0635",
+"pinyin":"Linqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371600,
+"name":"滨州市",
+"pid":370000,
+"code":"0543",
+"pinyin":"Binzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371602,
+"name":"滨城区",
+"pid":371600,
+"code":"0543",
+"pinyin":"Bincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371603,
+"name":"沾化区",
+"pid":371600,
+"code":"0543",
+"pinyin":"Zhanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371621,
+"name":"惠民县",
+"pid":371600,
+"code":"0543",
+"pinyin":"Huimin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371622,
+"name":"阳信县",
+"pid":371600,
+"code":"0543",
+"pinyin":"Yangxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371623,
+"name":"无棣县",
+"pid":371600,
+"code":"0543",
+"pinyin":"Wudi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371625,
+"name":"博兴县",
+"pid":371600,
+"code":"0543",
+"pinyin":"Boxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371626,
+"name":"邹平县",
+"pid":371600,
+"code":"0543",
+"pinyin":"Zouping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371627,
+"name":"北海新区",
+"pid":371600,
+"code":"0543",
+"pinyin":"Beihaixinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371700,
+"name":"菏泽市",
+"pid":370000,
+"code":"0530",
+"pinyin":"Heze",
+"ccode":null,
+"level":3
+},
+    {
+        "id":371702,
+"name":"牡丹区",
+"pid":371700,
+"code":"0530",
+"pinyin":"Mudan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371703,
+"name":"定陶区",
+"pid":371700,
+"code":"0530",
+"pinyin":"Dingtao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371721,
+"name":"曹县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Caoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371722,
+"name":"单县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Shanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371723,
+"name":"成武县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Chengwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371724,
+"name":"巨野县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Juye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371725,
+"name":"郓城县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Yuncheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371726,
+"name":"鄄城县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Juancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":371728,
+"name":"东明县",
+"pid":371700,
+"code":"0530",
+"pinyin":"Dongming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410000,
+"name":"河南省",
+"pid":100000,
+"code":null,
+"pinyin":"Henan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":410100,
+"name":"郑州市",
+"pid":410000,
+"code":"0371",
+"pinyin":"Zhengzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410102,
+"name":"中原区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Zhongyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410103,
+"name":"二七区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Erqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410104,
+"name":"管城回族区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Guancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410105,
+"name":"金水区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Jinshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410106,
+"name":"上街区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Shangjie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410108,
+"name":"惠济区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Huiji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410122,
+"name":"中牟县",
+"pid":410100,
+"code":"0371",
+"pinyin":"Zhongmu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410181,
+"name":"巩义市",
+"pid":410100,
+"code":"0371",
+"pinyin":"Gongyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410182,
+"name":"荥阳市",
+"pid":410100,
+"code":"0371",
+"pinyin":"Xingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410183,
+"name":"新密市",
+"pid":410100,
+"code":"0371",
+"pinyin":"Xinmi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410184,
+"name":"新郑市",
+"pid":410100,
+"code":"0371",
+"pinyin":"Xinzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410185,
+"name":"登封市",
+"pid":410100,
+"code":"0371",
+"pinyin":"Dengfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410186,
+"name":"郑东新区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Zhengdongxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410187,
+"name":"郑汴新区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Zhengbianxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410188,
+"name":"高新开发区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410189,
+"name":"经济开发区",
+"pid":410100,
+"code":"0371",
+"pinyin":"Jingjiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410200,
+"name":"开封市",
+"pid":410000,
+"code":"0371",
+"pinyin":"Kaifeng",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410202,
+"name":"龙亭区",
+"pid":410200,
+"code":"0371",
+"pinyin":"Longting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410203,
+"name":"顺河回族区",
+"pid":410200,
+"code":"0371",
+"pinyin":"Shunhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410204,
+"name":"鼓楼区",
+"pid":410200,
+"code":"0371",
+"pinyin":"Gulou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410205,
+"name":"禹王台区",
+"pid":410200,
+"code":"0371",
+"pinyin":"Yuwangtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410212,
+"name":"祥符区",
+"pid":410200,
+"code":"0371",
+"pinyin":"Xiangfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410221,
+"name":"杞县",
+"pid":410200,
+"code":"0371",
+"pinyin":"Qixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410222,
+"name":"通许县",
+"pid":410200,
+"code":"0371",
+"pinyin":"Tongxu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410223,
+"name":"尉氏县",
+"pid":410200,
+"code":"0371",
+"pinyin":"Weishi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410225,
+"name":"兰考县",
+"pid":410200,
+"code":"0371",
+"pinyin":"Lankao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410226,
+"name":"经济技术开发区",
+"pid":410200,
+"code":"0371",
+"pinyin":"JingJiKaiFaQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410300,
+"name":"洛阳市",
+"pid":410000,
+"code":"0379",
+"pinyin":"Luoyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410302,
+"name":"老城区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Laocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410303,
+"name":"西工区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Xigong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410304,
+"name":"瀍河回族区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Chanhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410305,
+"name":"涧西区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Jianxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410306,
+"name":"吉利区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Jili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410311,
+"name":"洛龙区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Luolong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410322,
+"name":"孟津县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Mengjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410323,
+"name":"新安县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Xin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410324,
+"name":"栾川县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Luanchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410325,
+"name":"嵩县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Songxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410326,
+"name":"汝阳县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Ruyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410327,
+"name":"宜阳县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Yiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410328,
+"name":"洛宁县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Luoning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410329,
+"name":"伊川县",
+"pid":410300,
+"code":"0379",
+"pinyin":"Yichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410381,
+"name":"偃师市",
+"pid":410300,
+"code":"0379",
+"pinyin":"Yanshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410382,
+"name":"洛阳新区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Luoyangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410383,
+"name":"高新区",
+"pid":410300,
+"code":"0379",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410400,
+"name":"平顶山市",
+"pid":410000,
+"code":"0375",
+"pinyin":"Pingdingshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410402,
+"name":"新华区",
+"pid":410400,
+"code":"0375",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410403,
+"name":"卫东区",
+"pid":410400,
+"code":"0375",
+"pinyin":"Weidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410404,
+"name":"石龙区",
+"pid":410400,
+"code":"0375",
+"pinyin":"Shilong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410411,
+"name":"湛河区",
+"pid":410400,
+"code":"0375",
+"pinyin":"Zhanhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410421,
+"name":"宝丰县",
+"pid":410400,
+"code":"0375",
+"pinyin":"Baofeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410422,
+"name":"叶县",
+"pid":410400,
+"code":"0375",
+"pinyin":"Yexian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410423,
+"name":"鲁山县",
+"pid":410400,
+"code":"0375",
+"pinyin":"Lushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410425,
+"name":"郏县",
+"pid":410400,
+"code":"0375",
+"pinyin":"Jiaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410481,
+"name":"舞钢市",
+"pid":410400,
+"code":"0375",
+"pinyin":"Wugang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410482,
+"name":"汝州市",
+"pid":410400,
+"code":"0375",
+"pinyin":"Ruzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410500,
+"name":"安阳市",
+"pid":410000,
+"code":"0372",
+"pinyin":"Anyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410502,
+"name":"文峰区",
+"pid":410500,
+"code":"0372",
+"pinyin":"Wenfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410503,
+"name":"北关区",
+"pid":410500,
+"code":"0372",
+"pinyin":"Beiguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410505,
+"name":"殷都区",
+"pid":410500,
+"code":"0372",
+"pinyin":"Yindu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410506,
+"name":"龙安区",
+"pid":410500,
+"code":"0372",
+"pinyin":"Long'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410522,
+"name":"安阳县",
+"pid":410500,
+"code":"0372",
+"pinyin":"Anyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410523,
+"name":"汤阴县",
+"pid":410500,
+"code":"0372",
+"pinyin":"Tangyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410526,
+"name":"滑县",
+"pid":410500,
+"code":"0372",
+"pinyin":"Huaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410527,
+"name":"内黄县",
+"pid":410500,
+"code":"0372",
+"pinyin":"Neihuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410581,
+"name":"林州市",
+"pid":410500,
+"code":"0372",
+"pinyin":"Linzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410582,
+"name":"安阳新区",
+"pid":410500,
+"code":"0372",
+"pinyin":"Anyangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410600,
+"name":"鹤壁市",
+"pid":410000,
+"code":"0392",
+"pinyin":"Hebi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410602,
+"name":"鹤山区",
+"pid":410600,
+"code":"0392",
+"pinyin":"Heshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410603,
+"name":"山城区",
+"pid":410600,
+"code":"0392",
+"pinyin":"Shancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410611,
+"name":"淇滨区",
+"pid":410600,
+"code":"0392",
+"pinyin":"Qibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410621,
+"name":"浚县",
+"pid":410600,
+"code":"0392",
+"pinyin":"Xunxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410622,
+"name":"淇县",
+"pid":410600,
+"code":"0392",
+"pinyin":"Qixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410700,
+"name":"新乡市",
+"pid":410000,
+"code":"0373",
+"pinyin":"Xinxiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410702,
+"name":"红旗区",
+"pid":410700,
+"code":"0373",
+"pinyin":"Hongqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410703,
+"name":"卫滨区",
+"pid":410700,
+"code":"0373",
+"pinyin":"Weibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410704,
+"name":"凤泉区",
+"pid":410700,
+"code":"0373",
+"pinyin":"Fengquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410711,
+"name":"牧野区",
+"pid":410700,
+"code":"0373",
+"pinyin":"Muye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410721,
+"name":"新乡县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Xinxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410724,
+"name":"获嘉县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Huojia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410725,
+"name":"原阳县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Yuanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410726,
+"name":"延津县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Yanjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410727,
+"name":"封丘县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Fengqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410728,
+"name":"长垣县",
+"pid":410700,
+"code":"0373",
+"pinyin":"Changyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410781,
+"name":"卫辉市",
+"pid":410700,
+"code":"0373",
+"pinyin":"Weihui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410782,
+"name":"辉县市",
+"pid":410700,
+"code":"0373",
+"pinyin":"Huixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410800,
+"name":"焦作市",
+"pid":410000,
+"code":"0391",
+"pinyin":"Jiaozuo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410802,
+"name":"解放区",
+"pid":410800,
+"code":"0391",
+"pinyin":"Jiefang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410803,
+"name":"中站区",
+"pid":410800,
+"code":"0391",
+"pinyin":"Zhongzhan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410804,
+"name":"马村区",
+"pid":410800,
+"code":"0391",
+"pinyin":"Macun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410811,
+"name":"山阳区",
+"pid":410800,
+"code":"0391",
+"pinyin":"Shanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410821,
+"name":"修武县",
+"pid":410800,
+"code":"0391",
+"pinyin":"Xiuwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410822,
+"name":"博爱县",
+"pid":410800,
+"code":"0391",
+"pinyin":"Boai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410823,
+"name":"武陟县",
+"pid":410800,
+"code":"0391",
+"pinyin":"Wuzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410825,
+"name":"温县",
+"pid":410800,
+"code":"0391",
+"pinyin":"Wenxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410882,
+"name":"沁阳市",
+"pid":410800,
+"code":"0391",
+"pinyin":"Qinyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410883,
+"name":"孟州市",
+"pid":410800,
+"code":"0391",
+"pinyin":"Mengzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410900,
+"name":"濮阳市",
+"pid":410000,
+"code":"0393",
+"pinyin":"Puyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":410902,
+"name":"华龙区",
+"pid":410900,
+"code":"0393",
+"pinyin":"Hualong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410922,
+"name":"清丰县",
+"pid":410900,
+"code":"0393",
+"pinyin":"Qingfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410923,
+"name":"南乐县",
+"pid":410900,
+"code":"0393",
+"pinyin":"Nanle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410926,
+"name":"范县",
+"pid":410900,
+"code":"0393",
+"pinyin":"Fanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410927,
+"name":"台前县",
+"pid":410900,
+"code":"0393",
+"pinyin":"Taiqian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":410928,
+"name":"濮阳县",
+"pid":410900,
+"code":"0393",
+"pinyin":"Puyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411000,
+"name":"许昌市",
+"pid":410000,
+"code":"0374",
+"pinyin":"Xuchang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411002,
+"name":"魏都区",
+"pid":411000,
+"code":"0374",
+"pinyin":"Weidu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411003,
+"name":"建安区",
+"pid":411000,
+"code":"0374",
+"pinyin":"Jian'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411024,
+"name":"鄢陵县",
+"pid":411000,
+"code":"0374",
+"pinyin":"Yanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411025,
+"name":"襄城县",
+"pid":411000,
+"code":"0374",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411081,
+"name":"禹州市",
+"pid":411000,
+"code":"0374",
+"pinyin":"Yuzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411082,
+"name":"长葛市",
+"pid":411000,
+"code":"0374",
+"pinyin":"Changge",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411100,
+"name":"漯河市",
+"pid":410000,
+"code":"0395",
+"pinyin":"Luohe",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411102,
+"name":"源汇区",
+"pid":411100,
+"code":"0395",
+"pinyin":"Yuanhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411103,
+"name":"郾城区",
+"pid":411100,
+"code":"0395",
+"pinyin":"Yancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411104,
+"name":"召陵区",
+"pid":411100,
+"code":"0395",
+"pinyin":"Zhaoling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411121,
+"name":"舞阳县",
+"pid":411100,
+"code":"0395",
+"pinyin":"Wuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411122,
+"name":"临颍县",
+"pid":411100,
+"code":"0395",
+"pinyin":"Linying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411200,
+"name":"三门峡市",
+"pid":410000,
+"code":"0398",
+"pinyin":"Sanmenxia",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411202,
+"name":"湖滨区",
+"pid":411200,
+"code":"0398",
+"pinyin":"Hubin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411203,
+"name":"陕州区",
+"pid":411200,
+"code":"0398",
+"pinyin":"Shanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411221,
+"name":"渑池县",
+"pid":411200,
+"code":"0398",
+"pinyin":"Mianchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411224,
+"name":"卢氏县",
+"pid":411200,
+"code":"0398",
+"pinyin":"Lushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411281,
+"name":"义马市",
+"pid":411200,
+"code":"0398",
+"pinyin":"Yima",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411282,
+"name":"灵宝市",
+"pid":411200,
+"code":"0398",
+"pinyin":"Lingbao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411300,
+"name":"南阳市",
+"pid":410000,
+"code":"0377",
+"pinyin":"Nanyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411302,
+"name":"宛城区",
+"pid":411300,
+"code":"0377",
+"pinyin":"Wancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411303,
+"name":"卧龙区",
+"pid":411300,
+"code":"0377",
+"pinyin":"Wolong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411321,
+"name":"南召县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Nanzhao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411322,
+"name":"方城县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Fangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411323,
+"name":"西峡县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Xixia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411324,
+"name":"镇平县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Zhenping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411325,
+"name":"内乡县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Neixiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411326,
+"name":"淅川县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Xichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411327,
+"name":"社旗县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Sheqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411328,
+"name":"唐河县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Tanghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411329,
+"name":"新野县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Xinye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411330,
+"name":"桐柏县",
+"pid":411300,
+"code":"0377",
+"pinyin":"Tongbai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411381,
+"name":"邓州市",
+"pid":411300,
+"code":"0377",
+"pinyin":"Dengzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411400,
+"name":"商丘市",
+"pid":410000,
+"code":"0370",
+"pinyin":"Shangqiu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411402,
+"name":"梁园区",
+"pid":411400,
+"code":"0370",
+"pinyin":"Liangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411403,
+"name":"睢阳区",
+"pid":411400,
+"code":"0370",
+"pinyin":"Suiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411421,
+"name":"民权县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Minquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411422,
+"name":"睢县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Suixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411423,
+"name":"宁陵县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Ningling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411424,
+"name":"柘城县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Zhecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411425,
+"name":"虞城县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Yucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411426,
+"name":"夏邑县",
+"pid":411400,
+"code":"0370",
+"pinyin":"Xiayi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411481,
+"name":"永城市",
+"pid":411400,
+"code":"0370",
+"pinyin":"Yongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411500,
+"name":"信阳市",
+"pid":410000,
+"code":"0376",
+"pinyin":"Xinyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411502,
+"name":"浉河区",
+"pid":411500,
+"code":"0376",
+"pinyin":"Shihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411503,
+"name":"平桥区",
+"pid":411500,
+"code":"0376",
+"pinyin":"Pingqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411521,
+"name":"罗山县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Luoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411522,
+"name":"光山县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Guangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411523,
+"name":"新县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Xinxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411524,
+"name":"商城县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Shangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411525,
+"name":"固始县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Gushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411526,
+"name":"潢川县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Huangchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411527,
+"name":"淮滨县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Huaibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411528,
+"name":"息县",
+"pid":411500,
+"code":"0376",
+"pinyin":"Xixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411600,
+"name":"周口市",
+"pid":410000,
+"code":"0394",
+"pinyin":"Zhoukou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411602,
+"name":"川汇区",
+"pid":411600,
+"code":"0394",
+"pinyin":"Chuanhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411621,
+"name":"扶沟县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Fugou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411622,
+"name":"西华县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Xihua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411623,
+"name":"商水县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Shangshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411624,
+"name":"沈丘县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Shenqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411625,
+"name":"郸城县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Dancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411626,
+"name":"淮阳县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Huaiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411627,
+"name":"太康县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Taikang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411628,
+"name":"鹿邑县",
+"pid":411600,
+"code":"0394",
+"pinyin":"Luyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411681,
+"name":"项城市",
+"pid":411600,
+"code":"0394",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411682,
+"name":"东新区",
+"pid":411600,
+"code":"0394",
+"pinyin":"Dongxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411683,
+"name":"经济开发区",
+"pid":411600,
+"code":"0394",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411700,
+"name":"驻马店市",
+"pid":410000,
+"code":"0396",
+"pinyin":"Zhumadian",
+"ccode":null,
+"level":3
+},
+    {
+        "id":411702,
+"name":"驿城区",
+"pid":411700,
+"code":"0396",
+"pinyin":"Yicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411721,
+"name":"西平县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Xiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411722,
+"name":"上蔡县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Shangcai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411723,
+"name":"平舆县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Pingyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411724,
+"name":"正阳县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Zhengyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411725,
+"name":"确山县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Queshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411726,
+"name":"泌阳县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Biyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411727,
+"name":"汝南县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Runan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411728,
+"name":"遂平县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Suiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":411729,
+"name":"新蔡县",
+"pid":411700,
+"code":"0396",
+"pinyin":"Xincai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419001,
+"name":"济源市",
+"pid":410000,
+"code":"0391",
+"pinyin":"Jiyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":419011,
+"name":"沁园街道",
+"pid":419001,
+"code":"0391",
+"pinyin":"Qinyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419012,
+"name":"济水街道",
+"pid":419001,
+"code":"0391",
+"pinyin":"Jishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419013,
+"name":"北海街道",
+"pid":419001,
+"code":"0391",
+"pinyin":"Beihai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419014,
+"name":"天坛街道",
+"pid":419001,
+"code":"0391",
+"pinyin":"Tiantan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419015,
+"name":"玉泉街道",
+"pid":419001,
+"code":"0391",
+"pinyin":"Yuquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419016,
+"name":"克井镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Kejing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419017,
+"name":"五龙口镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Wulongkao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419018,
+"name":"梨林镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Lilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419019,
+"name":"轵城镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"ZhiCheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419020,
+"name":"承留镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"ChengLiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419021,
+"name":"坡头镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Potou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419022,
+"name":"大峪镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Dayu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419023,
+"name":"邵原镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"ShaoYuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419024,
+"name":"思礼镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"Sili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419025,
+"name":"王屋镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"WangWu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":419026,
+"name":"下冶镇",
+"pid":419001,
+"code":"0391",
+"pinyin":"XiaYe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420000,
+"name":"湖北省",
+"pid":100000,
+"code":null,
+"pinyin":"Hubei",
+"ccode":null,
+"level":2
+},
+    {
+        "id":420100,
+"name":"武汉市",
+"pid":420000,
+"code":"027",
+"pinyin":"Wuhan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420102,
+"name":"江岸区",
+"pid":420100,
+"code":"027",
+"pinyin":"Jiang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420103,
+"name":"江汉区",
+"pid":420100,
+"code":"027",
+"pinyin":"Jianghan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420104,
+"name":"硚口区",
+"pid":420100,
+"code":"027",
+"pinyin":"Qiaokou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420105,
+"name":"汉阳区",
+"pid":420100,
+"code":"027",
+"pinyin":"Hanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420106,
+"name":"武昌区",
+"pid":420100,
+"code":"027",
+"pinyin":"Wuchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420107,
+"name":"青山区",
+"pid":420100,
+"code":"027",
+"pinyin":"Qingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420111,
+"name":"洪山区",
+"pid":420100,
+"code":"027",
+"pinyin":"Hongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420112,
+"name":"东西湖区",
+"pid":420100,
+"code":"027",
+"pinyin":"Dongxihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420113,
+"name":"汉南区",
+"pid":420100,
+"code":"027",
+"pinyin":"Hannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420114,
+"name":"蔡甸区",
+"pid":420100,
+"code":"027",
+"pinyin":"Caidian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420115,
+"name":"江夏区",
+"pid":420100,
+"code":"027",
+"pinyin":"Jiangxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420116,
+"name":"黄陂区",
+"pid":420100,
+"code":"027",
+"pinyin":"Huangpi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420117,
+"name":"新洲区",
+"pid":420100,
+"code":"027",
+"pinyin":"Xinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420118,
+"name":"经济技术开发区",
+"pid":420100,
+"code":"027",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420200,
+"name":"黄石市",
+"pid":420000,
+"code":"0714",
+"pinyin":"Huangshi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420202,
+"name":"黄石港区",
+"pid":420200,
+"code":"0714",
+"pinyin":"Huangshigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420203,
+"name":"西塞山区",
+"pid":420200,
+"code":"0714",
+"pinyin":"Xisaishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420204,
+"name":"下陆区",
+"pid":420200,
+"code":"0714",
+"pinyin":"Xialu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420205,
+"name":"铁山区",
+"pid":420200,
+"code":"0714",
+"pinyin":"Tieshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420222,
+"name":"阳新县",
+"pid":420200,
+"code":"0714",
+"pinyin":"Yangxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420281,
+"name":"大冶市",
+"pid":420200,
+"code":"0714",
+"pinyin":"Daye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420282,
+"name":"经济开发区",
+"pid":420200,
+"code":"0714",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420300,
+"name":"十堰市",
+"pid":420000,
+"code":"0719",
+"pinyin":"Shiyan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420302,
+"name":"茅箭区",
+"pid":420300,
+"code":"0719",
+"pinyin":"Maojian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420303,
+"name":"张湾区",
+"pid":420300,
+"code":"0719",
+"pinyin":"Zhangwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420304,
+"name":"郧阳区",
+"pid":420300,
+"code":"0719",
+"pinyin":"Yunyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420322,
+"name":"郧西县",
+"pid":420300,
+"code":"0719",
+"pinyin":"Yunxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420323,
+"name":"竹山县",
+"pid":420300,
+"code":"0719",
+"pinyin":"Zhushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420324,
+"name":"竹溪县",
+"pid":420300,
+"code":"0719",
+"pinyin":"Zhuxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420325,
+"name":"房县",
+"pid":420300,
+"code":"0719",
+"pinyin":"Fangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420381,
+"name":"丹江口市",
+"pid":420300,
+"code":"0719",
+"pinyin":"Danjiangkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420500,
+"name":"宜昌市",
+"pid":420000,
+"code":"0717",
+"pinyin":"Yichang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420502,
+"name":"西陵区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Xiling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420503,
+"name":"伍家岗区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Wujiagang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420504,
+"name":"点军区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Dianjun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420505,
+"name":"猇亭区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Xiaoting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420506,
+"name":"夷陵区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Yiling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420525,
+"name":"远安县",
+"pid":420500,
+"code":"0717",
+"pinyin":"Yuan'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420526,
+"name":"兴山县",
+"pid":420500,
+"code":"0717",
+"pinyin":"Xingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420527,
+"name":"秭归县",
+"pid":420500,
+"code":"0717",
+"pinyin":"Zigui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420528,
+"name":"长阳土家族自治县",
+"pid":420500,
+"code":"0717",
+"pinyin":"Changyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420529,
+"name":"五峰土家族自治县",
+"pid":420500,
+"code":"0717",
+"pinyin":"Wufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420581,
+"name":"宜都市",
+"pid":420500,
+"code":"0717",
+"pinyin":"Yidu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420582,
+"name":"当阳市",
+"pid":420500,
+"code":"0717",
+"pinyin":"Dangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420583,
+"name":"枝江市",
+"pid":420500,
+"code":"0717",
+"pinyin":"Zhijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420584,
+"name":"宜昌新区",
+"pid":420500,
+"code":"0717",
+"pinyin":"Yichangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420600,
+"name":"襄阳市",
+"pid":420000,
+"code":"0710",
+"pinyin":"Xiangyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420602,
+"name":"襄城区",
+"pid":420600,
+"code":"0710",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420606,
+"name":"樊城区",
+"pid":420600,
+"code":"0710",
+"pinyin":"Fancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420607,
+"name":"襄州区",
+"pid":420600,
+"code":"0710",
+"pinyin":"Xiangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420624,
+"name":"南漳县",
+"pid":420600,
+"code":"0710",
+"pinyin":"Nanzhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420625,
+"name":"谷城县",
+"pid":420600,
+"code":"0710",
+"pinyin":"Gucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420626,
+"name":"保康县",
+"pid":420600,
+"code":"0710",
+"pinyin":"Baokang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420682,
+"name":"老河口市",
+"pid":420600,
+"code":"0710",
+"pinyin":"Laohekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420683,
+"name":"枣阳市",
+"pid":420600,
+"code":"0710",
+"pinyin":"Zaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420684,
+"name":"宜城市",
+"pid":420600,
+"code":"0710",
+"pinyin":"Yicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420685,
+"name":"高新区",
+"pid":420600,
+"code":"0710",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420686,
+"name":"经济开发区",
+"pid":420600,
+"code":"0710",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420700,
+"name":"鄂州市",
+"pid":420000,
+"code":"0711",
+"pinyin":"Ezhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420702,
+"name":"梁子湖区",
+"pid":420700,
+"code":"0711",
+"pinyin":"Liangzihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420703,
+"name":"华容区",
+"pid":420700,
+"code":"0711",
+"pinyin":"Huarong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420704,
+"name":"鄂城区",
+"pid":420700,
+"code":"0711",
+"pinyin":"Echeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420800,
+"name":"荆门市",
+"pid":420000,
+"code":"0724",
+"pinyin":"Jingmen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420802,
+"name":"东宝区",
+"pid":420800,
+"code":"0724",
+"pinyin":"Dongbao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420804,
+"name":"掇刀区",
+"pid":420800,
+"code":"0724",
+"pinyin":"Duodao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420821,
+"name":"京山县",
+"pid":420800,
+"code":"0724",
+"pinyin":"Jingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420822,
+"name":"沙洋县",
+"pid":420800,
+"code":"0724",
+"pinyin":"Shayang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420881,
+"name":"钟祥市",
+"pid":420800,
+"code":"0724",
+"pinyin":"Zhongxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420900,
+"name":"孝感市",
+"pid":420000,
+"code":"0712",
+"pinyin":"Xiaogan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":420902,
+"name":"孝南区",
+"pid":420900,
+"code":"0712",
+"pinyin":"Xiaonan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420921,
+"name":"孝昌县",
+"pid":420900,
+"code":"0712",
+"pinyin":"Xiaochang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420922,
+"name":"大悟县",
+"pid":420900,
+"code":"0712",
+"pinyin":"Dawu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420923,
+"name":"云梦县",
+"pid":420900,
+"code":"0712",
+"pinyin":"Yunmeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420981,
+"name":"应城市",
+"pid":420900,
+"code":"0712",
+"pinyin":"Yingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420982,
+"name":"安陆市",
+"pid":420900,
+"code":"0712",
+"pinyin":"Anlu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":420984,
+"name":"汉川市",
+"pid":420900,
+"code":"0712",
+"pinyin":"Hanchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421000,
+"name":"荆州市",
+"pid":420000,
+"code":"0716",
+"pinyin":"Jingzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":421002,
+"name":"沙市区",
+"pid":421000,
+"code":"0716",
+"pinyin":"Shashi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421003,
+"name":"荆州区",
+"pid":421000,
+"code":"0716",
+"pinyin":"Jingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421022,
+"name":"公安县",
+"pid":421000,
+"code":"0716",
+"pinyin":"Gong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421023,
+"name":"监利县",
+"pid":421000,
+"code":"0716",
+"pinyin":"Jianli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421024,
+"name":"江陵县",
+"pid":421000,
+"code":"0716",
+"pinyin":"Jiangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421081,
+"name":"石首市",
+"pid":421000,
+"code":"0716",
+"pinyin":"Shishou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421083,
+"name":"洪湖市",
+"pid":421000,
+"code":"0716",
+"pinyin":"Honghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421087,
+"name":"松滋市",
+"pid":421000,
+"code":"0716",
+"pinyin":"Songzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421100,
+"name":"黄冈市",
+"pid":420000,
+"code":"0713",
+"pinyin":"Huanggang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":421102,
+"name":"黄州区",
+"pid":421100,
+"code":"0713",
+"pinyin":"Huangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421121,
+"name":"团风县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Tuanfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421122,
+"name":"红安县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Hong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421123,
+"name":"罗田县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Luotian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421124,
+"name":"英山县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Yingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421125,
+"name":"浠水县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Xishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421126,
+"name":"蕲春县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Qichun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421127,
+"name":"黄梅县",
+"pid":421100,
+"code":"0713",
+"pinyin":"Huangmei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421181,
+"name":"麻城市",
+"pid":421100,
+"code":"0713",
+"pinyin":"Macheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421182,
+"name":"武穴市",
+"pid":421100,
+"code":"0713",
+"pinyin":"Wuxue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421200,
+"name":"咸宁市",
+"pid":420000,
+"code":"0715",
+"pinyin":"Xianning",
+"ccode":null,
+"level":3
+},
+    {
+        "id":421202,
+"name":"咸安区",
+"pid":421200,
+"code":"0715",
+"pinyin":"Xian'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421221,
+"name":"嘉鱼县",
+"pid":421200,
+"code":"0715",
+"pinyin":"Jiayu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421222,
+"name":"通城县",
+"pid":421200,
+"code":"0715",
+"pinyin":"Tongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421223,
+"name":"崇阳县",
+"pid":421200,
+"code":"0715",
+"pinyin":"Chongyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421224,
+"name":"通山县",
+"pid":421200,
+"code":"0715",
+"pinyin":"Tongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421281,
+"name":"赤壁市",
+"pid":421200,
+"code":"0715",
+"pinyin":"Chibi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421300,
+"name":"随州市",
+"pid":420000,
+"code":"0722",
+"pinyin":"Suizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":421303,
+"name":"曾都区",
+"pid":421300,
+"code":"0722",
+"pinyin":"Zengdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421321,
+"name":"随县",
+"pid":421300,
+"code":"0722",
+"pinyin":"Suixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":421381,
+"name":"广水市",
+"pid":421300,
+"code":"0722",
+"pinyin":"Guangshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422800,
+"name":"恩施土家族苗族自治州",
+"pid":420000,
+"code":"0718",
+"pinyin":"Enshi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":422801,
+"name":"恩施市",
+"pid":422800,
+"code":"0718",
+"pinyin":"Enshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422802,
+"name":"利川市",
+"pid":422800,
+"code":"0718",
+"pinyin":"Lichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422822,
+"name":"建始县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Jianshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422823,
+"name":"巴东县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Badong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422825,
+"name":"宣恩县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Xuanen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422826,
+"name":"咸丰县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Xianfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422827,
+"name":"来凤县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Laifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":422828,
+"name":"鹤峰县",
+"pid":422800,
+"code":"0718",
+"pinyin":"Hefeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429004,
+"name":"仙桃市",
+"pid":420000,
+"code":"0728",
+"pinyin":"Xiantao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":429005,
+"name":"潜江市",
+"pid":420000,
+"code":"0728",
+"pinyin":"Qianjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":429006,
+"name":"天门市",
+"pid":420000,
+"code":"0728",
+"pinyin":"Tianmen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":429021,
+"name":"神农架林区",
+"pid":420000,
+"code":"0719",
+"pinyin":"Shennongjia",
+"ccode":null,
+"level":3
+},
+    {
+        "id":429022,
+"name":"松柏镇",
+"pid":429021,
+"code":"0719",
+"pinyin":"Songbai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429023,
+"name":"阳日镇",
+"pid":429021,
+"code":"0719",
+"pinyin":"Yangri",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429024,
+"name":"木鱼镇",
+"pid":429021,
+"code":"0719",
+"pinyin":"Muyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429025,
+"name":"红坪镇",
+"pid":429021,
+"code":"0719",
+"pinyin":"Hongping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429026,
+"name":"新华镇",
+"pid":429021,
+"code":"0719",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429027,
+"name":"大九湖",
+"pid":429021,
+"code":"0719",
+"pinyin":"DaJiuHu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429028,
+"name":"宋洛",
+"pid":429021,
+"code":"0719",
+"pinyin":"SongLuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429029,
+"name":"下谷坪乡",
+"pid":429021,
+"code":"0719",
+"pinyin":"Xiaguping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429401,
+"name":"沙嘴街道",
+"pid":429004,
+"code":"0728",
+"pinyin":"Shazui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429402,
+"name":"干河街道",
+"pid":429004,
+"code":"0728",
+"pinyin":"Ganhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429403,
+"name":"龙华山街道",
+"pid":429004,
+"code":"0728",
+"pinyin":"Longhuashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429404,
+"name":"郑场镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Zhengchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429405,
+"name":"毛嘴镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Maozui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429406,
+"name":"豆河镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Douhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429407,
+"name":"三伏潭镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Sanfutan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429408,
+"name":"胡场镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Huchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429409,
+"name":"长埫口镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Changchongkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429410,
+"name":"西流河镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Xiliuhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429411,
+"name":"沙湖镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Shahu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429412,
+"name":"杨林尾镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Yanglinwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429413,
+"name":"彭场镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Pengchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429414,
+"name":"张沟镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Zhanggou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429415,
+"name":"郭河镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Guohe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429416,
+"name":"沔城镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Miancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429417,
+"name":"通海口镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Tonghaikou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429418,
+"name":"陈场镇",
+"pid":429004,
+"code":"0728",
+"pinyin":"Chenchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429419,
+"name":"高新区",
+"pid":429004,
+"code":"0728",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429420,
+"name":"经济开发区",
+"pid":429004,
+"code":"0728",
+"pinyin":"Xiantao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429421,
+"name":"工业园区",
+"pid":429004,
+"code":"0728",
+"pinyin":"Gongyeyuanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429422,
+"name":"九合垸原种场",
+"pid":429004,
+"code":"0728",
+"pinyin":"Jiuheyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429423,
+"name":"沙湖原种场",
+"pid":429004,
+"code":"0728",
+"pinyin":"ShaYuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429424,
+"name":"排湖渔场",
+"pid":429004,
+"code":"0728",
+"pinyin":"PaiHu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429425,
+"name":"五湖渔场",
+"pid":429004,
+"code":"0728",
+"pinyin":"Wuhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429426,
+"name":"赵西垸林场",
+"pid":429004,
+"code":"0728",
+"pinyin":"Zhaoxiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429427,
+"name":"刘家垸林场",
+"pid":429004,
+"code":"0728",
+"pinyin":"LiuJiaYuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429428,
+"name":"畜禽良种场",
+"pid":429004,
+"code":"0728",
+"pinyin":"ChuQin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429501,
+"name":"园林",
+"pid":429005,
+"code":"0728",
+"pinyin":"Yuanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429502,
+"name":"广华",
+"pid":429005,
+"code":"0728",
+"pinyin":"Guanghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429503,
+"name":"杨市",
+"pid":429005,
+"code":"0728",
+"pinyin":"Yangshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429504,
+"name":"周矶",
+"pid":429005,
+"code":"0728",
+"pinyin":"Zhouji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429505,
+"name":"泽口",
+"pid":429005,
+"code":"0728",
+"pinyin":"Zekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429506,
+"name":"泰丰",
+"pid":429005,
+"code":"0728",
+"pinyin":"Taifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429507,
+"name":"高场",
+"pid":429005,
+"code":"0728",
+"pinyin":"Gaochang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429508,
+"name":"熊口镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Xiongkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429509,
+"name":"竹根滩镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Zhugentan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429510,
+"name":"高石碑镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Gaoshibei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429511,
+"name":"老新镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Laoxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429512,
+"name":"王场镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Wangchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429513,
+"name":"渔洋镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Yuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429514,
+"name":"龙湾镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Longwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429515,
+"name":"浩口镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Haokou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429516,
+"name":"积玉口镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Jiyukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429517,
+"name":"张金镇",
+"pid":429005,
+"code":"0728",
+"pinyin":"Zhangjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429518,
+"name":"白鹭湖管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Bailuhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429519,
+"name":"总口管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"ZongKou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429520,
+"name":"熊口农场管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Xiongkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429521,
+"name":"运粮湖管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Yunlianghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429522,
+"name":"后湖管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Houhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429523,
+"name":"周矶管理区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Zhouji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429524,
+"name":"经济开发区",
+"pid":429005,
+"code":"0728",
+"pinyin":"Kaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429601,
+"name":"竟陵街道",
+"pid":429006,
+"code":"0728",
+"pinyin":"Jingling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429602,
+"name":"杨林街道",
+"pid":429006,
+"code":"0728",
+"pinyin":"Yanglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429603,
+"name":"佛子山镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Fozishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429604,
+"name":"多宝镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Duobao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429605,
+"name":"拖市镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Tuoshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429606,
+"name":"张港镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Zhanggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429607,
+"name":"蒋场镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Jiangchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429608,
+"name":"汪场镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Wangchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429609,
+"name":"渔薪镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Yuxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429610,
+"name":"黄潭镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Huangtan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429611,
+"name":"岳口镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Yuekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429612,
+"name":"横林镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Henglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429613,
+"name":"彭市镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Pengshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429614,
+"name":"麻洋镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Mayang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429615,
+"name":"多祥镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Duoxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429616,
+"name":"干驿镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Ganyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429617,
+"name":"马湾镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Mawan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429618,
+"name":"卢市镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Lushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429619,
+"name":"小板镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Xiaoban",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429620,
+"name":"九真镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Jiuzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429621,
+"name":"皂市镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Zaoshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429622,
+"name":"胡市镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Hushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429623,
+"name":"石河镇",
+"pid":429006,
+"code":"0728",
+"pinyin":"Shihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429624,
+"name":"净潭乡",
+"pid":429006,
+"code":"0728",
+"pinyin":"Jingtanxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429625,
+"name":"蒋湖农场",
+"pid":429006,
+"code":"0728",
+"pinyin":"Jianghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429626,
+"name":"白茅湖农场",
+"pid":429006,
+"code":"0728",
+"pinyin":"Baimaohu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429627,
+"name":"沉湖林业科技示范区",
+"pid":429006,
+"code":"0728",
+"pinyin":"Chenhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429628,
+"name":"天门工业园",
+"pid":429006,
+"code":"0728",
+"pinyin":"Gongyeyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":429629,
+"name":"侨乡街道开发区",
+"pid":429006,
+"code":"0728",
+"pinyin":"Qiaoxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430000,
+"name":"湖南省",
+"pid":100000,
+"code":null,
+"pinyin":"Hunan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":430100,
+"name":"长沙市",
+"pid":430000,
+"code":"0731",
+"pinyin":"Changsha",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430102,
+"name":"芙蓉区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Furong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430103,
+"name":"天心区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Tianxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430104,
+"name":"岳麓区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Yuelu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430105,
+"name":"开福区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Kaifu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430111,
+"name":"雨花区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Yuhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430112,
+"name":"望城区",
+"pid":430100,
+"code":"0731",
+"pinyin":"Wangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430121,
+"name":"长沙县",
+"pid":430100,
+"code":"0731",
+"pinyin":"Changsha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430124,
+"name":"宁乡市",
+"pid":430100,
+"code":"0731",
+"pinyin":"Ningxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430181,
+"name":"浏阳市",
+"pid":430100,
+"code":"0731",
+"pinyin":"Liuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430182,
+"name":"湘江新区",
+"pid":430100,
+"code":"0731",
+"pinyin":"XiangJiangXiQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430200,
+"name":"株洲市",
+"pid":430000,
+"code":"0731",
+"pinyin":"Zhuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430202,
+"name":"荷塘区",
+"pid":430200,
+"code":"0731",
+"pinyin":"Hetang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430203,
+"name":"芦淞区",
+"pid":430200,
+"code":"0731",
+"pinyin":"Lusong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430204,
+"name":"石峰区",
+"pid":430200,
+"code":"0731",
+"pinyin":"Shifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430211,
+"name":"天元区",
+"pid":430200,
+"code":"0731",
+"pinyin":"Tianyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430221,
+"name":"株洲县",
+"pid":430200,
+"code":"0731",
+"pinyin":"Zhuzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430223,
+"name":"攸县",
+"pid":430200,
+"code":"0731",
+"pinyin":"Youxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430224,
+"name":"茶陵县",
+"pid":430200,
+"code":"0731",
+"pinyin":"Chaling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430225,
+"name":"炎陵县",
+"pid":430200,
+"code":"0731",
+"pinyin":"Yanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430281,
+"name":"醴陵市",
+"pid":430200,
+"code":"0731",
+"pinyin":"Liling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430300,
+"name":"湘潭市",
+"pid":430000,
+"code":"0731",
+"pinyin":"Xiangtan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430302,
+"name":"雨湖区",
+"pid":430300,
+"code":"0731",
+"pinyin":"Yuhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430304,
+"name":"岳塘区",
+"pid":430300,
+"code":"0731",
+"pinyin":"Yuetang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430321,
+"name":"湘潭县",
+"pid":430300,
+"code":"0731",
+"pinyin":"Xiangtan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430381,
+"name":"湘乡市",
+"pid":430300,
+"code":"0731",
+"pinyin":"Xiangxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430382,
+"name":"韶山市",
+"pid":430300,
+"code":"0731",
+"pinyin":"Shaoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430383,
+"name":"高新区",
+"pid":430300,
+"code":"0731",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430400,
+"name":"衡阳市",
+"pid":430000,
+"code":"0734",
+"pinyin":"Hengyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430405,
+"name":"珠晖区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Zhuhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430406,
+"name":"雁峰区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Yanfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430407,
+"name":"石鼓区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Shigu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430408,
+"name":"蒸湘区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Zhengxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430412,
+"name":"南岳区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Nanyue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430421,
+"name":"衡阳县",
+"pid":430400,
+"code":"0734",
+"pinyin":"Hengyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430422,
+"name":"衡南县",
+"pid":430400,
+"code":"0734",
+"pinyin":"Hengnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430423,
+"name":"衡山县",
+"pid":430400,
+"code":"0734",
+"pinyin":"Hengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430424,
+"name":"衡东县",
+"pid":430400,
+"code":"0734",
+"pinyin":"Hengdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430426,
+"name":"祁东县",
+"pid":430400,
+"code":"0734",
+"pinyin":"Qidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430481,
+"name":"耒阳市",
+"pid":430400,
+"code":"0734",
+"pinyin":"Leiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430482,
+"name":"常宁市",
+"pid":430400,
+"code":"0734",
+"pinyin":"Changning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430483,
+"name":"高新区",
+"pid":430400,
+"code":"0734",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430500,
+"name":"邵阳市",
+"pid":430000,
+"code":"0739",
+"pinyin":"Shaoyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430502,
+"name":"双清区",
+"pid":430500,
+"code":"0739",
+"pinyin":"Shuangqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430503,
+"name":"大祥区",
+"pid":430500,
+"code":"0739",
+"pinyin":"Daxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430511,
+"name":"北塔区",
+"pid":430500,
+"code":"0739",
+"pinyin":"Beita",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430521,
+"name":"邵东县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Shaodong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430522,
+"name":"新邵县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Xinshao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430523,
+"name":"邵阳县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Shaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430524,
+"name":"隆回县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Longhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430525,
+"name":"洞口县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Dongkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430527,
+"name":"绥宁县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Suining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430528,
+"name":"新宁县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Xinning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430529,
+"name":"城步苗族自治县",
+"pid":430500,
+"code":"0739",
+"pinyin":"Chengbu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430581,
+"name":"武冈市",
+"pid":430500,
+"code":"0739",
+"pinyin":"Wugang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430600,
+"name":"岳阳市",
+"pid":430000,
+"code":"0730",
+"pinyin":"Yueyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430602,
+"name":"岳阳楼区",
+"pid":430600,
+"code":"0730",
+"pinyin":"Yueyanglou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430603,
+"name":"云溪区",
+"pid":430600,
+"code":"0730",
+"pinyin":"Yunxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430611,
+"name":"君山区",
+"pid":430600,
+"code":"0730",
+"pinyin":"Junshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430621,
+"name":"岳阳县",
+"pid":430600,
+"code":"0730",
+"pinyin":"Yueyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430623,
+"name":"华容县",
+"pid":430600,
+"code":"0730",
+"pinyin":"Huarong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430624,
+"name":"湘阴县",
+"pid":430600,
+"code":"0730",
+"pinyin":"Xiangyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430626,
+"name":"平江县",
+"pid":430600,
+"code":"0730",
+"pinyin":"Pingjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430681,
+"name":"汨罗市",
+"pid":430600,
+"code":"0730",
+"pinyin":"Miluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430682,
+"name":"临湘市",
+"pid":430600,
+"code":"0730",
+"pinyin":"Linxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430700,
+"name":"常德市",
+"pid":430000,
+"code":"0736",
+"pinyin":"Changde",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430702,
+"name":"武陵区",
+"pid":430700,
+"code":"0736",
+"pinyin":"Wuling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430703,
+"name":"鼎城区",
+"pid":430700,
+"code":"0736",
+"pinyin":"Dingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430721,
+"name":"安乡县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Anxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430722,
+"name":"汉寿县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Hanshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430723,
+"name":"澧县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Lixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430724,
+"name":"临澧县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Linli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430725,
+"name":"桃源县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Taoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430726,
+"name":"石门县",
+"pid":430700,
+"code":"0736",
+"pinyin":"Shimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430781,
+"name":"津市市",
+"pid":430700,
+"code":"0736",
+"pinyin":"Jinshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430800,
+"name":"张家界市",
+"pid":430000,
+"code":"0744",
+"pinyin":"Zhangjiajie",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430802,
+"name":"永定区",
+"pid":430800,
+"code":"0744",
+"pinyin":"Yongding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430811,
+"name":"武陵源区",
+"pid":430800,
+"code":"0744",
+"pinyin":"Wulingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430821,
+"name":"慈利县",
+"pid":430800,
+"code":"0744",
+"pinyin":"Cili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430822,
+"name":"桑植县",
+"pid":430800,
+"code":"0744",
+"pinyin":"Sangzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430900,
+"name":"益阳市",
+"pid":430000,
+"code":"0737",
+"pinyin":"Yiyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":430902,
+"name":"资阳区",
+"pid":430900,
+"code":"0737",
+"pinyin":"Ziyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430903,
+"name":"赫山区",
+"pid":430900,
+"code":"0737",
+"pinyin":"Heshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430921,
+"name":"南县",
+"pid":430900,
+"code":"0737",
+"pinyin":"Nanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430922,
+"name":"桃江县",
+"pid":430900,
+"code":"0737",
+"pinyin":"Taojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430923,
+"name":"安化县",
+"pid":430900,
+"code":"0737",
+"pinyin":"Anhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":430981,
+"name":"沅江市",
+"pid":430900,
+"code":"0737",
+"pinyin":"Yuanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431000,
+"name":"郴州市",
+"pid":430000,
+"code":"0735",
+"pinyin":"Chenzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":431002,
+"name":"北湖区",
+"pid":431000,
+"code":"0735",
+"pinyin":"Beihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431003,
+"name":"苏仙区",
+"pid":431000,
+"code":"0735",
+"pinyin":"Suxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431021,
+"name":"桂阳县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Guiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431022,
+"name":"宜章县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Yizhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431023,
+"name":"永兴县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Yongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431024,
+"name":"嘉禾县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Jiahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431025,
+"name":"临武县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Linwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431026,
+"name":"汝城县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Rucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431027,
+"name":"桂东县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Guidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431028,
+"name":"安仁县",
+"pid":431000,
+"code":"0735",
+"pinyin":"Anren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431081,
+"name":"资兴市",
+"pid":431000,
+"code":"0735",
+"pinyin":"Zixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431100,
+"name":"永州市",
+"pid":430000,
+"code":"0746",
+"pinyin":"Yongzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":431102,
+"name":"零陵区",
+"pid":431100,
+"code":"0746",
+"pinyin":"Lingling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431103,
+"name":"冷水滩区",
+"pid":431100,
+"code":"0746",
+"pinyin":"Lengshuitan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431121,
+"name":"祁阳县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Qiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431122,
+"name":"东安县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Dong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431123,
+"name":"双牌县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Shuangpai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431124,
+"name":"道县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Daoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431125,
+"name":"江永县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Jiangyong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431126,
+"name":"宁远县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Ningyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431127,
+"name":"蓝山县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Lanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431128,
+"name":"新田县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Xintian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431129,
+"name":"江华瑶族自治县",
+"pid":431100,
+"code":"0746",
+"pinyin":"Jianghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431200,
+"name":"怀化市",
+"pid":430000,
+"code":"0745",
+"pinyin":"Huaihua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":431202,
+"name":"鹤城区",
+"pid":431200,
+"code":"0745",
+"pinyin":"Hecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431221,
+"name":"中方县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Zhongfang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431222,
+"name":"沅陵县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Yuanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431223,
+"name":"辰溪县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Chenxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431224,
+"name":"溆浦县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Xupu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431225,
+"name":"会同县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Huitong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431226,
+"name":"麻阳苗族自治县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Mayang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431227,
+"name":"新晃侗族自治县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Xinhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431228,
+"name":"芷江侗族自治县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Zhijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431229,
+"name":"靖州苗族侗族自治县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Jingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431230,
+"name":"通道侗族自治县",
+"pid":431200,
+"code":"0745",
+"pinyin":"Tongdao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431281,
+"name":"洪江市",
+"pid":431200,
+"code":"0745",
+"pinyin":"Hongjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431300,
+"name":"娄底市",
+"pid":430000,
+"code":"0738",
+"pinyin":"Loudi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":431302,
+"name":"娄星区",
+"pid":431300,
+"code":"0738",
+"pinyin":"Louxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431321,
+"name":"双峰县",
+"pid":431300,
+"code":"0738",
+"pinyin":"Shuangfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431322,
+"name":"新化县",
+"pid":431300,
+"code":"0738",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431381,
+"name":"冷水江市",
+"pid":431300,
+"code":"0738",
+"pinyin":"Lengshuijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":431382,
+"name":"涟源市",
+"pid":431300,
+"code":"0738",
+"pinyin":"Lianyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433100,
+"name":"湘西土家族苗族自治州",
+"pid":430000,
+"code":"0743",
+"pinyin":"Xiangxi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":433101,
+"name":"吉首市",
+"pid":433100,
+"code":"0743",
+"pinyin":"Jishou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433122,
+"name":"泸溪县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Luxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433123,
+"name":"凤凰县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Fenghuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433124,
+"name":"花垣县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Huayuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433125,
+"name":"保靖县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Baojing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433126,
+"name":"古丈县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Guzhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433127,
+"name":"永顺县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Yongshun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":433130,
+"name":"龙山县",
+"pid":433100,
+"code":"0743",
+"pinyin":"Longshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440000,
+"name":"广东省",
+"pid":100000,
+"code":null,
+"pinyin":"Guangdong",
+"ccode":null,
+"level":2
+},
+    {
+        "id":440100,
+"name":"广州市",
+"pid":440000,
+"code":"020",
+"pinyin":"Guangzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440103,
+"name":"荔湾区",
+"pid":440100,
+"code":"020",
+"pinyin":"Liwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440104,
+"name":"越秀区",
+"pid":440100,
+"code":"020",
+"pinyin":"Yuexiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440105,
+"name":"海珠区",
+"pid":440100,
+"code":"020",
+"pinyin":"Haizhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440106,
+"name":"天河区",
+"pid":440100,
+"code":"020",
+"pinyin":"Tianhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440111,
+"name":"白云区",
+"pid":440100,
+"code":"020",
+"pinyin":"Baiyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440112,
+"name":"黄埔区",
+"pid":440100,
+"code":"020",
+"pinyin":"Huangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440113,
+"name":"番禺区",
+"pid":440100,
+"code":"020",
+"pinyin":"Panyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440114,
+"name":"花都区",
+"pid":440100,
+"code":"020",
+"pinyin":"Huadu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440115,
+"name":"南沙区",
+"pid":440100,
+"code":"020",
+"pinyin":"Nansha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440117,
+"name":"从化区",
+"pid":440100,
+"code":"020",
+"pinyin":"Conghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440118,
+"name":"增城区",
+"pid":440100,
+"code":"020",
+"pinyin":"Zengcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440200,
+"name":"韶关市",
+"pid":440000,
+"code":"0751",
+"pinyin":"Shaoguan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440203,
+"name":"武江区",
+"pid":440200,
+"code":"0751",
+"pinyin":"Wujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440204,
+"name":"浈江区",
+"pid":440200,
+"code":"0751",
+"pinyin":"Zhenjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440205,
+"name":"曲江区",
+"pid":440200,
+"code":"0751",
+"pinyin":"Qujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440222,
+"name":"始兴县",
+"pid":440200,
+"code":"0751",
+"pinyin":"Shixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440224,
+"name":"仁化县",
+"pid":440200,
+"code":"0751",
+"pinyin":"Renhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440229,
+"name":"翁源县",
+"pid":440200,
+"code":"0751",
+"pinyin":"Wengyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440232,
+"name":"乳源瑶族自治县",
+"pid":440200,
+"code":"0751",
+"pinyin":"Ruyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440233,
+"name":"新丰县",
+"pid":440200,
+"code":"0751",
+"pinyin":"Xinfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440281,
+"name":"乐昌市",
+"pid":440200,
+"code":"0751",
+"pinyin":"Lechang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440282,
+"name":"南雄市",
+"pid":440200,
+"code":"0751",
+"pinyin":"Nanxiong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440300,
+"name":"深圳市",
+"pid":440000,
+"code":"0755",
+"pinyin":"Shenzhen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440303,
+"name":"罗湖区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Luohu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440304,
+"name":"福田区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Futian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440305,
+"name":"南山区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Nanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440306,
+"name":"宝安区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Bao'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440307,
+"name":"龙岗区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Longgang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440308,
+"name":"盐田区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Yantian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440309,
+"name":"龙华区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Longhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440310,
+"name":"坪山区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Pingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440311,
+"name":"光明新区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Guangmingxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440312,
+"name":"大鹏新区",
+"pid":440300,
+"code":"0755",
+"pinyin":"Dapengxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440400,
+"name":"珠海市",
+"pid":440000,
+"code":"0756",
+"pinyin":"Zhuhai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440402,
+"name":"香洲区",
+"pid":440400,
+"code":"0756",
+"pinyin":"Xiangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440403,
+"name":"斗门区",
+"pid":440400,
+"code":"0756",
+"pinyin":"Doumen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440404,
+"name":"金湾区",
+"pid":440400,
+"code":"0756",
+"pinyin":"Jinwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440405,
+"name":"横琴新区",
+"pid":440400,
+"code":"0756",
+"pinyin":"Hengqinxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440406,
+"name":"经济开发区",
+"pid":440400,
+"code":"0756",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440500,
+"name":"汕头市",
+"pid":440000,
+"code":"0754",
+"pinyin":"Shantou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440507,
+"name":"龙湖区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Longhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440511,
+"name":"金平区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Jinping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440512,
+"name":"濠江区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Haojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440513,
+"name":"潮阳区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Chaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440514,
+"name":"潮南区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Chaonan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440515,
+"name":"澄海区",
+"pid":440500,
+"code":"0754",
+"pinyin":"Chenghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440523,
+"name":"南澳县",
+"pid":440500,
+"code":"0754",
+"pinyin":"Nanao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440600,
+"name":"佛山市",
+"pid":440000,
+"code":"0757",
+"pinyin":"Foshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440604,
+"name":"禅城区",
+"pid":440600,
+"code":"0757",
+"pinyin":"Chancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440605,
+"name":"南海区",
+"pid":440600,
+"code":"0757",
+"pinyin":"Nanhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440606,
+"name":"顺德区",
+"pid":440600,
+"code":"0757",
+"pinyin":"Shunde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440607,
+"name":"三水区",
+"pid":440600,
+"code":"0757",
+"pinyin":"Sanshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440608,
+"name":"高明区",
+"pid":440600,
+"code":"0757",
+"pinyin":"Gaoming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440700,
+"name":"江门市",
+"pid":440000,
+"code":"0750",
+"pinyin":"Jiangmen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440703,
+"name":"蓬江区",
+"pid":440700,
+"code":"0750",
+"pinyin":"Pengjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440704,
+"name":"江海区",
+"pid":440700,
+"code":"0750",
+"pinyin":"Jianghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440705,
+"name":"新会区",
+"pid":440700,
+"code":"0750",
+"pinyin":"Xinhui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440781,
+"name":"台山市",
+"pid":440700,
+"code":"0750",
+"pinyin":"Taishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440783,
+"name":"开平市",
+"pid":440700,
+"code":"0750",
+"pinyin":"Kaiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440784,
+"name":"鹤山市",
+"pid":440700,
+"code":"0750",
+"pinyin":"Heshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440785,
+"name":"恩平市",
+"pid":440700,
+"code":"0750",
+"pinyin":"Enping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440800,
+"name":"湛江市",
+"pid":440000,
+"code":"0759",
+"pinyin":"Zhanjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440802,
+"name":"赤坎区",
+"pid":440800,
+"code":"0759",
+"pinyin":"Chikan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440803,
+"name":"霞山区",
+"pid":440800,
+"code":"0759",
+"pinyin":"Xiashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440804,
+"name":"坡头区",
+"pid":440800,
+"code":"0759",
+"pinyin":"Potou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440811,
+"name":"麻章区",
+"pid":440800,
+"code":"0759",
+"pinyin":"Mazhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440823,
+"name":"遂溪县",
+"pid":440800,
+"code":"0759",
+"pinyin":"Suixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440825,
+"name":"徐闻县",
+"pid":440800,
+"code":"0759",
+"pinyin":"Xuwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440881,
+"name":"廉江市",
+"pid":440800,
+"code":"0759",
+"pinyin":"Lianjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440882,
+"name":"雷州市",
+"pid":440800,
+"code":"0759",
+"pinyin":"Leizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440883,
+"name":"吴川市",
+"pid":440800,
+"code":"0759",
+"pinyin":"Wuchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440884,
+"name":"经济开发区",
+"pid":440800,
+"code":"0759",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440900,
+"name":"茂名市",
+"pid":440000,
+"code":"0668",
+"pinyin":"Maoming",
+"ccode":null,
+"level":3
+},
+    {
+        "id":440902,
+"name":"茂南区",
+"pid":440900,
+"code":"0668",
+"pinyin":"Maonan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440904,
+"name":"电白区",
+"pid":440900,
+"code":"0668",
+"pinyin":"Dianbai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440981,
+"name":"高州市",
+"pid":440900,
+"code":"0668",
+"pinyin":"Gaozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440982,
+"name":"化州市",
+"pid":440900,
+"code":"0668",
+"pinyin":"Huazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":440983,
+"name":"信宜市",
+"pid":440900,
+"code":"0668",
+"pinyin":"Xinyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441200,
+"name":"肇庆市",
+"pid":440000,
+"code":"0758",
+"pinyin":"Zhaoqing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441202,
+"name":"端州区",
+"pid":441200,
+"code":"0758",
+"pinyin":"Duanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441203,
+"name":"鼎湖区",
+"pid":441200,
+"code":"0758",
+"pinyin":"Dinghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441204,
+"name":"高要区",
+"pid":441200,
+"code":"0758",
+"pinyin":"Gaoyao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441223,
+"name":"广宁县",
+"pid":441200,
+"code":"0758",
+"pinyin":"Guangning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441224,
+"name":"怀集县",
+"pid":441200,
+"code":"0758",
+"pinyin":"Huaiji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441225,
+"name":"封开县",
+"pid":441200,
+"code":"0758",
+"pinyin":"Fengkai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441226,
+"name":"德庆县",
+"pid":441200,
+"code":"0758",
+"pinyin":"Deqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441284,
+"name":"四会市",
+"pid":441200,
+"code":"0758",
+"pinyin":"Sihui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441300,
+"name":"惠州市",
+"pid":440000,
+"code":"0752",
+"pinyin":"Huizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441302,
+"name":"惠城区",
+"pid":441300,
+"code":"0752",
+"pinyin":"Huicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441303,
+"name":"惠阳区",
+"pid":441300,
+"code":"0752",
+"pinyin":"Huiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441322,
+"name":"博罗县",
+"pid":441300,
+"code":"0752",
+"pinyin":"Boluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441323,
+"name":"惠东县",
+"pid":441300,
+"code":"0752",
+"pinyin":"Huidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441324,
+"name":"龙门县",
+"pid":441300,
+"code":"0752",
+"pinyin":"Longmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441325,
+"name":"大亚湾区",
+"pid":441300,
+"code":"0752",
+"pinyin":"Dayawan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441400,
+"name":"梅州市",
+"pid":440000,
+"code":"0753",
+"pinyin":"Meizhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441402,
+"name":"梅江区",
+"pid":441400,
+"code":"0753",
+"pinyin":"Meijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441403,
+"name":"梅县区",
+"pid":441400,
+"code":"0753",
+"pinyin":"Meixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441422,
+"name":"大埔县",
+"pid":441400,
+"code":"0753",
+"pinyin":"Dabu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441423,
+"name":"丰顺县",
+"pid":441400,
+"code":"0753",
+"pinyin":"Fengshun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441424,
+"name":"五华县",
+"pid":441400,
+"code":"0753",
+"pinyin":"Wuhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441426,
+"name":"平远县",
+"pid":441400,
+"code":"0753",
+"pinyin":"Pingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441427,
+"name":"蕉岭县",
+"pid":441400,
+"code":"0753",
+"pinyin":"Jiaoling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441481,
+"name":"兴宁市",
+"pid":441400,
+"code":"0753",
+"pinyin":"Xingning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441500,
+"name":"汕尾市",
+"pid":440000,
+"code":"0660",
+"pinyin":"Shanwei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441502,
+"name":"城区",
+"pid":441500,
+"code":"0660",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441521,
+"name":"海丰县",
+"pid":441500,
+"code":"0660",
+"pinyin":"Haifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441523,
+"name":"陆河县",
+"pid":441500,
+"code":"0660",
+"pinyin":"Luhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441581,
+"name":"陆丰市",
+"pid":441500,
+"code":"0660",
+"pinyin":"Lufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441600,
+"name":"河源市",
+"pid":440000,
+"code":"0762",
+"pinyin":"Heyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441602,
+"name":"源城区",
+"pid":441600,
+"code":"0762",
+"pinyin":"Yuancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441621,
+"name":"紫金县",
+"pid":441600,
+"code":"0762",
+"pinyin":"Zijin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441622,
+"name":"龙川县",
+"pid":441600,
+"code":"0762",
+"pinyin":"Longchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441623,
+"name":"连平县",
+"pid":441600,
+"code":"0762",
+"pinyin":"Lianping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441624,
+"name":"和平县",
+"pid":441600,
+"code":"0762",
+"pinyin":"Heping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441625,
+"name":"东源县",
+"pid":441600,
+"code":"0762",
+"pinyin":"Dongyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441700,
+"name":"阳江市",
+"pid":440000,
+"code":"0662",
+"pinyin":"Yangjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441702,
+"name":"江城区",
+"pid":441700,
+"code":"0662",
+"pinyin":"Jiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441704,
+"name":"阳东区",
+"pid":441700,
+"code":"0662",
+"pinyin":"Yangdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441721,
+"name":"阳西县",
+"pid":441700,
+"code":"0662",
+"pinyin":"Yangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441781,
+"name":"阳春市",
+"pid":441700,
+"code":"0662",
+"pinyin":"Yangchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441800,
+"name":"清远市",
+"pid":440000,
+"code":"0763",
+"pinyin":"Qingyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441802,
+"name":"清城区",
+"pid":441800,
+"code":"0763",
+"pinyin":"Qingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441803,
+"name":"清新区",
+"pid":441800,
+"code":"0763",
+"pinyin":"Qingxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441821,
+"name":"佛冈县",
+"pid":441800,
+"code":"0763",
+"pinyin":"Fogang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441823,
+"name":"阳山县",
+"pid":441800,
+"code":"0763",
+"pinyin":"Yangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441825,
+"name":"连山壮族瑶族自治县",
+"pid":441800,
+"code":"0763",
+"pinyin":"Lianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441826,
+"name":"连南瑶族自治县",
+"pid":441800,
+"code":"0763",
+"pinyin":"Liannan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441881,
+"name":"英德市",
+"pid":441800,
+"code":"0763",
+"pinyin":"Yingde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441882,
+"name":"连州市",
+"pid":441800,
+"code":"0763",
+"pinyin":"Lianzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441900,
+"name":"东莞市",
+"pid":440000,
+"code":"0769",
+"pinyin":"Dongguan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":441901,
+"name":"莞城区",
+"pid":441900,
+"code":"0769",
+"pinyin":"Guancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441902,
+"name":"南城区",
+"pid":441900,
+"code":"0769",
+"pinyin":"Nancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441903,
+"name":"东城区",
+"pid":441900,
+"code":"0769",
+"pinyin":"Dongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441904,
+"name":"万江区",
+"pid":441900,
+"code":"0769",
+"pinyin":"Wanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441905,
+"name":"石碣镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Shijie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441906,
+"name":"石龙镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Shilong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441907,
+"name":"茶山镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Chashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441908,
+"name":"石排镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Shipai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441909,
+"name":"企石镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Qishi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441910,
+"name":"横沥镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Hengli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441911,
+"name":"桥头镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Qiaotou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441912,
+"name":"谢岗镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Xiegang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441913,
+"name":"东坑镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Dongkeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441914,
+"name":"常平镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Changping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441915,
+"name":"寮步镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Liaobu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441916,
+"name":"大朗镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Dalang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441917,
+"name":"麻涌镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Machong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441918,
+"name":"中堂镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Zhongtang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441919,
+"name":"高埗镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Gaobu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441920,
+"name":"樟木头镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Zhangmutou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441921,
+"name":"大岭山镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Dalingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441922,
+"name":"望牛墩镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Wangniudun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441923,
+"name":"黄江镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Huangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441924,
+"name":"洪梅镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Hongmei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441925,
+"name":"清溪镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Qingxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441926,
+"name":"沙田镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Shatian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441927,
+"name":"道滘镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Daojiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441928,
+"name":"塘厦镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Tangxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441929,
+"name":"虎门镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Humen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441930,
+"name":"厚街镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Houjie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441931,
+"name":"凤岗镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Fenggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441932,
+"name":"长安镇",
+"pid":441900,
+"code":"0769",
+"pinyin":"Chang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":441933,
+"name":"松山湖高新区",
+"pid":441900,
+"code":"0769",
+"pinyin":"Songshanhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442000,
+"name":"中山市",
+"pid":440000,
+"code":"0760",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":442001,
+"name":"石岐区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Shiqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442002,
+"name":"东区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442003,
+"name":"西区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Xiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442004,
+"name":"南区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Nanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442005,
+"name":"五桂山区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Wuguishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442006,
+"name":"火炬开发区",
+"pid":442000,
+"code":"0760",
+"pinyin":"Huoju",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442007,
+"name":"黄圃镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Huangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442008,
+"name":"南头镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Nantou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442009,
+"name":"东凤镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Dongfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442010,
+"name":"阜沙镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Fusha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442011,
+"name":"小榄镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Xiaolan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442012,
+"name":"东升镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Dongsheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442013,
+"name":"古镇镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Guzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442014,
+"name":"横栏镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Henglan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442015,
+"name":"三角镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Sanjiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442016,
+"name":"民众镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Minzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442017,
+"name":"南朗镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Nanlang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442018,
+"name":"港口镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Gangkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442019,
+"name":"大涌镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Dayong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442020,
+"name":"沙溪镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Shaxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442021,
+"name":"三乡镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Sanxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442022,
+"name":"板芙镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Banfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442023,
+"name":"神湾镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Shenwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":442024,
+"name":"坦洲镇",
+"pid":442000,
+"code":"0760",
+"pinyin":"Tanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445100,
+"name":"潮州市",
+"pid":440000,
+"code":"0768",
+"pinyin":"Chaozhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":445102,
+"name":"湘桥区",
+"pid":445100,
+"code":"0768",
+"pinyin":"Xiangqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445103,
+"name":"潮安区",
+"pid":445100,
+"code":"0768",
+"pinyin":"Chao'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445122,
+"name":"饶平县",
+"pid":445100,
+"code":"0768",
+"pinyin":"Raoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445200,
+"name":"揭阳市",
+"pid":440000,
+"code":"0663",
+"pinyin":"Jieyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":445202,
+"name":"榕城区",
+"pid":445200,
+"code":"0663",
+"pinyin":"Rongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445203,
+"name":"揭东区",
+"pid":445200,
+"code":"0663",
+"pinyin":"Jiedong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445222,
+"name":"揭西县",
+"pid":445200,
+"code":"0663",
+"pinyin":"Jiexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445224,
+"name":"惠来县",
+"pid":445200,
+"code":"0663",
+"pinyin":"Huilai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445281,
+"name":"普宁市",
+"pid":445200,
+"code":"0663",
+"pinyin":"Puning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445300,
+"name":"云浮市",
+"pid":440000,
+"code":"0766",
+"pinyin":"Yunfu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":445302,
+"name":"云城区",
+"pid":445300,
+"code":"0766",
+"pinyin":"Yuncheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445303,
+"name":"云安区",
+"pid":445300,
+"code":"0766",
+"pinyin":"Yun'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445321,
+"name":"新兴县",
+"pid":445300,
+"code":"0766",
+"pinyin":"Xinxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445322,
+"name":"郁南县",
+"pid":445300,
+"code":"0766",
+"pinyin":"Yunan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":445381,
+"name":"罗定市",
+"pid":445300,
+"code":"0766",
+"pinyin":"Luoding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450000,
+"name":"广西壮族自治区",
+"pid":100000,
+"code":null,
+"pinyin":"Guangxi",
+"ccode":null,
+"level":2
+},
+    {
+        "id":450100,
+"name":"南宁市",
+"pid":450000,
+"code":"0771",
+"pinyin":"Nanning",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450102,
+"name":"兴宁区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Xingning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450103,
+"name":"青秀区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Qingxiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450105,
+"name":"江南区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Jiangnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450107,
+"name":"西乡塘区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Xixiangtang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450108,
+"name":"良庆区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Liangqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450109,
+"name":"邕宁区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Yongning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450110,
+"name":"武鸣区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Wuming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450123,
+"name":"隆安县",
+"pid":450100,
+"code":"0771",
+"pinyin":"Long'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450124,
+"name":"马山县",
+"pid":450100,
+"code":"0771",
+"pinyin":"Mashan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450125,
+"name":"上林县",
+"pid":450100,
+"code":"0771",
+"pinyin":"Shanglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450126,
+"name":"宾阳县",
+"pid":450100,
+"code":"0771",
+"pinyin":"Binyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450127,
+"name":"横县",
+"pid":450100,
+"code":"0771",
+"pinyin":"Hengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450128,
+"name":"埌东新区",
+"pid":450100,
+"code":"0771",
+"pinyin":"Langdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450200,
+"name":"柳州市",
+"pid":450000,
+"code":"0772",
+"pinyin":"Liuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450202,
+"name":"城中区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Chengzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450203,
+"name":"鱼峰区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Yufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450204,
+"name":"柳南区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Liunan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450205,
+"name":"柳北区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Liubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450206,
+"name":"柳江区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Liujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450222,
+"name":"柳城县",
+"pid":450200,
+"code":"0772",
+"pinyin":"Liucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450223,
+"name":"鹿寨县",
+"pid":450200,
+"code":"0772",
+"pinyin":"Luzhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450224,
+"name":"融安县",
+"pid":450200,
+"code":"0772",
+"pinyin":"Rong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450225,
+"name":"融水苗族自治县",
+"pid":450200,
+"code":"0772",
+"pinyin":"Rongshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450226,
+"name":"三江侗族自治县",
+"pid":450200,
+"code":"0772",
+"pinyin":"Sanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450227,
+"name":"柳东新区",
+"pid":450200,
+"code":"0772",
+"pinyin":"Liudong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450300,
+"name":"桂林市",
+"pid":450000,
+"code":"0773",
+"pinyin":"Guilin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450302,
+"name":"秀峰区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Xiufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450303,
+"name":"叠彩区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Diecai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450304,
+"name":"象山区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Xiangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450305,
+"name":"七星区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Qixing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450311,
+"name":"雁山区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Yanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450312,
+"name":"临桂区",
+"pid":450300,
+"code":"0773",
+"pinyin":"Lingui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450321,
+"name":"阳朔县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Yangshuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450323,
+"name":"灵川县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Lingchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450324,
+"name":"全州县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Quanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450325,
+"name":"兴安县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Xing'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450326,
+"name":"永福县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Yongfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450327,
+"name":"灌阳县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Guanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450328,
+"name":"龙胜各族自治县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Longsheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450329,
+"name":"资源县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Ziyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450330,
+"name":"平乐县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Pingle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450331,
+"name":"荔浦县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Lipu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450332,
+"name":"恭城瑶族自治县",
+"pid":450300,
+"code":"0773",
+"pinyin":"Gongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450400,
+"name":"梧州市",
+"pid":450000,
+"code":"0774",
+"pinyin":"Wuzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450403,
+"name":"万秀区",
+"pid":450400,
+"code":"0774",
+"pinyin":"Wanxiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450405,
+"name":"长洲区",
+"pid":450400,
+"code":"0774",
+"pinyin":"Changzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450406,
+"name":"龙圩区",
+"pid":450400,
+"code":"0774",
+"pinyin":"Longxu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450421,
+"name":"苍梧县",
+"pid":450400,
+"code":"0774",
+"pinyin":"Cangwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450422,
+"name":"藤县",
+"pid":450400,
+"code":"0774",
+"pinyin":"Tengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450423,
+"name":"蒙山县",
+"pid":450400,
+"code":"0774",
+"pinyin":"Mengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450481,
+"name":"岑溪市",
+"pid":450400,
+"code":"0774",
+"pinyin":"Cenxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450500,
+"name":"北海市",
+"pid":450000,
+"code":"0779",
+"pinyin":"Beihai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450502,
+"name":"海城区",
+"pid":450500,
+"code":"0779",
+"pinyin":"Haicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450503,
+"name":"银海区",
+"pid":450500,
+"code":"0779",
+"pinyin":"Yinhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450512,
+"name":"铁山港区",
+"pid":450500,
+"code":"0779",
+"pinyin":"Tieshangang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450521,
+"name":"合浦县",
+"pid":450500,
+"code":"0779",
+"pinyin":"Hepu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450600,
+"name":"防城港市",
+"pid":450000,
+"code":"0770",
+"pinyin":"Fangchenggang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450602,
+"name":"港口区",
+"pid":450600,
+"code":"0770",
+"pinyin":"Gangkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450603,
+"name":"防城区",
+"pid":450600,
+"code":"0770",
+"pinyin":"Fangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450621,
+"name":"上思县",
+"pid":450600,
+"code":"0770",
+"pinyin":"Shangsi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450681,
+"name":"东兴市",
+"pid":450600,
+"code":"0770",
+"pinyin":"Dongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450700,
+"name":"钦州市",
+"pid":450000,
+"code":"0777",
+"pinyin":"Qinzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450702,
+"name":"钦南区",
+"pid":450700,
+"code":"0777",
+"pinyin":"Qinnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450703,
+"name":"钦北区",
+"pid":450700,
+"code":"0777",
+"pinyin":"Qinbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450721,
+"name":"灵山县",
+"pid":450700,
+"code":"0777",
+"pinyin":"Lingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450722,
+"name":"浦北县",
+"pid":450700,
+"code":"0777",
+"pinyin":"Pubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450800,
+"name":"贵港市",
+"pid":450000,
+"code":"0775",
+"pinyin":"Guigang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450802,
+"name":"港北区",
+"pid":450800,
+"code":"0775",
+"pinyin":"Gangbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450803,
+"name":"港南区",
+"pid":450800,
+"code":"0775",
+"pinyin":"Gangnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450804,
+"name":"覃塘区",
+"pid":450800,
+"code":"0775",
+"pinyin":"Qintang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450821,
+"name":"平南县",
+"pid":450800,
+"code":"0775",
+"pinyin":"Pingnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450881,
+"name":"桂平市",
+"pid":450800,
+"code":"0775",
+"pinyin":"Guiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450900,
+"name":"玉林市",
+"pid":450000,
+"code":"0775",
+"pinyin":"Yulin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":450902,
+"name":"玉州区",
+"pid":450900,
+"code":"0775",
+"pinyin":"Yuzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450903,
+"name":"福绵区",
+"pid":450900,
+"code":"0775",
+"pinyin":"Fumian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450921,
+"name":"容县",
+"pid":450900,
+"code":"0775",
+"pinyin":"Rongxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450922,
+"name":"陆川县",
+"pid":450900,
+"code":"0775",
+"pinyin":"Luchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450923,
+"name":"博白县",
+"pid":450900,
+"code":"0775",
+"pinyin":"Bobai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450924,
+"name":"兴业县",
+"pid":450900,
+"code":"0775",
+"pinyin":"Xingye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450981,
+"name":"北流市",
+"pid":450900,
+"code":"0775",
+"pinyin":"Beiliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450982,
+"name":"玉东新区",
+"pid":450900,
+"code":"0775",
+"pinyin":"Yudong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":450983,
+"name":"高新区",
+"pid":450900,
+"code":"0775",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451000,
+"name":"百色市",
+"pid":450000,
+"code":"0776",
+"pinyin":"Baise",
+"ccode":null,
+"level":3
+},
+    {
+        "id":451002,
+"name":"右江区",
+"pid":451000,
+"code":"0776",
+"pinyin":"Youjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451021,
+"name":"田阳县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Tianyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451022,
+"name":"田东县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Tiandong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451023,
+"name":"平果县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Pingguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451024,
+"name":"德保县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Debao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451026,
+"name":"那坡县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Napo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451027,
+"name":"凌云县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Lingyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451028,
+"name":"乐业县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Leye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451029,
+"name":"田林县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Tianlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451030,
+"name":"西林县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Xilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451031,
+"name":"隆林各族自治县",
+"pid":451000,
+"code":"0776",
+"pinyin":"Longlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451081,
+"name":"靖西市",
+"pid":451000,
+"code":"0776",
+"pinyin":"Jingxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451100,
+"name":"贺州市",
+"pid":450000,
+"code":"0774",
+"pinyin":"Hezhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":451102,
+"name":"八步区",
+"pid":451100,
+"code":"0774",
+"pinyin":"Babu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451103,
+"name":"平桂区",
+"pid":451100,
+"code":"0774",
+"pinyin":"Pingui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451121,
+"name":"昭平县",
+"pid":451100,
+"code":"0774",
+"pinyin":"Zhaoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451122,
+"name":"钟山县",
+"pid":451100,
+"code":"0774",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451123,
+"name":"富川瑶族自治县",
+"pid":451100,
+"code":"0774",
+"pinyin":"Fuchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451200,
+"name":"河池市",
+"pid":450000,
+"code":"0778",
+"pinyin":"Hechi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":451202,
+"name":"金城江区",
+"pid":451200,
+"code":"0778",
+"pinyin":"Jinchengjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451203,
+"name":"宜州区",
+"pid":451200,
+"code":"0778",
+"pinyin":"Yizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451221,
+"name":"南丹县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Nandan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451222,
+"name":"天峨县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Tiane",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451223,
+"name":"凤山县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Fengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451224,
+"name":"东兰县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Donglan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451225,
+"name":"罗城仫佬族自治县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Luocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451226,
+"name":"环江毛南族自治县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Huanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451227,
+"name":"巴马瑶族自治县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Bama",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451228,
+"name":"都安瑶族自治县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Du'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451229,
+"name":"大化瑶族自治县",
+"pid":451200,
+"code":"0778",
+"pinyin":"Dahua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451300,
+"name":"来宾市",
+"pid":450000,
+"code":"0772",
+"pinyin":"Laibin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":451302,
+"name":"兴宾区",
+"pid":451300,
+"code":"0772",
+"pinyin":"Xingbin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451321,
+"name":"忻城县",
+"pid":451300,
+"code":"0772",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451322,
+"name":"象州县",
+"pid":451300,
+"code":"0772",
+"pinyin":"Xiangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451323,
+"name":"武宣县",
+"pid":451300,
+"code":"0772",
+"pinyin":"Wuxuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451324,
+"name":"金秀瑶族自治县",
+"pid":451300,
+"code":"0772",
+"pinyin":"Jinxiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451381,
+"name":"合山市",
+"pid":451300,
+"code":"0772",
+"pinyin":"Heshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451400,
+"name":"崇左市",
+"pid":450000,
+"code":"0771",
+"pinyin":"Chongzuo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":451402,
+"name":"江州区",
+"pid":451400,
+"code":"0771",
+"pinyin":"Jiangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451421,
+"name":"扶绥县",
+"pid":451400,
+"code":"0771",
+"pinyin":"Fusui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451422,
+"name":"宁明县",
+"pid":451400,
+"code":"0771",
+"pinyin":"Ningming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451423,
+"name":"龙州县",
+"pid":451400,
+"code":"0771",
+"pinyin":"Longzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451424,
+"name":"大新县",
+"pid":451400,
+"code":"0771",
+"pinyin":"Daxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451425,
+"name":"天等县",
+"pid":451400,
+"code":"0771",
+"pinyin":"Tiandeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":451481,
+"name":"凭祥市",
+"pid":451400,
+"code":"0771",
+"pinyin":"Pingxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460000,
+"name":"海南省",
+"pid":100000,
+"code":null,
+"pinyin":"Hainan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":460100,
+"name":"海口市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Haikou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":460105,
+"name":"秀英区",
+"pid":460100,
+"code":"0898",
+"pinyin":"Xiuying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460106,
+"name":"龙华区",
+"pid":460100,
+"code":"0898",
+"pinyin":"Longhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460107,
+"name":"琼山区",
+"pid":460100,
+"code":"0898",
+"pinyin":"Qiongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460108,
+"name":"美兰区",
+"pid":460100,
+"code":"0898",
+"pinyin":"Meilan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460200,
+"name":"三亚市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Sanya",
+"ccode":null,
+"level":3
+},
+    {
+        "id":460202,
+"name":"海棠区",
+"pid":460200,
+"code":"0898",
+"pinyin":"Haitang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460203,
+"name":"吉阳区",
+"pid":460200,
+"code":"0898",
+"pinyin":"Jiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460204,
+"name":"天涯区",
+"pid":460200,
+"code":"0898",
+"pinyin":"Tianya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460205,
+"name":"崖州区",
+"pid":460200,
+"code":"0898",
+"pinyin":"Yazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460300,
+"name":"三沙市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Sansha",
+"ccode":null,
+"level":3
+},
+    {
+        "id":460321,
+"name":"西沙群岛",
+"pid":460300,
+"code":"0898",
+"pinyin":"Xisha Islands",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460322,
+"name":"南沙群岛",
+"pid":460300,
+"code":"0898",
+"pinyin":"Nansha Islands",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460323,
+"name":"中沙群岛",
+"pid":460300,
+"code":"0898",
+"pinyin":"Zhongsha Islands",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460400,
+"name":"儋州市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Danzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":460401,
+"name":"洋浦经济开发区",
+"pid":460400,
+"code":"0898",
+"pinyin":"Yangpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460402,
+"name":"那大镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Nada",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460403,
+"name":"南丰镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Nanfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460404,
+"name":"雅星镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Yaxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460405,
+"name":"和庆镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Heqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460406,
+"name":"大成镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Dacheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460407,
+"name":"新州镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460408,
+"name":"光村镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Guangcun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460409,
+"name":"东成镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Dongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460410,
+"name":"中和镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Zhonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460411,
+"name":"峨蔓镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"E'man",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460412,
+"name":"兰洋镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Lanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460413,
+"name":"王五镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Wangwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460414,
+"name":"排浦镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Paipu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460415,
+"name":"海头镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Haitou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460416,
+"name":"木棠镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Mutang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460417,
+"name":"白马井镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Baima",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460418,
+"name":"三都镇",
+"pid":460400,
+"code":"0898",
+"pinyin":"Sandu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460419,
+"name":"西培农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xipei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460420,
+"name":"西联农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xilian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460421,
+"name":"蓝洋农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Lanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460422,
+"name":"八一农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Bayi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460423,
+"name":"西华农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xihua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460424,
+"name":"西庆农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xiqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460425,
+"name":"西流农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xiliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460426,
+"name":"新盈农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Xinying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460427,
+"name":"龙山农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Longshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":460428,
+"name":"红岭农场",
+"pid":460400,
+"code":"0898",
+"pinyin":"Hongling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469001,
+"name":"五指山市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Wuzhishan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469002,
+"name":"琼海市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Qionghai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469005,
+"name":"文昌市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Wenchang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469006,
+"name":"万宁市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Wanning",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469007,
+"name":"东方市",
+"pid":460000,
+"code":"0898",
+"pinyin":"Dongfang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469021,
+"name":"定安县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Ding'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469022,
+"name":"屯昌县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Tunchang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469023,
+"name":"澄迈县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Chengmai",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469024,
+"name":"临高县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Lingao",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469025,
+"name":"白沙黎族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Baisha",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469026,
+"name":"昌江黎族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Changjiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469027,
+"name":"乐东黎族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Ledong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469028,
+"name":"陵水黎族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Lingshui",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469029,
+"name":"保亭黎族苗族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Baoting",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469030,
+"name":"琼中黎族苗族自治县",
+"pid":460000,
+"code":"0898",
+"pinyin":"Qiongzhong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":469101,
+"name":"通什镇",
+"pid":469001,
+"code":"0898",
+"pinyin":"Tongshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469102,
+"name":"南圣镇",
+"pid":469001,
+"code":"0898",
+"pinyin":"Nansheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469103,
+"name":"毛阳镇",
+"pid":469001,
+"code":"0898",
+"pinyin":"Maoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469104,
+"name":"番阳镇",
+"pid":469001,
+"code":"0898",
+"pinyin":"Panyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469105,
+"name":"畅好乡",
+"pid":469001,
+"code":"0898",
+"pinyin":"Changhao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469106,
+"name":"毛道乡",
+"pid":469001,
+"code":"0898",
+"pinyin":"Maodao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469107,
+"name":"水满乡",
+"pid":469001,
+"code":"0898",
+"pinyin":"Shuiman",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469201,
+"name":"嘉积镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Jiaji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469202,
+"name":"万泉镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Wanqua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469203,
+"name":"石壁镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Shibi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469204,
+"name":"中原镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Zhongyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469205,
+"name":"博鳌镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Bo'ao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469206,
+"name":"阳江镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Yangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469207,
+"name":"龙江镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Longjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469208,
+"name":"潭门镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Tanmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469209,
+"name":"塔洋镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Tayang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469210,
+"name":"长坡镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Changpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469211,
+"name":"大路镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Dalu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469212,
+"name":"会山镇",
+"pid":469002,
+"code":"0898",
+"pinyin":"Huishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469213,
+"name":"东太农场",
+"pid":469002,
+"code":"0898",
+"pinyin":"Dongtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469214,
+"name":"东红农场",
+"pid":469002,
+"code":"0898",
+"pinyin":"Donghong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469215,
+"name":"东升农场",
+"pid":469002,
+"code":"0898",
+"pinyin":"Dongsheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469216,
+"name":"南俸农场",
+"pid":469002,
+"code":"0898",
+"pinyin":"Nanfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469217,
+"name":"彬村山华侨农场",
+"pid":469002,
+"code":"0898",
+"pinyin":"Huaqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469501,
+"name":"文城镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Wencheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469502,
+"name":"重兴镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Zhongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469503,
+"name":"蓬莱镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Penglai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469504,
+"name":"会文镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Huiwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469505,
+"name":"东路镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Donglu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469506,
+"name":"潭牛镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Tanniu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469507,
+"name":"东阁镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Dongge",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469508,
+"name":"文教镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Wenjiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469509,
+"name":"东郊镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Dongjiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469510,
+"name":"龙楼镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Longlou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469511,
+"name":"昌洒镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Changsa",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469512,
+"name":"翁田镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Wengtian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469513,
+"name":"抱罗镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Baoluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469514,
+"name":"冯坡镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Fengpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469515,
+"name":"锦山镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Jinshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469516,
+"name":"铺前镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Putian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469517,
+"name":"公坡镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Gongpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469518,
+"name":"迈号镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Maihao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469519,
+"name":"清谰镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Qinglan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469520,
+"name":"南阳镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Nanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469521,
+"name":"新桥镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Xinqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469522,
+"name":"头苑镇",
+"pid":469005,
+"code":"0898",
+"pinyin":"Touyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469523,
+"name":"宝芳乡",
+"pid":469005,
+"code":"0898",
+"pinyin":"Baofang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469524,
+"name":"龙马乡",
+"pid":469005,
+"code":"0898",
+"pinyin":"Longma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469525,
+"name":"湖山乡",
+"pid":469005,
+"code":"0898",
+"pinyin":"Hushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469526,
+"name":"东路农场",
+"pid":469005,
+"code":"0898",
+"pinyin":"Donglu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469527,
+"name":"南阳农场",
+"pid":469005,
+"code":"0898",
+"pinyin":"Nanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469528,
+"name":"罗豆农场",
+"pid":469005,
+"code":"0898",
+"pinyin":"Luodou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469601,
+"name":"万城镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Wancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469602,
+"name":"龙滚镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Longgun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469603,
+"name":"和乐镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Hele",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469604,
+"name":"后安镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Hou'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469605,
+"name":"大茂镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Damao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469606,
+"name":"东澳镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Dong'ao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469607,
+"name":"礼纪镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Liji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469608,
+"name":"长丰镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Changfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469609,
+"name":"山根镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Shangen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469610,
+"name":"北大镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Beida",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469611,
+"name":"南桥镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Nanqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469612,
+"name":"三更罗镇",
+"pid":469006,
+"code":"0898",
+"pinyin":"Sangengluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469613,
+"name":"东岭农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Dongning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469614,
+"name":"南林农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Nanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469615,
+"name":"东兴农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Dongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469616,
+"name":"东和农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Donghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469617,
+"name":"新中农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Xinzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469618,
+"name":"兴隆华侨农场",
+"pid":469006,
+"code":"0898",
+"pinyin":"Xinglong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469701,
+"name":"八所镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Basuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469702,
+"name":"东河镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Donghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469703,
+"name":"大田镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Datian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469704,
+"name":"感城镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Gancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469705,
+"name":"板桥镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Banqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469706,
+"name":"三家镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Sanjia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469707,
+"name":"四更镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Sigeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469708,
+"name":"新龙镇",
+"pid":469007,
+"code":"0898",
+"pinyin":"Xinlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469709,
+"name":"天安乡",
+"pid":469007,
+"code":"0898",
+"pinyin":"Tian'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469710,
+"name":"江边乡",
+"pid":469007,
+"code":"0898",
+"pinyin":"Jiangbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469711,
+"name":"广坝农场",
+"pid":469007,
+"code":"0898",
+"pinyin":"Guangba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469712,
+"name":"东方华侨农场",
+"pid":469007,
+"code":"0898",
+"pinyin":"Dongfang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469801,
+"name":"定城镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Dingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469802,
+"name":"新竹镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Xinzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469803,
+"name":"龙湖镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Longhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469804,
+"name":"雷鸣镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Leiming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469805,
+"name":"龙门镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Longmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469806,
+"name":"龙河镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Longhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469807,
+"name":"岭口镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Lingkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469808,
+"name":"翰林镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Hanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469809,
+"name":"富文镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Fuwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469810,
+"name":"黄竹镇",
+"pid":469021,
+"code":"0898",
+"pinyin":"Huangzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469811,
+"name":"金鸡岭农场",
+"pid":469021,
+"code":"0898",
+"pinyin":"Jinjiling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469812,
+"name":"中瑞农场",
+"pid":469021,
+"code":"0898",
+"pinyin":"Zhongrui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469813,
+"name":"南海农场",
+"pid":469021,
+"code":"0898",
+"pinyin":"Nanhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469814,
+"name":"城区",
+"pid":469021,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469821,
+"name":"屯城镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Tuncheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469822,
+"name":"新兴镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Xinxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469823,
+"name":"枫木镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Fengmu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469824,
+"name":"乌坡镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Wupo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469825,
+"name":"南吕镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Nanlv",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469826,
+"name":"南坤镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Nankun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469827,
+"name":"坡心镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Poxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469828,
+"name":"西昌镇",
+"pid":469022,
+"code":"0898",
+"pinyin":"Xichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469829,
+"name":"中建农场",
+"pid":469022,
+"code":"0898",
+"pinyin":"Zhongjian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469830,
+"name":"中坤农场",
+"pid":469022,
+"code":"0898",
+"pinyin":"Zhongkun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469831,
+"name":"县城内",
+"pid":469022,
+"code":"0898",
+"pinyin":"Xiancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469841,
+"name":"金江镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Jinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469842,
+"name":"老城镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Laocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469843,
+"name":"瑞溪镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Ruixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469844,
+"name":"永发镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Yongfa",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469845,
+"name":"加乐镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Jiale",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469846,
+"name":"文儒镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Wenru",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469847,
+"name":"中兴镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Zhongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469848,
+"name":"仁兴镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Renxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469849,
+"name":"福山镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Fushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469850,
+"name":"桥头镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Qiaotou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469851,
+"name":"大丰镇",
+"pid":469023,
+"code":"0898",
+"pinyin":"Dafeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469852,
+"name":"红光农场",
+"pid":469023,
+"code":"0898",
+"pinyin":"Hongguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469853,
+"name":"西达农场",
+"pid":469023,
+"code":"0898",
+"pinyin":"Xida",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469854,
+"name":"金安农场",
+"pid":469023,
+"code":"0898",
+"pinyin":"Jin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469855,
+"name":"城区",
+"pid":469023,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469861,
+"name":"临城镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Lincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469862,
+"name":"波莲镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Bolian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469863,
+"name":"东英镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Dongying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469864,
+"name":"博厚镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Bohou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469865,
+"name":"皇桐镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Huangtong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469866,
+"name":"多文镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Duowen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469867,
+"name":"和舍镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Heshe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469868,
+"name":"南宝镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Nanbao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469869,
+"name":"新盈镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Xinying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469870,
+"name":"调楼镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Tiaolou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469871,
+"name":"加来镇",
+"pid":469024,
+"code":"0898",
+"pinyin":"Jialai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469872,
+"name":"红华农场",
+"pid":469024,
+"code":"0898",
+"pinyin":"Honghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469873,
+"name":"加来农场",
+"pid":469024,
+"code":"0898",
+"pinyin":"Jialai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469874,
+"name":"城区",
+"pid":469024,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469881,
+"name":"牙叉镇",
+"pid":469025,
+"code":"0898",
+"pinyin":"Yacha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469882,
+"name":"七坊镇",
+"pid":469025,
+"code":"0898",
+"pinyin":"Qifang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469883,
+"name":"邦溪镇",
+"pid":469025,
+"code":"0898",
+"pinyin":"Bangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469884,
+"name":"打安镇",
+"pid":469025,
+"code":"0898",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469885,
+"name":"细水乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Xishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469886,
+"name":"元门乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Yuanmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469887,
+"name":"南开乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Nankai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469888,
+"name":"阜龙乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Fulong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469889,
+"name":"青松乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Qingsong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469890,
+"name":"金波乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Jinbo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469891,
+"name":"荣邦乡",
+"pid":469025,
+"code":"0898",
+"pinyin":"Rongbang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469892,
+"name":"白沙农场",
+"pid":469025,
+"code":"0898",
+"pinyin":"Baisha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469893,
+"name":"龙江农场",
+"pid":469025,
+"code":"0898",
+"pinyin":"Longjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469894,
+"name":"邦溪农场",
+"pid":469025,
+"code":"0898",
+"pinyin":"Bangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469895,
+"name":"城区",
+"pid":469025,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469901,
+"name":"石碌镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Shilu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469902,
+"name":"叉河镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Chahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469903,
+"name":"十月田镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Shiyuetian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469904,
+"name":"乌烈镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Wulie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469905,
+"name":"海尾镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Haiwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469906,
+"name":"南罗镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Nanluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469907,
+"name":"太坡镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Taipo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469908,
+"name":"昌化镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Changhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469909,
+"name":"七叉镇",
+"pid":469026,
+"code":"0898",
+"pinyin":"Qicha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469910,
+"name":"保平乡",
+"pid":469026,
+"code":"0898",
+"pinyin":"BaoPing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469911,
+"name":"昌城乡",
+"pid":469026,
+"code":"0898",
+"pinyin":"Changcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469912,
+"name":"王下乡",
+"pid":469026,
+"code":"0898",
+"pinyin":"Wangxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469913,
+"name":"霸王岭林场",
+"pid":469026,
+"code":"0898",
+"pinyin":"Bawangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469914,
+"name":"红林农场",
+"pid":469026,
+"code":"0898",
+"pinyin":"Honglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469915,
+"name":"城区",
+"pid":469026,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469920,
+"name":"抱由镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Baoyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469921,
+"name":"万冲镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Wanchong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469922,
+"name":"大安镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469923,
+"name":"志仲镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Zhizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469924,
+"name":"千家镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Qianjia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469925,
+"name":"九所镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Jiusuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469926,
+"name":"利国镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Liguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469927,
+"name":"黄流镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Huangliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469928,
+"name":"佛罗镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Foluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469929,
+"name":"尖峰镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Jianfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469930,
+"name":"莺歌海镇",
+"pid":469027,
+"code":"0898",
+"pinyin":"Yinggehai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469931,
+"name":"乐中农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Lezhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469932,
+"name":"山荣农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Shanrong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469933,
+"name":"乐光农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Leguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469934,
+"name":"报伦农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Baolun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469935,
+"name":"福报农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Fubao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469936,
+"name":"保国农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Baoguo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469937,
+"name":"保显农场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Baoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469938,
+"name":"尖峰岭林业",
+"pid":469027,
+"code":"0898",
+"pinyin":"Jianfengling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469939,
+"name":"莺歌海盐场",
+"pid":469027,
+"code":"0898",
+"pinyin":"Yinggehai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469940,
+"name":"城区",
+"pid":469027,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469941,
+"name":"椰林镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Yelin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469942,
+"name":"光坡镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Guangpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469943,
+"name":"三才镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Sancai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469944,
+"name":"英州镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Yingzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469945,
+"name":"隆广镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Longguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469946,
+"name":"文罗镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Wenluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469947,
+"name":"本号镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Benhao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469948,
+"name":"新村镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Xincun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469949,
+"name":"黎安镇",
+"pid":469028,
+"code":"0898",
+"pinyin":"Li'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469950,
+"name":"提蒙乡",
+"pid":469028,
+"code":"0898",
+"pinyin":"Timeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469951,
+"name":"群英乡",
+"pid":469028,
+"code":"0898",
+"pinyin":"Qunying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469952,
+"name":"岭门农场",
+"pid":469028,
+"code":"0898",
+"pinyin":"Lingmeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469953,
+"name":"南平农场",
+"pid":469028,
+"code":"0898",
+"pinyin":"Nanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469954,
+"name":"城区",
+"pid":469028,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469961,
+"name":"保城镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Baocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469962,
+"name":"什玲镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Shiling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469963,
+"name":"加茂镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Jiamao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469964,
+"name":"响水镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Xiangshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469965,
+"name":"新政镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Xinzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469966,
+"name":"三道镇",
+"pid":469029,
+"code":"0898",
+"pinyin":"Sandao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469967,
+"name":"六弓乡",
+"pid":469029,
+"code":"0898",
+"pinyin":"Liugong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469968,
+"name":"南林乡",
+"pid":469029,
+"code":"0898",
+"pinyin":"Nanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469969,
+"name":"毛感乡",
+"pid":469029,
+"code":"0898",
+"pinyin":"Maogan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469970,
+"name":"新星农场",
+"pid":469029,
+"code":"0898",
+"pinyin":"Xinxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469971,
+"name":"金江农场",
+"pid":469029,
+"code":"0898",
+"pinyin":"Jinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469972,
+"name":"三道农场",
+"pid":469029,
+"code":"0898",
+"pinyin":"Sandao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469981,
+"name":"营根镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Yinggen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469982,
+"name":"湾岭镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Wanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469983,
+"name":"黎母山镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Limushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469984,
+"name":"和平镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Heping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469985,
+"name":"长征镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Changzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469986,
+"name":"红毛镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Hongmao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469987,
+"name":"中平镇",
+"pid":469030,
+"code":"0898",
+"pinyin":"Zhongping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469988,
+"name":"上安乡",
+"pid":469030,
+"code":"0898",
+"pinyin":"Shang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469989,
+"name":"什运乡",
+"pid":469030,
+"code":"0898",
+"pinyin":"Shiyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469990,
+"name":"吊罗山乡",
+"pid":469030,
+"code":"0898",
+"pinyin":"Diaoluoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469991,
+"name":"阳江农场",
+"pid":469030,
+"code":"0898",
+"pinyin":"Yangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469992,
+"name":"乌石农场",
+"pid":469030,
+"code":"0898",
+"pinyin":"Wushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469993,
+"name":"加钗农场",
+"pid":469030,
+"code":"0898",
+"pinyin":"Jiacha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469994,
+"name":"长征农场",
+"pid":469030,
+"code":"0898",
+"pinyin":"Changzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":469995,
+"name":"城区",
+"pid":469030,
+"code":"0898",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500000,
+"name":"重庆",
+"pid":100000,
+"code":null,
+"pinyin":"Chongqing",
+"ccode":null,
+"level":2
+},
+    {
+        "id":500100,
+"name":"重庆市",
+"pid":500000,
+"code":"023",
+"pinyin":"Chongqing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":500101,
+"name":"万州区",
+"pid":500100,
+"code":"023",
+"pinyin":"Wanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500102,
+"name":"涪陵区",
+"pid":500100,
+"code":"023",
+"pinyin":"Fuling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500103,
+"name":"渝中区",
+"pid":500100,
+"code":"023",
+"pinyin":"Yuzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500104,
+"name":"大渡口区",
+"pid":500100,
+"code":"023",
+"pinyin":"Dadukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500105,
+"name":"江北区",
+"pid":500100,
+"code":"023",
+"pinyin":"Jiangbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500106,
+"name":"沙坪坝区",
+"pid":500100,
+"code":"023",
+"pinyin":"Shapingba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500107,
+"name":"九龙坡区",
+"pid":500100,
+"code":"023",
+"pinyin":"Jiulongpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500108,
+"name":"南岸区",
+"pid":500100,
+"code":"023",
+"pinyin":"Nan'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500109,
+"name":"北碚区",
+"pid":500100,
+"code":"023",
+"pinyin":"Beibei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500110,
+"name":"綦江区",
+"pid":500100,
+"code":"023",
+"pinyin":"Qijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500111,
+"name":"大足区",
+"pid":500100,
+"code":"023",
+"pinyin":"Dazu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500112,
+"name":"渝北区",
+"pid":500100,
+"code":"023",
+"pinyin":"Yubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500113,
+"name":"巴南区",
+"pid":500100,
+"code":"023",
+"pinyin":"Banan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500114,
+"name":"黔江区",
+"pid":500100,
+"code":"023",
+"pinyin":"Qianjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500115,
+"name":"长寿区",
+"pid":500100,
+"code":"023",
+"pinyin":"Changshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500116,
+"name":"江津区",
+"pid":500100,
+"code":"023",
+"pinyin":"Jiangjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500117,
+"name":"合川区",
+"pid":500100,
+"code":"023",
+"pinyin":"Hechuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500118,
+"name":"永川区",
+"pid":500100,
+"code":"023",
+"pinyin":"Yongchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500119,
+"name":"南川区",
+"pid":500100,
+"code":"023",
+"pinyin":"Nanchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500120,
+"name":"璧山区",
+"pid":500100,
+"code":"023",
+"pinyin":"Bishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500151,
+"name":"铜梁区",
+"pid":500100,
+"code":"023",
+"pinyin":"Tongliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500152,
+"name":"潼南区",
+"pid":500100,
+"code":"023",
+"pinyin":"Tongnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500153,
+"name":"荣昌区",
+"pid":500100,
+"code":"023",
+"pinyin":"Rongchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500154,
+"name":"开州区",
+"pid":500100,
+"code":"023",
+"pinyin":"KaiZhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500155,
+"name":"梁平区",
+"pid":500100,
+"code":"023",
+"pinyin":"Liangping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500156,
+"name":"武隆区",
+"pid":500100,
+"code":"023",
+"pinyin":"Wulong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500229,
+"name":"城口县",
+"pid":500100,
+"code":"023",
+"pinyin":"Chengkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500230,
+"name":"丰都县",
+"pid":500100,
+"code":"023",
+"pinyin":"Fengdu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500231,
+"name":"垫江县",
+"pid":500100,
+"code":"023",
+"pinyin":"Dianjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500233,
+"name":"忠县",
+"pid":500100,
+"code":"023",
+"pinyin":"Zhongxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500235,
+"name":"云阳县",
+"pid":500100,
+"code":"023",
+"pinyin":"Yunyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500236,
+"name":"奉节县",
+"pid":500100,
+"code":"023",
+"pinyin":"Fengjie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500237,
+"name":"巫山县",
+"pid":500100,
+"code":"023",
+"pinyin":"Wushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500238,
+"name":"巫溪县",
+"pid":500100,
+"code":"023",
+"pinyin":"Wuxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500240,
+"name":"石柱土家族自治县",
+"pid":500100,
+"code":"023",
+"pinyin":"Shizhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500241,
+"name":"秀山土家族苗族自治县",
+"pid":500100,
+"code":"023",
+"pinyin":"Xiushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500242,
+"name":"酉阳土家族苗族自治县",
+"pid":500100,
+"code":"023",
+"pinyin":"Youyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500243,
+"name":"彭水苗族土家族自治县",
+"pid":500100,
+"code":"023",
+"pinyin":"Pengshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500300,
+"name":"两江新区",
+"pid":500100,
+"code":"023",
+"pinyin":"Liangjiangxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500301,
+"name":"高新区",
+"pid":500100,
+"code":"023",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":500302,
+"name":"璧山高新区",
+"pid":500100,
+"code":"023",
+"pinyin":"BishanGaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510000,
+"name":"四川省",
+"pid":100000,
+"code":null,
+"pinyin":"Sichuan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":510100,
+"name":"成都市",
+"pid":510000,
+"code":"028",
+"pinyin":"Chengdu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510104,
+"name":"锦江区",
+"pid":510100,
+"code":"028",
+"pinyin":"Jinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510105,
+"name":"青羊区",
+"pid":510100,
+"code":"028",
+"pinyin":"Qingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510106,
+"name":"金牛区",
+"pid":510100,
+"code":"028",
+"pinyin":"Jinniu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510107,
+"name":"武侯区",
+"pid":510100,
+"code":"028",
+"pinyin":"Wuhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510108,
+"name":"成华区",
+"pid":510100,
+"code":"028",
+"pinyin":"Chenghua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510112,
+"name":"龙泉驿区",
+"pid":510100,
+"code":"028",
+"pinyin":"Longquanyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510113,
+"name":"青白江区",
+"pid":510100,
+"code":"028",
+"pinyin":"Qingbaijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510114,
+"name":"新都区",
+"pid":510100,
+"code":"028",
+"pinyin":"Xindu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510115,
+"name":"温江区",
+"pid":510100,
+"code":"028",
+"pinyin":"Wenjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510116,
+"name":"双流区",
+"pid":510100,
+"code":"028",
+"pinyin":"Shuangliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510117,
+"name":"郫都区",
+"pid":510100,
+"code":"028",
+"pinyin":"Pidu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510121,
+"name":"金堂县",
+"pid":510100,
+"code":"028",
+"pinyin":"Jintang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510129,
+"name":"大邑县",
+"pid":510100,
+"code":"028",
+"pinyin":"Dayi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510131,
+"name":"蒲江县",
+"pid":510100,
+"code":"028",
+"pinyin":"Pujiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510132,
+"name":"新津县",
+"pid":510100,
+"code":"028",
+"pinyin":"Xinjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510181,
+"name":"都江堰市",
+"pid":510100,
+"code":"028",
+"pinyin":"Dujiangyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510182,
+"name":"彭州市",
+"pid":510100,
+"code":"028",
+"pinyin":"Pengzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510183,
+"name":"邛崃市",
+"pid":510100,
+"code":"028",
+"pinyin":"Qionglai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510184,
+"name":"崇州市",
+"pid":510100,
+"code":"028",
+"pinyin":"Chongzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510185,
+"name":"简阳市",
+"pid":510100,
+"code":"028",
+"pinyin":"Jianyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510186,
+"name":"天府新区",
+"pid":510100,
+"code":"028",
+"pinyin":"TianfuXinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510187,
+"name":"高新南区",
+"pid":510100,
+"code":"028",
+"pinyin":"GaoxinNanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510188,
+"name":"高新西区",
+"pid":510100,
+"code":"028",
+"pinyin":"GaoxinXiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510300,
+"name":"自贡市",
+"pid":510000,
+"code":"0813",
+"pinyin":"Zigong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510302,
+"name":"自流井区",
+"pid":510300,
+"code":"0813",
+"pinyin":"Ziliujing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510303,
+"name":"贡井区",
+"pid":510300,
+"code":"0813",
+"pinyin":"Gongjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510304,
+"name":"大安区",
+"pid":510300,
+"code":"0813",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510311,
+"name":"沿滩区",
+"pid":510300,
+"code":"0813",
+"pinyin":"Yantan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510321,
+"name":"荣县",
+"pid":510300,
+"code":"0813",
+"pinyin":"Rongxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510322,
+"name":"富顺县",
+"pid":510300,
+"code":"0813",
+"pinyin":"Fushun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510323,
+"name":"高新区",
+"pid":510300,
+"code":"0813",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510400,
+"name":"攀枝花市",
+"pid":510000,
+"code":"0812",
+"pinyin":"Panzhihua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510402,
+"name":"东区",
+"pid":510400,
+"code":"0812",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510403,
+"name":"西区",
+"pid":510400,
+"code":"0812",
+"pinyin":"Xiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510411,
+"name":"仁和区",
+"pid":510400,
+"code":"0812",
+"pinyin":"Renhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510421,
+"name":"米易县",
+"pid":510400,
+"code":"0812",
+"pinyin":"Miyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510422,
+"name":"盐边县",
+"pid":510400,
+"code":"0812",
+"pinyin":"Yanbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510500,
+"name":"泸州市",
+"pid":510000,
+"code":"0830",
+"pinyin":"Luzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510502,
+"name":"江阳区",
+"pid":510500,
+"code":"0830",
+"pinyin":"Jiangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510503,
+"name":"纳溪区",
+"pid":510500,
+"code":"0830",
+"pinyin":"Naxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510504,
+"name":"龙马潭区",
+"pid":510500,
+"code":"0830",
+"pinyin":"Longmatan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510521,
+"name":"泸县",
+"pid":510500,
+"code":"0830",
+"pinyin":"Luxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510522,
+"name":"合江县",
+"pid":510500,
+"code":"0830",
+"pinyin":"Hejiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510524,
+"name":"叙永县",
+"pid":510500,
+"code":"0830",
+"pinyin":"Xuyong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510525,
+"name":"古蔺县",
+"pid":510500,
+"code":"0830",
+"pinyin":"Gulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510600,
+"name":"德阳市",
+"pid":510000,
+"code":"0838",
+"pinyin":"Deyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510603,
+"name":"旌阳区",
+"pid":510600,
+"code":"0838",
+"pinyin":"Jingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510623,
+"name":"中江县",
+"pid":510600,
+"code":"0838",
+"pinyin":"Zhongjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510626,
+"name":"罗江区",
+"pid":510600,
+"code":"0838",
+"pinyin":"Luojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510681,
+"name":"广汉市",
+"pid":510600,
+"code":"0838",
+"pinyin":"Guanghan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510682,
+"name":"什邡市",
+"pid":510600,
+"code":"0838",
+"pinyin":"Shifang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510683,
+"name":"绵竹市",
+"pid":510600,
+"code":"0838",
+"pinyin":"Mianzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510700,
+"name":"绵阳市",
+"pid":510000,
+"code":"0816",
+"pinyin":"Mianyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510703,
+"name":"涪城区",
+"pid":510700,
+"code":"0816",
+"pinyin":"Fucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510704,
+"name":"游仙区",
+"pid":510700,
+"code":"0816",
+"pinyin":"Youxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510705,
+"name":"安州区",
+"pid":510700,
+"code":"0816",
+"pinyin":"Anzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510722,
+"name":"三台县",
+"pid":510700,
+"code":"0816",
+"pinyin":"Santai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510723,
+"name":"盐亭县",
+"pid":510700,
+"code":"0816",
+"pinyin":"Yanting",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510725,
+"name":"梓潼县",
+"pid":510700,
+"code":"0816",
+"pinyin":"Zitong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510726,
+"name":"北川羌族自治县",
+"pid":510700,
+"code":"0816",
+"pinyin":"Beichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510727,
+"name":"平武县",
+"pid":510700,
+"code":"0816",
+"pinyin":"Pingwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510781,
+"name":"江油市",
+"pid":510700,
+"code":"0816",
+"pinyin":"Jiangyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510782,
+"name":"高新区",
+"pid":510700,
+"code":"0816",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510783,
+"name":"经开区",
+"pid":510700,
+"code":"0816",
+"pinyin":"Jingkaiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510800,
+"name":"广元市",
+"pid":510000,
+"code":"0839",
+"pinyin":"Guangyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510802,
+"name":"利州区",
+"pid":510800,
+"code":"0839",
+"pinyin":"Lizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510811,
+"name":"昭化区",
+"pid":510800,
+"code":"0839",
+"pinyin":"Zhaohua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510812,
+"name":"朝天区",
+"pid":510800,
+"code":"0839",
+"pinyin":"Chaotian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510821,
+"name":"旺苍县",
+"pid":510800,
+"code":"0839",
+"pinyin":"Wangcang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510822,
+"name":"青川县",
+"pid":510800,
+"code":"0839",
+"pinyin":"Qingchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510823,
+"name":"剑阁县",
+"pid":510800,
+"code":"0839",
+"pinyin":"Jiange",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510824,
+"name":"苍溪县",
+"pid":510800,
+"code":"0839",
+"pinyin":"Cangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510900,
+"name":"遂宁市",
+"pid":510000,
+"code":"0825",
+"pinyin":"Suining",
+"ccode":null,
+"level":3
+},
+    {
+        "id":510903,
+"name":"船山区",
+"pid":510900,
+"code":"0825",
+"pinyin":"Chuanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510904,
+"name":"安居区",
+"pid":510900,
+"code":"0825",
+"pinyin":"Anju",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510921,
+"name":"蓬溪县",
+"pid":510900,
+"code":"0825",
+"pinyin":"Pengxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510922,
+"name":"射洪县",
+"pid":510900,
+"code":"0825",
+"pinyin":"Shehong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510923,
+"name":"大英县",
+"pid":510900,
+"code":"0825",
+"pinyin":"Daying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":510924,
+"name":"经济技术开发区",
+"pid":510900,
+"code":"0825",
+"pinyin":"JingJiKaiFaQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511000,
+"name":"内江市",
+"pid":510000,
+"code":"0832",
+"pinyin":"Neijiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511002,
+"name":"市中区",
+"pid":511000,
+"code":"0832",
+"pinyin":"Shizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511011,
+"name":"东兴区",
+"pid":511000,
+"code":"0832",
+"pinyin":"Dongxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511024,
+"name":"威远县",
+"pid":511000,
+"code":"0832",
+"pinyin":"Weiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511025,
+"name":"资中县",
+"pid":511000,
+"code":"0832",
+"pinyin":"Zizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511083,
+"name":"隆昌市",
+"pid":511000,
+"code":"0832",
+"pinyin":"Longchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511100,
+"name":"乐山市",
+"pid":510000,
+"code":"0833",
+"pinyin":"Leshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511102,
+"name":"市中区",
+"pid":511100,
+"code":"0833",
+"pinyin":"Shizhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511111,
+"name":"沙湾区",
+"pid":511100,
+"code":"0833",
+"pinyin":"Shawan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511112,
+"name":"五通桥区",
+"pid":511100,
+"code":"0833",
+"pinyin":"Wutongqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511113,
+"name":"金口河区",
+"pid":511100,
+"code":"0833",
+"pinyin":"Jinkouhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511123,
+"name":"犍为县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Qianwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511124,
+"name":"井研县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Jingyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511126,
+"name":"夹江县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Jiajiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511129,
+"name":"沐川县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Muchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511132,
+"name":"峨边彝族自治县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Ebian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511133,
+"name":"马边彝族自治县",
+"pid":511100,
+"code":"0833",
+"pinyin":"Mabian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511181,
+"name":"峨眉山市",
+"pid":511100,
+"code":"0833",
+"pinyin":"Emeishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511300,
+"name":"南充市",
+"pid":510000,
+"code":"0817",
+"pinyin":"Nanchong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511302,
+"name":"顺庆区",
+"pid":511300,
+"code":"0817",
+"pinyin":"Shunqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511303,
+"name":"高坪区",
+"pid":511300,
+"code":"0817",
+"pinyin":"Gaoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511304,
+"name":"嘉陵区",
+"pid":511300,
+"code":"0817",
+"pinyin":"Jialing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511321,
+"name":"南部县",
+"pid":511300,
+"code":"0817",
+"pinyin":"Nanbu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511322,
+"name":"营山县",
+"pid":511300,
+"code":"0817",
+"pinyin":"Yingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511323,
+"name":"蓬安县",
+"pid":511300,
+"code":"0817",
+"pinyin":"Peng'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511324,
+"name":"仪陇县",
+"pid":511300,
+"code":"0817",
+"pinyin":"Yilong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511325,
+"name":"西充县",
+"pid":511300,
+"code":"0817",
+"pinyin":"Xichong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511381,
+"name":"阆中市",
+"pid":511300,
+"code":"0817",
+"pinyin":"Langzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511400,
+"name":"眉山市",
+"pid":510000,
+"code":"028",
+"pinyin":"Meishan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511402,
+"name":"东坡区",
+"pid":511400,
+"code":"028",
+"pinyin":"Dongpo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511403,
+"name":"彭山区",
+"pid":511400,
+"code":"028",
+"pinyin":"Pengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511421,
+"name":"仁寿县",
+"pid":511400,
+"code":"028",
+"pinyin":"Renshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511423,
+"name":"洪雅县",
+"pid":511400,
+"code":"028",
+"pinyin":"Hongya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511424,
+"name":"丹棱县",
+"pid":511400,
+"code":"028",
+"pinyin":"Danling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511425,
+"name":"青神县",
+"pid":511400,
+"code":"028",
+"pinyin":"Qingshen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511500,
+"name":"宜宾市",
+"pid":510000,
+"code":"0831",
+"pinyin":"Yibin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511502,
+"name":"翠屏区",
+"pid":511500,
+"code":"0831",
+"pinyin":"Cuiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511503,
+"name":"南溪区",
+"pid":511500,
+"code":"0831",
+"pinyin":"Nanxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511521,
+"name":"宜宾县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Yibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511523,
+"name":"江安县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Jiang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511524,
+"name":"长宁县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Changning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511525,
+"name":"高县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Gaoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511526,
+"name":"珙县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Gongxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511527,
+"name":"筠连县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Junlian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511528,
+"name":"兴文县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Xingwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511529,
+"name":"屏山县",
+"pid":511500,
+"code":"0831",
+"pinyin":"Pingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511600,
+"name":"广安市",
+"pid":510000,
+"code":"0826",
+"pinyin":"Guang'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511602,
+"name":"广安区",
+"pid":511600,
+"code":"0826",
+"pinyin":"Guang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511603,
+"name":"前锋区",
+"pid":511600,
+"code":"0826",
+"pinyin":"Qianfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511621,
+"name":"岳池县",
+"pid":511600,
+"code":"0826",
+"pinyin":"Yuechi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511622,
+"name":"武胜县",
+"pid":511600,
+"code":"0826",
+"pinyin":"Wusheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511623,
+"name":"邻水县",
+"pid":511600,
+"code":"0826",
+"pinyin":"Linshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511681,
+"name":"华蓥市",
+"pid":511600,
+"code":"0826",
+"pinyin":"Huaying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511700,
+"name":"达州市",
+"pid":510000,
+"code":"0818",
+"pinyin":"Dazhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511702,
+"name":"通川区",
+"pid":511700,
+"code":"0818",
+"pinyin":"Tongchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511703,
+"name":"达川区",
+"pid":511700,
+"code":"0818",
+"pinyin":"Dachuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511722,
+"name":"宣汉县",
+"pid":511700,
+"code":"0818",
+"pinyin":"Xuanhan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511723,
+"name":"开江县",
+"pid":511700,
+"code":"0818",
+"pinyin":"Kaijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511724,
+"name":"大竹县",
+"pid":511700,
+"code":"0818",
+"pinyin":"Dazhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511725,
+"name":"渠县",
+"pid":511700,
+"code":"0818",
+"pinyin":"Quxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511781,
+"name":"万源市",
+"pid":511700,
+"code":"0818",
+"pinyin":"Wanyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511800,
+"name":"雅安市",
+"pid":510000,
+"code":"0835",
+"pinyin":"Ya'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511802,
+"name":"雨城区",
+"pid":511800,
+"code":"0835",
+"pinyin":"Yucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511803,
+"name":"名山区",
+"pid":511800,
+"code":"0835",
+"pinyin":"Mingshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511822,
+"name":"荥经县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Yingjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511823,
+"name":"汉源县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Hanyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511824,
+"name":"石棉县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Shimian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511825,
+"name":"天全县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Tianquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511826,
+"name":"芦山县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Lushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511827,
+"name":"宝兴县",
+"pid":511800,
+"code":"0835",
+"pinyin":"Baoxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511900,
+"name":"巴中市",
+"pid":510000,
+"code":"0827",
+"pinyin":"Bazhong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":511902,
+"name":"巴州区",
+"pid":511900,
+"code":"0827",
+"pinyin":"Bazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511903,
+"name":"恩阳区",
+"pid":511900,
+"code":"0827",
+"pinyin":"Enyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511921,
+"name":"通江县",
+"pid":511900,
+"code":"0827",
+"pinyin":"Tongjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511922,
+"name":"南江县",
+"pid":511900,
+"code":"0827",
+"pinyin":"Nanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":511923,
+"name":"平昌县",
+"pid":511900,
+"code":"0827",
+"pinyin":"Pingchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":512000,
+"name":"资阳市",
+"pid":510000,
+"code":"028",
+"pinyin":"Ziyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":512002,
+"name":"雁江区",
+"pid":512000,
+"code":"028",
+"pinyin":"Yanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":512021,
+"name":"安岳县",
+"pid":512000,
+"code":"028",
+"pinyin":"Anyue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":512022,
+"name":"乐至县",
+"pid":512000,
+"code":"028",
+"pinyin":"Lezhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513200,
+"name":"阿坝藏族羌族自治州",
+"pid":510000,
+"code":"0837",
+"pinyin":"Aba",
+"ccode":null,
+"level":3
+},
+    {
+        "id":513201,
+"name":"马尔康市",
+"pid":513200,
+"code":"0837",
+"pinyin":"Maerkang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513221,
+"name":"汶川县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Wenchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513222,
+"name":"理县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Lixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513223,
+"name":"茂县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Maoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513224,
+"name":"松潘县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Songpan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513225,
+"name":"九寨沟县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Jiuzhaigou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513226,
+"name":"金川县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Jinchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513227,
+"name":"小金县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Xiaojin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513228,
+"name":"黑水县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Heishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513230,
+"name":"壤塘县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Rangtang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513231,
+"name":"阿坝县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Aba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513232,
+"name":"若尔盖县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Ruoergai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513233,
+"name":"红原县",
+"pid":513200,
+"code":"0837",
+"pinyin":"Hongyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513300,
+"name":"甘孜藏族自治州",
+"pid":510000,
+"code":"0836",
+"pinyin":"Garze",
+"ccode":null,
+"level":3
+},
+    {
+        "id":513301,
+"name":"康定市",
+"pid":513300,
+"code":"0836",
+"pinyin":"Kangding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513322,
+"name":"泸定县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Luding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513323,
+"name":"丹巴县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Danba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513324,
+"name":"九龙县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Jiulong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513325,
+"name":"雅江县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Yajiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513326,
+"name":"道孚县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Daofu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513327,
+"name":"炉霍县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Luhuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513328,
+"name":"甘孜县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Ganzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513329,
+"name":"新龙县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Xinlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513330,
+"name":"德格县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Dege",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513331,
+"name":"白玉县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Baiyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513332,
+"name":"石渠县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Shiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513333,
+"name":"色达县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Seda",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513334,
+"name":"理塘县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Litang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513335,
+"name":"巴塘县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Batang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513336,
+"name":"乡城县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Xiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513337,
+"name":"稻城县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Daocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513338,
+"name":"得荣县",
+"pid":513300,
+"code":"0836",
+"pinyin":"Derong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513400,
+"name":"凉山彝族自治州",
+"pid":510000,
+"code":"0834",
+"pinyin":"Liangshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":513401,
+"name":"西昌市",
+"pid":513400,
+"code":"0834",
+"pinyin":"Xichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513422,
+"name":"木里藏族自治县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Muli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513423,
+"name":"盐源县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Yanyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513424,
+"name":"德昌县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Dechang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513425,
+"name":"会理县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Huili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513426,
+"name":"会东县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Huidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513427,
+"name":"宁南县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Ningnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513428,
+"name":"普格县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Puge",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513429,
+"name":"布拖县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Butuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513430,
+"name":"金阳县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Jinyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513431,
+"name":"昭觉县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Zhaojue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513432,
+"name":"喜德县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Xide",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513433,
+"name":"冕宁县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Mianning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513434,
+"name":"越西县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Yuexi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513435,
+"name":"甘洛县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Ganluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513436,
+"name":"美姑县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Meigu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":513437,
+"name":"雷波县",
+"pid":513400,
+"code":"0834",
+"pinyin":"Leibo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520000,
+"name":"贵州省",
+"pid":100000,
+"code":null,
+"pinyin":"Guizhou",
+"ccode":null,
+"level":2
+},
+    {
+        "id":520100,
+"name":"贵阳市",
+"pid":520000,
+"code":"0851",
+"pinyin":"Guiyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520102,
+"name":"南明区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Nanming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520103,
+"name":"云岩区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Yunyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520111,
+"name":"花溪区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Huaxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520112,
+"name":"乌当区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Wudang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520113,
+"name":"白云区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Baiyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520115,
+"name":"观山湖区",
+"pid":520100,
+"code":"0851",
+"pinyin":"Guanshanhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520121,
+"name":"开阳县",
+"pid":520100,
+"code":"0851",
+"pinyin":"Kaiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520122,
+"name":"息烽县",
+"pid":520100,
+"code":"0851",
+"pinyin":"Xifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520123,
+"name":"修文县",
+"pid":520100,
+"code":"0851",
+"pinyin":"Xiuwen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520181,
+"name":"清镇市",
+"pid":520100,
+"code":"0851",
+"pinyin":"Qingzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520182,
+"name":"贵安新区",
+"pid":520100,
+"code":"0851",
+"pinyin":"GuiAnXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520183,
+"name":"高新区",
+"pid":520100,
+"code":"0851",
+"pinyin":"GaoXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520200,
+"name":"六盘水市",
+"pid":520000,
+"code":"0858",
+"pinyin":"Liupanshui",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520201,
+"name":"钟山区",
+"pid":520200,
+"code":"0858",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520203,
+"name":"六枝特区",
+"pid":520200,
+"code":"0858",
+"pinyin":"Liuzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520221,
+"name":"水城县",
+"pid":520200,
+"code":"0858",
+"pinyin":"Shuicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520281,
+"name":"盘州市",
+"pid":520200,
+"code":"0858",
+"pinyin":"Panzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520300,
+"name":"遵义市",
+"pid":520000,
+"code":"0851",
+"pinyin":"Zunyi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520302,
+"name":"红花岗区",
+"pid":520300,
+"code":"0851",
+"pinyin":"Honghuagang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520303,
+"name":"汇川区",
+"pid":520300,
+"code":"0851",
+"pinyin":"Huichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520304,
+"name":"播州区",
+"pid":520300,
+"code":"0851",
+"pinyin":"BoZhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520322,
+"name":"桐梓县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Tongzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520323,
+"name":"绥阳县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Suiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520324,
+"name":"正安县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Zheng'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520325,
+"name":"道真仡佬族苗族自治县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Daozhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520326,
+"name":"务川仡佬族苗族自治县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Wuchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520327,
+"name":"凤冈县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Fenggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520328,
+"name":"湄潭县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Meitan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520329,
+"name":"余庆县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Yuqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520330,
+"name":"习水县",
+"pid":520300,
+"code":"0851",
+"pinyin":"Xishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520381,
+"name":"赤水市",
+"pid":520300,
+"code":"0851",
+"pinyin":"Chishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520382,
+"name":"仁怀市",
+"pid":520300,
+"code":"0851",
+"pinyin":"Renhuai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520400,
+"name":"安顺市",
+"pid":520000,
+"code":"0851",
+"pinyin":"Anshun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520402,
+"name":"西秀区",
+"pid":520400,
+"code":"0851",
+"pinyin":"Xixiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520403,
+"name":"平坝区",
+"pid":520400,
+"code":"0851",
+"pinyin":"Pingba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520422,
+"name":"普定县",
+"pid":520400,
+"code":"0851",
+"pinyin":"Puding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520423,
+"name":"镇宁布依族苗族自治县",
+"pid":520400,
+"code":"0851",
+"pinyin":"Zhenning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520424,
+"name":"关岭布依族苗族自治县",
+"pid":520400,
+"code":"0851",
+"pinyin":"Guanling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520425,
+"name":"紫云苗族布依族自治县",
+"pid":520400,
+"code":"0851",
+"pinyin":"Ziyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520500,
+"name":"毕节市",
+"pid":520000,
+"code":"0857",
+"pinyin":"Bijie",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520502,
+"name":"七星关区",
+"pid":520500,
+"code":"0857",
+"pinyin":"Qixingguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520521,
+"name":"大方县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Dafang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520522,
+"name":"黔西县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Qianxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520523,
+"name":"金沙县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Jinsha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520524,
+"name":"织金县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Zhijin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520525,
+"name":"纳雍县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Nayong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520526,
+"name":"威宁彝族回族苗族自治县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Weining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520527,
+"name":"赫章县",
+"pid":520500,
+"code":"0857",
+"pinyin":"Hezhang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520600,
+"name":"铜仁市",
+"pid":520000,
+"code":"0856",
+"pinyin":"Tongren",
+"ccode":null,
+"level":3
+},
+    {
+        "id":520602,
+"name":"碧江区",
+"pid":520600,
+"code":"0856",
+"pinyin":"Bijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520603,
+"name":"万山区",
+"pid":520600,
+"code":"0856",
+"pinyin":"Wanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520621,
+"name":"江口县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Jiangkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520622,
+"name":"玉屏侗族自治县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Yuping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520623,
+"name":"石阡县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Shiqian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520624,
+"name":"思南县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Sinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520625,
+"name":"印江土家族苗族自治县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Yinjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520626,
+"name":"德江县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Dejiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520627,
+"name":"沿河土家族自治县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Yuanhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":520628,
+"name":"松桃苗族自治县",
+"pid":520600,
+"code":"0856",
+"pinyin":"Songtao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522300,
+"name":"黔西南布依族苗族自治州",
+"pid":520000,
+"code":"0859",
+"pinyin":"Qianxinan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":522301,
+"name":"兴义市 ",
+"pid":522300,
+"code":"0859",
+"pinyin":"Xingyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522322,
+"name":"兴仁县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Xingren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522323,
+"name":"普安县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Pu'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522324,
+"name":"晴隆县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Qinglong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522325,
+"name":"贞丰县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Zhenfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522326,
+"name":"望谟县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Wangmo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522327,
+"name":"册亨县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Ceheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522328,
+"name":"安龙县",
+"pid":522300,
+"code":"0859",
+"pinyin":"Anlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522600,
+"name":"黔东南苗族侗族自治州",
+"pid":520000,
+"code":"0855",
+"pinyin":"Qiandongnan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":522601,
+"name":"凯里市",
+"pid":522600,
+"code":"0855",
+"pinyin":"Kaili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522622,
+"name":"黄平县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Huangping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522623,
+"name":"施秉县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Shibing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522624,
+"name":"三穗县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Sansui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522625,
+"name":"镇远县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Zhenyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522626,
+"name":"岑巩县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Cengong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522627,
+"name":"天柱县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Tianzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522628,
+"name":"锦屏县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Jinping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522629,
+"name":"剑河县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Jianhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522630,
+"name":"台江县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Taijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522631,
+"name":"黎平县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Liping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522632,
+"name":"榕江县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Rongjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522633,
+"name":"从江县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Congjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522634,
+"name":"雷山县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Leishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522635,
+"name":"麻江县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Majiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522636,
+"name":"丹寨县",
+"pid":522600,
+"code":"0855",
+"pinyin":"Danzhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522700,
+"name":"黔南布依族苗族自治州",
+"pid":520000,
+"code":"0854",
+"pinyin":"Qiannan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":522701,
+"name":"都匀市",
+"pid":522700,
+"code":"0854",
+"pinyin":"Duyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522702,
+"name":"福泉市",
+"pid":522700,
+"code":"0854",
+"pinyin":"Fuquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522722,
+"name":"荔波县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Libo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522723,
+"name":"贵定县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Guiding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522725,
+"name":"瓮安县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Weng'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522726,
+"name":"独山县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Dushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522727,
+"name":"平塘县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Pingtang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522728,
+"name":"罗甸县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Luodian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522729,
+"name":"长顺县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Changshun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522730,
+"name":"龙里县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Longli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522731,
+"name":"惠水县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Huishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":522732,
+"name":"三都水族自治县",
+"pid":522700,
+"code":"0854",
+"pinyin":"Sandu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530000,
+"name":"云南省",
+"pid":100000,
+"code":null,
+"pinyin":"Yunnan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":530100,
+"name":"昆明市",
+"pid":530000,
+"code":"0871",
+"pinyin":"Kunming",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530102,
+"name":"五华区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Wuhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530103,
+"name":"盘龙区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Panlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530111,
+"name":"官渡区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Guandu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530112,
+"name":"西山区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Xishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530113,
+"name":"东川区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Dongchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530114,
+"name":"呈贡区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Chenggong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530115,
+"name":"晋宁区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Jinning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530124,
+"name":"富民县",
+"pid":530100,
+"code":"0871",
+"pinyin":"Fumin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530125,
+"name":"宜良县",
+"pid":530100,
+"code":"0871",
+"pinyin":"Yiliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530126,
+"name":"石林彝族自治县",
+"pid":530100,
+"code":"0871",
+"pinyin":"Shilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530127,
+"name":"嵩明县",
+"pid":530100,
+"code":"0871",
+"pinyin":"Songming",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530128,
+"name":"禄劝彝族苗族自治县",
+"pid":530100,
+"code":"0871",
+"pinyin":"Luquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530129,
+"name":"寻甸回族彝族自治县 ",
+"pid":530100,
+"code":"0871",
+"pinyin":"Xundian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530181,
+"name":"安宁市",
+"pid":530100,
+"code":"0871",
+"pinyin":"Anning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530182,
+"name":"滇中新区",
+"pid":530100,
+"code":"0871",
+"pinyin":"DianZhongXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530183,
+"name":"高新区",
+"pid":530100,
+"code":"0871",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530300,
+"name":"曲靖市",
+"pid":530000,
+"code":"0874",
+"pinyin":"Qujing",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530302,
+"name":"麒麟区",
+"pid":530300,
+"code":"0874",
+"pinyin":"Qilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530303,
+"name":"沾益区",
+"pid":530300,
+"code":"0874",
+"pinyin":"Zhanyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530321,
+"name":"马龙县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Malong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530322,
+"name":"陆良县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Luliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530323,
+"name":"师宗县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Shizong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530324,
+"name":"罗平县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Luoping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530325,
+"name":"富源县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Fuyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530326,
+"name":"会泽县",
+"pid":530300,
+"code":"0874",
+"pinyin":"Huize",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530381,
+"name":"宣威市",
+"pid":530300,
+"code":"0874",
+"pinyin":"Xuanwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530400,
+"name":"玉溪市",
+"pid":530000,
+"code":"0877",
+"pinyin":"Yuxi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530402,
+"name":"红塔区",
+"pid":530400,
+"code":"0877",
+"pinyin":"Hongta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530403,
+"name":"江川区",
+"pid":530400,
+"code":"0877",
+"pinyin":"Jiangchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530422,
+"name":"澄江县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Chengjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530423,
+"name":"通海县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Tonghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530424,
+"name":"华宁县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Huaning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530425,
+"name":"易门县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Yimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530426,
+"name":"峨山彝族自治县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Eshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530427,
+"name":"新平彝族傣族自治县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Xinping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530428,
+"name":"元江哈尼族彝族傣族自治县",
+"pid":530400,
+"code":"0877",
+"pinyin":"Yuanjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530500,
+"name":"保山市",
+"pid":530000,
+"code":"0875",
+"pinyin":"Baoshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530502,
+"name":"隆阳区",
+"pid":530500,
+"code":"0875",
+"pinyin":"Longyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530521,
+"name":"施甸县",
+"pid":530500,
+"code":"0875",
+"pinyin":"Shidian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530523,
+"name":"龙陵县",
+"pid":530500,
+"code":"0875",
+"pinyin":"Longling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530524,
+"name":"昌宁县",
+"pid":530500,
+"code":"0875",
+"pinyin":"Changning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530581,
+"name":"腾冲市",
+"pid":530500,
+"code":"0875",
+"pinyin":"Tengchong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530600,
+"name":"昭通市",
+"pid":530000,
+"code":"0870",
+"pinyin":"Zhaotong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530602,
+"name":"昭阳区",
+"pid":530600,
+"code":"0870",
+"pinyin":"Zhaoyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530621,
+"name":"鲁甸县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Ludian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530622,
+"name":"巧家县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Qiaojia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530623,
+"name":"盐津县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Yanjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530624,
+"name":"大关县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Daguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530625,
+"name":"永善县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Yongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530626,
+"name":"绥江县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Suijiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530627,
+"name":"镇雄县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Zhenxiong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530628,
+"name":"彝良县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Yiliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530629,
+"name":"威信县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Weixin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530630,
+"name":"水富县",
+"pid":530600,
+"code":"0870",
+"pinyin":"Shuifu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530700,
+"name":"丽江市",
+"pid":530000,
+"code":"0888",
+"pinyin":"Lijiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530702,
+"name":"古城区",
+"pid":530700,
+"code":"0888",
+"pinyin":"Gucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530721,
+"name":"玉龙纳西族自治县",
+"pid":530700,
+"code":"0888",
+"pinyin":"Yulong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530722,
+"name":"永胜县",
+"pid":530700,
+"code":"0888",
+"pinyin":"Yongsheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530723,
+"name":"华坪县",
+"pid":530700,
+"code":"0888",
+"pinyin":"Huaping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530724,
+"name":"宁蒗彝族自治县",
+"pid":530700,
+"code":"0888",
+"pinyin":"Ninglang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530800,
+"name":"普洱市",
+"pid":530000,
+"code":"0879",
+"pinyin":"Pu'er",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530802,
+"name":"思茅区",
+"pid":530800,
+"code":"0879",
+"pinyin":"Simao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530821,
+"name":"宁洱哈尼族彝族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Ninger",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530822,
+"name":"墨江哈尼族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Mojiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530823,
+"name":"景东彝族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Jingdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530824,
+"name":"景谷傣族彝族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Jinggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530825,
+"name":"镇沅彝族哈尼族拉祜族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Zhenyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530826,
+"name":"江城哈尼族彝族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Jiangcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530827,
+"name":"孟连傣族拉祜族佤族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Menglian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530828,
+"name":"澜沧拉祜族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Lancang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530829,
+"name":"西盟佤族自治县",
+"pid":530800,
+"code":"0879",
+"pinyin":"Ximeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530900,
+"name":"临沧市",
+"pid":530000,
+"code":"0883",
+"pinyin":"Lincang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":530902,
+"name":"临翔区",
+"pid":530900,
+"code":"0883",
+"pinyin":"Linxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530921,
+"name":"凤庆县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Fengqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530922,
+"name":"云县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Yunxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530923,
+"name":"永德县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Yongde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530924,
+"name":"镇康县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Zhenkang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530925,
+"name":"双江拉祜族佤族布朗族傣族自治县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Shuangjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530926,
+"name":"耿马傣族佤族自治县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Gengma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":530927,
+"name":"沧源佤族自治县",
+"pid":530900,
+"code":"0883",
+"pinyin":"Cangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532300,
+"name":"楚雄彝族自治州",
+"pid":530000,
+"code":"0878",
+"pinyin":"Chuxiong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":532301,
+"name":"楚雄市",
+"pid":532300,
+"code":"0878",
+"pinyin":"Chuxiong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532322,
+"name":"双柏县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Shuangbai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532323,
+"name":"牟定县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Mouding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532324,
+"name":"南华县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Nanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532325,
+"name":"姚安县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Yao'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532326,
+"name":"大姚县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Dayao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532327,
+"name":"永仁县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Yongren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532328,
+"name":"元谋县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Yuanmou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532329,
+"name":"武定县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Wuding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532331,
+"name":"禄丰县",
+"pid":532300,
+"code":"0878",
+"pinyin":"Lufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532500,
+"name":"红河哈尼族彝族自治州",
+"pid":530000,
+"code":"0873",
+"pinyin":"Honghe",
+"ccode":null,
+"level":3
+},
+    {
+        "id":532501,
+"name":"个旧市",
+"pid":532500,
+"code":"0873",
+"pinyin":"Gejiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532502,
+"name":"开远市",
+"pid":532500,
+"code":"0873",
+"pinyin":"Kaiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532503,
+"name":"蒙自市",
+"pid":532500,
+"code":"0873",
+"pinyin":"Mengzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532504,
+"name":"弥勒市",
+"pid":532500,
+"code":"0873",
+"pinyin":"Mile ",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532523,
+"name":"屏边苗族自治县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Pingbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532524,
+"name":"建水县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Jianshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532525,
+"name":"石屏县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Shiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532527,
+"name":"泸西县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Luxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532528,
+"name":"元阳县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Yuanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532529,
+"name":"红河县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Honghexian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532530,
+"name":"金平苗族瑶族傣族自治县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Jinping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532531,
+"name":"绿春县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Lvchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532532,
+"name":"河口瑶族自治县",
+"pid":532500,
+"code":"0873",
+"pinyin":"Hekou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532600,
+"name":"文山壮族苗族自治州",
+"pid":530000,
+"code":"0876",
+"pinyin":"Wenshan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":532601,
+"name":"文山市",
+"pid":532600,
+"code":"0876",
+"pinyin":"Wenshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532622,
+"name":"砚山县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Yanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532623,
+"name":"西畴县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Xichou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532624,
+"name":"麻栗坡县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Malipo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532625,
+"name":"马关县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Maguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532626,
+"name":"丘北县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Qiubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532627,
+"name":"广南县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Guangnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532628,
+"name":"富宁县",
+"pid":532600,
+"code":"0876",
+"pinyin":"Funing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532800,
+"name":"西双版纳傣族自治州",
+"pid":530000,
+"code":"0691",
+"pinyin":"Xishuangbanna",
+"ccode":null,
+"level":3
+},
+    {
+        "id":532801,
+"name":"景洪市",
+"pid":532800,
+"code":"0691",
+"pinyin":"Jinghong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532822,
+"name":"勐海县",
+"pid":532800,
+"code":"0691",
+"pinyin":"Menghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532823,
+"name":"勐腊县",
+"pid":532800,
+"code":"0691",
+"pinyin":"Mengla",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532900,
+"name":"大理白族自治州",
+"pid":530000,
+"code":"0872",
+"pinyin":"Dali",
+"ccode":null,
+"level":3
+},
+    {
+        "id":532901,
+"name":"大理市",
+"pid":532900,
+"code":"0872",
+"pinyin":"Dali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532922,
+"name":"漾濞彝族自治县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Yangbi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532923,
+"name":"祥云县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Xiangyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532924,
+"name":"宾川县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Binchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532925,
+"name":"弥渡县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Midu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532926,
+"name":"南涧彝族自治县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Nanjian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532927,
+"name":"巍山彝族回族自治县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Weishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532928,
+"name":"永平县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Yongping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532929,
+"name":"云龙县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Yunlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532930,
+"name":"洱源县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Eryuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532931,
+"name":"剑川县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Jianchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":532932,
+"name":"鹤庆县",
+"pid":532900,
+"code":"0872",
+"pinyin":"Heqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533100,
+"name":"德宏傣族景颇族自治州",
+"pid":530000,
+"code":"0692",
+"pinyin":"Dehong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":533102,
+"name":"瑞丽市",
+"pid":533100,
+"code":"0692",
+"pinyin":"Ruili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533103,
+"name":"芒市",
+"pid":533100,
+"code":"0692",
+"pinyin":"Mangshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533122,
+"name":"梁河县",
+"pid":533100,
+"code":"0692",
+"pinyin":"Lianghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533123,
+"name":"盈江县",
+"pid":533100,
+"code":"0692",
+"pinyin":"Yingjiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533124,
+"name":"陇川县",
+"pid":533100,
+"code":"0692",
+"pinyin":"Longchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533300,
+"name":"怒江傈僳族自治州",
+"pid":530000,
+"code":"0886",
+"pinyin":"Nujiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":533301,
+"name":"泸水市",
+"pid":533300,
+"code":"0886",
+"pinyin":"Lushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533323,
+"name":"福贡县",
+"pid":533300,
+"code":"0886",
+"pinyin":"Fugong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533324,
+"name":"贡山独龙族怒族自治县",
+"pid":533300,
+"code":"0886",
+"pinyin":"Gongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533325,
+"name":"兰坪白族普米族自治县",
+"pid":533300,
+"code":"0886",
+"pinyin":"Lanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533400,
+"name":"迪庆藏族自治州",
+"pid":530000,
+"code":"0887",
+"pinyin":"Deqen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":533401,
+"name":"香格里拉市",
+"pid":533400,
+"code":"0887",
+"pinyin":"Xianggelila",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533422,
+"name":"德钦县",
+"pid":533400,
+"code":"0887",
+"pinyin":"Deqin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":533423,
+"name":"维西傈僳族自治县",
+"pid":533400,
+"code":"0887",
+"pinyin":"Weixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540000,
+"name":"西藏自治区",
+"pid":100000,
+"code":null,
+"pinyin":"Tibet",
+"ccode":null,
+"level":2
+},
+    {
+        "id":540100,
+"name":"拉萨市",
+"pid":540000,
+"code":"0891",
+"pinyin":"Lhasa",
+"ccode":null,
+"level":3
+},
+    {
+        "id":540102,
+"name":"城关区",
+"pid":540100,
+"code":"0891",
+"pinyin":"Chengguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540103,
+"name":"堆龙德庆区",
+"pid":540100,
+"code":"0891",
+"pinyin":"Duilongdeqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540121,
+"name":"林周县",
+"pid":540100,
+"code":"0891",
+"pinyin":"Linzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540122,
+"name":"当雄县",
+"pid":540100,
+"code":"0891",
+"pinyin":"Dangxiong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540123,
+"name":"尼木县",
+"pid":540100,
+"code":"0891",
+"pinyin":"Nimu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540124,
+"name":"曲水县",
+"pid":540100,
+"code":"0891",
+"pinyin":"Qushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540126,
+"name":"达孜区",
+"pid":540100,
+"code":"0891",
+"pinyin":"Dazi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540127,
+"name":"墨竹工卡县",
+"pid":540100,
+"code":"0891",
+"pinyin":"Mozhugongka",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540200,
+"name":"日喀则市",
+"pid":540000,
+"code":"0892",
+"pinyin":"Rikaze",
+"ccode":null,
+"level":3
+},
+    {
+        "id":540202,
+"name":"桑珠孜区",
+"pid":540200,
+"code":"0892",
+"pinyin":"Sangzhuzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540221,
+"name":"南木林县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Nanmulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540222,
+"name":"江孜县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Jiangzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540223,
+"name":"定日县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Dingri",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540224,
+"name":"萨迦县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Sajia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540225,
+"name":"拉孜县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Lazi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540226,
+"name":"昂仁县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Angren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540227,
+"name":"谢通门县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Xietongmen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540228,
+"name":"白朗县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Bailang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540229,
+"name":"仁布县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Renbu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540230,
+"name":"康马县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Kangma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540231,
+"name":"定结县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Dingjie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540232,
+"name":"仲巴县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Zhongba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540233,
+"name":"亚东县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Yadong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540234,
+"name":"吉隆县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Jilong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540235,
+"name":"聂拉木县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Nielamu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540236,
+"name":"萨嘎县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Saga",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540237,
+"name":"岗巴县",
+"pid":540200,
+"code":"0892",
+"pinyin":"Gangba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540300,
+"name":"昌都市",
+"pid":540000,
+"code":"0895",
+"pinyin":"Qamdo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":540302,
+"name":"卡若区",
+"pid":540300,
+"code":"0895",
+"pinyin":"Karuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540321,
+"name":"江达县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Jiangda",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540322,
+"name":"贡觉县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Gongjue",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540323,
+"name":"类乌齐县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Leiwuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540324,
+"name":"丁青县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Dingqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540325,
+"name":"察雅县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Chaya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540326,
+"name":"八宿县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Basu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540327,
+"name":"左贡县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Zuogong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540328,
+"name":"芒康县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Mangkang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540329,
+"name":"洛隆县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Luolong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540330,
+"name":"边坝县",
+"pid":540300,
+"code":"0895",
+"pinyin":"Bianba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540400,
+"name":"林芝市",
+"pid":540000,
+"code":"0894",
+"pinyin":"Nyingchi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":540402,
+"name":"巴宜区",
+"pid":540400,
+"code":"0894",
+"pinyin":"BaYi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540421,
+"name":"工布江达县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Gongbujiangda",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540422,
+"name":"米林县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Milin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540423,
+"name":"墨脱县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Motuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540424,
+"name":"波密县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Bomi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540425,
+"name":"察隅县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Chayu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540426,
+"name":"朗县",
+"pid":540400,
+"code":"0894",
+"pinyin":"Langxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540500,
+"name":"山南市",
+"pid":540000,
+"code":"0893",
+"pinyin":"Shannan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":540502,
+"name":"乃东区",
+"pid":540500,
+"code":"0893",
+"pinyin":"Naidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540521,
+"name":"扎囊县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Zhanang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540522,
+"name":"贡嘎县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Gongga",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540523,
+"name":"桑日县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Sangri",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540524,
+"name":"琼结县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Qiongjie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540525,
+"name":"曲松县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Qusong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540526,
+"name":"措美县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Cuomei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540527,
+"name":"洛扎县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Luozha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540528,
+"name":"加查县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Jiacha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540529,
+"name":"隆子县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Longzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540530,
+"name":"错那县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Cuona",
+"ccode":null,
+"level":4
+},
+    {
+        "id":540531,
+"name":"浪卡子县",
+"pid":540500,
+"code":"0893",
+"pinyin":"Langkazi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542400,
+"name":"那曲市",
+"pid":540000,
+"code":"0896",
+"pinyin":"Nagqu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":542421,
+"name":"色尼区",
+"pid":542400,
+"code":"0896",
+"pinyin":"Seni",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542422,
+"name":"嘉黎县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Jiali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542423,
+"name":"比如县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Biru",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542424,
+"name":"聂荣县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Nierong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542425,
+"name":"安多县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Anduo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542426,
+"name":"申扎县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Shenzha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542427,
+"name":"索县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Suoxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542428,
+"name":"班戈县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Bange",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542429,
+"name":"巴青县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Baqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542430,
+"name":"尼玛县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Nima",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542431,
+"name":"双湖县",
+"pid":542400,
+"code":"0896",
+"pinyin":"Shuanghu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542500,
+"name":"阿里地区",
+"pid":540000,
+"code":"0897",
+"pinyin":"Ngari",
+"ccode":null,
+"level":3
+},
+    {
+        "id":542521,
+"name":"普兰县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Pulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542522,
+"name":"札达县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Zhada",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542523,
+"name":"噶尔县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Gaer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542524,
+"name":"日土县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Ritu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542525,
+"name":"革吉县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Geji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542526,
+"name":"改则县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Gaize",
+"ccode":null,
+"level":4
+},
+    {
+        "id":542527,
+"name":"措勤县",
+"pid":542500,
+"code":"0897",
+"pinyin":"Cuoqin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610000,
+"name":"陕西省",
+"pid":100000,
+"code":null,
+"pinyin":"Shaanxi",
+"ccode":null,
+"level":2
+},
+    {
+        "id":610100,
+"name":"西安市",
+"pid":610000,
+"code":"029",
+"pinyin":"Xi'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610102,
+"name":"新城区",
+"pid":610100,
+"code":"029",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610103,
+"name":"碑林区",
+"pid":610100,
+"code":"029",
+"pinyin":"Beilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610104,
+"name":"莲湖区",
+"pid":610100,
+"code":"029",
+"pinyin":"Lianhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610111,
+"name":"灞桥区",
+"pid":610100,
+"code":"029",
+"pinyin":"Baqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610112,
+"name":"未央区",
+"pid":610100,
+"code":"029",
+"pinyin":"Weiyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610113,
+"name":"雁塔区",
+"pid":610100,
+"code":"029",
+"pinyin":"Yanta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610114,
+"name":"阎良区",
+"pid":610100,
+"code":"029",
+"pinyin":"Yanliang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610115,
+"name":"临潼区",
+"pid":610100,
+"code":"029",
+"pinyin":"Lintong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610116,
+"name":"长安区",
+"pid":610100,
+"code":"029",
+"pinyin":"Chang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610117,
+"name":"高陵区",
+"pid":610100,
+"code":"029",
+"pinyin":"Gaoling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610118,
+"name":"鄠邑区",
+"pid":610100,
+"code":"029",
+"pinyin":"Huyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610122,
+"name":"蓝田县",
+"pid":610100,
+"code":"029",
+"pinyin":"Lantian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610124,
+"name":"周至县",
+"pid":610100,
+"code":"029",
+"pinyin":"Zhouzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610125,
+"name":"西咸新区",
+"pid":610100,
+"code":"029",
+"pinyin":"XixianXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610127,
+"name":"曲江新区",
+"pid":610100,
+"code":"029",
+"pinyin":"QujiangXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610128,
+"name":"高新区",
+"pid":610100,
+"code":"029",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610200,
+"name":"铜川市",
+"pid":610000,
+"code":"0919",
+"pinyin":"Tongchuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610202,
+"name":"王益区",
+"pid":610200,
+"code":"0919",
+"pinyin":"Wangyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610203,
+"name":"印台区",
+"pid":610200,
+"code":"0919",
+"pinyin":"Yintai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610204,
+"name":"耀州区",
+"pid":610200,
+"code":"0919",
+"pinyin":"Yaozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610222,
+"name":"宜君县",
+"pid":610200,
+"code":"0919",
+"pinyin":"Yijun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610300,
+"name":"宝鸡市",
+"pid":610000,
+"code":"0917",
+"pinyin":"Baoji",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610302,
+"name":"渭滨区",
+"pid":610300,
+"code":"0917",
+"pinyin":"Weibin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610303,
+"name":"金台区",
+"pid":610300,
+"code":"0917",
+"pinyin":"Jintai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610304,
+"name":"陈仓区",
+"pid":610300,
+"code":"0917",
+"pinyin":"Chencang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610322,
+"name":"凤翔县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Fengxiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610323,
+"name":"岐山县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Qishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610324,
+"name":"扶风县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Fufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610326,
+"name":"眉县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Meixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610327,
+"name":"陇县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Longxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610328,
+"name":"千阳县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Qianyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610329,
+"name":"麟游县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Linyou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610330,
+"name":"凤县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Fengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610331,
+"name":"太白县",
+"pid":610300,
+"code":"0917",
+"pinyin":"Taibai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610332,
+"name":"高新区",
+"pid":610300,
+"code":"0917",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610400,
+"name":"咸阳市",
+"pid":610000,
+"code":"029",
+"pinyin":"Xianyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610402,
+"name":"秦都区",
+"pid":610400,
+"code":"029",
+"pinyin":"Qindu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610403,
+"name":"杨陵区",
+"pid":610400,
+"code":"029",
+"pinyin":"Yangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610404,
+"name":"渭城区",
+"pid":610400,
+"code":"029",
+"pinyin":"Weicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610422,
+"name":"三原县",
+"pid":610400,
+"code":"029",
+"pinyin":"Sanyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610423,
+"name":"泾阳县",
+"pid":610400,
+"code":"029",
+"pinyin":"Jingyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610424,
+"name":"乾县",
+"pid":610400,
+"code":"029",
+"pinyin":"Qianxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610425,
+"name":"礼泉县",
+"pid":610400,
+"code":"029",
+"pinyin":"Liquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610426,
+"name":"永寿县",
+"pid":610400,
+"code":"029",
+"pinyin":"Yongshou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610427,
+"name":"彬县",
+"pid":610400,
+"code":"029",
+"pinyin":"Binxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610428,
+"name":"长武县",
+"pid":610400,
+"code":"029",
+"pinyin":"Changwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610429,
+"name":"旬邑县",
+"pid":610400,
+"code":"029",
+"pinyin":"Xunyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610430,
+"name":"淳化县",
+"pid":610400,
+"code":"029",
+"pinyin":"Chunhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610431,
+"name":"武功县",
+"pid":610400,
+"code":"029",
+"pinyin":"Wugong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610481,
+"name":"兴平市",
+"pid":610400,
+"code":"029",
+"pinyin":"Xingping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610482,
+"name":"高新区",
+"pid":610400,
+"code":"029",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610500,
+"name":"渭南市",
+"pid":610000,
+"code":"0913",
+"pinyin":"Weinan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610502,
+"name":"临渭区",
+"pid":610500,
+"code":"0913",
+"pinyin":"Linwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610503,
+"name":"华州区",
+"pid":610500,
+"code":"0913",
+"pinyin":"Huazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610522,
+"name":"潼关县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Tongguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610523,
+"name":"大荔县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Dali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610524,
+"name":"合阳县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Heyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610525,
+"name":"澄城县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Chengcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610526,
+"name":"蒲城县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Pucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610527,
+"name":"白水县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Baishui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610528,
+"name":"富平县",
+"pid":610500,
+"code":"0913",
+"pinyin":"Fuping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610581,
+"name":"韩城市",
+"pid":610500,
+"code":"0913",
+"pinyin":"Hancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610582,
+"name":"华阴市",
+"pid":610500,
+"code":"0913",
+"pinyin":"Huayin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610600,
+"name":"延安市",
+"pid":610000,
+"code":"0911",
+"pinyin":"Yan'an",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610602,
+"name":"宝塔区",
+"pid":610600,
+"code":"0911",
+"pinyin":"Baota",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610603,
+"name":"安塞区",
+"pid":610600,
+"code":"0911",
+"pinyin":"Ansai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610621,
+"name":"延长县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Yanchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610622,
+"name":"延川县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Yanchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610623,
+"name":"子长县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Zichang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610625,
+"name":"志丹县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Zhidan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610626,
+"name":"吴起县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Wuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610627,
+"name":"甘泉县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Ganquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610628,
+"name":"富县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Fuxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610629,
+"name":"洛川县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Luochuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610630,
+"name":"宜川县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Yichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610631,
+"name":"黄龙县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Huanglong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610632,
+"name":"黄陵县",
+"pid":610600,
+"code":"0911",
+"pinyin":"Huangling",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610700,
+"name":"汉中市",
+"pid":610000,
+"code":"0916",
+"pinyin":"Hanzhong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610702,
+"name":"汉台区",
+"pid":610700,
+"code":"0916",
+"pinyin":"Hantai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610721,
+"name":"南郑区",
+"pid":610700,
+"code":"0916",
+"pinyin":"Nanzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610722,
+"name":"城固县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Chenggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610723,
+"name":"洋县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Yangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610724,
+"name":"西乡县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Xixiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610725,
+"name":"勉县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Mianxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610726,
+"name":"宁强县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Ningqiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610727,
+"name":"略阳县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Lueyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610728,
+"name":"镇巴县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Zhenba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610729,
+"name":"留坝县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Liuba",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610730,
+"name":"佛坪县",
+"pid":610700,
+"code":"0916",
+"pinyin":"Foping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610800,
+"name":"榆林市",
+"pid":610000,
+"code":"0912",
+"pinyin":"Yulin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610802,
+"name":"榆阳区",
+"pid":610800,
+"code":"0912",
+"pinyin":"Yuyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610803,
+"name":"横山区",
+"pid":610800,
+"code":"0912",
+"pinyin":"Hengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610822,
+"name":"府谷县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Fugu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610824,
+"name":"靖边县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Jingbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610825,
+"name":"定边县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Dingbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610826,
+"name":"绥德县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Suide",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610827,
+"name":"米脂县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Mizhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610828,
+"name":"佳县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Jiaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610829,
+"name":"吴堡县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Wubu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610830,
+"name":"清涧县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Qingjian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610831,
+"name":"子洲县",
+"pid":610800,
+"code":"0912",
+"pinyin":"Zizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610881,
+"name":"神木市",
+"pid":610800,
+"code":"0912",
+"pinyin":"Shenmu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610900,
+"name":"安康市",
+"pid":610000,
+"code":"0915",
+"pinyin":"Ankang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":610902,
+"name":"汉滨区",
+"pid":610900,
+"code":"0915",
+"pinyin":"Hanbin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610921,
+"name":"汉阴县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Hanyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610922,
+"name":"石泉县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Shiquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610923,
+"name":"宁陕县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Ningshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610924,
+"name":"紫阳县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Ziyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610925,
+"name":"岚皋县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Langao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610926,
+"name":"平利县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Pingli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610927,
+"name":"镇坪县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Zhenping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610928,
+"name":"旬阳县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Xunyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":610929,
+"name":"白河县",
+"pid":610900,
+"code":"0915",
+"pinyin":"Baihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611000,
+"name":"商洛市",
+"pid":610000,
+"code":"0914",
+"pinyin":"Shangluo",
+"ccode":null,
+"level":3
+},
+    {
+        "id":611002,
+"name":"商州区",
+"pid":611000,
+"code":"0914",
+"pinyin":"Shangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611021,
+"name":"洛南县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Luonan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611022,
+"name":"丹凤县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Danfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611023,
+"name":"商南县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Shangnan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611024,
+"name":"山阳县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Shanyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611025,
+"name":"镇安县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Zhen'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":611026,
+"name":"柞水县",
+"pid":611000,
+"code":"0914",
+"pinyin":"Zhashui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620000,
+"name":"甘肃省",
+"pid":100000,
+"code":null,
+"pinyin":"Gansu",
+"ccode":null,
+"level":2
+},
+    {
+        "id":620100,
+"name":"兰州市",
+"pid":620000,
+"code":"0931",
+"pinyin":"Lanzhou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620102,
+"name":"城关区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Chengguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620103,
+"name":"七里河区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Qilihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620104,
+"name":"西固区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Xigu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620105,
+"name":"安宁区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Anning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620111,
+"name":"红古区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Honggu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620121,
+"name":"永登县",
+"pid":620100,
+"code":"0931",
+"pinyin":"Yongdeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620122,
+"name":"皋兰县",
+"pid":620100,
+"code":"0931",
+"pinyin":"Gaolan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620123,
+"name":"榆中县",
+"pid":620100,
+"code":"0931",
+"pinyin":"Yuzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620124,
+"name":"兰州新区",
+"pid":620100,
+"code":"0931",
+"pinyin":"LanzhouXinQu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620125,
+"name":"高新区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Gaoxinqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620126,
+"name":"经济开发区",
+"pid":620100,
+"code":"0931",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620200,
+"name":"嘉峪关市",
+"pid":620000,
+"code":"0937",
+"pinyin":"Jiayuguan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620201,
+"name":"雄关区",
+"pid":620200,
+"code":"0937",
+"pinyin":"Xiongguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620202,
+"name":"长城区",
+"pid":620200,
+"code":"0937",
+"pinyin":"Changcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620203,
+"name":"镜铁区",
+"pid":620200,
+"code":"0937",
+"pinyin":"Jingtie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620300,
+"name":"金昌市",
+"pid":620000,
+"code":"0935",
+"pinyin":"Jinchang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620302,
+"name":"金川区",
+"pid":620300,
+"code":"0935",
+"pinyin":"Jinchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620321,
+"name":"永昌县",
+"pid":620300,
+"code":"0935",
+"pinyin":"Yongchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620400,
+"name":"白银市",
+"pid":620000,
+"code":"0943",
+"pinyin":"Baiyin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620402,
+"name":"白银区",
+"pid":620400,
+"code":"0943",
+"pinyin":"Baiyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620403,
+"name":"平川区",
+"pid":620400,
+"code":"0943",
+"pinyin":"Pingchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620421,
+"name":"靖远县",
+"pid":620400,
+"code":"0943",
+"pinyin":"Jingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620422,
+"name":"会宁县",
+"pid":620400,
+"code":"0943",
+"pinyin":"Huining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620423,
+"name":"景泰县",
+"pid":620400,
+"code":"0943",
+"pinyin":"Jingtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620500,
+"name":"天水市",
+"pid":620000,
+"code":"0938",
+"pinyin":"Tianshui",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620502,
+"name":"秦州区",
+"pid":620500,
+"code":"0938",
+"pinyin":"Qinzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620503,
+"name":"麦积区",
+"pid":620500,
+"code":"0938",
+"pinyin":"Maiji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620521,
+"name":"清水县",
+"pid":620500,
+"code":"0938",
+"pinyin":"Qingshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620522,
+"name":"秦安县",
+"pid":620500,
+"code":"0938",
+"pinyin":"Qin'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620523,
+"name":"甘谷县",
+"pid":620500,
+"code":"0938",
+"pinyin":"Gangu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620524,
+"name":"武山县",
+"pid":620500,
+"code":"0938",
+"pinyin":"Wushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620525,
+"name":"张家川回族自治县",
+"pid":620500,
+"code":"0938",
+"pinyin":"Zhangjiachuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620600,
+"name":"武威市",
+"pid":620000,
+"code":"0935",
+"pinyin":"Wuwei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620602,
+"name":"凉州区",
+"pid":620600,
+"code":"0935",
+"pinyin":"Liangzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620621,
+"name":"民勤县",
+"pid":620600,
+"code":"0935",
+"pinyin":"Minqin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620622,
+"name":"古浪县",
+"pid":620600,
+"code":"0935",
+"pinyin":"Gulang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620623,
+"name":"天祝藏族自治县",
+"pid":620600,
+"code":"0935",
+"pinyin":"Tianzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620700,
+"name":"张掖市",
+"pid":620000,
+"code":"0936",
+"pinyin":"Zhangye",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620702,
+"name":"甘州区",
+"pid":620700,
+"code":"0936",
+"pinyin":"Ganzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620721,
+"name":"肃南裕固族自治县",
+"pid":620700,
+"code":"0936",
+"pinyin":"Sunan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620722,
+"name":"民乐县",
+"pid":620700,
+"code":"0936",
+"pinyin":"Minle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620723,
+"name":"临泽县",
+"pid":620700,
+"code":"0936",
+"pinyin":"Linze",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620724,
+"name":"高台县",
+"pid":620700,
+"code":"0936",
+"pinyin":"Gaotai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620725,
+"name":"山丹县",
+"pid":620700,
+"code":"0936",
+"pinyin":"Shandan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620800,
+"name":"平凉市",
+"pid":620000,
+"code":"0933",
+"pinyin":"Pingliang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620802,
+"name":"崆峒区",
+"pid":620800,
+"code":"0933",
+"pinyin":"Kongtong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620821,
+"name":"泾川县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Jingchuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620822,
+"name":"灵台县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Lingtai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620823,
+"name":"崇信县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Chongxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620824,
+"name":"华亭县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Huating",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620825,
+"name":"庄浪县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Zhuanglang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620826,
+"name":"静宁县",
+"pid":620800,
+"code":"0933",
+"pinyin":"Jingning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620900,
+"name":"酒泉市",
+"pid":620000,
+"code":"0937",
+"pinyin":"Jiuquan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":620902,
+"name":"肃州区",
+"pid":620900,
+"code":"0937",
+"pinyin":"Suzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620921,
+"name":"金塔县",
+"pid":620900,
+"code":"0937",
+"pinyin":"Jinta",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620922,
+"name":"瓜州县",
+"pid":620900,
+"code":"0937",
+"pinyin":"Guazhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620923,
+"name":"肃北蒙古族自治县",
+"pid":620900,
+"code":"0937",
+"pinyin":"Subei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620924,
+"name":"阿克塞哈萨克族自治县",
+"pid":620900,
+"code":"0937",
+"pinyin":"Akesai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620981,
+"name":"玉门市",
+"pid":620900,
+"code":"0937",
+"pinyin":"Yumen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":620982,
+"name":"敦煌市",
+"pid":620900,
+"code":"0937",
+"pinyin":"Dunhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621000,
+"name":"庆阳市",
+"pid":620000,
+"code":"0934",
+"pinyin":"Qingyang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":621002,
+"name":"西峰区",
+"pid":621000,
+"code":"0934",
+"pinyin":"Xifeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621021,
+"name":"庆城县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Qingcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621022,
+"name":"环县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Huanxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621023,
+"name":"华池县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Huachi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621024,
+"name":"合水县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Heshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621025,
+"name":"正宁县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Zhengning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621026,
+"name":"宁县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Ningxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621027,
+"name":"镇原县",
+"pid":621000,
+"code":"0934",
+"pinyin":"Zhenyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621100,
+"name":"定西市",
+"pid":620000,
+"code":"0932",
+"pinyin":"Dingxi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":621102,
+"name":"安定区",
+"pid":621100,
+"code":"0932",
+"pinyin":"Anding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621121,
+"name":"通渭县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Tongwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621122,
+"name":"陇西县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Longxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621123,
+"name":"渭源县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Weiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621124,
+"name":"临洮县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Lintao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621125,
+"name":"漳县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Zhangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621126,
+"name":"岷县",
+"pid":621100,
+"code":"0932",
+"pinyin":"Minxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621200,
+"name":"陇南市",
+"pid":620000,
+"code":"0939",
+"pinyin":"Longnan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":621202,
+"name":"武都区",
+"pid":621200,
+"code":"0939",
+"pinyin":"Wudu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621221,
+"name":"成县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Chengxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621222,
+"name":"文县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Wenxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621223,
+"name":"宕昌县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Dangchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621224,
+"name":"康县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Kangxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621225,
+"name":"西和县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Xihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621226,
+"name":"礼县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Lixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621227,
+"name":"徽县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Huixian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":621228,
+"name":"两当县",
+"pid":621200,
+"code":"0939",
+"pinyin":"Liangdang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622900,
+"name":"临夏回族自治州",
+"pid":620000,
+"code":"0930",
+"pinyin":"Linxia",
+"ccode":null,
+"level":3
+},
+    {
+        "id":622901,
+"name":"临夏市",
+"pid":622900,
+"code":"0930",
+"pinyin":"Linxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622921,
+"name":"临夏县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Linxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622922,
+"name":"康乐县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Kangle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622923,
+"name":"永靖县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Yongjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622924,
+"name":"广河县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Guanghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622925,
+"name":"和政县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Hezheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622926,
+"name":"东乡族自治县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Dongxiangzu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":622927,
+"name":"积石山保安族东乡族撒拉族自治县",
+"pid":622900,
+"code":"0930",
+"pinyin":"Jishishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623000,
+"name":"甘南藏族自治州",
+"pid":620000,
+"code":"0941",
+"pinyin":"Gannan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":623001,
+"name":"合作市",
+"pid":623000,
+"code":"0941",
+"pinyin":"Hezuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623021,
+"name":"临潭县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Lintan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623022,
+"name":"卓尼县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Zhuoni",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623023,
+"name":"舟曲县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Zhouqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623024,
+"name":"迭部县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Diebu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623025,
+"name":"玛曲县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Maqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623026,
+"name":"碌曲县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Luqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":623027,
+"name":"夏河县",
+"pid":623000,
+"code":"0941",
+"pinyin":"Xiahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630000,
+"name":"青海省",
+"pid":100000,
+"code":null,
+"pinyin":"Qinghai",
+"ccode":null,
+"level":2
+},
+    {
+        "id":630100,
+"name":"西宁市",
+"pid":630000,
+"code":"0971",
+"pinyin":"Xining",
+"ccode":null,
+"level":3
+},
+    {
+        "id":630102,
+"name":"城东区",
+"pid":630100,
+"code":"0971",
+"pinyin":"Chengdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630103,
+"name":"城中区",
+"pid":630100,
+"code":"0971",
+"pinyin":"Chengzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630104,
+"name":"城西区",
+"pid":630100,
+"code":"0971",
+"pinyin":"Chengxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630105,
+"name":"城北区",
+"pid":630100,
+"code":"0971",
+"pinyin":"Chengbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630121,
+"name":"大通回族土族自治县",
+"pid":630100,
+"code":"0971",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630122,
+"name":"湟中县",
+"pid":630100,
+"code":"0971",
+"pinyin":"Huangzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630123,
+"name":"湟源县",
+"pid":630100,
+"code":"0971",
+"pinyin":"Huangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630200,
+"name":"海东市",
+"pid":630000,
+"code":"0972",
+"pinyin":"Haidong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":630202,
+"name":"乐都区",
+"pid":630200,
+"code":"0972",
+"pinyin":"Ledu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630203,
+"name":"平安区",
+"pid":630200,
+"code":"0972",
+"pinyin":"Ping'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630222,
+"name":"民和回族土族自治县",
+"pid":630200,
+"code":"0972",
+"pinyin":"Minhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630223,
+"name":"互助土族自治县",
+"pid":630200,
+"code":"0972",
+"pinyin":"Huzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630224,
+"name":"化隆回族自治县",
+"pid":630200,
+"code":"0972",
+"pinyin":"Hualong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":630225,
+"name":"循化撒拉族自治县",
+"pid":630200,
+"code":"0972",
+"pinyin":"Xunhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632200,
+"name":"海北藏族自治州",
+"pid":630000,
+"code":"0970",
+"pinyin":"Haibei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632221,
+"name":"门源回族自治县",
+"pid":632200,
+"code":"0970",
+"pinyin":"Menyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632222,
+"name":"祁连县",
+"pid":632200,
+"code":"0970",
+"pinyin":"Qilian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632223,
+"name":"海晏县",
+"pid":632200,
+"code":"0970",
+"pinyin":"Haiyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632224,
+"name":"刚察县",
+"pid":632200,
+"code":"0970",
+"pinyin":"Gangcha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632300,
+"name":"黄南藏族自治州",
+"pid":630000,
+"code":"0973",
+"pinyin":"Huangnan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632321,
+"name":"同仁县",
+"pid":632300,
+"code":"0973",
+"pinyin":"Tongren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632322,
+"name":"尖扎县",
+"pid":632300,
+"code":"0973",
+"pinyin":"Jianzha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632323,
+"name":"泽库县",
+"pid":632300,
+"code":"0973",
+"pinyin":"Zeku",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632324,
+"name":"河南蒙古族自治县",
+"pid":632300,
+"code":"0973",
+"pinyin":"Henan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632500,
+"name":"海南藏族自治州",
+"pid":630000,
+"code":"0974",
+"pinyin":"Hainan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632521,
+"name":"共和县",
+"pid":632500,
+"code":"0974",
+"pinyin":"Gonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632522,
+"name":"同德县",
+"pid":632500,
+"code":"0974",
+"pinyin":"Tongde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632523,
+"name":"贵德县",
+"pid":632500,
+"code":"0974",
+"pinyin":"Guide",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632524,
+"name":"兴海县",
+"pid":632500,
+"code":"0974",
+"pinyin":"Xinghai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632525,
+"name":"贵南县",
+"pid":632500,
+"code":"0974",
+"pinyin":"Guinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632600,
+"name":"果洛藏族自治州",
+"pid":630000,
+"code":"0975",
+"pinyin":"Golog",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632621,
+"name":"玛沁县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Maqin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632622,
+"name":"班玛县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Banma",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632623,
+"name":"甘德县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Gande",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632624,
+"name":"达日县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Dari",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632625,
+"name":"久治县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Jiuzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632626,
+"name":"玛多县",
+"pid":632600,
+"code":"0975",
+"pinyin":"Maduo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632700,
+"name":"玉树藏族自治州",
+"pid":630000,
+"code":"0976",
+"pinyin":"Yushu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632701,
+"name":"玉树市",
+"pid":632700,
+"code":"0976",
+"pinyin":"Yushu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632722,
+"name":"杂多县",
+"pid":632700,
+"code":"0976",
+"pinyin":"Zaduo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632723,
+"name":"称多县",
+"pid":632700,
+"code":"0976",
+"pinyin":"Chenduo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632724,
+"name":"治多县",
+"pid":632700,
+"code":"0976",
+"pinyin":"Zhiduo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632725,
+"name":"囊谦县",
+"pid":632700,
+"code":"0976",
+"pinyin":"Nangqian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632726,
+"name":"曲麻莱县",
+"pid":632700,
+"code":"0976",
+"pinyin":"Qumalai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632800,
+"name":"海西蒙古族藏族自治州",
+"pid":630000,
+"code":"0977",
+"pinyin":"Haixi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":632801,
+"name":"格尔木市",
+"pid":632800,
+"code":"0979",
+"pinyin":"Geermu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632802,
+"name":"德令哈市",
+"pid":632800,
+"code":"0977",
+"pinyin":"Delingha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632821,
+"name":"乌兰县",
+"pid":632800,
+"code":"0977",
+"pinyin":"Wulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632822,
+"name":"都兰县",
+"pid":632800,
+"code":"0977",
+"pinyin":"Dulan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":632823,
+"name":"天峻县",
+"pid":632800,
+"code":"0977",
+"pinyin":"Tianjun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640000,
+"name":"宁夏回族自治区",
+"pid":100000,
+"code":null,
+"pinyin":"Ningxia",
+"ccode":null,
+"level":2
+},
+    {
+        "id":640100,
+"name":"银川市",
+"pid":640000,
+"code":"0951",
+"pinyin":"Yinchuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":640104,
+"name":"兴庆区",
+"pid":640100,
+"code":"0951",
+"pinyin":"Xingqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640105,
+"name":"西夏区",
+"pid":640100,
+"code":"0951",
+"pinyin":"Xixia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640106,
+"name":"金凤区",
+"pid":640100,
+"code":"0951",
+"pinyin":"Jinfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640121,
+"name":"永宁县",
+"pid":640100,
+"code":"0951",
+"pinyin":"Yongning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640122,
+"name":"贺兰县",
+"pid":640100,
+"code":"0951",
+"pinyin":"Helan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640181,
+"name":"灵武市",
+"pid":640100,
+"code":"0951",
+"pinyin":"Lingwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640182,
+"name":"经济开发区",
+"pid":640100,
+"code":"0951",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640200,
+"name":"石嘴山市",
+"pid":640000,
+"code":"0952",
+"pinyin":"Shizuishan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":640202,
+"name":"大武口区",
+"pid":640200,
+"code":"0952",
+"pinyin":"Dawukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640205,
+"name":"惠农区",
+"pid":640200,
+"code":"0952",
+"pinyin":"Huinong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640221,
+"name":"平罗县",
+"pid":640200,
+"code":"0952",
+"pinyin":"Pingluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640222,
+"name":"经济开发区",
+"pid":640200,
+"code":"0952",
+"pinyin":"Jingjikaifaqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640300,
+"name":"吴忠市",
+"pid":640000,
+"code":"0953",
+"pinyin":"Wuzhong",
+"ccode":null,
+"level":3
+},
+    {
+        "id":640302,
+"name":"利通区",
+"pid":640300,
+"code":"0953",
+"pinyin":"Litong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640303,
+"name":"红寺堡区",
+"pid":640300,
+"code":"0953",
+"pinyin":"Hongsibao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640323,
+"name":"盐池县",
+"pid":640300,
+"code":"0953",
+"pinyin":"Yanchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640324,
+"name":"同心县",
+"pid":640300,
+"code":"0953",
+"pinyin":"Tongxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640381,
+"name":"青铜峡市",
+"pid":640300,
+"code":"0953",
+"pinyin":"Qingtongxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640400,
+"name":"固原市",
+"pid":640000,
+"code":"0954",
+"pinyin":"Guyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":640402,
+"name":"原州区",
+"pid":640400,
+"code":"0954",
+"pinyin":"Yuanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640422,
+"name":"西吉县",
+"pid":640400,
+"code":"0954",
+"pinyin":"Xiji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640423,
+"name":"隆德县",
+"pid":640400,
+"code":"0954",
+"pinyin":"Longde",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640424,
+"name":"泾源县",
+"pid":640400,
+"code":"0954",
+"pinyin":"Jingyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640425,
+"name":"彭阳县",
+"pid":640400,
+"code":"0954",
+"pinyin":"Pengyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640500,
+"name":"中卫市",
+"pid":640000,
+"code":"0955",
+"pinyin":"Zhongwei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":640502,
+"name":"沙坡头区",
+"pid":640500,
+"code":"0955",
+"pinyin":"Shapotou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640521,
+"name":"中宁县",
+"pid":640500,
+"code":"0955",
+"pinyin":"Zhongning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":640522,
+"name":"海原县",
+"pid":640500,
+"code":"0955",
+"pinyin":"Haiyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650000,
+"name":"新疆维吾尔自治区",
+"pid":100000,
+"code":null,
+"pinyin":"Xinjiang",
+"ccode":null,
+"level":2
+},
+    {
+        "id":650100,
+"name":"乌鲁木齐市",
+"pid":650000,
+"code":"0991",
+"pinyin":"Urumqi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":650102,
+"name":"天山区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Tianshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650103,
+"name":"沙依巴克区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Shayibake",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650104,
+"name":"新市区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Xinshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650105,
+"name":"水磨沟区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Shuimogou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650106,
+"name":"头屯河区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Toutunhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650107,
+"name":"达坂城区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Dabancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650109,
+"name":"米东区",
+"pid":650100,
+"code":"0991",
+"pinyin":"Midong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650121,
+"name":"乌鲁木齐县",
+"pid":650100,
+"code":"0991",
+"pinyin":"Wulumuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650200,
+"name":"克拉玛依市",
+"pid":650000,
+"code":"0990",
+"pinyin":"Karamay",
+"ccode":null,
+"level":3
+},
+    {
+        "id":650202,
+"name":"独山子区",
+"pid":650200,
+"code":"0992",
+"pinyin":"Dushanzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650203,
+"name":"克拉玛依区",
+"pid":650200,
+"code":"0990",
+"pinyin":"Kelamayi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650204,
+"name":"白碱滩区",
+"pid":650200,
+"code":"0990",
+"pinyin":"Baijiantan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650205,
+"name":"乌尔禾区",
+"pid":650200,
+"code":"0990",
+"pinyin":"Wuerhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650400,
+"name":"吐鲁番市",
+"pid":650000,
+"code":"0995",
+"pinyin":"Turpan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":650402,
+"name":"高昌区",
+"pid":650400,
+"code":"0995",
+"pinyin":"Gaochang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650421,
+"name":"鄯善县",
+"pid":650400,
+"code":"0995",
+"pinyin":"Shanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650422,
+"name":"托克逊县",
+"pid":650400,
+"code":"0995",
+"pinyin":"Tuokexun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650500,
+"name":"哈密市",
+"pid":650000,
+"code":"0902",
+"pinyin":"Hami",
+"ccode":null,
+"level":3
+},
+    {
+        "id":650502,
+"name":"伊州区",
+"pid":650500,
+"code":"0902",
+"pinyin":"Yizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650521,
+"name":"巴里坤哈萨克自治县",
+"pid":650500,
+"code":"0902",
+"pinyin":"Balikun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":650522,
+"name":"伊吾县",
+"pid":650500,
+"code":"0902",
+"pinyin":"Yiwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652300,
+"name":"昌吉回族自治州",
+"pid":650000,
+"code":"0994",
+"pinyin":"Changji",
+"ccode":null,
+"level":3
+},
+    {
+        "id":652301,
+"name":"昌吉市",
+"pid":652300,
+"code":"0994",
+"pinyin":"Changji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652302,
+"name":"阜康市",
+"pid":652300,
+"code":"0994",
+"pinyin":"Fukang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652323,
+"name":"呼图壁县",
+"pid":652300,
+"code":"0994",
+"pinyin":"Hutubi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652324,
+"name":"玛纳斯县",
+"pid":652300,
+"code":"0994",
+"pinyin":"Manasi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652325,
+"name":"奇台县",
+"pid":652300,
+"code":"0994",
+"pinyin":"Qitai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652327,
+"name":"吉木萨尔县",
+"pid":652300,
+"code":"0994",
+"pinyin":"Jimusaer",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652328,
+"name":"木垒哈萨克自治县",
+"pid":652300,
+"code":"0994",
+"pinyin":"Mulei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652700,
+"name":"博尔塔拉蒙古自治州",
+"pid":650000,
+"code":"0909",
+"pinyin":"Bortala",
+"ccode":null,
+"level":3
+},
+    {
+        "id":652701,
+"name":"博乐市",
+"pid":652700,
+"code":"0909",
+"pinyin":"Bole",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652702,
+"name":"阿拉山口市",
+"pid":652700,
+"code":"0909",
+"pinyin":"Alashankou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652722,
+"name":"精河县",
+"pid":652700,
+"code":"0909",
+"pinyin":"Jinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652723,
+"name":"温泉县",
+"pid":652700,
+"code":"0909",
+"pinyin":"Wenquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652800,
+"name":"巴音郭楞蒙古自治州",
+"pid":650000,
+"code":"0996",
+"pinyin":"Bayingol",
+"ccode":null,
+"level":3
+},
+    {
+        "id":652801,
+"name":"库尔勒市",
+"pid":652800,
+"code":"0996",
+"pinyin":"Kuerle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652822,
+"name":"轮台县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Luntai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652823,
+"name":"尉犁县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Yuli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652824,
+"name":"若羌县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Ruoqiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652825,
+"name":"且末县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Qiemo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652826,
+"name":"焉耆回族自治县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Yanqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652827,
+"name":"和静县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Hejing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652828,
+"name":"和硕县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Heshuo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652829,
+"name":"博湖县",
+"pid":652800,
+"code":"0996",
+"pinyin":"Bohu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652900,
+"name":"阿克苏地区",
+"pid":650000,
+"code":"0997",
+"pinyin":"Aksu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":652901,
+"name":"阿克苏市",
+"pid":652900,
+"code":"0997",
+"pinyin":"Akesu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652922,
+"name":"温宿县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Wensu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652923,
+"name":"库车县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Kuche",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652924,
+"name":"沙雅县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Shaya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652925,
+"name":"新和县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Xinhe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652926,
+"name":"拜城县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Baicheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652927,
+"name":"乌什县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Wushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652928,
+"name":"阿瓦提县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Awati",
+"ccode":null,
+"level":4
+},
+    {
+        "id":652929,
+"name":"柯坪县",
+"pid":652900,
+"code":"0997",
+"pinyin":"Keping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653000,
+"name":"克孜勒苏柯尔克孜自治州",
+"pid":650000,
+"code":"0908",
+"pinyin":"Kizilsu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":653001,
+"name":"阿图什市",
+"pid":653000,
+"code":"0908",
+"pinyin":"Atushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653022,
+"name":"阿克陶县",
+"pid":653000,
+"code":"0908",
+"pinyin":"Aketao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653023,
+"name":"阿合奇县",
+"pid":653000,
+"code":"0997",
+"pinyin":"Aheqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653024,
+"name":"乌恰县",
+"pid":653000,
+"code":"0908",
+"pinyin":"Wuqia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653100,
+"name":"喀什地区",
+"pid":650000,
+"code":"0998",
+"pinyin":"Kashgar",
+"ccode":null,
+"level":3
+},
+    {
+        "id":653101,
+"name":"喀什市",
+"pid":653100,
+"code":"0998",
+"pinyin":"Kashi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653121,
+"name":"疏附县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Shufu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653122,
+"name":"疏勒县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Shule",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653123,
+"name":"英吉沙县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Yingjisha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653124,
+"name":"泽普县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Zepu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653125,
+"name":"莎车县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Shache",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653126,
+"name":"叶城县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Yecheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653127,
+"name":"麦盖提县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Maigaiti",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653128,
+"name":"岳普湖县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Yuepuhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653129,
+"name":"伽师县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Jiashi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653130,
+"name":"巴楚县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Bachu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653131,
+"name":"塔什库尔干塔吉克自治县",
+"pid":653100,
+"code":"0998",
+"pinyin":"Tashikuergantajike",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653200,
+"name":"和田地区",
+"pid":650000,
+"code":"0903",
+"pinyin":"Hotan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":653201,
+"name":"和田市",
+"pid":653200,
+"code":"0903",
+"pinyin":"Hetianshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653221,
+"name":"和田县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Hetianxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653222,
+"name":"墨玉县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Moyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653223,
+"name":"皮山县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Pishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653224,
+"name":"洛浦县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Luopu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653225,
+"name":"策勒县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Cele",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653226,
+"name":"于田县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Yutian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":653227,
+"name":"民丰县",
+"pid":653200,
+"code":"0903",
+"pinyin":"Minfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654000,
+"name":"伊犁哈萨克自治州",
+"pid":650000,
+"code":"0999",
+"pinyin":"Ili",
+"ccode":null,
+"level":3
+},
+    {
+        "id":654002,
+"name":"伊宁市",
+"pid":654000,
+"code":"0999",
+"pinyin":"Yining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654003,
+"name":"奎屯市",
+"pid":654000,
+"code":"0992",
+"pinyin":"Kuitun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654004,
+"name":"霍尔果斯市",
+"pid":654000,
+"code":"0999",
+"pinyin":"Huoerguosi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654021,
+"name":"伊宁县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Yining",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654022,
+"name":"察布查尔锡伯自治县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Chabuchaerxibo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654023,
+"name":"霍城县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Huocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654024,
+"name":"巩留县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Gongliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654025,
+"name":"新源县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Xinyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654026,
+"name":"昭苏县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Zhaosu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654027,
+"name":"特克斯县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Tekesi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654028,
+"name":"尼勒克县",
+"pid":654000,
+"code":"0999",
+"pinyin":"Nileke",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654200,
+"name":"塔城地区",
+"pid":650000,
+"code":"0901",
+"pinyin":"Qoqek",
+"ccode":null,
+"level":3
+},
+    {
+        "id":654201,
+"name":"塔城市",
+"pid":654200,
+"code":"0901",
+"pinyin":"Tacheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654202,
+"name":"乌苏市",
+"pid":654200,
+"code":"0992",
+"pinyin":"Wusu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654221,
+"name":"额敏县",
+"pid":654200,
+"code":"0901",
+"pinyin":"Emin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654223,
+"name":"沙湾县",
+"pid":654200,
+"code":"0993",
+"pinyin":"Shawan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654224,
+"name":"托里县",
+"pid":654200,
+"code":"0901",
+"pinyin":"Tuoli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654225,
+"name":"裕民县",
+"pid":654200,
+"code":"0901",
+"pinyin":"Yumin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654226,
+"name":"和布克赛尔蒙古自治县",
+"pid":654200,
+"code":"0990",
+"pinyin":"Hebukesaier",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654300,
+"name":"阿勒泰地区",
+"pid":650000,
+"code":"0906",
+"pinyin":"Altay",
+"ccode":null,
+"level":3
+},
+    {
+        "id":654301,
+"name":"阿勒泰市",
+"pid":654300,
+"code":"0906",
+"pinyin":"Aletai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654321,
+"name":"布尔津县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Buerjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654322,
+"name":"富蕴县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Fuyun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654323,
+"name":"福海县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Fuhai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654324,
+"name":"哈巴河县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Habahe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654325,
+"name":"青河县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Qinghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":654326,
+"name":"吉木乃县",
+"pid":654300,
+"code":"0906",
+"pinyin":"Jimunai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659001,
+"name":"石河子市",
+"pid":650000,
+"code":"0993",
+"pinyin":"Shihezi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659002,
+"name":"阿拉尔市",
+"pid":650000,
+"code":"0997",
+"pinyin":"Aral",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659003,
+"name":"图木舒克市",
+"pid":650000,
+"code":"0998",
+"pinyin":"Tumxuk",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659004,
+"name":"五家渠市",
+"pid":650000,
+"code":"0994",
+"pinyin":"Wujiaqu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659005,
+"name":"北屯市",
+"pid":650000,
+"code":"0906",
+"pinyin":"Beitun",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659006,
+"name":"铁门关市",
+"pid":650000,
+"code":"0906",
+"pinyin":"Tiemenguan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659007,
+"name":"双河市",
+"pid":650000,
+"code":"0909",
+"pinyin":"Shuanghe",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659008,
+"name":"可克达拉市",
+"pid":650000,
+"code":"0999",
+"pinyin":"Kokdala",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659009,
+"name":"昆玉市",
+"pid":650000,
+"code":"0903",
+"pinyin":"Kunyu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":659101,
+"name":"新城街道",
+"pid":659001,
+"code":"0993",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659102,
+"name":"向阳街道",
+"pid":659001,
+"code":"0993",
+"pinyin":"Xiangyang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659103,
+"name":"红山街道",
+"pid":659001,
+"code":"0993",
+"pinyin":"Hongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659104,
+"name":"老街街道",
+"pid":659001,
+"code":"0993",
+"pinyin":"Laojie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659105,
+"name":"东城街道",
+"pid":659001,
+"code":"0993",
+"pinyin":"Dongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659106,
+"name":"北泉镇",
+"pid":659001,
+"code":"0993",
+"pinyin":"Beiquan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659107,
+"name":"石河子乡",
+"pid":659001,
+"code":"0993",
+"pinyin":"Shihezi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659108,
+"name":"一五二团",
+"pid":659001,
+"code":"0993",
+"pinyin":"Yishierwutuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659201,
+"name":"幸福路街道",
+"pid":659002,
+"code":"0997",
+"pinyin":"XingFuLu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659202,
+"name":"金银川路街道",
+"pid":659002,
+"code":"0997",
+"pinyin":"JinYinChuanLu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659203,
+"name":"青松路街道",
+"pid":659002,
+"code":"0997",
+"pinyin":"QingSongLu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659204,
+"name":"南口街道",
+"pid":659002,
+"code":"0997",
+"pinyin":"Nankou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659205,
+"name":"托喀依乡",
+"pid":659002,
+"code":"0997",
+"pinyin":"Tuokayixiang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659206,
+"name":"金银川镇",
+"pid":659002,
+"code":"0997",
+"pinyin":"JinYinChuanZhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659301,
+"name":"图木舒克市区",
+"pid":659003,
+"code":"0998",
+"pinyin":"Shiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659302,
+"name":"兵团四十四团",
+"pid":659003,
+"code":"0998",
+"pinyin":"SishisiTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659303,
+"name":"兵团四十九团",
+"pid":659003,
+"code":"0998",
+"pinyin":"SishijiuTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659304,
+"name":"兵团五十团",
+"pid":659003,
+"code":"0998",
+"pinyin":"WushiTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659305,
+"name":"兵团五十一团",
+"pid":659003,
+"code":"0998",
+"pinyin":"WushiyiTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659306,
+"name":"兵团五十二团",
+"pid":659003,
+"code":"0998",
+"pinyin":"WushierTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659307,
+"name":"兵团五十三团",
+"pid":659003,
+"code":"0998",
+"pinyin":"WushisanTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659308,
+"name":"喀拉拜勒镇",
+"pid":659003,
+"code":"0998",
+"pinyin":"Kalabaile",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659309,
+"name":"永安坝",
+"pid":659003,
+"code":"0998",
+"pinyin":"Yong'anBa",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659401,
+"name":"城区",
+"pid":659004,
+"code":"0994",
+"pinyin":"Chengqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659402,
+"name":"一零一团",
+"pid":659004,
+"code":"0994",
+"pinyin":"YilingyiTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659403,
+"name":"一零二团",
+"pid":659004,
+"code":"0994",
+"pinyin":"YilingerTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659404,
+"name":"一零三团",
+"pid":659004,
+"code":"0994",
+"pinyin":"YilingsanTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659501,
+"name":"新城区",
+"pid":659005,
+"code":"0906",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659502,
+"name":"老城区",
+"pid":659005,
+"code":"0906",
+"pinyin":"Laocheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659503,
+"name":"工业园区",
+"pid":659005,
+"code":"0906",
+"pinyin":"Gongyeyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659504,
+"name":"海川镇",
+"pid":659005,
+"code":"0906",
+"pinyin":"Haichuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659505,
+"name":"丰庆镇",
+"pid":659005,
+"code":"0906",
+"pinyin":"Fengqing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659506,
+"name":"锡伯渡镇",
+"pid":659005,
+"code":"0906",
+"pinyin":"Xibodu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659601,
+"name":"二十九团场",
+"pid":659006,
+"code":"0906",
+"pinyin":"Ershijiutuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659602,
+"name":"库西经济工业园",
+"pid":659006,
+"code":"0906",
+"pinyin":"Kuxigongyeyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659603,
+"name":"博古其镇",
+"pid":659006,
+"code":"0906",
+"pinyin":"Boguqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659604,
+"name":"双丰镇",
+"pid":659006,
+"code":"0906",
+"pinyin":"Shuangfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659701,
+"name":"八十一团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Bayituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659702,
+"name":"八十四团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Basituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659703,
+"name":"八十五团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Bawutuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659704,
+"name":"八十六团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Baliutuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659705,
+"name":"八十九团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Bashijiutuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659706,
+"name":"九十团",
+"pid":659007,
+"code":"0909",
+"pinyin":"Jiushituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659801,
+"name":"63团",
+"pid":659008,
+"code":"0999",
+"pinyin":"Liushisantuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659802,
+"name":"64团",
+"pid":659008,
+"code":"0999",
+"pinyin":"Liushisituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659803,
+"name":"66团",
+"pid":659008,
+"code":"0999",
+"pinyin":"LiushiliuTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659804,
+"name":"67团",
+"pid":659008,
+"code":"0999",
+"pinyin":"LiushiqiTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659805,
+"name":"68团",
+"pid":659008,
+"code":"0999",
+"pinyin":"LiushibaTuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659901,
+"name":"皮山农场",
+"pid":659009,
+"code":"0903",
+"pinyin":"Pishannongchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659902,
+"name":"二二四团",
+"pid":659009,
+"code":"0903",
+"pinyin":"Erersituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659903,
+"name":"四十七团",
+"pid":659009,
+"code":"0903",
+"pinyin":"Sishiqituan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":659904,
+"name":"一牧场",
+"pid":659009,
+"code":"0903",
+"pinyin":"Yimuchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710000,
+"name":"台湾",
+"pid":100000,
+"code":null,
+"pinyin":"Taiwan",
+"ccode":null,
+"level":2
+},
+    {
+        "id":710100,
+"name":"台北市",
+"pid":710000,
+"code":"02",
+"pinyin":"Taipei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710101,
+"name":"松山区",
+"pid":710100,
+"code":"02",
+"pinyin":"Songshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710102,
+"name":"信义区",
+"pid":710100,
+"code":"02",
+"pinyin":"Xinyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710103,
+"name":"大安区",
+"pid":710100,
+"code":"02",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710104,
+"name":"中山区",
+"pid":710100,
+"code":"02",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710105,
+"name":"中正区",
+"pid":710100,
+"code":"02",
+"pinyin":"Zhongzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710106,
+"name":"大同区",
+"pid":710100,
+"code":"02",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710107,
+"name":"万华区",
+"pid":710100,
+"code":"02",
+"pinyin":"Wanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710108,
+"name":"文山区",
+"pid":710100,
+"code":"02",
+"pinyin":"Wenshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710109,
+"name":"南港区",
+"pid":710100,
+"code":"02",
+"pinyin":"Nangang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710110,
+"name":"内湖区",
+"pid":710100,
+"code":"02",
+"pinyin":"Nahu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710111,
+"name":"士林区",
+"pid":710100,
+"code":"02",
+"pinyin":"Shilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710112,
+"name":"北投区",
+"pid":710100,
+"code":"02",
+"pinyin":"Beitou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710200,
+"name":"高雄市",
+"pid":710000,
+"code":"07",
+"pinyin":"Kaohsiung",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710201,
+"name":"盐埕区",
+"pid":710200,
+"code":"07",
+"pinyin":"Yancheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710202,
+"name":"鼓山区",
+"pid":710200,
+"code":"07",
+"pinyin":"Gushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710203,
+"name":"左营区",
+"pid":710200,
+"code":"07",
+"pinyin":"Zuoying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710204,
+"name":"楠梓区",
+"pid":710200,
+"code":"07",
+"pinyin":"Nanzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710205,
+"name":"三民区",
+"pid":710200,
+"code":"07",
+"pinyin":"Sanmin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710206,
+"name":"新兴区",
+"pid":710200,
+"code":"07",
+"pinyin":"Xinxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710207,
+"name":"前金区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qianjin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710208,
+"name":"苓雅区",
+"pid":710200,
+"code":"07",
+"pinyin":"Lingya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710209,
+"name":"前镇区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qianzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710210,
+"name":"旗津区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qijin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710211,
+"name":"小港区",
+"pid":710200,
+"code":"07",
+"pinyin":"Xiaogang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710212,
+"name":"凤山区",
+"pid":710200,
+"code":"07",
+"pinyin":"Fengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710213,
+"name":"林园区",
+"pid":710200,
+"code":"07",
+"pinyin":"Linyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710214,
+"name":"大寮区",
+"pid":710200,
+"code":"07",
+"pinyin":"Daliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710215,
+"name":"大树区",
+"pid":710200,
+"code":"07",
+"pinyin":"Dashu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710216,
+"name":"大社区",
+"pid":710200,
+"code":"07",
+"pinyin":"Dashe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710217,
+"name":"仁武区",
+"pid":710200,
+"code":"07",
+"pinyin":"Renwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710218,
+"name":"鸟松区",
+"pid":710200,
+"code":"07",
+"pinyin":"Niaosong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710219,
+"name":"冈山区",
+"pid":710200,
+"code":"07",
+"pinyin":"Gangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710220,
+"name":"桥头区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qiaotou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710221,
+"name":"燕巢区",
+"pid":710200,
+"code":"07",
+"pinyin":"Yanchao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710222,
+"name":"田寮区",
+"pid":710200,
+"code":"07",
+"pinyin":"Tianliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710223,
+"name":"阿莲区",
+"pid":710200,
+"code":"07",
+"pinyin":"Alian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710224,
+"name":"路竹区",
+"pid":710200,
+"code":"07",
+"pinyin":"Luzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710225,
+"name":"湖内区",
+"pid":710200,
+"code":"07",
+"pinyin":"Huna",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710226,
+"name":"茄萣区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qieding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710227,
+"name":"永安区",
+"pid":710200,
+"code":"07",
+"pinyin":"Yong'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710228,
+"name":"弥陀区",
+"pid":710200,
+"code":"07",
+"pinyin":"Mituo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710229,
+"name":"梓官区",
+"pid":710200,
+"code":"07",
+"pinyin":"Ziguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710230,
+"name":"旗山区",
+"pid":710200,
+"code":"07",
+"pinyin":"Qishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710231,
+"name":"美浓区",
+"pid":710200,
+"code":"07",
+"pinyin":"Meinong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710232,
+"name":"六龟区",
+"pid":710200,
+"code":"07",
+"pinyin":"Liugui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710233,
+"name":"甲仙区",
+"pid":710200,
+"code":"07",
+"pinyin":"Jiaxian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710234,
+"name":"杉林区",
+"pid":710200,
+"code":"07",
+"pinyin":"Shanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710235,
+"name":"内门区",
+"pid":710200,
+"code":"07",
+"pinyin":"Namen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710236,
+"name":"茂林区",
+"pid":710200,
+"code":"07",
+"pinyin":"Maolin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710237,
+"name":"桃源区",
+"pid":710200,
+"code":"07",
+"pinyin":"Taoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710238,
+"name":"那玛夏区",
+"pid":710200,
+"code":"07",
+"pinyin":"Namaxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710300,
+"name":"基隆市",
+"pid":710000,
+"code":"02",
+"pinyin":"Keelung",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710301,
+"name":"中正区",
+"pid":710300,
+"code":"02",
+"pinyin":"Zhongzheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710302,
+"name":"七堵区",
+"pid":710300,
+"code":"02",
+"pinyin":"Qidu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710303,
+"name":"暖暖区",
+"pid":710300,
+"code":"02",
+"pinyin":"Nuannuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710304,
+"name":"仁爱区",
+"pid":710300,
+"code":"02",
+"pinyin":"Renai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710305,
+"name":"中山区",
+"pid":710300,
+"code":"02",
+"pinyin":"Zhongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710306,
+"name":"安乐区",
+"pid":710300,
+"code":"02",
+"pinyin":"Anle",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710307,
+"name":"信义区",
+"pid":710300,
+"code":"02",
+"pinyin":"Xinyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710400,
+"name":"台中市",
+"pid":710000,
+"code":"04",
+"pinyin":"Taichung",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710401,
+"name":"中区",
+"pid":710400,
+"code":"04",
+"pinyin":"Zhongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710402,
+"name":"东区",
+"pid":710400,
+"code":"04",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710403,
+"name":"南区",
+"pid":710400,
+"code":"04",
+"pinyin":"Nanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710404,
+"name":"西区",
+"pid":710400,
+"code":"04",
+"pinyin":"Xiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710405,
+"name":"北区",
+"pid":710400,
+"code":"04",
+"pinyin":"Beiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710406,
+"name":"西屯区",
+"pid":710400,
+"code":"04",
+"pinyin":"Xitun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710407,
+"name":"南屯区",
+"pid":710400,
+"code":"04",
+"pinyin":"Nantun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710408,
+"name":"北屯区",
+"pid":710400,
+"code":"04",
+"pinyin":"Beitun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710409,
+"name":"丰原区",
+"pid":710400,
+"code":"04",
+"pinyin":"Fengyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710410,
+"name":"东势区",
+"pid":710400,
+"code":"04",
+"pinyin":"Dongshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710411,
+"name":"大甲区",
+"pid":710400,
+"code":"04",
+"pinyin":"Dajia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710412,
+"name":"清水区",
+"pid":710400,
+"code":"04",
+"pinyin":"Qingshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710413,
+"name":"沙鹿区",
+"pid":710400,
+"code":"04",
+"pinyin":"Shalu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710414,
+"name":"梧栖区",
+"pid":710400,
+"code":"04",
+"pinyin":"Wuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710415,
+"name":"后里区",
+"pid":710400,
+"code":"04",
+"pinyin":"Houli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710416,
+"name":"神冈区",
+"pid":710400,
+"code":"04",
+"pinyin":"Shengang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710417,
+"name":"潭子区",
+"pid":710400,
+"code":"04",
+"pinyin":"Tanzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710418,
+"name":"大雅区",
+"pid":710400,
+"code":"04",
+"pinyin":"Daya",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710419,
+"name":"新社区",
+"pid":710400,
+"code":"04",
+"pinyin":"Xinshe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710420,
+"name":"石冈区",
+"pid":710400,
+"code":"04",
+"pinyin":"Shigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710421,
+"name":"外埔区",
+"pid":710400,
+"code":"04",
+"pinyin":"Waipu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710422,
+"name":"大安区",
+"pid":710400,
+"code":"04",
+"pinyin":"Da'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710423,
+"name":"乌日区",
+"pid":710400,
+"code":"04",
+"pinyin":"Wuri",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710424,
+"name":"大肚区",
+"pid":710400,
+"code":"04",
+"pinyin":"Dadu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710425,
+"name":"龙井区",
+"pid":710400,
+"code":"04",
+"pinyin":"Longjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710426,
+"name":"雾峰区",
+"pid":710400,
+"code":"04",
+"pinyin":"Wufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710427,
+"name":"太平区",
+"pid":710400,
+"code":"04",
+"pinyin":"Taiping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710428,
+"name":"大里区",
+"pid":710400,
+"code":"04",
+"pinyin":"Dali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710429,
+"name":"和平区",
+"pid":710400,
+"code":"04",
+"pinyin":"Heping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710500,
+"name":"台南市",
+"pid":710000,
+"code":"06",
+"pinyin":"Tainan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710501,
+"name":"东区",
+"pid":710500,
+"code":"06",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710502,
+"name":"南区",
+"pid":710500,
+"code":"06",
+"pinyin":"Nanqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710504,
+"name":"北区",
+"pid":710500,
+"code":"06",
+"pinyin":"Beiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710506,
+"name":"安南区",
+"pid":710500,
+"code":"06",
+"pinyin":"Annan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710507,
+"name":"安平区",
+"pid":710500,
+"code":"06",
+"pinyin":"Anping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710508,
+"name":"中西区",
+"pid":710500,
+"code":"06",
+"pinyin":"Zhongxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710509,
+"name":"新营区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xinying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710510,
+"name":"盐水区",
+"pid":710500,
+"code":"06",
+"pinyin":"Yanshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710511,
+"name":"白河区",
+"pid":710500,
+"code":"06",
+"pinyin":"Baihe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710512,
+"name":"柳营区",
+"pid":710500,
+"code":"06",
+"pinyin":"Liuying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710513,
+"name":"后壁区",
+"pid":710500,
+"code":"06",
+"pinyin":"Houbi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710514,
+"name":"东山区",
+"pid":710500,
+"code":"06",
+"pinyin":"Dongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710515,
+"name":"麻豆区",
+"pid":710500,
+"code":"06",
+"pinyin":"Madou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710516,
+"name":"下营区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xiaying",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710517,
+"name":"六甲区",
+"pid":710500,
+"code":"06",
+"pinyin":"Liujia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710518,
+"name":"官田区",
+"pid":710500,
+"code":"06",
+"pinyin":"Guantian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710519,
+"name":"大内区",
+"pid":710500,
+"code":"06",
+"pinyin":"Dana",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710520,
+"name":"佳里区",
+"pid":710500,
+"code":"06",
+"pinyin":"Jiali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710521,
+"name":"学甲区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xuejia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710522,
+"name":"西港区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710523,
+"name":"七股区",
+"pid":710500,
+"code":"06",
+"pinyin":"Qigu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710524,
+"name":"将军区",
+"pid":710500,
+"code":"06",
+"pinyin":"Jiangjun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710525,
+"name":"北门区",
+"pid":710500,
+"code":"06",
+"pinyin":"Beimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710526,
+"name":"新化区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xinhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710527,
+"name":"善化区",
+"pid":710500,
+"code":"06",
+"pinyin":"Shanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710528,
+"name":"新市区",
+"pid":710500,
+"code":"06",
+"pinyin":"Xinshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710529,
+"name":"安定区",
+"pid":710500,
+"code":"06",
+"pinyin":"Anding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710530,
+"name":"山上区",
+"pid":710500,
+"code":"06",
+"pinyin":"Shanshang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710531,
+"name":"玉井区",
+"pid":710500,
+"code":"06",
+"pinyin":"Yujing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710532,
+"name":"楠西区",
+"pid":710500,
+"code":"06",
+"pinyin":"Nanxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710533,
+"name":"南化区",
+"pid":710500,
+"code":"06",
+"pinyin":"Nanhua",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710534,
+"name":"左镇区",
+"pid":710500,
+"code":"06",
+"pinyin":"Zuozhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710535,
+"name":"仁德区",
+"pid":710500,
+"code":"06",
+"pinyin":"Rende",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710536,
+"name":"归仁区",
+"pid":710500,
+"code":"06",
+"pinyin":"Guiren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710537,
+"name":"关庙区",
+"pid":710500,
+"code":"06",
+"pinyin":"Guanmiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710538,
+"name":"龙崎区",
+"pid":710500,
+"code":"06",
+"pinyin":"Longqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710539,
+"name":"永康区",
+"pid":710500,
+"code":"06",
+"pinyin":"Yongkang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710600,
+"name":"新竹市",
+"pid":710000,
+"code":"03",
+"pinyin":"Hsinchu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710601,
+"name":"东区",
+"pid":710600,
+"code":"03",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710602,
+"name":"北区",
+"pid":710600,
+"code":"03",
+"pinyin":"Beiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710603,
+"name":"香山区",
+"pid":710600,
+"code":"03",
+"pinyin":"Xiangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710700,
+"name":"嘉义市",
+"pid":710000,
+"code":"05",
+"pinyin":"Chiayi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710701,
+"name":"东区",
+"pid":710700,
+"code":"05",
+"pinyin":"Dongqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710702,
+"name":"西区",
+"pid":710700,
+"code":"05",
+"pinyin":"Xiqu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710800,
+"name":"新北市",
+"pid":710000,
+"code":"02",
+"pinyin":"New Taipei",
+"ccode":null,
+"level":3
+},
+    {
+        "id":710801,
+"name":"板桥区",
+"pid":710800,
+"code":"02",
+"pinyin":"Banqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710802,
+"name":"三重区",
+"pid":710800,
+"code":"02",
+"pinyin":"Sanzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710803,
+"name":"中和区",
+"pid":710800,
+"code":"02",
+"pinyin":"Zhonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710804,
+"name":"永和区",
+"pid":710800,
+"code":"02",
+"pinyin":"Yonghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710805,
+"name":"新庄区",
+"pid":710800,
+"code":"02",
+"pinyin":"Xinzhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710806,
+"name":"新店区",
+"pid":710800,
+"code":"02",
+"pinyin":"Xindian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710807,
+"name":"树林区",
+"pid":710800,
+"code":"02",
+"pinyin":"Shulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710808,
+"name":"莺歌区",
+"pid":710800,
+"code":"02",
+"pinyin":"Yingge",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710809,
+"name":"三峡区",
+"pid":710800,
+"code":"02",
+"pinyin":"Sanxia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710810,
+"name":"淡水区",
+"pid":710800,
+"code":"02",
+"pinyin":"Danshui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710811,
+"name":"汐止区",
+"pid":710800,
+"code":"02",
+"pinyin":"Xizhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710812,
+"name":"瑞芳区",
+"pid":710800,
+"code":"02",
+"pinyin":"Ruifang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710813,
+"name":"土城区",
+"pid":710800,
+"code":"02",
+"pinyin":"Tucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710814,
+"name":"芦洲区",
+"pid":710800,
+"code":"02",
+"pinyin":"Luzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710815,
+"name":"五股区",
+"pid":710800,
+"code":"02",
+"pinyin":"Wugu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710816,
+"name":"泰山区",
+"pid":710800,
+"code":"02",
+"pinyin":"Taishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710817,
+"name":"林口区",
+"pid":710800,
+"code":"02",
+"pinyin":"Linkou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710818,
+"name":"深坑区",
+"pid":710800,
+"code":"02",
+"pinyin":"Shenkeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710819,
+"name":"石碇区",
+"pid":710800,
+"code":"02",
+"pinyin":"Shiding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710820,
+"name":"坪林区",
+"pid":710800,
+"code":"02",
+"pinyin":"Pinglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710821,
+"name":"三芝区",
+"pid":710800,
+"code":"02",
+"pinyin":"Sanzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710822,
+"name":"石门区",
+"pid":710800,
+"code":"02",
+"pinyin":"Shimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710823,
+"name":"八里区",
+"pid":710800,
+"code":"02",
+"pinyin":"Bali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710824,
+"name":"平溪区",
+"pid":710800,
+"code":"02",
+"pinyin":"Pingxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710825,
+"name":"双溪区",
+"pid":710800,
+"code":"02",
+"pinyin":"Shuangxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710826,
+"name":"贡寮区",
+"pid":710800,
+"code":"02",
+"pinyin":"Gongliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710827,
+"name":"金山区",
+"pid":710800,
+"code":"02",
+"pinyin":"Jinshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710828,
+"name":"万里区",
+"pid":710800,
+"code":"02",
+"pinyin":"Wanli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":710829,
+"name":"乌来区",
+"pid":710800,
+"code":"02",
+"pinyin":"Wulai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712200,
+"name":"宜兰县",
+"pid":710000,
+"code":"03",
+"pinyin":"Yilan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712201,
+"name":"宜兰市",
+"pid":712200,
+"code":"03",
+"pinyin":"Yilan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712221,
+"name":"罗东镇",
+"pid":712200,
+"code":"03",
+"pinyin":"Luodong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712222,
+"name":"苏澳镇",
+"pid":712200,
+"code":"03",
+"pinyin":"Suao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712223,
+"name":"头城镇",
+"pid":712200,
+"code":"03",
+"pinyin":"Toucheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712224,
+"name":"礁溪乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Jiaoxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712225,
+"name":"壮围乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Zhuangwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712226,
+"name":"员山乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Yuanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712227,
+"name":"冬山乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Dongshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712228,
+"name":"五结乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Wujie",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712229,
+"name":"三星乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Sanxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712230,
+"name":"大同乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Datong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712231,
+"name":"南澳乡",
+"pid":712200,
+"code":"03",
+"pinyin":"Nanao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712300,
+"name":"桃园市",
+"pid":710000,
+"code":"03",
+"pinyin":"Taoyuan",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712301,
+"name":"桃园市",
+"pid":712300,
+"code":"03",
+"pinyin":"Taoyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712302,
+"name":"中坜市",
+"pid":712300,
+"code":"03",
+"pinyin":"Zhongli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712303,
+"name":"平镇市",
+"pid":712300,
+"code":"03",
+"pinyin":"Pingzhen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712304,
+"name":"八德市",
+"pid":712300,
+"code":"03",
+"pinyin":"Bade",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712305,
+"name":"杨梅市",
+"pid":712300,
+"code":"03",
+"pinyin":"Yangmei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712306,
+"name":"芦竹市",
+"pid":712300,
+"code":"03",
+"pinyin":"Luzhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712321,
+"name":"大溪镇",
+"pid":712300,
+"code":"03",
+"pinyin":"Daxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712324,
+"name":"大园乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Dayuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712325,
+"name":"龟山乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Guishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712327,
+"name":"龙潭乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Longtan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712329,
+"name":"新屋乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Xinwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712330,
+"name":"观音乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Guanyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712331,
+"name":"复兴乡",
+"pid":712300,
+"code":"03",
+"pinyin":"Fuxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712400,
+"name":"新竹县",
+"pid":710000,
+"code":"03",
+"pinyin":"Hsinchu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712401,
+"name":"竹北市",
+"pid":712400,
+"code":"03",
+"pinyin":"Zhubei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712421,
+"name":"竹东镇",
+"pid":712400,
+"code":"03",
+"pinyin":"Zhudong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712422,
+"name":"新埔镇",
+"pid":712400,
+"code":"03",
+"pinyin":"Xinpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712423,
+"name":"关西镇",
+"pid":712400,
+"code":"03",
+"pinyin":"Guanxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712424,
+"name":"湖口乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Hukou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712425,
+"name":"新丰乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Xinfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712426,
+"name":"芎林乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Xionglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712427,
+"name":"横山乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Hengshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712428,
+"name":"北埔乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Beipu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712429,
+"name":"宝山乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Baoshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712430,
+"name":"峨眉乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Emei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712431,
+"name":"尖石乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Jianshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712432,
+"name":"五峰乡",
+"pid":712400,
+"code":"03",
+"pinyin":"Wufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712500,
+"name":"苗栗县",
+"pid":710000,
+"code":"037",
+"pinyin":"Miaoli",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712501,
+"name":"苗栗市",
+"pid":712500,
+"code":"037",
+"pinyin":"Miaoli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712521,
+"name":"苑里镇",
+"pid":712500,
+"code":"037",
+"pinyin":"Yuanli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712522,
+"name":"通霄镇",
+"pid":712500,
+"code":"037",
+"pinyin":"Tongxiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712523,
+"name":"竹南镇",
+"pid":712500,
+"code":"037",
+"pinyin":"Zhunan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712524,
+"name":"头份市",
+"pid":712500,
+"code":"037",
+"pinyin":"Toufen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712525,
+"name":"后龙镇",
+"pid":712500,
+"code":"037",
+"pinyin":"Houlong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712526,
+"name":"卓兰镇",
+"pid":712500,
+"code":"037",
+"pinyin":"Zhuolan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712527,
+"name":"大湖乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Dahu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712528,
+"name":"公馆乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Gongguan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712529,
+"name":"铜锣乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Tongluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712530,
+"name":"南庄乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Nanzhuang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712531,
+"name":"头屋乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Touwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712532,
+"name":"三义乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Sanyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712533,
+"name":"西湖乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Xihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712534,
+"name":"造桥乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Zaoqiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712535,
+"name":"三湾乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Sanwan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712536,
+"name":"狮潭乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Shitan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712537,
+"name":"泰安乡",
+"pid":712500,
+"code":"037",
+"pinyin":"Tai'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712700,
+"name":"彰化县",
+"pid":710000,
+"code":"04",
+"pinyin":"Changhua",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712701,
+"name":"彰化市",
+"pid":712700,
+"code":"04",
+"pinyin":"Zhanghuashi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712721,
+"name":"鹿港镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Lugang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712722,
+"name":"和美镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Hemei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712723,
+"name":"线西乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Xianxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712724,
+"name":"伸港乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Shengang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712725,
+"name":"福兴乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Fuxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712726,
+"name":"秀水乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Xiushui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712727,
+"name":"花坛乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Huatan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712728,
+"name":"芬园乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Fenyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712729,
+"name":"员林市",
+"pid":712700,
+"code":"04",
+"pinyin":"Yuanlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712730,
+"name":"溪湖镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Xihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712731,
+"name":"田中镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Tianzhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712732,
+"name":"大村乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Dacun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712733,
+"name":"埔盐乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Puyan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712734,
+"name":"埔心乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Puxin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712735,
+"name":"永靖乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Yongjing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712736,
+"name":"社头乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Shetou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712737,
+"name":"二水乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Ershui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712738,
+"name":"北斗镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Beidou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712739,
+"name":"二林镇",
+"pid":712700,
+"code":"04",
+"pinyin":"Erlin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712740,
+"name":"田尾乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Tianwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712741,
+"name":"埤头乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Pitou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712742,
+"name":"芳苑乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Fangyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712743,
+"name":"大城乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Dacheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712744,
+"name":"竹塘乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Zhutang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712745,
+"name":"溪州乡",
+"pid":712700,
+"code":"04",
+"pinyin":"Xizhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712800,
+"name":"南投县",
+"pid":710000,
+"code":"049",
+"pinyin":"Nantou",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712801,
+"name":"南投市",
+"pid":712800,
+"code":"049",
+"pinyin":"Nantoushi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712821,
+"name":"埔里镇",
+"pid":712800,
+"code":"049",
+"pinyin":"Puli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712822,
+"name":"草屯镇",
+"pid":712800,
+"code":"049",
+"pinyin":"Caotun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712823,
+"name":"竹山镇",
+"pid":712800,
+"code":"049",
+"pinyin":"Zhushan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712824,
+"name":"集集镇",
+"pid":712800,
+"code":"049",
+"pinyin":"Jiji",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712825,
+"name":"名间乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Mingjian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712826,
+"name":"鹿谷乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Lugu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712827,
+"name":"中寮乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Zhongliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712828,
+"name":"鱼池乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Yuchi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712829,
+"name":"国姓乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Guoxing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712830,
+"name":"水里乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Shuili",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712831,
+"name":"信义乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Xinyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712832,
+"name":"仁爱乡",
+"pid":712800,
+"code":"049",
+"pinyin":"Renai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712900,
+"name":"云林县",
+"pid":710000,
+"code":"05",
+"pinyin":"Yunlin",
+"ccode":null,
+"level":3
+},
+    {
+        "id":712901,
+"name":"斗六市",
+"pid":712900,
+"code":"05",
+"pinyin":"Douliu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712921,
+"name":"斗南镇",
+"pid":712900,
+"code":"05",
+"pinyin":"Dounan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712922,
+"name":"虎尾镇",
+"pid":712900,
+"code":"05",
+"pinyin":"Huwei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712923,
+"name":"西螺镇",
+"pid":712900,
+"code":"05",
+"pinyin":"Xiluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712924,
+"name":"土库镇",
+"pid":712900,
+"code":"05",
+"pinyin":"Tuku",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712925,
+"name":"北港镇",
+"pid":712900,
+"code":"05",
+"pinyin":"Beigang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712926,
+"name":"古坑乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Gukeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712927,
+"name":"大埤乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Dapi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712928,
+"name":"莿桐乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Citong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712929,
+"name":"林内乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Linna",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712930,
+"name":"二仑乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Erlun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712931,
+"name":"仑背乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Lunbei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712932,
+"name":"麦寮乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Mailiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712933,
+"name":"东势乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Dongshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712934,
+"name":"褒忠乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Baozhong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712935,
+"name":"台西乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Taixi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712936,
+"name":"元长乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Yuanchang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712937,
+"name":"四湖乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Sihu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712938,
+"name":"口湖乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Kouhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":712939,
+"name":"水林乡",
+"pid":712900,
+"code":"05",
+"pinyin":"Shuilin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713000,
+"name":"嘉义县",
+"pid":710000,
+"code":"05",
+"pinyin":"Chiayi",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713001,
+"name":"太保市",
+"pid":713000,
+"code":"05",
+"pinyin":"Taibao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713002,
+"name":"朴子市",
+"pid":713000,
+"code":"05",
+"pinyin":"Puzi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713023,
+"name":"布袋镇",
+"pid":713000,
+"code":"05",
+"pinyin":"Budai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713024,
+"name":"大林镇",
+"pid":713000,
+"code":"05",
+"pinyin":"Dalin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713025,
+"name":"民雄乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Minxiong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713026,
+"name":"溪口乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Xikou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713027,
+"name":"新港乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Xingang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713028,
+"name":"六脚乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Liujiao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713029,
+"name":"东石乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Dongshi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713030,
+"name":"义竹乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Yizhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713031,
+"name":"鹿草乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Lucao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713032,
+"name":"水上乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Shuishang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713033,
+"name":"中埔乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Zhongpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713034,
+"name":"竹崎乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Zhuqi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713035,
+"name":"梅山乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Meishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713036,
+"name":"番路乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Fanlu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713037,
+"name":"大埔乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Dapu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713038,
+"name":"阿里山乡",
+"pid":713000,
+"code":"05",
+"pinyin":"Alishan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713300,
+"name":"屏东县",
+"pid":710000,
+"code":"08",
+"pinyin":"Pingtung",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713301,
+"name":"屏东市",
+"pid":713300,
+"code":"08",
+"pinyin":"Pingdong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713321,
+"name":"潮州镇",
+"pid":713300,
+"code":"08",
+"pinyin":"Chaozhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713322,
+"name":"东港镇",
+"pid":713300,
+"code":"08",
+"pinyin":"Donggang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713323,
+"name":"恒春镇",
+"pid":713300,
+"code":"08",
+"pinyin":"Hengchun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713324,
+"name":"万丹乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Wandan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713325,
+"name":"长治乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Changzhi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713326,
+"name":"麟洛乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Linluo",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713327,
+"name":"九如乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Jiuru",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713328,
+"name":"里港乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Ligang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713329,
+"name":"盐埔乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Yanpu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713330,
+"name":"高树乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Gaoshu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713331,
+"name":"万峦乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Wanluan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713332,
+"name":"内埔乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Napu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713333,
+"name":"竹田乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Zhutian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713334,
+"name":"新埤乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Xinpi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713335,
+"name":"枋寮乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Fangliao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713336,
+"name":"新园乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Xinyuan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713337,
+"name":"崁顶乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Kanding",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713338,
+"name":"林边乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Linbian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713339,
+"name":"南州乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Nanzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713340,
+"name":"佳冬乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Jiadong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713341,
+"name":"琉球乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Liuqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713342,
+"name":"车城乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Checheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713343,
+"name":"满州乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Manzhou",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713344,
+"name":"枋山乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Fangshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713345,
+"name":"三地门乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Sandimen",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713346,
+"name":"雾台乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Wutai",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713347,
+"name":"玛家乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Majia",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713348,
+"name":"泰武乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Taiwu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713349,
+"name":"来义乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Laiyi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713350,
+"name":"春日乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Chunri",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713351,
+"name":"狮子乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Shizi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713352,
+"name":"牡丹乡",
+"pid":713300,
+"code":"08",
+"pinyin":"Mudan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713400,
+"name":"台东县",
+"pid":710000,
+"code":"089",
+"pinyin":"Taitung",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713401,
+"name":"台东市",
+"pid":713400,
+"code":"089",
+"pinyin":"Taidong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713421,
+"name":"成功镇",
+"pid":713400,
+"code":"089",
+"pinyin":"Chenggong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713422,
+"name":"关山镇",
+"pid":713400,
+"code":"089",
+"pinyin":"Guanshan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713423,
+"name":"卑南乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Beinan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713424,
+"name":"鹿野乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Luye",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713425,
+"name":"池上乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Chishang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713426,
+"name":"东河乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Donghe",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713427,
+"name":"长滨乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Changbin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713428,
+"name":"太麻里乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Taimali",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713429,
+"name":"大武乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Dawu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713430,
+"name":"绿岛乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Lvdao",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713431,
+"name":"海端乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Haiduan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713432,
+"name":"延平乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Yanping",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713433,
+"name":"金峰乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Jinfeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713434,
+"name":"达仁乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Daren",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713435,
+"name":"兰屿乡",
+"pid":713400,
+"code":"089",
+"pinyin":"Lanyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713500,
+"name":"花莲县",
+"pid":710000,
+"code":"03",
+"pinyin":"Hualien",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713501,
+"name":"花莲市",
+"pid":713500,
+"code":"03",
+"pinyin":"Hualian",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713521,
+"name":"凤林镇",
+"pid":713500,
+"code":"03",
+"pinyin":"Fenglin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713522,
+"name":"玉里镇",
+"pid":713500,
+"code":"03",
+"pinyin":"Yuli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713523,
+"name":"新城乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Xincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713524,
+"name":"吉安乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Ji'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713525,
+"name":"寿丰乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Shoufeng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713526,
+"name":"光复乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Guangfu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713527,
+"name":"丰滨乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Fengbin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713528,
+"name":"瑞穗乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Ruisui",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713529,
+"name":"富里乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Fuli",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713530,
+"name":"秀林乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Xiulin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713531,
+"name":"万荣乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Wanrong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713532,
+"name":"卓溪乡",
+"pid":713500,
+"code":"03",
+"pinyin":"Zhuoxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713600,
+"name":"澎湖县",
+"pid":710000,
+"code":"06",
+"pinyin":"Penghu",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713601,
+"name":"马公市",
+"pid":713600,
+"code":"06",
+"pinyin":"Magong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713621,
+"name":"湖西乡",
+"pid":713600,
+"code":"06",
+"pinyin":"Huxi",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713622,
+"name":"白沙乡",
+"pid":713600,
+"code":"06",
+"pinyin":"Baisha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713623,
+"name":"西屿乡",
+"pid":713600,
+"code":"06",
+"pinyin":"Xiyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713624,
+"name":"望安乡",
+"pid":713600,
+"code":"06",
+"pinyin":"Wang'an",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713625,
+"name":"七美乡",
+"pid":713600,
+"code":"06",
+"pinyin":"Qimei",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713700,
+"name":"金门县",
+"pid":710000,
+"code":"082",
+"pinyin":"Jinmen",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713701,
+"name":"金城镇",
+"pid":713700,
+"code":"082",
+"pinyin":"Jincheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713702,
+"name":"金湖镇",
+"pid":713700,
+"code":"082",
+"pinyin":"Jinhu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713703,
+"name":"金沙镇",
+"pid":713700,
+"code":"082",
+"pinyin":"Jinsha",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713704,
+"name":"金宁乡",
+"pid":713700,
+"code":"082",
+"pinyin":"Jinning",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713705,
+"name":"烈屿乡",
+"pid":713700,
+"code":"082",
+"pinyin":"Lieyu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713706,
+"name":"乌丘乡",
+"pid":713700,
+"code":"082",
+"pinyin":"Wuqiu",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713800,
+"name":"连江县",
+"pid":710000,
+"code":"0836",
+"pinyin":"Lienchiang",
+"ccode":null,
+"level":3
+},
+    {
+        "id":713801,
+"name":"南竿乡",
+"pid":713800,
+"code":"0836",
+"pinyin":"Nangan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713802,
+"name":"北竿乡",
+"pid":713800,
+"code":"0836",
+"pinyin":"Beigan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713803,
+"name":"莒光乡",
+"pid":713800,
+"code":"0836",
+"pinyin":"Juguang",
+"ccode":null,
+"level":4
+},
+    {
+        "id":713804,
+"name":"东引乡",
+"pid":713800,
+"code":"0836",
+"pinyin":"Dongyin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810000,
+"name":"香港特别行政区",
+"pid":100000,
+"code":null,
+"pinyin":"Hong Kong",
+"ccode":null,
+"level":2
+},
+    {
+        "id":810100,
+"name":"香港岛",
+"pid":810000,
+"code":"00852",
+"pinyin":"Hong Kong Island",
+"ccode":null,
+"level":3
+},
+    {
+        "id":810101,
+"name":"中西区",
+"pid":810100,
+"code":"00852",
+"pinyin":"Central and Western District",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810102,
+"name":"湾仔区",
+"pid":810100,
+"code":"00852",
+"pinyin":"Wan Chai District",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810103,
+"name":"东区",
+"pid":810100,
+"code":"00852",
+"pinyin":"Eastern District",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810104,
+"name":"南区",
+"pid":810100,
+"code":"00852",
+"pinyin":"Southern District",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810200,
+"name":"九龙",
+"pid":810000,
+"code":"00852",
+"pinyin":"Kowloon",
+"ccode":null,
+"level":3
+},
+    {
+        "id":810201,
+"name":"油尖旺区",
+"pid":810200,
+"code":"00852",
+"pinyin":"Yau Tsim Mong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810202,
+"name":"深水埗区",
+"pid":810200,
+"code":"00852",
+"pinyin":"Sham Shui Po",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810203,
+"name":"九龙城区",
+"pid":810200,
+"code":"00852",
+"pinyin":"Jiulongcheng",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810204,
+"name":"黄大仙区",
+"pid":810200,
+"code":"00852",
+"pinyin":"Wong Tai Sin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810205,
+"name":"观塘区",
+"pid":810200,
+"code":"00852",
+"pinyin":"Kwun Tong",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810300,
+"name":"新界",
+"pid":810000,
+"code":"00852",
+"pinyin":"New Territories",
+"ccode":null,
+"level":3
+},
+    {
+        "id":810301,
+"name":"荃湾区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Tsuen Wan",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810302,
+"name":"屯门区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Tuen Mun",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810303,
+"name":"元朗区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Yuen Long",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810304,
+"name":"北区",
+"pid":810300,
+"code":"00852",
+"pinyin":"North District",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810305,
+"name":"大埔区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Tai Po",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810306,
+"name":"西贡区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Sai Kung",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810307,
+"name":"沙田区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Sha Tin",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810308,
+"name":"葵青区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Kwai Tsing",
+"ccode":null,
+"level":4
+},
+    {
+        "id":810309,
+"name":"离岛区",
+"pid":810300,
+"code":"00852",
+"pinyin":"Outlying Islands",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820000,
+"name":"澳门特别行政区",
+"pid":100000,
+"code":null,
+"pinyin":"Macau",
+"ccode":null,
+"level":2
+},
+    {
+        "id":820100,
+"name":"澳门半岛",
+"pid":820000,
+"code":"00853",
+"pinyin":"MacauPeninsula",
+"ccode":null,
+"level":3
+},
+    {
+        "id":820101,
+"name":"花地玛堂区",
+"pid":820100,
+"code":"00853",
+"pinyin":"Nossa Senhora de Fatima",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820102,
+"name":"圣安多尼堂区",
+"pid":820100,
+"code":"00853",
+"pinyin":"Santo Antonio",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820103,
+"name":"大堂区",
+"pid":820100,
+"code":"00853",
+"pinyin":"Sé",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820104,
+"name":"望德堂区",
+"pid":820100,
+"code":"00853",
+"pinyin":"Sao Lazaro",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820105,
+"name":"风顺堂区",
+"pid":820100,
+"code":"00853",
+"pinyin":"Sao Lourenco",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820200,
+"name":"氹仔岛",
+"pid":820000,
+"code":"00853",
+"pinyin":"Taipa",
+"ccode":null,
+"level":3
+},
+    {
+        "id":820201,
+"name":"嘉模堂区",
+"pid":820200,
+"code":"00853",
+"pinyin":"Our Lady Of Carmel's Parish",
+"ccode":null,
+"level":4
+},
+    {
+        "id":820300,
+"name":"路环岛",
+"pid":820000,
+"code":"00853",
+"pinyin":"Coloane",
+"ccode":null,
+"level":3
+},
+    {
+        "id":820301,
+"name":"圣方济各堂区",
+"pid":820300,
+"code":"00853",
+"pinyin":"St Francis Xavier's Parish",
+"ccode":null,
+"level":4
+},
+    {
+        "id":900000,
+"name":"钓鱼岛",
+"pid":100000,
+"code":null,
+"pinyin":"DiaoyuDao",
+"ccode":null,
+"level":2
+},
+    {
+        "id":101000000,
+"name":"阿鲁巴",
+"pid":0,
+"code":"ABW",
+"pinyin":"Aruba",
+"ccode":"aw",
+"level":1
+},
+    {
+        "id":102000000,
+"name":"阿富汗",
+"pid":0,
+"code":"AFG",
+"pinyin":"Afghanistan",
+"ccode":"af",
+"level":1
+},
+    {
+        "id":102100001,
+"name":"赫拉特",
+"pid":102100000,
+"code":"HEA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":102100002,
+"name":"喀布尔",
+"pid":102100000,
+"code":"KBL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":102100003,
+"name":"坎大哈",
+"pid":102100000,
+"code":"KDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":102100004,
+"name":"马扎里沙里夫",
+"pid":102100000,
+"code":"MZR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103000000,
+"name":"安哥拉",
+"pid":0,
+"code":"AGO",
+"pinyin":"Angola",
+"ccode":"ao",
+"level":1
+},
+    {
+        "id":103100001,
+"name":"本戈",
+"pid":103100000,
+"code":"BGO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100002,
+"name":"本格拉",
+"pid":103100000,
+"code":"BGU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100003,
+"name":"比耶",
+"pid":103100000,
+"code":"BIE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100004,
+"name":"卡宾达",
+"pid":103100000,
+"code":"CAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100005,
+"name":"宽多库邦戈",
+"pid":103100000,
+"code":"CCU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100006,
+"name":"库内内",
+"pid":103100000,
+"code":"CNN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100007,
+"name":"北宽扎",
+"pid":103100000,
+"code":"CNO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100008,
+"name":"南宽扎",
+"pid":103100000,
+"code":"CUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100009,
+"name":"万博",
+"pid":103100000,
+"code":"HUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100010,
+"name":"威拉",
+"pid":103100000,
+"code":"HUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100011,
+"name":"北隆达",
+"pid":103100000,
+"code":"LNO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100012,
+"name":"南隆达",
+"pid":103100000,
+"code":"LSU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100013,
+"name":"罗安达",
+"pid":103100000,
+"code":"LUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100014,
+"name":"马兰热",
+"pid":103100000,
+"code":"MAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100015,
+"name":"莫希科",
+"pid":103100000,
+"code":"MOX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100016,
+"name":"纳米贝",
+"pid":103100000,
+"code":"NAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100017,
+"name":"威热",
+"pid":103100000,
+"code":"UIG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":103100018,
+"name":"扎伊尔",
+"pid":103100000,
+"code":"ZAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":104000000,
+"name":"安圭拉",
+"pid":0,
+"code":"AIA",
+"pinyin":"Anguilla",
+"ccode":"ai",
+"level":1
+},
+    {
+        "id":105000000,
+"name":"奥兰群岛",
+"pid":0,
+"code":"ALA",
+"pinyin":"Åland Islands",
+"ccode":"ax",
+"level":1
+},
+    {
+        "id":106000000,
+"name":"阿尔巴尼亚",
+"pid":0,
+"code":"ALB",
+"pinyin":"Albania",
+"ccode":"al",
+"level":1
+},
+    {
+        "id":106100001,
+"name":"培拉特",
+"pid":106100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100002,
+"name":"迪勃拉",
+"pid":106100000,
+"code":"DI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100003,
+"name":"都拉斯",
+"pid":106100000,
+"code":"DR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100004,
+"name":"爱尔巴桑",
+"pid":106100000,
+"code":"EL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100005,
+"name":"费里",
+"pid":106100000,
+"code":"FR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100006,
+"name":"吉诺卡斯特",
+"pid":106100000,
+"code":"GJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100007,
+"name":"科尔察",
+"pid":106100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100008,
+"name":"库克斯",
+"pid":106100000,
+"code":"KU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100009,
+"name":"莱什",
+"pid":106100000,
+"code":"LE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100010,
+"name":"斯库台",
+"pid":106100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100011,
+"name":"地拉那",
+"pid":106100000,
+"code":"TR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":106100012,
+"name":"发罗拉",
+"pid":106100000,
+"code":"VL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107000000,
+"name":"安道尔",
+"pid":0,
+"code":"AND",
+"pinyin":"Andorra",
+"ccode":"ad",
+"level":1
+},
+    {
+        "id":107100001,
+"name":"卡尼略",
+"pid":107100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100002,
+"name":"恩坎普",
+"pid":107100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100003,
+"name":"马萨纳",
+"pid":107100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100004,
+"name":"奥尔迪诺",
+"pid":107100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100005,
+"name":"圣胡利娅－德洛里亚",
+"pid":107100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100006,
+"name":"安道尔城",
+"pid":107100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":107100007,
+"name":"莱塞斯卡尔德－恩戈尔达",
+"pid":107100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":109000000,
+"name":"阿拉伯联合酋长国",
+"pid":0,
+"code":"ARE",
+"pinyin":"United Arab Emirates",
+"ccode":"ae",
+"level":1
+},
+    {
+        "id":109100001,
+"name":"艾因",
+"pid":109100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":109100002,
+"name":"阿布扎比",
+"pid":109100000,
+"code":"AZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":109100003,
+"name":"迪拜",
+"pid":109100000,
+"code":"DU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":109100004,
+"name":"沙迦",
+"pid":109100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110000000,
+"name":"阿根廷",
+"pid":0,
+"code":"ARG",
+"pinyin":"Argentina",
+"ccode":"ar",
+"level":1
+},
+    {
+        "id":110100001,
+"name":"圣拉斐尔",
+"pid":110100000,
+"code":"AFA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100002,
+"name":"布兰卡港",
+"pid":110100000,
+"code":"BHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100003,
+"name":"布宜诺斯艾利斯",
+"pid":110100000,
+"code":"BUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100004,
+"name":"科连特斯",
+"pid":110100000,
+"code":"CNQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100005,
+"name":"肯考迪娅",
+"pid":110100000,
+"code":"COC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100006,
+"name":"科尔多瓦",
+"pid":110100000,
+"code":"COR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100007,
+"name":"里瓦达维亚海军准将城",
+"pid":110100000,
+"code":"CRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100008,
+"name":"卡塔马卡",
+"pid":110100000,
+"code":"CTC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100009,
+"name":"福莫萨",
+"pid":110100000,
+"code":"FMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100010,
+"name":"拉里奥哈",
+"pid":110100000,
+"code":"IRJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100011,
+"name":"胡胡伊",
+"pid":110100000,
+"code":"JUJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100012,
+"name":"拉普拉塔",
+"pid":110100000,
+"code":"LPG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100013,
+"name":"圣路易斯",
+"pid":110100000,
+"code":"LUQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100014,
+"name":"马德普拉塔",
+"pid":110100000,
+"code":"MDQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100015,
+"name":"门多萨",
+"pid":110100000,
+"code":"MDZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100016,
+"name":"内乌肯",
+"pid":110100000,
+"code":"NQN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100017,
+"name":"巴拉那",
+"pid":110100000,
+"code":"PRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100018,
+"name":"波萨达斯",
+"pid":110100000,
+"code":"PSS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100019,
+"name":"里奥夸尔托",
+"pid":110100000,
+"code":"RCU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100020,
+"name":"特雷利乌",
+"pid":110100000,
+"code":"REL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100021,
+"name":"雷西斯滕匹亚",
+"pid":110100000,
+"code":"RES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100022,
+"name":"里奥加耶戈斯",
+"pid":110100000,
+"code":"RGL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100023,
+"name":"罗萨里奥",
+"pid":110100000,
+"code":"ROS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100024,
+"name":"圣罗莎",
+"pid":110100000,
+"code":"RSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100025,
+"name":"罗森",
+"pid":110100000,
+"code":"RWO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100026,
+"name":"圣地亚哥-德尔埃斯特罗",
+"pid":110100000,
+"code":"SDE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100027,
+"name":"圣菲",
+"pid":110100000,
+"code":"SFN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100028,
+"name":"萨尔塔",
+"pid":110100000,
+"code":"SLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100029,
+"name":"圣米格尔-德图库曼",
+"pid":110100000,
+"code":"SMC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100030,
+"name":"圣尼古拉斯",
+"pid":110100000,
+"code":"SNS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100031,
+"name":"圣胡安",
+"pid":110100000,
+"code":"UAQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100032,
+"name":"乌斯怀亚",
+"pid":110100000,
+"code":"USH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100033,
+"name":"别德马",
+"pid":110100000,
+"code":"VDM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":110100034,
+"name":"克劳斯城",
+"pid":110100000,
+"code":"VLK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111000000,
+"name":"亚美尼亚",
+"pid":0,
+"code":"ARM",
+"pinyin":"Armenia",
+"ccode":"am",
+"level":1
+},
+    {
+        "id":111100001,
+"name":"阿拉加措特恩",
+"pid":111100000,
+"code":"AGT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100002,
+"name":"阿拉拉特",
+"pid":111100000,
+"code":"ARA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100003,
+"name":"阿尔马维尔",
+"pid":111100000,
+"code":"ARM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100004,
+"name":"埃里温市",
+"pid":111100000,
+"code":"EVN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100005,
+"name":"格加尔库尼克",
+"pid":111100000,
+"code":"GEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100006,
+"name":"科泰克",
+"pid":111100000,
+"code":"KOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100007,
+"name":"洛里",
+"pid":111100000,
+"code":"LOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100008,
+"name":"希拉克",
+"pid":111100000,
+"code":"SHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100009,
+"name":"休尼克",
+"pid":111100000,
+"code":"SYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100010,
+"name":"塔武什",
+"pid":111100000,
+"code":"TAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":111100011,
+"name":"瓦约茨·佐尔",
+"pid":111100000,
+"code":"VAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":112000000,
+"name":"阿森松岛",
+"pid":0,
+"code":"ASC",
+"pinyin":"Ascension Island",
+"ccode":"ac",
+"level":1
+},
+    {
+        "id":113000000,
+"name":"美属萨摩亚",
+"pid":0,
+"code":"ASM",
+"pinyin":"American Samoa",
+"ccode":"as",
+"level":1
+},
+    {
+        "id":113100001,
+"name":"阿纳",
+"pid":113100000,
+"code":"AAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100002,
+"name":"艾加伊勒泰",
+"pid":113100000,
+"code":"AIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100003,
+"name":"阿图阿",
+"pid":113100000,
+"code":"ATU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100004,
+"name":"法塞莱莱阿加",
+"pid":113100000,
+"code":"FAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100005,
+"name":"加盖福毛加",
+"pid":113100000,
+"code":"GFG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100006,
+"name":"加加埃毛加",
+"pid":113100000,
+"code":"GMG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100007,
+"name":"帕劳利",
+"pid":113100000,
+"code":"PAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100008,
+"name":"萨图帕伊泰阿",
+"pid":113100000,
+"code":"SAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100009,
+"name":"萨瓦伊岛",
+"pid":113100000,
+"code":"SAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100010,
+"name":"图阿马萨加",
+"pid":113100000,
+"code":"TUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100011,
+"name":"乌波卢岛",
+"pid":113100000,
+"code":"UPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100012,
+"name":"瓦奥福诺蒂",
+"pid":113100000,
+"code":"VAF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":113100013,
+"name":"韦西加诺",
+"pid":113100000,
+"code":"VAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":114000000,
+"name":"南极洲",
+"pid":0,
+"code":"ATA",
+"pinyin":"Antarctica",
+"ccode":"aq",
+"level":1
+},
+    {
+        "id":115000000,
+"name":"法属南部领地",
+"pid":0,
+"code":"ATF",
+"pinyin":"French Southern Territories",
+"ccode":"tf",
+"level":1
+},
+    {
+        "id":116000000,
+"name":"安提瓜和巴布达",
+"pid":0,
+"code":"ATG",
+"pinyin":"Antigua and Barbuda",
+"ccode":"ag",
+"level":1
+},
+    {
+        "id":117000000,
+"name":"澳大利亚",
+"pid":0,
+"code":"AUS",
+"pinyin":"Australia",
+"ccode":"au",
+"level":1
+},
+    {
+        "id":117101000,
+"name":"堪培拉",
+"pid":117000000,
+"code":"ACT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117101001,
+"name":"堪培拉",
+"pid":117101000,
+"code":"CBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102000,
+"name":"昆士兰",
+"pid":117000000,
+"code":"QLD",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117102001,
+"name":"布里斯班",
+"pid":117102000,
+"code":"BNE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102002,
+"name":"凯恩斯",
+"pid":117102000,
+"code":"CNS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102003,
+"name":"日光海岸",
+"pid":117102000,
+"code":"CUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102004,
+"name":"黄金海岸",
+"pid":117102000,
+"code":"OOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102005,
+"name":"汤斯维尔",
+"pid":117102000,
+"code":"TSV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117102006,
+"name":"图文巴",
+"pid":117102000,
+"code":"TWB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117103000,
+"name":"新南威尔士",
+"pid":117000000,
+"code":"NSW",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117103001,
+"name":"悉尼",
+"pid":117103000,
+"code":"HBS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117103002,
+"name":"纽卡斯尔",
+"pid":117103000,
+"code":"NTL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117103003,
+"name":"伍伦贡",
+"pid":117103000,
+"code":"WOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117104000,
+"name":"北部地区",
+"pid":117000000,
+"code":"NT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117104001,
+"name":"达尔文",
+"pid":117104000,
+"code":"DRW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117104002,
+"name":"北帕默斯顿",
+"pid":117104000,
+"code":"PAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105000,
+"name":"南澳大利亚",
+"pid":117000000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117105001,
+"name":"阿德莱德",
+"pid":117105000,
+"code":"ADL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105002,
+"name":"甘比亚山",
+"pid":117105000,
+"code":"MGB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105003,
+"name":"默里布里奇",
+"pid":117105000,
+"code":"MYB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105004,
+"name":"林肯港",
+"pid":117105000,
+"code":"PLO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105005,
+"name":"皮里港",
+"pid":117105000,
+"code":"PPI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105006,
+"name":"奥古斯塔港",
+"pid":117105000,
+"code":"PUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105007,
+"name":"维克托港",
+"pid":117105000,
+"code":"VHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117105008,
+"name":"怀阿拉",
+"pid":117105000,
+"code":"WAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117106000,
+"name":"塔斯马尼亚",
+"pid":117000000,
+"code":"TAS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117106001,
+"name":"伯尼港",
+"pid":117106000,
+"code":"BWT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117106002,
+"name":"德文波特",
+"pid":117106000,
+"code":"DPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117106003,
+"name":"霍巴特",
+"pid":117106000,
+"code":"HBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117106004,
+"name":"朗塞斯顿",
+"pid":117106000,
+"code":"LST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117107000,
+"name":"维多利亚",
+"pid":117000000,
+"code":"VIC",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117107001,
+"name":"吉朗",
+"pid":117107000,
+"code":"GEX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117107002,
+"name":"墨尔本",
+"pid":117107000,
+"code":"MEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108000,
+"name":"西澳大利亚",
+"pid":117000000,
+"code":"WA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":117108001,
+"name":"奥尔巴尼",
+"pid":117108000,
+"code":"ALH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108002,
+"name":"班伯里",
+"pid":117108000,
+"code":"BUY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108003,
+"name":"弗里曼特尔港",
+"pid":117108000,
+"code":"FRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108004,
+"name":"杰拉尔顿",
+"pid":117108000,
+"code":"GET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108005,
+"name":"卡尔古利",
+"pid":117108000,
+"code":"KGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108006,
+"name":"曼哲拉",
+"pid":117108000,
+"code":"MDU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":117108007,
+"name":"珀斯",
+"pid":117108000,
+"code":"PER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118000000,
+"name":"奥地利",
+"pid":0,
+"code":"AUT",
+"pinyin":"Austria",
+"ccode":"at",
+"level":1
+},
+    {
+        "id":118100001,
+"name":"布尔根兰",
+"pid":118100000,
+"code":"BUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100002,
+"name":"克恩顿",
+"pid":118100000,
+"code":"CAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100003,
+"name":"下奥地利",
+"pid":118100000,
+"code":"LAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100004,
+"name":"施蒂利亚",
+"pid":118100000,
+"code":"STY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100005,
+"name":"萨尔茨堡",
+"pid":118100000,
+"code":"SZG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100006,
+"name":"蒂罗尔",
+"pid":118100000,
+"code":"TYR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100007,
+"name":"上奥地利",
+"pid":118100000,
+"code":"UAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100008,
+"name":"维也纳",
+"pid":118100000,
+"code":"VDD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":118100009,
+"name":"福拉尔贝格",
+"pid":118100000,
+"code":"VOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119000000,
+"name":"阿塞拜疆",
+"pid":0,
+"code":"AZE",
+"pinyin":"Azerbaijan",
+"ccode":"az",
+"level":1
+},
+    {
+        "id":119100001,
+"name":"阿布歇隆",
+"pid":119100000,
+"code":"ABS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100002,
+"name":"占贾",
+"pid":119100000,
+"code":"GA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100003,
+"name":"哈奇马斯",
+"pid":119100000,
+"code":"XAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100004,
+"name":"卡尔巴卡尔",
+"pid":119100000,
+"code":"KAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100005,
+"name":"卡扎赫",
+"pid":119100000,
+"code":"QAZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100006,
+"name":"连科兰",
+"pid":119100000,
+"code":"LAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100007,
+"name":"密尔-卡拉巴赫",
+"pid":119100000,
+"code":"MQA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100008,
+"name":"穆甘-萨连",
+"pid":119100000,
+"code":"MSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100009,
+"name":"纳希切万",
+"pid":119100000,
+"code":"NX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100010,
+"name":"纳戈尔诺－卡拉巴赫",
+"pid":119100000,
+"code":"NQA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100011,
+"name":"普利亚拉克斯",
+"pid":119100000,
+"code":"PRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100012,
+"name":"舍基",
+"pid":119100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100013,
+"name":"锡尔万",
+"pid":119100000,
+"code":"SIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":119100014,
+"name":"苏姆盖特",
+"pid":119100000,
+"code":"SMC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120000000,
+"name":"布隆迪",
+"pid":0,
+"code":"BDI",
+"pinyin":"Burundi",
+"ccode":"bi",
+"level":1
+},
+    {
+        "id":120100001,
+"name":"布班扎",
+"pid":120100000,
+"code":"BB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100002,
+"name":"布琼布拉城市",
+"pid":120100000,
+"code":"BM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100003,
+"name":"布鲁里",
+"pid":120100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100004,
+"name":"布琼布拉乡村",
+"pid":120100000,
+"code":"BU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100005,
+"name":"坎库佐",
+"pid":120100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100006,
+"name":"锡比托凯",
+"pid":120100000,
+"code":"CI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100007,
+"name":"基特加",
+"pid":120100000,
+"code":"GI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100008,
+"name":"基龙多",
+"pid":120100000,
+"code":"KI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100009,
+"name":"卡鲁济",
+"pid":120100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100010,
+"name":"卡扬扎",
+"pid":120100000,
+"code":"KY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100011,
+"name":"马坎巴",
+"pid":120100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100012,
+"name":"穆拉姆维亚",
+"pid":120100000,
+"code":"MU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100013,
+"name":"穆瓦洛",
+"pid":120100000,
+"code":"MW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100014,
+"name":"穆因加",
+"pid":120100000,
+"code":"MY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100015,
+"name":"恩戈齐",
+"pid":120100000,
+"code":"NG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100016,
+"name":"鲁塔纳",
+"pid":120100000,
+"code":"RT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":120100017,
+"name":"鲁伊吉",
+"pid":120100000,
+"code":"RY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121000000,
+"name":"比利时",
+"pid":0,
+"code":"BEL",
+"pinyin":"Belgium",
+"ccode":"be",
+"level":1
+},
+    {
+        "id":121100001,
+"name":"布鲁塞尔",
+"pid":121100000,
+"code":"BRU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100002,
+"name":"安特卫普",
+"pid":121100000,
+"code":"VAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100003,
+"name":"佛兰芒-布拉班特",
+"pid":121100000,
+"code":"VBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100004,
+"name":"林堡",
+"pid":121100000,
+"code":"VLI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100005,
+"name":"东佛兰德",
+"pid":121100000,
+"code":"VOV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100006,
+"name":"西佛兰德",
+"pid":121100000,
+"code":"VWV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100007,
+"name":"布拉班特-瓦隆",
+"pid":121100000,
+"code":"WBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100008,
+"name":"埃诺",
+"pid":121100000,
+"code":"WHT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100009,
+"name":"列日",
+"pid":121100000,
+"code":"WLG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100010,
+"name":"卢森堡",
+"pid":121100000,
+"code":"WLX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":121100011,
+"name":"那慕尔",
+"pid":121100000,
+"code":"WNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122000000,
+"name":"贝宁",
+"pid":0,
+"code":"BEN",
+"pinyin":"Benin",
+"ccode":"bj",
+"level":1
+},
+    {
+        "id":122100001,
+"name":"阿塔科拉",
+"pid":122100000,
+"code":"AK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100002,
+"name":"大西洋",
+"pid":122100000,
+"code":"AQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100003,
+"name":"阿黎博里",
+"pid":122100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100004,
+"name":"博尔古",
+"pid":122100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100005,
+"name":"波希康市",
+"pid":122100000,
+"code":"BOH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100006,
+"name":"丘陵",
+"pid":122100000,
+"code":"CO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100007,
+"name":"峡谷",
+"pid":122100000,
+"code":"DO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100008,
+"name":"库福",
+"pid":122100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100009,
+"name":"滨海",
+"pid":122100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100010,
+"name":"莫诺",
+"pid":122100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100011,
+"name":"韦梅",
+"pid":122100000,
+"code":"OU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100012,
+"name":"高原",
+"pid":122100000,
+"code":"PL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":122100013,
+"name":"祖",
+"pid":122100000,
+"code":"ZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123000000,
+"name":"布基纳法索",
+"pid":0,
+"code":"BFA",
+"pinyin":"Burkina Faso",
+"ccode":"bf",
+"level":1
+},
+    {
+        "id":123100001,
+"name":"巴雷",
+"pid":123100000,
+"code":"BAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100002,
+"name":"巴姆",
+"pid":123100000,
+"code":"BAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100003,
+"name":"巴瓦",
+"pid":123100000,
+"code":"BAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100004,
+"name":"巴泽加",
+"pid":123100000,
+"code":"BAZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100005,
+"name":"布尔古",
+"pid":123100000,
+"code":"BLG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100006,
+"name":"布尔基恩德",
+"pid":123100000,
+"code":"BOK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100007,
+"name":"布古里巴",
+"pid":123100000,
+"code":"BOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100008,
+"name":"科莫埃",
+"pid":123100000,
+"code":"COM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100009,
+"name":"冈祖尔古",
+"pid":123100000,
+"code":"GAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100010,
+"name":"尼亚尼亚",
+"pid":123100000,
+"code":"GNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100011,
+"name":"古尔马",
+"pid":123100000,
+"code":"GOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100012,
+"name":"乌埃",
+"pid":123100000,
+"code":"HOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100013,
+"name":"伊奥巴",
+"pid":123100000,
+"code":"IOA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100014,
+"name":"卡焦戈",
+"pid":123100000,
+"code":"KAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100015,
+"name":"凯内杜古",
+"pid":123100000,
+"code":"KEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100016,
+"name":"库尔佩罗戈",
+"pid":123100000,
+"code":"KOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100017,
+"name":"科蒙加里",
+"pid":123100000,
+"code":"KOO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100018,
+"name":"孔皮恩加",
+"pid":123100000,
+"code":"KOP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100019,
+"name":"孔西",
+"pid":123100000,
+"code":"KOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100020,
+"name":"库里滕加",
+"pid":123100000,
+"code":"KOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100021,
+"name":"库尔维奥戈",
+"pid":123100000,
+"code":"KOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100022,
+"name":"雷拉巴",
+"pid":123100000,
+"code":"LER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100023,
+"name":"罗卢姆",
+"pid":123100000,
+"code":"LOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100024,
+"name":"穆翁",
+"pid":123100000,
+"code":"MOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100025,
+"name":"纳乌里",
+"pid":123100000,
+"code":"NAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100026,
+"name":"纳门滕加",
+"pid":123100000,
+"code":"NAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100027,
+"name":"纳亚拉",
+"pid":123100000,
+"code":"NAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100028,
+"name":"努姆比埃尔",
+"pid":123100000,
+"code":"NOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100029,
+"name":"乌布里滕加",
+"pid":123100000,
+"code":"OUB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100030,
+"name":"乌达兰",
+"pid":123100000,
+"code":"OUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100031,
+"name":"帕索雷",
+"pid":123100000,
+"code":"PAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100032,
+"name":"波尼",
+"pid":123100000,
+"code":"PON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100033,
+"name":"桑吉",
+"pid":123100000,
+"code":"SAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100034,
+"name":"桑马滕加",
+"pid":123100000,
+"code":"SAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100035,
+"name":"塞诺",
+"pid":123100000,
+"code":"SEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100036,
+"name":"锡西里",
+"pid":123100000,
+"code":"SIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100037,
+"name":"苏姆",
+"pid":123100000,
+"code":"SOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100038,
+"name":"苏鲁",
+"pid":123100000,
+"code":"SOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100039,
+"name":"塔波阿",
+"pid":123100000,
+"code":"TAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100040,
+"name":"图伊",
+"pid":123100000,
+"code":"TUY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100041,
+"name":"亚加",
+"pid":123100000,
+"code":"YAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100042,
+"name":"亚滕加",
+"pid":123100000,
+"code":"YAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100043,
+"name":"济罗",
+"pid":123100000,
+"code":"ZIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100044,
+"name":"宗多马",
+"pid":123100000,
+"code":"ZOD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":123100045,
+"name":"宗德韦奥戈",
+"pid":123100000,
+"code":"ZOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":124000000,
+"name":"孟加拉",
+"pid":0,
+"code":"BGD",
+"pinyin":"Bangladesh",
+"ccode":"bd",
+"level":1
+},
+    {
+        "id":124100001,
+"name":"吉大港",
+"pid":124100000,
+"code":"CGP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":124100002,
+"name":"达卡",
+"pid":124100000,
+"code":"DAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":124100003,
+"name":"库尔纳",
+"pid":124100000,
+"code":"KHL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125000000,
+"name":"保加利亚",
+"pid":0,
+"code":"BGR",
+"pinyin":"Bulgaria",
+"ccode":"bg",
+"level":1
+},
+    {
+        "id":125100001,
+"name":"布尔加斯",
+"pid":125100000,
+"code":"BOJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100002,
+"name":"索非亚市",
+"pid":125100000,
+"code":"GSO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100003,
+"name":"卡斯科伏",
+"pid":125100000,
+"code":"KHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100004,
+"name":"洛维奇",
+"pid":125100000,
+"code":"LVP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100005,
+"name":"蒙塔纳",
+"pid":125100000,
+"code":"OZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100006,
+"name":"普罗夫迪夫",
+"pid":125100000,
+"code":"PDV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100007,
+"name":"鲁塞",
+"pid":125100000,
+"code":"ROU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100008,
+"name":"索非亚",
+"pid":125100000,
+"code":"SOF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":125100009,
+"name":"瓦尔纳",
+"pid":125100000,
+"code":"VAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126000000,
+"name":"巴林",
+"pid":0,
+"code":"BHR",
+"pinyin":"Bahrain",
+"ccode":"bh",
+"level":1
+},
+    {
+        "id":126100001,
+"name":"哈德",
+"pid":126100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100002,
+"name":"西部",
+"pid":126100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100003,
+"name":"哈马德",
+"pid":126100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100004,
+"name":"穆哈拉格",
+"pid":126100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100005,
+"name":"麦纳麦",
+"pid":126100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100006,
+"name":"北部",
+"pid":126100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100007,
+"name":"中部",
+"pid":126100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100008,
+"name":"伊萨城",
+"pid":126100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":126100009,
+"name":"里法",
+"pid":126100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":127000000,
+"name":"巴哈马",
+"pid":0,
+"code":"BHS",
+"pinyin":"Bahamas",
+"ccode":"bs",
+"level":1
+},
+    {
+        "id":128000000,
+"name":"波斯尼亚和黑塞哥维那",
+"pid":0,
+"code":"BIH",
+"pinyin":"Bosnia and Herzegovina",
+"ccode":"ba",
+"level":1
+},
+    {
+        "id":128100001,
+"name":"波斯尼亚－波德里涅",
+"pid":128100000,
+"code":"FBP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100002,
+"name":"西波斯尼亚",
+"pid":128100000,
+"code":"FHB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100003,
+"name":"黑塞哥维那－涅雷特瓦",
+"pid":128100000,
+"code":"FHN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100004,
+"name":"波萨维纳",
+"pid":128100000,
+"code":"FPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100005,
+"name":"萨拉热窝",
+"pid":128100000,
+"code":"FSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100006,
+"name":"中波斯尼亚",
+"pid":128100000,
+"code":"FSB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100007,
+"name":"多米斯拉夫格勒",
+"pid":128100000,
+"code":"FTO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100008,
+"name":"图兹拉－波德里涅",
+"pid":128100000,
+"code":"FTU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100009,
+"name":"乌纳－萨纳",
+"pid":128100000,
+"code":"FUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100010,
+"name":"泽尼察－多博伊",
+"pid":128100000,
+"code":"FZE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":128100011,
+"name":"西黑塞哥维那",
+"pid":128100000,
+"code":"FZH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129000000,
+"name":"白俄罗斯",
+"pid":0,
+"code":"BLR",
+"pinyin":"Belarus",
+"ccode":"by",
+"level":1
+},
+    {
+        "id":129100001,
+"name":"布列斯特",
+"pid":129100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129100002,
+"name":"戈梅利",
+"pid":129100000,
+"code":"HO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129100003,
+"name":"格罗德诺",
+"pid":129100000,
+"code":"HR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129100004,
+"name":"莫吉廖夫",
+"pid":129100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129100005,
+"name":"明斯克市",
+"pid":129100000,
+"code":"MI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":129100006,
+"name":"维捷布斯克",
+"pid":129100000,
+"code":"VI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130000000,
+"name":"伯利兹",
+"pid":0,
+"code":"BLZ",
+"pinyin":"Belize",
+"ccode":"bz",
+"level":1
+},
+    {
+        "id":130100001,
+"name":"伯利兹",
+"pid":130100000,
+"code":"BZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130100002,
+"name":"科罗萨尔",
+"pid":130100000,
+"code":"CR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130100003,
+"name":"卡约",
+"pid":130100000,
+"code":"CY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130100004,
+"name":"橘园",
+"pid":130100000,
+"code":"OW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130100005,
+"name":"斯坦港",
+"pid":130100000,
+"code":"SC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":130100006,
+"name":"托莱多",
+"pid":130100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":131000000,
+"name":"百慕大",
+"pid":0,
+"code":"BMU",
+"pinyin":"Bermuda",
+"ccode":"bm",
+"level":1
+},
+    {
+        "id":132000000,
+"name":"玻利维亚",
+"pid":0,
+"code":"BOL",
+"pinyin":"Bolivia",
+"ccode":"bo",
+"level":1
+},
+    {
+        "id":132100001,
+"name":"奥尔托",
+"pid":132100000,
+"code":"ALT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100002,
+"name":"贝尼",
+"pid":132100000,
+"code":"BEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100003,
+"name":"科恰班巴",
+"pid":132100000,
+"code":"CBB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100004,
+"name":"丘基萨卡",
+"pid":132100000,
+"code":"CHU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100005,
+"name":"基拉科洛",
+"pid":132100000,
+"code":"QUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100006,
+"name":"拉巴斯",
+"pid":132100000,
+"code":"LPB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100007,
+"name":"奥鲁罗",
+"pid":132100000,
+"code":"ORU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100008,
+"name":"潘多",
+"pid":132100000,
+"code":"PAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100009,
+"name":"波多西",
+"pid":132100000,
+"code":"POI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100010,
+"name":"萨卡巴",
+"pid":132100000,
+"code":"SAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100011,
+"name":"圣克鲁斯",
+"pid":132100000,
+"code":"SRZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":132100012,
+"name":"塔里哈",
+"pid":132100000,
+"code":"TJA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133000000,
+"name":"巴西",
+"pid":0,
+"code":"BRA",
+"pinyin":"Brazil",
+"ccode":"br",
+"level":1
+},
+    {
+        "id":133100001,
+"name":"阿克里",
+"pid":133100000,
+"code":"AC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100002,
+"name":"阿拉戈斯",
+"pid":133100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100003,
+"name":"亚马孙",
+"pid":133100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100004,
+"name":"阿马帕",
+"pid":133100000,
+"code":"AP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100005,
+"name":"巴伊亚",
+"pid":133100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100006,
+"name":"巴西利亚",
+"pid":133100000,
+"code":"BSB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100007,
+"name":"塞阿拉",
+"pid":133100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100008,
+"name":"圣埃斯皮里图",
+"pid":133100000,
+"code":"ES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100009,
+"name":"戈亚斯",
+"pid":133100000,
+"code":"GO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100010,
+"name":"马拉尼昂",
+"pid":133100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100011,
+"name":"米纳斯吉拉斯",
+"pid":133100000,
+"code":"MG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100012,
+"name":"南马托格罗索",
+"pid":133100000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100013,
+"name":"马托格罗索",
+"pid":133100000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100014,
+"name":"帕拉",
+"pid":133100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100015,
+"name":"帕拉伊巴",
+"pid":133100000,
+"code":"PB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100016,
+"name":"伯南布哥",
+"pid":133100000,
+"code":"PE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100017,
+"name":"皮奥伊",
+"pid":133100000,
+"code":"PI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100018,
+"name":"巴拉那",
+"pid":133100000,
+"code":"PR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100019,
+"name":"里约热内卢",
+"pid":133100000,
+"code":"RJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100020,
+"name":"北里奥格兰德",
+"pid":133100000,
+"code":"RN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100021,
+"name":"朗多尼亚",
+"pid":133100000,
+"code":"RO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100022,
+"name":"罗赖马",
+"pid":133100000,
+"code":"RR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100023,
+"name":"南里奥格兰德",
+"pid":133100000,
+"code":"RS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100024,
+"name":"圣卡塔琳娜",
+"pid":133100000,
+"code":"SC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100025,
+"name":"塞尔希培",
+"pid":133100000,
+"code":"SE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100026,
+"name":"圣保罗",
+"pid":133100000,
+"code":"SP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":133100027,
+"name":"托坎廷斯",
+"pid":133100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":134000000,
+"name":"巴巴多斯岛",
+"pid":0,
+"code":"BRB",
+"pinyin":"Barbados",
+"ccode":"bb",
+"level":1
+},
+    {
+        "id":135000000,
+"name":"文莱",
+"pid":0,
+"code":"BRN",
+"pinyin":"Brunei",
+"ccode":"bn",
+"level":1
+},
+    {
+        "id":136000000,
+"name":"不丹",
+"pid":0,
+"code":"BTN",
+"pinyin":"Bhutan",
+"ccode":"bt",
+"level":1
+},
+    {
+        "id":137000000,
+"name":"布韦岛",
+"pid":0,
+"code":"BVT",
+"pinyin":"Bouvet Island",
+"ccode":"bv",
+"level":1
+},
+    {
+        "id":138000000,
+"name":"博茨瓦纳",
+"pid":0,
+"code":"BWA",
+"pinyin":"Botswana",
+"ccode":"bw",
+"level":1
+},
+    {
+        "id":139000000,
+"name":"中非共和国",
+"pid":0,
+"code":"CAF",
+"pinyin":"Central African Republic",
+"ccode":"cf",
+"level":1
+},
+    {
+        "id":139100001,
+"name":"瓦姆",
+"pid":139100000,
+"code":"AC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100002,
+"name":"巴明吉-班戈兰",
+"pid":139100000,
+"code":"BB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100003,
+"name":"班吉直辖市",
+"pid":139100000,
+"code":"BGF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100004,
+"name":"宾博",
+"pid":139100000,
+"code":"BI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100005,
+"name":"下科托",
+"pid":139100000,
+"code":"BK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100006,
+"name":"上科托",
+"pid":139100000,
+"code":"HK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100007,
+"name":"上姆博穆",
+"pid":139100000,
+"code":"HM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100008,
+"name":"曼贝雷-卡代",
+"pid":139100000,
+"code":"HS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100009,
+"name":"纳纳-格里比齐",
+"pid":139100000,
+"code":"KB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100010,
+"name":"凯莫",
+"pid":139100000,
+"code":"KG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100011,
+"name":"洛巴伊",
+"pid":139100000,
+"code":"LB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100012,
+"name":"姆博穆",
+"pid":139100000,
+"code":"MB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100013,
+"name":"翁贝拉-姆波科",
+"pid":139100000,
+"code":"MP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100014,
+"name":"纳纳-曼贝雷",
+"pid":139100000,
+"code":"NM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100015,
+"name":"瓦姆-彭代",
+"pid":139100000,
+"code":"OP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100016,
+"name":"桑加-姆巴埃雷",
+"pid":139100000,
+"code":"SE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100017,
+"name":"瓦卡",
+"pid":139100000,
+"code":"UK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":139100018,
+"name":"瓦卡加",
+"pid":139100000,
+"code":"VK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140000000,
+"name":"加拿大",
+"pid":0,
+"code":"CAN",
+"pinyin":"Canada",
+"ccode":"ca",
+"level":1
+},
+    {
+        "id":140100001,
+"name":"阿伯茨福",
+"pid":140100000,
+"code":"ABB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100002,
+"name":"巴里",
+"pid":140100000,
+"code":"BAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100003,
+"name":"基奇纳",
+"pid":140100000,
+"code":"BRP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100004,
+"name":"卡里加里",
+"pid":140100000,
+"code":"CAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100005,
+"name":"布列塔尼角",
+"pid":140100000,
+"code":"CBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100006,
+"name":"夏洛特敦",
+"pid":140100000,
+"code":"CHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100007,
+"name":"埃德蒙顿",
+"pid":140100000,
+"code":"EDM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100008,
+"name":"弗雷德里顿",
+"pid":140100000,
+"code":"FRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100009,
+"name":"圭尔夫",
+"pid":140100000,
+"code":"GLP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100010,
+"name":"哈利法克斯",
+"pid":140100000,
+"code":"HAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100011,
+"name":"哈密尔顿",
+"pid":140100000,
+"code":"HAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100012,
+"name":"伊魁特",
+"pid":140100000,
+"code":"IQL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100013,
+"name":"金斯敦",
+"pid":140100000,
+"code":"KGN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100014,
+"name":"基劳纳",
+"pid":140100000,
+"code":"KWL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100015,
+"name":"魁北克",
+"pid":140100000,
+"code":"QUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100016,
+"name":"伦敦",
+"pid":140100000,
+"code":"LOD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100017,
+"name":"蒙特利尔",
+"pid":140100000,
+"code":"MTR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100018,
+"name":"奥沙瓦",
+"pid":140100000,
+"code":"OSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100019,
+"name":"渥太华",
+"pid":140100000,
+"code":"OTT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100020,
+"name":"里贾纳",
+"pid":140100000,
+"code":"REG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100021,
+"name":"萨斯卡通",
+"pid":140100000,
+"code":"SAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100022,
+"name":"舍布鲁克",
+"pid":140100000,
+"code":"SBE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100023,
+"name":"圣卡塔琳娜",
+"pid":140100000,
+"code":"SCA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100024,
+"name":"圣约翰斯",
+"pid":140100000,
+"code":"SJB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100025,
+"name":"萨德伯里",
+"pid":140100000,
+"code":"SUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100026,
+"name":"桑德贝",
+"pid":140100000,
+"code":"THU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100027,
+"name":"多伦多",
+"pid":140100000,
+"code":"TOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100028,
+"name":"三河城",
+"pid":140100000,
+"code":"TRR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100029,
+"name":"温哥华",
+"pid":140100000,
+"code":"VAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100030,
+"name":"维多利亚",
+"pid":140100000,
+"code":"VIC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100031,
+"name":"温莎",
+"pid":140100000,
+"code":"WDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100032,
+"name":"温尼伯",
+"pid":140100000,
+"code":"WNP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100033,
+"name":"怀特霍斯",
+"pid":140100000,
+"code":"YXY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":140100034,
+"name":"耶洛奈夫",
+"pid":140100000,
+"code":"YZF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":141000000,
+"name":"科科斯（基林）群岛",
+"pid":0,
+"code":"CCK",
+"pinyin":"Cocos",
+"ccode":"cc",
+"level":1
+},
+    {
+        "id":142000000,
+"name":"瑞士",
+"pid":0,
+"code":"CHE",
+"pinyin":"Switzerland",
+"ccode":"ch",
+"level":1
+},
+    {
+        "id":142100001,
+"name":"阿尔高",
+"pid":142100000,
+"code":"AG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100002,
+"name":"内阿彭策尔",
+"pid":142100000,
+"code":"AI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100003,
+"name":"外阿彭策尔",
+"pid":142100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100004,
+"name":"伯尔尼",
+"pid":142100000,
+"code":"BE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100005,
+"name":"巴塞尔乡村",
+"pid":142100000,
+"code":"BL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100006,
+"name":"巴塞尔城市",
+"pid":142100000,
+"code":"BS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100007,
+"name":"弗里堡",
+"pid":142100000,
+"code":"FR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100008,
+"name":"日内瓦",
+"pid":142100000,
+"code":"GE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100009,
+"name":"格拉鲁斯",
+"pid":142100000,
+"code":"GL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100010,
+"name":"格劳宾登",
+"pid":142100000,
+"code":"GR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100011,
+"name":"汝拉",
+"pid":142100000,
+"code":"JU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100012,
+"name":"洛桑",
+"pid":142100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100013,
+"name":"卢塞恩",
+"pid":142100000,
+"code":"LU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100014,
+"name":"纳沙泰尔",
+"pid":142100000,
+"code":"NE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100015,
+"name":"下瓦尔登",
+"pid":142100000,
+"code":"NW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100016,
+"name":"上瓦尔登",
+"pid":142100000,
+"code":"OW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100017,
+"name":"圣加仑",
+"pid":142100000,
+"code":"SG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100018,
+"name":"沙夫豪森",
+"pid":142100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100019,
+"name":"索洛图恩",
+"pid":142100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100020,
+"name":"施维茨",
+"pid":142100000,
+"code":"SZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100021,
+"name":"图尔高",
+"pid":142100000,
+"code":"TG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100022,
+"name":"提契诺",
+"pid":142100000,
+"code":"TI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100023,
+"name":"乌里",
+"pid":142100000,
+"code":"UR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100024,
+"name":"沃",
+"pid":142100000,
+"code":"VD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100025,
+"name":"瓦莱",
+"pid":142100000,
+"code":"VS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100026,
+"name":"楚格",
+"pid":142100000,
+"code":"ZG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":142100027,
+"name":"苏黎世",
+"pid":142100000,
+"code":"ZH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143000000,
+"name":"智利",
+"pid":0,
+"code":"CHL",
+"pinyin":"Chile",
+"ccode":"cl",
+"level":1
+},
+    {
+        "id":143100001,
+"name":"伊瓦涅斯将军的艾森大区",
+"pid":143100000,
+"code":"AI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100002,
+"name":"安托法加斯塔大区",
+"pid":143100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100003,
+"name":"阿劳卡尼亚大区",
+"pid":143100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100004,
+"name":"阿塔卡马大区",
+"pid":143100000,
+"code":"AT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100005,
+"name":"比奥比奥大区",
+"pid":143100000,
+"code":"BI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100006,
+"name":"科金博大区",
+"pid":143100000,
+"code":"CO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100007,
+"name":"复活节岛",
+"pid":143100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100008,
+"name":"湖大区",
+"pid":143100000,
+"code":"LL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100009,
+"name":"麦哲伦-智利南极大区",
+"pid":143100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100010,
+"name":"马乌莱大区",
+"pid":143100000,
+"code":"ML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100011,
+"name":"圣地亚哥",
+"pid":143100000,
+"code":"RM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100012,
+"name":"塔拉帕卡大区",
+"pid":143100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":143100013,
+"name":"瓦尔帕莱索大区",
+"pid":143100000,
+"code":"VS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":144000000,
+"name":"圣诞岛",
+"pid":0,
+"code":"CXR",
+"pinyin":"Christmas Island",
+"ccode":"cx",
+"level":1
+},
+    {
+        "id":145000000,
+"name":"科特迪瓦",
+"pid":0,
+"code":"CIV",
+"pinyin":"Côte d’Ivoire",
+"ccode":"ci",
+"level":1
+},
+    {
+        "id":145100001,
+"name":"阿涅比",
+"pid":145100000,
+"code":"AG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100002,
+"name":"巴芬",
+"pid":145100000,
+"code":"BF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100003,
+"name":"下萨桑德拉",
+"pid":145100000,
+"code":"BS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100004,
+"name":"登盖莱",
+"pid":145100000,
+"code":"DE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100005,
+"name":"山地",
+"pid":145100000,
+"code":"DH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100006,
+"name":"弗罗马格尔",
+"pid":145100000,
+"code":"FR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100007,
+"name":"萨桑德拉",
+"pid":145100000,
+"code":"HT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100008,
+"name":"湖泊",
+"pid":145100000,
+"code":"LC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100009,
+"name":"泻湖",
+"pid":145100000,
+"code":"LG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100010,
+"name":"中科莫埃",
+"pid":145100000,
+"code":"MC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100011,
+"name":"马拉韦",
+"pid":145100000,
+"code":"MR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100012,
+"name":"中卡瓦利",
+"pid":145100000,
+"code":"MV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100013,
+"name":"恩济－科莫埃",
+"pid":145100000,
+"code":"NC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100014,
+"name":"南邦达马",
+"pid":145100000,
+"code":"SB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100015,
+"name":"南科莫埃",
+"pid":145100000,
+"code":"SC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100016,
+"name":"萨瓦纳",
+"pid":145100000,
+"code":"SV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100017,
+"name":"邦达马河谷",
+"pid":145100000,
+"code":"VB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100018,
+"name":"沃罗杜古",
+"pid":145100000,
+"code":"WR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":145100019,
+"name":"赞赞",
+"pid":145100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146000000,
+"name":"喀麦隆",
+"pid":0,
+"code":"CMR",
+"pinyin":"Cameroon",
+"ccode":"cm",
+"level":1
+},
+    {
+        "id":146100001,
+"name":"阿达马瓦",
+"pid":146100000,
+"code":"ADA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100002,
+"name":"中央",
+"pid":146100000,
+"code":"CEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100003,
+"name":"北端",
+"pid":146100000,
+"code":"EXN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100004,
+"name":"东部",
+"pid":146100000,
+"code":"EST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100005,
+"name":"滨海",
+"pid":146100000,
+"code":"LIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100006,
+"name":"北部",
+"pid":146100000,
+"code":"NOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100007,
+"name":"西北",
+"pid":146100000,
+"code":"NOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100008,
+"name":"西部",
+"pid":146100000,
+"code":"OUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100009,
+"name":"西南",
+"pid":146100000,
+"code":"SOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":146100010,
+"name":"南部",
+"pid":146100000,
+"code":"SUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":147000000,
+"name":"刚果（金）",
+"pid":0,
+"code":"COD",
+"pinyin":"Congo",
+"ccode":"cd",
+"level":1
+},
+    {
+        "id":148000000,
+"name":"刚果（布）",
+"pid":0,
+"code":"COG",
+"pinyin":"Congo",
+"ccode":"cg",
+"level":1
+},
+    {
+        "id":149000000,
+"name":"库克群岛",
+"pid":0,
+"code":"COK",
+"pinyin":"Cook Islands",
+"ccode":"ck",
+"level":1
+},
+    {
+        "id":150000000,
+"name":"哥伦比亚",
+"pid":0,
+"code":"COL",
+"pinyin":"Colombia",
+"ccode":"co",
+"level":1
+},
+    {
+        "id":150100001,
+"name":"亚马孙",
+"pid":150100000,
+"code":"AMZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100002,
+"name":"安提奥基亚",
+"pid":150100000,
+"code":"ANT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100003,
+"name":"阿劳卡",
+"pid":150100000,
+"code":"ARA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100004,
+"name":"大西洋",
+"pid":150100000,
+"code":"ATL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100005,
+"name":"波哥大首都区",
+"pid":150100000,
+"code":"BDC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100006,
+"name":"博利瓦尔",
+"pid":150100000,
+"code":"BOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100007,
+"name":"博亚卡",
+"pid":150100000,
+"code":"BOY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100008,
+"name":"卡克塔",
+"pid":150100000,
+"code":"CAQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100009,
+"name":"卡尔达斯",
+"pid":150100000,
+"code":"CAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100010,
+"name":"昆迪纳马卡",
+"pid":150100000,
+"code":"CAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100011,
+"name":"卡萨纳雷",
+"pid":150100000,
+"code":"CAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100012,
+"name":"考卡",
+"pid":150100000,
+"code":"CAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100013,
+"name":"塞萨尔",
+"pid":150100000,
+"code":"CES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100014,
+"name":"乔科",
+"pid":150100000,
+"code":"CHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100015,
+"name":"科尔多巴",
+"pid":150100000,
+"code":"COR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100016,
+"name":"瓜希拉",
+"pid":150100000,
+"code":"GJR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100017,
+"name":"瓜伊尼亚",
+"pid":150100000,
+"code":"GNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100018,
+"name":"瓜维亚雷",
+"pid":150100000,
+"code":"GVR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100019,
+"name":"乌伊拉",
+"pid":150100000,
+"code":"HUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100020,
+"name":"金迪奥",
+"pid":150100000,
+"code":"QUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100021,
+"name":"马格达雷那",
+"pid":150100000,
+"code":"MAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100022,
+"name":"梅塔",
+"pid":150100000,
+"code":"MET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100023,
+"name":"纳里尼奥",
+"pid":150100000,
+"code":"NAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100024,
+"name":"北桑坦德",
+"pid":150100000,
+"code":"NDS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100025,
+"name":"普图马约",
+"pid":150100000,
+"code":"PUT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100026,
+"name":"利萨拉尔达",
+"pid":150100000,
+"code":"RIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100027,
+"name":"桑坦德",
+"pid":150100000,
+"code":"SAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100028,
+"name":"圣安德烈斯-普罗维登西亚",
+"pid":150100000,
+"code":"SAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100029,
+"name":"苏克雷",
+"pid":150100000,
+"code":"SUC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100030,
+"name":"托利马",
+"pid":150100000,
+"code":"TOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100031,
+"name":"沃佩斯",
+"pid":150100000,
+"code":"VAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100032,
+"name":"考卡山谷",
+"pid":150100000,
+"code":"VDC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":150100033,
+"name":"维查达",
+"pid":150100000,
+"code":"VIC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":151000000,
+"name":"科摩罗",
+"pid":0,
+"code":"COM",
+"pinyin":"Comoros",
+"ccode":"km",
+"level":1
+},
+    {
+        "id":152000000,
+"name":"佛得角",
+"pid":0,
+"code":"CPV",
+"pinyin":"Cape Verde",
+"ccode":"cv",
+"level":1
+},
+    {
+        "id":152100001,
+"name":"布拉瓦岛",
+"pid":152100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100002,
+"name":"博阿维斯塔岛",
+"pid":152100000,
+"code":"BV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100003,
+"name":"圣卡塔琳娜",
+"pid":152100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100004,
+"name":"圣克鲁斯",
+"pid":152100000,
+"code":"CR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100005,
+"name":"福古岛",
+"pid":152100000,
+"code":"FO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100006,
+"name":"圣地亚哥岛",
+"pid":152100000,
+"code":"IA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100007,
+"name":"马尤岛",
+"pid":152100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100008,
+"name":"莫斯特罗",
+"pid":152100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100009,
+"name":"保尔",
+"pid":152100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100010,
+"name":"波多诺伏",
+"pid":152100000,
+"code":"PN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100011,
+"name":"普拉亚",
+"pid":152100000,
+"code":"PR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100012,
+"name":"大里贝拉",
+"pid":152100000,
+"code":"RG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100013,
+"name":"圣安唐岛",
+"pid":152100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100014,
+"name":"圣多明戈",
+"pid":152100000,
+"code":"SD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100015,
+"name":"圣菲利普",
+"pid":152100000,
+"code":"SF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100016,
+"name":"萨尔岛",
+"pid":152100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100017,
+"name":"圣米戈尔",
+"pid":152100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100018,
+"name":"圣尼古拉岛",
+"pid":152100000,
+"code":"SN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100019,
+"name":"圣维森特岛",
+"pid":152100000,
+"code":"SV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":152100020,
+"name":"塔拉法尔",
+"pid":152100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153000000,
+"name":"哥斯达黎加",
+"pid":0,
+"code":"CRI",
+"pinyin":"Costa Rica",
+"ccode":"cr",
+"level":1
+},
+    {
+        "id":153100001,
+"name":"阿拉胡埃拉",
+"pid":153100000,
+"code":"A",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100002,
+"name":"卡塔戈",
+"pid":153100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100003,
+"name":"瓜纳卡斯特",
+"pid":153100000,
+"code":"G",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100004,
+"name":"埃雷迪亚",
+"pid":153100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100005,
+"name":"利蒙",
+"pid":153100000,
+"code":"L",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100006,
+"name":"蓬塔雷纳斯",
+"pid":153100000,
+"code":"P",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":153100007,
+"name":"圣何塞",
+"pid":153100000,
+"code":"SJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154000000,
+"name":"古巴",
+"pid":0,
+"code":"CUB",
+"pinyin":"Cuba",
+"ccode":"cu",
+"level":1
+},
+    {
+        "id":154100001,
+"name":"比那尔德里奥",
+"pid":154100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100002,
+"name":"拉斯图纳斯",
+"pid":154100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100003,
+"name":"奥尔金",
+"pid":154100000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100004,
+"name":"格拉玛",
+"pid":154100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100005,
+"name":"圣地亚哥",
+"pid":154100000,
+"code":"13",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100006,
+"name":"关塔那摩",
+"pid":154100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100007,
+"name":"哈瓦那",
+"pid":154100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100008,
+"name":"哈瓦那城",
+"pid":154100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100009,
+"name":"马坦萨斯",
+"pid":154100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100010,
+"name":"比亚克拉拉",
+"pid":154100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100011,
+"name":"西恩富戈斯",
+"pid":154100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100012,
+"name":"圣斯皮里图斯",
+"pid":154100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100013,
+"name":"谢戈德阿维拉",
+"pid":154100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100014,
+"name":"卡马圭",
+"pid":154100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100015,
+"name":"青年岛特区",
+"pid":154100000,
+"code":"99",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100016,
+"name":"马亚里",
+"pid":154100000,
+"code":"MAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":154100017,
+"name":"曼萨尼罗",
+"pid":154100000,
+"code":"MZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":155000000,
+"name":"开曼群岛",
+"pid":0,
+"code":"CYM",
+"pinyin":"Cayman Islands",
+"ccode":"ky",
+"level":1
+},
+    {
+        "id":156000000,
+"name":"塞浦路斯",
+"pid":0,
+"code":"CYP",
+"pinyin":"Cyprus",
+"ccode":"cy",
+"level":1
+},
+    {
+        "id":156100001,
+"name":"尼科西亚",
+"pid":156100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":156100002,
+"name":"利马索尔",
+"pid":156100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":156100003,
+"name":"拉纳卡",
+"pid":156100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":156100004,
+"name":"法马古斯塔",
+"pid":156100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":156100005,
+"name":"帕福斯",
+"pid":156100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":156100006,
+"name":"凯里尼亚",
+"pid":156100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157000000,
+"name":"捷克",
+"pid":0,
+"code":"CZE",
+"pinyin":"Czech Republic",
+"ccode":"cz",
+"level":1
+},
+    {
+        "id":157100001,
+"name":"南摩拉维亚",
+"pid":157100000,
+"code":"JC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100002,
+"name":"卡罗维发利",
+"pid":157100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100003,
+"name":"赫拉德茨-克拉洛韦",
+"pid":157100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100004,
+"name":"利贝雷克",
+"pid":157100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100005,
+"name":"摩拉维亚-西里西亚",
+"pid":157100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100006,
+"name":"奥洛穆茨",
+"pid":157100000,
+"code":"OL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100007,
+"name":"帕尔杜比采",
+"pid":157100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100008,
+"name":"比尔森",
+"pid":157100000,
+"code":"PL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100009,
+"name":"布拉格直辖市",
+"pid":157100000,
+"code":"PR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100010,
+"name":"中捷克",
+"pid":157100000,
+"code":"ST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100011,
+"name":"乌斯季",
+"pid":157100000,
+"code":"US",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100012,
+"name":"维索基纳",
+"pid":157100000,
+"code":"VY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":157100013,
+"name":"兹林",
+"pid":157100000,
+"code":"ZL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158000000,
+"name":"德国",
+"pid":0,
+"code":"DEU",
+"pinyin":"Germany",
+"ccode":"de",
+"level":1
+},
+    {
+        "id":158100001,
+"name":"奥格斯堡",
+"pid":158100000,
+"code":"AGB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100002,
+"name":"安斯巴格",
+"pid":158100000,
+"code":"ANS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100003,
+"name":"阿恩斯贝格",
+"pid":158100000,
+"code":"ARN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100004,
+"name":"柏林",
+"pid":158100000,
+"code":"BE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100005,
+"name":"比勒费尔德",
+"pid":158100000,
+"code":"BFE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100006,
+"name":"波鸿",
+"pid":158100000,
+"code":"BOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100007,
+"name":"不伦瑞克",
+"pid":158100000,
+"code":"BRW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100008,
+"name":"拜伊罗特",
+"pid":158100000,
+"code":"BYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100009,
+"name":"科隆",
+"pid":158100000,
+"code":"CGN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100010,
+"name":"开姆尼斯",
+"pid":158100000,
+"code":"CHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100011,
+"name":"达姆施塔特",
+"pid":158100000,
+"code":"DAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100012,
+"name":"德绍",
+"pid":158100000,
+"code":"DES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100013,
+"name":"代特莫尔特",
+"pid":158100000,
+"code":"DET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100014,
+"name":"德累斯顿",
+"pid":158100000,
+"code":"DRS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100015,
+"name":"杜塞尔多夫",
+"pid":158100000,
+"code":"DUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100016,
+"name":"爱尔福特",
+"pid":158100000,
+"code":"ERF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100017,
+"name":"弗赖堡",
+"pid":158100000,
+"code":"FBG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100018,
+"name":"法兰克福",
+"pid":158100000,
+"code":"FFO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100019,
+"name":"吉森",
+"pid":158100000,
+"code":"GBN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100020,
+"name":"哈雷",
+"pid":158100000,
+"code":"HAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100021,
+"name":"汉诺威",
+"pid":158100000,
+"code":"HAJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100022,
+"name":"不来梅",
+"pid":158100000,
+"code":"HB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100023,
+"name":"汉堡",
+"pid":158100000,
+"code":"HH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100024,
+"name":"卡尔斯鲁厄",
+"pid":158100000,
+"code":"KAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100025,
+"name":"卡塞尔",
+"pid":158100000,
+"code":"KAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100026,
+"name":"基尔",
+"pid":158100000,
+"code":"KEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100027,
+"name":"科布伦次",
+"pid":158100000,
+"code":"KOB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100028,
+"name":"吕讷堡",
+"pid":158100000,
+"code":"LBG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100029,
+"name":"兰茨胡特",
+"pid":158100000,
+"code":"LDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100030,
+"name":"莱比锡",
+"pid":158100000,
+"code":"LEJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100031,
+"name":"马格德堡",
+"pid":158100000,
+"code":"MAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100032,
+"name":"美因兹",
+"pid":158100000,
+"code":"MAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100033,
+"name":"曼海姆",
+"pid":158100000,
+"code":"MHG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100034,
+"name":"慕尼黑",
+"pid":158100000,
+"code":"MUC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100035,
+"name":"明斯特",
+"pid":158100000,
+"code":"MUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100036,
+"name":"纽伦堡",
+"pid":158100000,
+"code":"NUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100037,
+"name":"波茨坦",
+"pid":158100000,
+"code":"POT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100038,
+"name":"斯图加特",
+"pid":158100000,
+"code":"STR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100039,
+"name":"什未林",
+"pid":158100000,
+"code":"SWH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100040,
+"name":"特里尔",
+"pid":158100000,
+"code":"TRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100041,
+"name":"威斯巴登",
+"pid":158100000,
+"code":"WIB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":158100042,
+"name":"维尔茨堡",
+"pid":158100000,
+"code":"WUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":159000000,
+"name":"吉布提",
+"pid":0,
+"code":"DJI",
+"pinyin":"Djibouti",
+"ccode":"dj",
+"level":1
+},
+    {
+        "id":159100001,
+"name":"迪基勒区",
+"pid":159100000,
+"code":"K",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":159100002,
+"name":"奥博克区",
+"pid":159100000,
+"code":"O",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":159100003,
+"name":"阿里萨比赫区",
+"pid":159100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":159100004,
+"name":"塔朱拉区",
+"pid":159100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":160000000,
+"name":"多米尼加",
+"pid":0,
+"code":"DMA",
+"pinyin":"Dominican Republic",
+"ccode":"do",
+"level":1
+},
+    {
+        "id":161000000,
+"name":"丹麦",
+"pid":0,
+"code":"DNK",
+"pinyin":"Denmark",
+"ccode":"dk",
+"level":1
+},
+    {
+        "id":161100001,
+"name":"奥胡斯",
+"pid":161100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100002,
+"name":"博恩霍尔姆",
+"pid":161100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100003,
+"name":"哥本哈根",
+"pid":161100000,
+"code":"CPH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100004,
+"name":"菲特烈堡",
+"pid":161100000,
+"code":"FRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100005,
+"name":"菲茵",
+"pid":161100000,
+"code":"FY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100006,
+"name":"里伯",
+"pid":161100000,
+"code":"RIB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100007,
+"name":"罗斯基勒",
+"pid":161100000,
+"code":"RKE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100008,
+"name":"灵克宾",
+"pid":161100000,
+"code":"RKG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100009,
+"name":"斯多斯特姆",
+"pid":161100000,
+"code":"ST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100010,
+"name":"南日德兰",
+"pid":161100000,
+"code":"VBI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100011,
+"name":"维厄勒",
+"pid":161100000,
+"code":"VEJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100012,
+"name":"维堡",
+"pid":161100000,
+"code":"VIB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100013,
+"name":"西希兰",
+"pid":161100000,
+"code":"VS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":161100014,
+"name":"北日德兰",
+"pid":161100000,
+"code":"VSV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":162000000,
+"name":"多米尼加共和国",
+"pid":0,
+"code":"DOM",
+"pinyin":"Dominican Republic",
+"ccode":"do",
+"level":1
+},
+    {
+        "id":163000000,
+"name":"阿尔及利亚",
+"pid":0,
+"code":"DZA",
+"pinyin":"Algeria",
+"ccode":"dz",
+"level":1
+},
+    {
+        "id":163100001,
+"name":"安纳巴",
+"pid":163100000,
+"code":"AAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100002,
+"name":"艾因·德夫拉",
+"pid":163100000,
+"code":"ADE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100003,
+"name":"阿德拉尔",
+"pid":163100000,
+"code":"ADR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100004,
+"name":"阿尔及尔",
+"pid":163100000,
+"code":"ALG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100005,
+"name":"艾因·蒂姆尚特",
+"pid":163100000,
+"code":"ATE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100006,
+"name":"巴特纳",
+"pid":163100000,
+"code":"BAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100007,
+"name":"贝沙尔",
+"pid":163100000,
+"code":"BEC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100008,
+"name":"比斯克拉",
+"pid":163100000,
+"code":"BIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100009,
+"name":"贝贾亚",
+"pid":163100000,
+"code":"BJA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100010,
+"name":"布利达",
+"pid":163100000,
+"code":"BLI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100011,
+"name":"布依拉",
+"pid":163100000,
+"code":"BOA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100012,
+"name":"布尔吉·布阿雷里吉",
+"pid":163100000,
+"code":"BOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100013,
+"name":"布迈德斯",
+"pid":163100000,
+"code":"BOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100014,
+"name":"谢里夫",
+"pid":163100000,
+"code":"CHL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100015,
+"name":"君士坦丁",
+"pid":163100000,
+"code":"CZL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100016,
+"name":"杰勒法",
+"pid":163100000,
+"code":"DJE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100017,
+"name":"贝伊德",
+"pid":163100000,
+"code":"EBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100018,
+"name":"瓦德",
+"pid":163100000,
+"code":"EOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100019,
+"name":"塔里夫",
+"pid":163100000,
+"code":"ETA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100020,
+"name":"盖尔达耶",
+"pid":163100000,
+"code":"GHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100021,
+"name":"盖尔马",
+"pid":163100000,
+"code":"GUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100022,
+"name":"伊利齐",
+"pid":163100000,
+"code":"ILL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100023,
+"name":"提济乌祖",
+"pid":163100000,
+"code":"IOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100024,
+"name":"吉杰尔",
+"pid":163100000,
+"code":"JIJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100025,
+"name":"罕西拉",
+"pid":163100000,
+"code":"KHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100026,
+"name":"拉格瓦特",
+"pid":163100000,
+"code":"LAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100027,
+"name":"麦迪亚",
+"pid":163100000,
+"code":"MED",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100028,
+"name":"密拉",
+"pid":163100000,
+"code":"MIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100029,
+"name":"莫斯塔加纳姆",
+"pid":163100000,
+"code":"MOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100030,
+"name":"姆西拉",
+"pid":163100000,
+"code":"MSI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100031,
+"name":"马斯卡拉",
+"pid":163100000,
+"code":"MUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100032,
+"name":"纳阿马",
+"pid":163100000,
+"code":"NAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100033,
+"name":"乌姆布阿基",
+"pid":163100000,
+"code":"OEB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100034,
+"name":"奥兰",
+"pid":163100000,
+"code":"ORA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100035,
+"name":"瓦尔格拉",
+"pid":163100000,
+"code":"OUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100036,
+"name":"赫利赞",
+"pid":163100000,
+"code":"REL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100037,
+"name":"苏克·阿赫拉斯",
+"pid":163100000,
+"code":"SAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100038,
+"name":"赛伊达",
+"pid":163100000,
+"code":"SAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100039,
+"name":"西迪贝勒阿贝斯",
+"pid":163100000,
+"code":"SBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100040,
+"name":"塞蒂夫",
+"pid":163100000,
+"code":"SET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100041,
+"name":"斯基克达",
+"pid":163100000,
+"code":"SKI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100042,
+"name":"塔曼拉塞特",
+"pid":163100000,
+"code":"TAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100043,
+"name":"特贝萨",
+"pid":163100000,
+"code":"TEB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100044,
+"name":"提亚雷特",
+"pid":163100000,
+"code":"TIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100045,
+"name":"廷杜夫",
+"pid":163100000,
+"code":"TIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100046,
+"name":"蒂巴扎",
+"pid":163100000,
+"code":"TIP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100047,
+"name":"蒂斯姆西勒特",
+"pid":163100000,
+"code":"TIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":163100048,
+"name":"特莱姆森",
+"pid":163100000,
+"code":"TLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164000000,
+"name":"厄瓜多尔",
+"pid":0,
+"code":"ECU",
+"pinyin":"Ecuador",
+"ccode":"ec",
+"level":1
+},
+    {
+        "id":164100001,
+"name":"阿苏艾",
+"pid":164100000,
+"code":"A",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100002,
+"name":"玻利瓦尔",
+"pid":164100000,
+"code":"B",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100003,
+"name":"卡尔奇",
+"pid":164100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100004,
+"name":"纳波，奥雷利亚纳",
+"pid":164100000,
+"code":"D",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100005,
+"name":"埃斯梅拉尔达斯",
+"pid":164100000,
+"code":"E",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100006,
+"name":"卡尼亚尔",
+"pid":164100000,
+"code":"F",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100007,
+"name":"瓜亚斯",
+"pid":164100000,
+"code":"G",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100008,
+"name":"钦博拉索",
+"pid":164100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100009,
+"name":"科托帕希",
+"pid":164100000,
+"code":"X",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100010,
+"name":"因巴布拉",
+"pid":164100000,
+"code":"I",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100011,
+"name":"洛哈",
+"pid":164100000,
+"code":"L",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100012,
+"name":"马纳比",
+"pid":164100000,
+"code":"M",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100013,
+"name":"埃尔奥罗",
+"pid":164100000,
+"code":"O",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100014,
+"name":"皮钦查",
+"pid":164100000,
+"code":"P",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100015,
+"name":"洛斯里奥斯",
+"pid":164100000,
+"code":"R",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100016,
+"name":"莫罗纳－圣地亚哥",
+"pid":164100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100017,
+"name":"通古拉瓦",
+"pid":164100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100018,
+"name":"苏昆毕奥斯",
+"pid":164100000,
+"code":"U",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100019,
+"name":"加拉帕戈斯",
+"pid":164100000,
+"code":"W",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100020,
+"name":"帕斯塔萨",
+"pid":164100000,
+"code":"Y",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":164100021,
+"name":"萨莫拉－钦奇佩",
+"pid":164100000,
+"code":"Z",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":165000000,
+"name":"埃及",
+"pid":0,
+"code":"EGY",
+"pinyin":"Egypt",
+"ccode":"eg",
+"level":1
+},
+    {
+        "id":165100001,
+"name":"亚历山大",
+"pid":165100000,
+"code":"ALY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":165100002,
+"name":"阿斯旺",
+"pid":165100000,
+"code":"ASW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":165100003,
+"name":"开罗",
+"pid":165100000,
+"code":"CAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":165100004,
+"name":"古尔代盖",
+"pid":165100000,
+"code":"GBY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":165100005,
+"name":"苏布拉开马",
+"pid":165100000,
+"code":"SKH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166000000,
+"name":"厄立特里亚",
+"pid":0,
+"code":"ERI",
+"pinyin":"Eritrea",
+"ccode":"er",
+"level":1
+},
+    {
+        "id":166100001,
+"name":"加什·巴尔卡",
+"pid":166100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166100002,
+"name":"南部",
+"pid":166100000,
+"code":"DE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166100003,
+"name":"南红海",
+"pid":166100000,
+"code":"DK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166100004,
+"name":"安塞巴",
+"pid":166100000,
+"code":"KE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166100005,
+"name":"中部",
+"pid":166100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":166100006,
+"name":"北红海",
+"pid":166100000,
+"code":"SK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167000000,
+"name":"西班牙",
+"pid":0,
+"code":"ESP",
+"pinyin":"Spain",
+"ccode":"es",
+"level":1
+},
+    {
+        "id":167100001,
+"name":"马拉加",
+"pid":167100000,
+"code":"AGP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100002,
+"name":"阿拉瓦",
+"pid":167100000,
+"code":"ALA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100003,
+"name":"阿尔瓦塞特",
+"pid":167100000,
+"code":"ALB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100004,
+"name":"阿利坎特",
+"pid":167100000,
+"code":"ALC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100005,
+"name":"拉里奥哈",
+"pid":167100000,
+"code":"ARL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100006,
+"name":"阿斯图利亚斯",
+"pid":167100000,
+"code":"AST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100007,
+"name":"阿维拉",
+"pid":167100000,
+"code":"AVI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100008,
+"name":"巴塞罗那",
+"pid":167100000,
+"code":"BCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100009,
+"name":"巴达霍斯",
+"pid":167100000,
+"code":"BJZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100010,
+"name":"巴利阿里",
+"pid":167100000,
+"code":"BLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100011,
+"name":"布尔戈斯",
+"pid":167100000,
+"code":"BUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100012,
+"name":"加的斯",
+"pid":167100000,
+"code":"CAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100013,
+"name":"卡斯特利翁",
+"pid":167100000,
+"code":"CAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100014,
+"name":"卡塞雷斯",
+"pid":167100000,
+"code":"CCS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100015,
+"name":"卡斯蒂利亚",
+"pid":167100000,
+"code":"CIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100016,
+"name":"昆卡",
+"pid":167100000,
+"code":"CUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100017,
+"name":"格拉纳达",
+"pid":167100000,
+"code":"GRX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100018,
+"name":"赫罗纳",
+"pid":167100000,
+"code":"GRO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100019,
+"name":"瓜达拉哈拉",
+"pid":167100000,
+"code":"GUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100020,
+"name":"吉普斯夸",
+"pid":167100000,
+"code":"GUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100021,
+"name":"韦斯卡",
+"pid":167100000,
+"code":"HUC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100022,
+"name":"韦尔瓦",
+"pid":167100000,
+"code":"HUV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100023,
+"name":"哈恩",
+"pid":167100000,
+"code":"JAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100024,
+"name":"拉科鲁尼亚",
+"pid":167100000,
+"code":"LCG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100025,
+"name":"阿尔梅里亚",
+"pid":167100000,
+"code":"LEI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100026,
+"name":"莱昂",
+"pid":167100000,
+"code":"LEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100027,
+"name":"卢戈",
+"pid":167100000,
+"code":"LGO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100028,
+"name":"莱里达",
+"pid":167100000,
+"code":"LLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100029,
+"name":"拉斯帕尔马斯",
+"pid":167100000,
+"code":"LPA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100030,
+"name":"马德里",
+"pid":167100000,
+"code":"MAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100031,
+"name":"穆尔西亚",
+"pid":167100000,
+"code":"MJV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100032,
+"name":"纳瓦拉",
+"pid":167100000,
+"code":"NVV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100033,
+"name":"科尔多瓦",
+"pid":167100000,
+"code":"ODB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100034,
+"name":"奥伦塞",
+"pid":167100000,
+"code":"ORE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100035,
+"name":"帕伦西亚",
+"pid":167100000,
+"code":"PAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100036,
+"name":"蓬特韦德拉",
+"pid":167100000,
+"code":"PEV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100037,
+"name":"圣克鲁斯-德特内里费",
+"pid":167100000,
+"code":"SCT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100038,
+"name":"桑坦德",
+"pid":167100000,
+"code":"SDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100039,
+"name":"塞哥维亚",
+"pid":167100000,
+"code":"SEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100040,
+"name":"萨拉曼卡",
+"pid":167100000,
+"code":"SLM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100041,
+"name":"索里亚",
+"pid":167100000,
+"code":"SOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100042,
+"name":"塞维利亚",
+"pid":167100000,
+"code":"SVQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100043,
+"name":"塔拉戈纳",
+"pid":167100000,
+"code":"TAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100044,
+"name":"特鲁埃尔",
+"pid":167100000,
+"code":"TER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100045,
+"name":"托莱多",
+"pid":167100000,
+"code":"TOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100046,
+"name":"巴伦西亚",
+"pid":167100000,
+"code":"VLC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100047,
+"name":"巴利亚多利德",
+"pid":167100000,
+"code":"VLL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100048,
+"name":"比斯开",
+"pid":167100000,
+"code":"VSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100049,
+"name":"萨拉戈萨",
+"pid":167100000,
+"code":"ZAZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":167100050,
+"name":"萨莫拉",
+"pid":167100000,
+"code":"ZMR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168000000,
+"name":"爱沙尼亚",
+"pid":0,
+"code":"EST",
+"pinyin":"Estonia",
+"ccode":"ee",
+"level":1
+},
+    {
+        "id":168100001,
+"name":"哈留",
+"pid":168100000,
+"code":"37",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100002,
+"name":"希尤",
+"pid":168100000,
+"code":"39",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100003,
+"name":"依达－维鲁",
+"pid":168100000,
+"code":"44",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100004,
+"name":"耶盖瓦",
+"pid":168100000,
+"code":"49",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100005,
+"name":"耶尔韦",
+"pid":168100000,
+"code":"51",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100006,
+"name":"里亚内",
+"pid":168100000,
+"code":"57",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100007,
+"name":"维鲁",
+"pid":168100000,
+"code":"59",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100008,
+"name":"贝尔瓦",
+"pid":168100000,
+"code":"65",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100009,
+"name":"帕尔努",
+"pid":168100000,
+"code":"67",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100010,
+"name":"拉普拉",
+"pid":168100000,
+"code":"70",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100011,
+"name":"萨雷",
+"pid":168100000,
+"code":"74",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100012,
+"name":"塔尔图",
+"pid":168100000,
+"code":"78",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100013,
+"name":"瓦尔加",
+"pid":168100000,
+"code":"82",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100014,
+"name":"维良地",
+"pid":168100000,
+"code":"84",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":168100015,
+"name":"沃鲁",
+"pid":168100000,
+"code":"86",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169000000,
+"name":"埃塞俄比亚",
+"pid":0,
+"code":"ETH",
+"pinyin":"Ethiopia",
+"ccode":"et",
+"level":1
+},
+    {
+        "id":169100001,
+"name":"亚的斯亚贝巴",
+"pid":169100000,
+"code":"AA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100002,
+"name":"阿法尔",
+"pid":169100000,
+"code":"AF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100003,
+"name":"阿姆哈拉",
+"pid":169100000,
+"code":"AH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100004,
+"name":"宾香古尔",
+"pid":169100000,
+"code":"BG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100005,
+"name":"德雷达瓦",
+"pid":169100000,
+"code":"DD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100006,
+"name":"甘贝拉各族",
+"pid":169100000,
+"code":"GB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100007,
+"name":"哈勒里民族",
+"pid":169100000,
+"code":"HR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100008,
+"name":"奥罗米亚",
+"pid":169100000,
+"code":"OR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100009,
+"name":"索马里",
+"pid":169100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100010,
+"name":"南方各族",
+"pid":169100000,
+"code":"SN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":169100011,
+"name":"提格雷",
+"pid":169100000,
+"code":"TG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170000000,
+"name":"芬兰",
+"pid":0,
+"code":"FIN",
+"pinyin":"Finland",
+"ccode":"fi",
+"level":1
+},
+    {
+        "id":170100001,
+"name":"埃斯波",
+"pid":170100000,
+"code":"ESP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100002,
+"name":"赫尔辛基",
+"pid":170100000,
+"code":"HEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100003,
+"name":"海门林纳",
+"pid":170100000,
+"code":"HMY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100004,
+"name":"约恩苏",
+"pid":170100000,
+"code":"JOE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100005,
+"name":"卡亚尼",
+"pid":170100000,
+"code":"KAJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100006,
+"name":"科科拉",
+"pid":170100000,
+"code":"KOK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100007,
+"name":"科特卡",
+"pid":170100000,
+"code":"KTK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100008,
+"name":"库奥皮奥",
+"pid":170100000,
+"code":"KUO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100009,
+"name":"拉赫蒂",
+"pid":170100000,
+"code":"LHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100010,
+"name":"拉彭兰塔",
+"pid":170100000,
+"code":"LPP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100011,
+"name":"玛丽港",
+"pid":170100000,
+"code":"MHQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100012,
+"name":"米凯利",
+"pid":170100000,
+"code":"MIK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100013,
+"name":"奥卢",
+"pid":170100000,
+"code":"OLU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100014,
+"name":"波里",
+"pid":170100000,
+"code":"POR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100015,
+"name":"博尔沃",
+"pid":170100000,
+"code":"PRV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100016,
+"name":"罗瓦涅米",
+"pid":170100000,
+"code":"RVN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100017,
+"name":"图尔库",
+"pid":170100000,
+"code":"TKU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100018,
+"name":"坦佩雷",
+"pid":170100000,
+"code":"TMP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100019,
+"name":"瓦萨",
+"pid":170100000,
+"code":"VAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":170100020,
+"name":"万塔",
+"pid":170100000,
+"code":"VAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":171000000,
+"name":"斐济",
+"pid":0,
+"code":"FJI",
+"pinyin":"Fiji",
+"ccode":"fj",
+"level":1
+},
+    {
+        "id":173000000,
+"name":"法国",
+"pid":0,
+"code":"FRA",
+"pinyin":"France",
+"ccode":"fr",
+"level":1
+},
+    {
+        "id":173100001,
+"name":"阿雅克修",
+"pid":173100000,
+"code":"AJA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100002,
+"name":"亚眠",
+"pid":173100000,
+"code":"AMI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100003,
+"name":"阿尔勒",
+"pid":173100000,
+"code":"ARL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100004,
+"name":"贝桑松",
+"pid":173100000,
+"code":"BSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100005,
+"name":"卡昂",
+"pid":173100000,
+"code":"CFR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100006,
+"name":"沙隆",
+"pid":173100000,
+"code":"CSM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100007,
+"name":"第戎",
+"pid":173100000,
+"code":"DIJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100008,
+"name":"弗雷瑞斯",
+"pid":173100000,
+"code":"FRJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100009,
+"name":"艾克斯",
+"pid":173100000,
+"code":"QXB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100010,
+"name":"利摩日",
+"pid":173100000,
+"code":"LIG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100011,
+"name":"里昂",
+"pid":173100000,
+"code":"LIO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100012,
+"name":"里尔",
+"pid":173100000,
+"code":"LLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100013,
+"name":"蒙彼利埃",
+"pid":173100000,
+"code":"MPL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100014,
+"name":"马赛",
+"pid":173100000,
+"code":"MRS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100015,
+"name":"梅斯",
+"pid":173100000,
+"code":"MZM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100016,
+"name":"尼斯",
+"pid":173100000,
+"code":"NCE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100017,
+"name":"南特",
+"pid":173100000,
+"code":"NTE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100018,
+"name":"奥尔良",
+"pid":173100000,
+"code":"ORR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100019,
+"name":"巴黎",
+"pid":173100000,
+"code":"PAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100020,
+"name":"雷恩",
+"pid":173100000,
+"code":"RNS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100021,
+"name":"图卢兹",
+"pid":173100000,
+"code":"TLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100022,
+"name":"鲁昂",
+"pid":173100000,
+"code":"URO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":173100023,
+"name":"瓦朗斯",
+"pid":173100000,
+"code":"VAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":174000000,
+"name":"法罗群岛",
+"pid":0,
+"code":"FRO",
+"pinyin":"Faroe Islands",
+"ccode":"fo",
+"level":1
+},
+    {
+        "id":175000000,
+"name":"密克罗尼西亚",
+"pid":0,
+"code":"FSM",
+"pinyin":"Micronesia",
+"ccode":"fm",
+"level":1
+},
+    {
+        "id":176000000,
+"name":"加蓬",
+"pid":0,
+"code":"GAB",
+"pinyin":"Gabon",
+"ccode":"ga",
+"level":1
+},
+    {
+        "id":176100001,
+"name":"河口",
+"pid":176100000,
+"code":"ES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100002,
+"name":"上奥果韦",
+"pid":176100000,
+"code":"HO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100003,
+"name":"中奥果韦",
+"pid":176100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100004,
+"name":"恩古涅",
+"pid":176100000,
+"code":"NG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100005,
+"name":"尼扬加",
+"pid":176100000,
+"code":"NY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100006,
+"name":"奥果韦-伊温多",
+"pid":176100000,
+"code":"OI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100007,
+"name":"奥果韦-洛洛",
+"pid":176100000,
+"code":"OL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100008,
+"name":"滨海奥果韦",
+"pid":176100000,
+"code":"OM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":176100009,
+"name":"沃勒-恩特姆",
+"pid":176100000,
+"code":"WN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177000000,
+"name":"英国",
+"pid":0,
+"code":"GBR",
+"pinyin":"United Kingdom",
+"ccode":"gb",
+"level":1
+},
+    {
+        "id":177101000,
+"name":"英格兰",
+"pid":177000000,
+"code":"ENG",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":177101001,
+"name":"巴斯",
+"pid":177101000,
+"code":"BAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101002,
+"name":"伯明翰",
+"pid":177101000,
+"code":"BIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101003,
+"name":"布莱顿与赫福",
+"pid":177101000,
+"code":"BNH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101004,
+"name":"布拉德福德",
+"pid":177101000,
+"code":"BRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101005,
+"name":"布里斯托尔",
+"pid":177101000,
+"code":"BST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101006,
+"name":"卡莱尔",
+"pid":177101000,
+"code":"CAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101007,
+"name":"剑桥",
+"pid":177101000,
+"code":"CAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101008,
+"name":"切斯特",
+"pid":177101000,
+"code":"CEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101009,
+"name":"坎特伯雷",
+"pid":177101000,
+"code":"CNG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101010,
+"name":"考文垂",
+"pid":177101000,
+"code":"COV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101011,
+"name":"奇切斯特",
+"pid":177101000,
+"code":"CST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101012,
+"name":"德比",
+"pid":177101000,
+"code":"DER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101013,
+"name":"德罕",
+"pid":177101000,
+"code":"DUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101014,
+"name":"爱塞特",
+"pid":177101000,
+"code":"EXE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101015,
+"name":"伊利",
+"pid":177101000,
+"code":"ELY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101016,
+"name":"格洛斯特",
+"pid":177101000,
+"code":"GLO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101017,
+"name":"赫里福德",
+"pid":177101000,
+"code":"HAF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101018,
+"name":"赫尔河畔京斯敦",
+"pid":177101000,
+"code":"KUH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101019,
+"name":"兰开斯特",
+"pid":177101000,
+"code":"LAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101020,
+"name":"列斯特",
+"pid":177101000,
+"code":"LCE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101021,
+"name":"林肯",
+"pid":177101000,
+"code":"LCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101022,
+"name":"利茲",
+"pid":177101000,
+"code":"LDS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101023,
+"name":"利奇菲尔德",
+"pid":177101000,
+"code":"LHF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101024,
+"name":"利物浦",
+"pid":177101000,
+"code":"LIV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101025,
+"name":"伦敦",
+"pid":177101000,
+"code":"LND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101026,
+"name":"曼彻斯特",
+"pid":177101000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101027,
+"name":"纽卡斯尔",
+"pid":177101000,
+"code":"NCL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101028,
+"name":"诺丁汉",
+"pid":177101000,
+"code":"NGM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101029,
+"name":"诺里奇",
+"pid":177101000,
+"code":"NRW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101030,
+"name":"牛津",
+"pid":177101000,
+"code":"OXF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101031,
+"name":"普利茅斯",
+"pid":177101000,
+"code":"PLY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101032,
+"name":"朴茨茅斯",
+"pid":177101000,
+"code":"POR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101033,
+"name":"普雷斯顿",
+"pid":177101000,
+"code":"PRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101034,
+"name":"彼得伯勒",
+"pid":177101000,
+"code":"PTE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101035,
+"name":"里彭",
+"pid":177101000,
+"code":"RIP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101036,
+"name":"谢菲尔德",
+"pid":177101000,
+"code":"SHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101037,
+"name":"索福特",
+"pid":177101000,
+"code":"SLF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101038,
+"name":"索尔斯堡",
+"pid":177101000,
+"code":"SLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101039,
+"name":"特伦特河畔斯多克",
+"pid":177101000,
+"code":"SOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101040,
+"name":"南安普敦",
+"pid":177101000,
+"code":"STH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101041,
+"name":"桑德兰",
+"pid":177101000,
+"code":"SUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101042,
+"name":"圣阿本斯",
+"pid":177101000,
+"code":"TBL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101043,
+"name":"特鲁罗",
+"pid":177101000,
+"code":"TRU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101044,
+"name":"韦克菲尔德",
+"pid":177101000,
+"code":"WKF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101045,
+"name":"威尔斯",
+"pid":177101000,
+"code":"WLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101046,
+"name":"温彻斯特",
+"pid":177101000,
+"code":"WNE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101047,
+"name":"伍斯特",
+"pid":177101000,
+"code":"WOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101048,
+"name":"伍尔弗汉普顿",
+"pid":177101000,
+"code":"WOV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177101049,
+"name":"约克",
+"pid":177101000,
+"code":"YOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177102000,
+"name":"北爱尔兰",
+"pid":177000000,
+"code":"NIR",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":177102001,
+"name":"贝尔法斯特",
+"pid":177102000,
+"code":"BFS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177102002,
+"name":"德里",
+"pid":177102000,
+"code":"DRY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177102003,
+"name":"利斯本",
+"pid":177102000,
+"code":"LSB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177102004,
+"name":"纽里",
+"pid":177102000,
+"code":"NYM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103000,
+"name":"苏格兰",
+"pid":177000000,
+"code":"SCT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":177103001,
+"name":"阿伯丁",
+"pid":177103000,
+"code":"ABD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103002,
+"name":"丹迪",
+"pid":177103000,
+"code":"DND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103003,
+"name":"爱丁堡",
+"pid":177103000,
+"code":"EDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103004,
+"name":"格拉斯哥",
+"pid":177103000,
+"code":"GLG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103005,
+"name":"因弗内斯",
+"pid":177103000,
+"code":"INV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177103006,
+"name":"斯特灵",
+"pid":177103000,
+"code":"STG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177104000,
+"name":"威尔士",
+"pid":177000000,
+"code":"WLS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":177104001,
+"name":"班戈",
+"pid":177104000,
+"code":"BAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177104002,
+"name":"卡迪夫",
+"pid":177104000,
+"code":"CDF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177104003,
+"name":"纽波特",
+"pid":177104000,
+"code":"NWP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":177104004,
+"name":"斯旺西",
+"pid":177104000,
+"code":"SWA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":178000000,
+"name":"乔治亚",
+"pid":0,
+"code":"GEO",
+"pinyin":"Georgia",
+"ccode":"gs",
+"level":1
+},
+    {
+        "id":179000000,
+"name":"格恩西岛",
+"pid":0,
+"code":"GGY",
+"pinyin":"Guernsey",
+"ccode":"gg",
+"level":1
+},
+    {
+        "id":180000000,
+"name":"加纳",
+"pid":0,
+"code":"GHA",
+"pinyin":"Ghana",
+"ccode":"gh",
+"level":1
+},
+    {
+        "id":180100001,
+"name":"阿散蒂",
+"pid":180100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100002,
+"name":"布朗阿哈福",
+"pid":180100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100003,
+"name":"中部",
+"pid":180100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100004,
+"name":"东部",
+"pid":180100000,
+"code":"EA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100005,
+"name":"大阿克拉",
+"pid":180100000,
+"code":"GA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100006,
+"name":"北部",
+"pid":180100000,
+"code":"NO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100007,
+"name":"奥布阿西",
+"pid":180100000,
+"code":"OBU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100008,
+"name":"上东部",
+"pid":180100000,
+"code":"UE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100009,
+"name":"上西部",
+"pid":180100000,
+"code":"UW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100010,
+"name":"沃尔特",
+"pid":180100000,
+"code":"VO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":180100011,
+"name":"西部",
+"pid":180100000,
+"code":"WE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":181000000,
+"name":"直布罗陀",
+"pid":0,
+"code":"GIB",
+"pinyin":"Gibraltar",
+"ccode":"gi",
+"level":1
+},
+    {
+        "id":182000000,
+"name":"几内亚",
+"pid":0,
+"code":"GIN",
+"pinyin":"Papua New Guinea",
+"ccode":"pg",
+"level":1
+},
+    {
+        "id":182100001,
+"name":"博凯",
+"pid":182100000,
+"code":"BOK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100002,
+"name":"科纳克里",
+"pid":182100000,
+"code":"CNK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100003,
+"name":"法拉纳",
+"pid":182100000,
+"code":"FRN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100004,
+"name":"金迪亚",
+"pid":182100000,
+"code":"KND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100005,
+"name":"康康",
+"pid":182100000,
+"code":"KNK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100006,
+"name":"拉贝",
+"pid":182100000,
+"code":"LAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100007,
+"name":"玛木",
+"pid":182100000,
+"code":"MAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":182100008,
+"name":"恩泽雷科雷",
+"pid":182100000,
+"code":"NZR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":183000000,
+"name":"瓜德罗普",
+"pid":0,
+"code":"GLP",
+"pinyin":"Guadeloupe",
+"ccode":"gp",
+"level":1
+},
+    {
+        "id":184000000,
+"name":"冈比亚",
+"pid":0,
+"code":"GMB",
+"pinyin":"Gambia",
+"ccode":"gm",
+"level":1
+},
+    {
+        "id":185000000,
+"name":"几内亚比绍",
+"pid":0,
+"code":"GNB",
+"pinyin":"Guinea-Bissau",
+"ccode":"gw",
+"level":1
+},
+    {
+        "id":186000000,
+"name":"希腊",
+"pid":0,
+"code":"GRC",
+"pinyin":"Greece",
+"ccode":"gr",
+"level":1
+},
+    {
+        "id":186100001,
+"name":"雅典",
+"pid":186100000,
+"code":"ATH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100002,
+"name":"干尼亚",
+"pid":186100000,
+"code":"CHQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100003,
+"name":"基克拉迪",
+"pid":186100000,
+"code":"CY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100004,
+"name":"多德卡尼斯",
+"pid":186100000,
+"code":"DO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100005,
+"name":"伊拉克里翁",
+"pid":186100000,
+"code":"HER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100006,
+"name":"莱斯博斯",
+"pid":186100000,
+"code":"LES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100007,
+"name":"拉西锡",
+"pid":186100000,
+"code":"LST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100008,
+"name":"比雷埃夫斯",
+"pid":186100000,
+"code":"PRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100009,
+"name":"雷西姆农",
+"pid":186100000,
+"code":"RET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":186100010,
+"name":"萨摩斯",
+"pid":186100000,
+"code":"SMI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":187000000,
+"name":"格林纳达",
+"pid":0,
+"code":"GRD",
+"pinyin":"Grenada",
+"ccode":"gd",
+"level":1
+},
+    {
+        "id":188000000,
+"name":"格陵兰",
+"pid":0,
+"code":"GRL",
+"pinyin":"Greenland",
+"ccode":"gl",
+"level":1
+},
+    {
+        "id":189000000,
+"name":"危地马拉",
+"pid":0,
+"code":"GTM",
+"pinyin":"Guatemala",
+"ccode":"gt",
+"level":1
+},
+    {
+        "id":189100001,
+"name":"上韦拉帕斯",
+"pid":189100000,
+"code":"AV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100002,
+"name":"下韦拉帕斯",
+"pid":189100000,
+"code":"BV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100003,
+"name":"奇基穆拉",
+"pid":189100000,
+"code":"CQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100004,
+"name":"奇马尔特南戈",
+"pid":189100000,
+"code":"CM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100005,
+"name":"埃斯昆特拉",
+"pid":189100000,
+"code":"ES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100006,
+"name":"危地马拉",
+"pid":189100000,
+"code":"GU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100007,
+"name":"韦韦特南戈",
+"pid":189100000,
+"code":"HU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100008,
+"name":"伊萨瓦尔",
+"pid":189100000,
+"code":"IZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100009,
+"name":"哈拉帕",
+"pid":189100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100010,
+"name":"胡蒂亚帕",
+"pid":189100000,
+"code":"JU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100011,
+"name":"基切",
+"pid":189100000,
+"code":"QC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100012,
+"name":"克萨尔特南戈",
+"pid":189100000,
+"code":"QZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100013,
+"name":"米克斯科",
+"pid":189100000,
+"code":"MIX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100014,
+"name":"佩滕",
+"pid":189100000,
+"code":"PE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100015,
+"name":"埃尔普罗格雷索",
+"pid":189100000,
+"code":"PR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100016,
+"name":"雷塔卢莱乌",
+"pid":189100000,
+"code":"RE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100017,
+"name":"圣马科斯",
+"pid":189100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100018,
+"name":"索洛拉",
+"pid":189100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100019,
+"name":"圣罗莎",
+"pid":189100000,
+"code":"SR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100020,
+"name":"萨卡特佩克斯",
+"pid":189100000,
+"code":"ST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100021,
+"name":"苏奇特佩克斯",
+"pid":189100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100022,
+"name":"托托尼卡潘",
+"pid":189100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100023,
+"name":"新城",
+"pid":189100000,
+"code":"VIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":189100024,
+"name":"萨卡帕",
+"pid":189100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":190000000,
+"name":"法属圭亚那",
+"pid":0,
+"code":"GUF",
+"pinyin":"French Guiana",
+"ccode":"gf",
+"level":1
+},
+    {
+        "id":191000000,
+"name":"关岛",
+"pid":0,
+"code":"GUM",
+"pinyin":"Guam",
+"ccode":"gu",
+"level":1
+},
+    {
+        "id":192000000,
+"name":"圭亚那",
+"pid":0,
+"code":"GUY",
+"pinyin":"French Guiana",
+"ccode":"gf",
+"level":1
+},
+    {
+        "id":192100001,
+"name":"巴里马-瓦伊尼",
+"pid":192100000,
+"code":"BW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100002,
+"name":"库尤尼-马扎鲁尼",
+"pid":192100000,
+"code":"CM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100003,
+"name":"德梅拉拉-马海卡",
+"pid":192100000,
+"code":"DM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100004,
+"name":"东伯比斯-科兰太因",
+"pid":192100000,
+"code":"EC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100005,
+"name":"埃塞奎博群岛-西德梅拉拉",
+"pid":192100000,
+"code":"EW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100006,
+"name":"马海卡-伯比斯",
+"pid":192100000,
+"code":"MB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100007,
+"name":"波塔罗-锡帕鲁尼",
+"pid":192100000,
+"code":"PI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100008,
+"name":"波默伦-苏佩纳姆",
+"pid":192100000,
+"code":"PM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100009,
+"name":"上德梅拉拉-伯比斯",
+"pid":192100000,
+"code":"UD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":192100010,
+"name":"上塔库图-上埃塞奎博",
+"pid":192100000,
+"code":"UT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":193000000,
+"name":"赫德岛和麦克唐纳群岛",
+"pid":0,
+"code":"HMD",
+"pinyin":"Heard \\x26 McDonald Islands",
+"ccode":"hm",
+"level":1
+},
+    {
+        "id":194000000,
+"name":"洪都拉斯",
+"pid":0,
+"code":"HND",
+"pinyin":"Honduras",
+"ccode":"hn",
+"level":1
+},
+    {
+        "id":194100001,
+"name":"阿特兰蒂达",
+"pid":194100000,
+"code":"AT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100002,
+"name":"乔卢特卡",
+"pid":194100000,
+"code":"CH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100003,
+"name":"乔罗马",
+"pid":194100000,
+"code":"CHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100004,
+"name":"科隆",
+"pid":194100000,
+"code":"CL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100005,
+"name":"科马亚瓜",
+"pid":194100000,
+"code":"CM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100006,
+"name":"科潘",
+"pid":194100000,
+"code":"CP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100007,
+"name":"科尔特斯",
+"pid":194100000,
+"code":"CR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100008,
+"name":"弗朗西斯科-莫拉桑",
+"pid":194100000,
+"code":"FM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100009,
+"name":"格拉西亚斯-阿迪奥斯",
+"pid":194100000,
+"code":"GD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100010,
+"name":"海湾群岛",
+"pid":194100000,
+"code":"IB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100011,
+"name":"因蒂布卡",
+"pid":194100000,
+"code":"IN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100012,
+"name":"伦皮拉",
+"pid":194100000,
+"code":"LE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100013,
+"name":"奥科特佩克",
+"pid":194100000,
+"code":"OC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100014,
+"name":"奥兰乔",
+"pid":194100000,
+"code":"OL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100015,
+"name":"埃尔帕拉伊索",
+"pid":194100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100016,
+"name":"拉巴斯",
+"pid":194100000,
+"code":"PZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100017,
+"name":"圣巴巴拉",
+"pid":194100000,
+"code":"SB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100018,
+"name":"山谷",
+"pid":194100000,
+"code":"VA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":194100019,
+"name":"约罗",
+"pid":194100000,
+"code":"YO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195000000,
+"name":"克罗地亚",
+"pid":0,
+"code":"HRV",
+"pinyin":"Croatia",
+"ccode":"hr",
+"level":1
+},
+    {
+        "id":195100001,
+"name":"萨格勒布",
+"pid":195100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100002,
+"name":"维罗维蒂察-波德拉维纳",
+"pid":195100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100003,
+"name":"波热加-斯拉沃尼亚",
+"pid":195100000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100004,
+"name":"布罗德-波萨维纳",
+"pid":195100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100005,
+"name":"扎达尔",
+"pid":195100000,
+"code":"13",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100006,
+"name":"奥西耶克-巴拉尼亚",
+"pid":195100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100007,
+"name":"希贝尼克-克宁",
+"pid":195100000,
+"code":"15",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100008,
+"name":"武科瓦尔-斯里耶姆",
+"pid":195100000,
+"code":"16",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100009,
+"name":"斯普利特-达尔马提亚",
+"pid":195100000,
+"code":"17",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100010,
+"name":"伊斯特拉",
+"pid":195100000,
+"code":"18",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100011,
+"name":"杜布罗夫斯克-内雷特瓦",
+"pid":195100000,
+"code":"19",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100012,
+"name":"克拉皮纳-扎戈列",
+"pid":195100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100013,
+"name":"梅吉穆列",
+"pid":195100000,
+"code":"20",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100014,
+"name":"萨格勒布市",
+"pid":195100000,
+"code":"21",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100015,
+"name":"锡萨克-莫斯拉维纳",
+"pid":195100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100016,
+"name":"卡尔洛瓦茨",
+"pid":195100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100017,
+"name":"瓦拉日丁",
+"pid":195100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100018,
+"name":"科普里夫尼察-克里热夫齐",
+"pid":195100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100019,
+"name":"别洛瓦尔-比洛戈拉",
+"pid":195100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100020,
+"name":"滨海和山区",
+"pid":195100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":195100021,
+"name":"利卡-塞尼",
+"pid":195100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":196000000,
+"name":"海地",
+"pid":0,
+"code":"HTI",
+"pinyin":"Haiti",
+"ccode":"ht",
+"level":1
+},
+    {
+        "id":197000000,
+"name":"匈牙利",
+"pid":0,
+"code":"HUN",
+"pinyin":"Hungary",
+"ccode":"hu",
+"level":1
+},
+    {
+        "id":197100001,
+"name":"巴兰尼亚",
+"pid":197100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100002,
+"name":"贝凯什",
+"pid":197100000,
+"code":"BE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100003,
+"name":"巴奇-基什孔",
+"pid":197100000,
+"code":"BK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100004,
+"name":"布达佩斯",
+"pid":197100000,
+"code":"BU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100005,
+"name":"包尔绍德-奥包乌伊-曾普伦",
+"pid":197100000,
+"code":"BZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100006,
+"name":"琼格拉德",
+"pid":197100000,
+"code":"CS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100007,
+"name":"费耶尔",
+"pid":197100000,
+"code":"FE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100008,
+"name":"杰尔-莫松-肖普朗",
+"pid":197100000,
+"code":"GS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100009,
+"name":"豪伊杜-比豪尔",
+"pid":197100000,
+"code":"HB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100010,
+"name":"赫维什",
+"pid":197100000,
+"code":"HE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100011,
+"name":"加兹-纳杰孔-索尔诺克",
+"pid":197100000,
+"code":"JN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100012,
+"name":"科马罗姆",
+"pid":197100000,
+"code":"KE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100013,
+"name":"诺格拉德",
+"pid":197100000,
+"code":"NO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100014,
+"name":"佩斯",
+"pid":197100000,
+"code":"PE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100015,
+"name":"绍莫吉",
+"pid":197100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100016,
+"name":"索博尔奇-索特马尔-贝拉格",
+"pid":197100000,
+"code":"SZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100017,
+"name":"托尔瑙",
+"pid":197100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100018,
+"name":"沃什",
+"pid":197100000,
+"code":"VA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100019,
+"name":"维斯普雷姆",
+"pid":197100000,
+"code":"VE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":197100020,
+"name":"佐洛",
+"pid":197100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198000000,
+"name":"印度尼西亚",
+"pid":0,
+"code":"IDN",
+"pinyin":"Indonesia",
+"ccode":"id",
+"level":1
+},
+    {
+        "id":198100001,
+"name":"亚齐",
+"pid":198100000,
+"code":"AC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100002,
+"name":"巴厘",
+"pid":198100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100003,
+"name":"邦加－勿里洞群岛",
+"pid":198100000,
+"code":"BB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100004,
+"name":"明古鲁",
+"pid":198100000,
+"code":"BE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100005,
+"name":"万丹",
+"pid":198100000,
+"code":"BT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100006,
+"name":"伊里安查亚",
+"pid":198100000,
+"code":"IJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100007,
+"name":"占碑",
+"pid":198100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100008,
+"name":"西爪哇",
+"pid":198100000,
+"code":"JB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100009,
+"name":"东爪哇",
+"pid":198100000,
+"code":"JI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100010,
+"name":"雅加达",
+"pid":198100000,
+"code":"JK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100011,
+"name":"中爪哇",
+"pid":198100000,
+"code":"JT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100012,
+"name":"大雅加达首都特区",
+"pid":198100000,
+"code":"KB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100013,
+"name":"东加里曼丹",
+"pid":198100000,
+"code":"KI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100014,
+"name":"南加里曼丹",
+"pid":198100000,
+"code":"KS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100015,
+"name":"中加里曼丹",
+"pid":198100000,
+"code":"KT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100016,
+"name":"楠榜",
+"pid":198100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100017,
+"name":"马鲁古",
+"pid":198100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100018,
+"name":"西努沙登加拉",
+"pid":198100000,
+"code":"NB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100019,
+"name":"东努沙登加拉",
+"pid":198100000,
+"code":"NT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100020,
+"name":"廖内",
+"pid":198100000,
+"code":"RI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100021,
+"name":"北苏拉威西",
+"pid":198100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100022,
+"name":"东南苏拉威西",
+"pid":198100000,
+"code":"SG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100023,
+"name":"南苏拉威西",
+"pid":198100000,
+"code":"SN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100024,
+"name":"西苏门答腊",
+"pid":198100000,
+"code":"SR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100025,
+"name":"南苏门答腊",
+"pid":198100000,
+"code":"SS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100026,
+"name":"中苏拉威西",
+"pid":198100000,
+"code":"ST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100027,
+"name":"北苏门答腊",
+"pid":198100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":198100028,
+"name":"日惹特区",
+"pid":198100000,
+"code":"YO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200000000,
+"name":"印度",
+"pid":0,
+"code":"IND",
+"pinyin":"India",
+"ccode":"in",
+"level":1
+},
+    {
+        "id":200100001,
+"name":"艾藻尔",
+"pid":200100000,
+"code":"AJL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100002,
+"name":"布巴内斯瓦尔",
+"pid":200100000,
+"code":"BBI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100003,
+"name":"博帕尔",
+"pid":200100000,
+"code":"BHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100004,
+"name":"班加罗尔",
+"pid":200100000,
+"code":"BLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100005,
+"name":"加尔各答",
+"pid":200100000,
+"code":"CCU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100006,
+"name":"哥印拜陀",
+"pid":200100000,
+"code":"CJB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100007,
+"name":"达曼",
+"pid":200100000,
+"code":"DAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100008,
+"name":"第乌",
+"pid":200100000,
+"code":"DIU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100009,
+"name":"甘托克",
+"pid":200100000,
+"code":"GTO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100010,
+"name":"新德里",
+"pid":200100000,
+"code":"ICD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100011,
+"name":"印多尔",
+"pid":200100000,
+"code":"IDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100012,
+"name":"昌迪加尔",
+"pid":200100000,
+"code":"IXC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100013,
+"name":"马杜赖",
+"pid":200100000,
+"code":"IXM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100014,
+"name":"因帕尔",
+"pid":200100000,
+"code":"IMF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100015,
+"name":"斋普尔",
+"pid":200100000,
+"code":"JAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100016,
+"name":"焦特布尔",
+"pid":200100000,
+"code":"JDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100017,
+"name":"贾巴尔普尔",
+"pid":200100000,
+"code":"JLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100018,
+"name":"贾朗达尔",
+"pid":200100000,
+"code":"JUC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100019,
+"name":"科希马",
+"pid":200100000,
+"code":"KOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100020,
+"name":"加里加尔",
+"pid":200100000,
+"code":"KRK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100021,
+"name":"卡瓦拉蒂",
+"pid":200100000,
+"code":"KVA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100022,
+"name":"金奈",
+"pid":200100000,
+"code":"MAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100023,
+"name":"马埃",
+"pid":200100000,
+"code":"MAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100024,
+"name":"本地治里",
+"pid":200100000,
+"code":"PNY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100025,
+"name":"西隆",
+"pid":200100000,
+"code":"SHL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100026,
+"name":"锡尔萨瓦",
+"pid":200100000,
+"code":"SIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100027,
+"name":"森伯尔布尔",
+"pid":200100000,
+"code":"SLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100028,
+"name":"亚南",
+"pid":200100000,
+"code":"SRV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100029,
+"name":"特里凡得琅",
+"pid":200100000,
+"code":"TRV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":200100030,
+"name":"乌代布尔",
+"pid":200100000,
+"code":"UDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":201000000,
+"name":"英属印度洋领地",
+"pid":0,
+"code":"IOT",
+"pinyin":"British Indian Ocean Territory",
+"ccode":"io",
+"level":1
+},
+    {
+        "id":202000000,
+"name":"伊拉克",
+"pid":0,
+"code":"IRQ",
+"pinyin":"Iraq",
+"ccode":"iq",
+"level":1
+},
+    {
+        "id":203000000,
+"name":"爱尔兰",
+"pid":0,
+"code":"IRL",
+"pinyin":"Ireland",
+"ccode":"ie",
+"level":1
+},
+    {
+        "id":203100001,
+"name":"科克",
+"pid":203100000,
+"code":"CK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100002,
+"name":"克莱尔",
+"pid":203100000,
+"code":"CL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100003,
+"name":"卡范",
+"pid":203100000,
+"code":"CV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100004,
+"name":"卡洛",
+"pid":203100000,
+"code":"CW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100005,
+"name":"都柏林",
+"pid":203100000,
+"code":"DB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100006,
+"name":"多内加尔",
+"pid":203100000,
+"code":"DG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100007,
+"name":"戈尔韦",
+"pid":203100000,
+"code":"GW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100008,
+"name":"基尔代尔",
+"pid":203100000,
+"code":"KD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100009,
+"name":"基尔肯尼",
+"pid":203100000,
+"code":"KK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100010,
+"name":"凯里",
+"pid":203100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100011,
+"name":"崂斯",
+"pid":203100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100012,
+"name":"朗福德",
+"pid":203100000,
+"code":"LF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100013,
+"name":"利默里克",
+"pid":203100000,
+"code":"LM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100014,
+"name":"利特里姆",
+"pid":203100000,
+"code":"LR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100015,
+"name":"劳斯",
+"pid":203100000,
+"code":"LT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100016,
+"name":"莫内根",
+"pid":203100000,
+"code":"MG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100017,
+"name":"米斯",
+"pid":203100000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100018,
+"name":"梅奥",
+"pid":203100000,
+"code":"MY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100019,
+"name":"奥法利",
+"pid":203100000,
+"code":"OF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100020,
+"name":"罗斯康芒",
+"pid":203100000,
+"code":"RC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100021,
+"name":"斯莱戈",
+"pid":203100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100022,
+"name":"蒂珀雷里",
+"pid":203100000,
+"code":"TP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100023,
+"name":"沃特福德",
+"pid":203100000,
+"code":"WF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100024,
+"name":"韦克斯福德",
+"pid":203100000,
+"code":"WX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100025,
+"name":"威克洛",
+"pid":203100000,
+"code":"WK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":203100026,
+"name":"西米斯",
+"pid":203100000,
+"code":"WM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":204000000,
+"name":"伊朗",
+"pid":0,
+"code":"IRN",
+"pinyin":"Iran",
+"ccode":"ir",
+"level":1
+},
+    {
+        "id":205000000,
+"name":"冰岛",
+"pid":0,
+"code":"ISL",
+"pinyin":"Iceland",
+"ccode":"is",
+"level":1
+},
+    {
+        "id":206000000,
+"name":"以色列",
+"pid":0,
+"code":"ISR",
+"pinyin":"Israel",
+"ccode":"il",
+"level":1
+},
+    {
+        "id":206100001,
+"name":"阿什杜德",
+"pid":206100000,
+"code":"ASH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100002,
+"name":"贝特雁",
+"pid":206100000,
+"code":"BAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100003,
+"name":"贝尔谢巴",
+"pid":206100000,
+"code":"BEV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100004,
+"name":"海法",
+"pid":206100000,
+"code":"HFA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100005,
+"name":"霍隆",
+"pid":206100000,
+"code":"HOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100006,
+"name":"耶路撒冷",
+"pid":206100000,
+"code":"J",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100007,
+"name":"内坦亚",
+"pid":206100000,
+"code":"NAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":206100008,
+"name":"特拉维夫",
+"pid":206100000,
+"code":"TLV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207000000,
+"name":"意大利",
+"pid":0,
+"code":"ITA",
+"pinyin":"Italy",
+"ccode":"it",
+"level":1
+},
+    {
+        "id":207100001,
+"name":"亚历山德里亚",
+"pid":207100000,
+"code":"ALE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100002,
+"name":"安科纳",
+"pid":207100000,
+"code":"AOI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100003,
+"name":"奥斯塔",
+"pid":207100000,
+"code":"AOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100004,
+"name":"阿斯科利皮切诺",
+"pid":207100000,
+"code":"ASP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100005,
+"name":"阿斯蒂",
+"pid":207100000,
+"code":"AST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100006,
+"name":"布林迪西",
+"pid":207100000,
+"code":"BDS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100007,
+"name":"贝内文托",
+"pid":207100000,
+"code":"BEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100008,
+"name":"贝加莫",
+"pid":207100000,
+"code":"BGO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100009,
+"name":"布拉",
+"pid":207100000,
+"code":"BIE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100010,
+"name":"博洛尼亚",
+"pid":207100000,
+"code":"BLQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100011,
+"name":"布雷西亚",
+"pid":207100000,
+"code":"BRC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100012,
+"name":"巴里",
+"pid":207100000,
+"code":"BRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100013,
+"name":"卡利亚里",
+"pid":207100000,
+"code":"CAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100014,
+"name":"热那亚",
+"pid":207100000,
+"code":"CAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100015,
+"name":"科摩",
+"pid":207100000,
+"code":"CIY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100016,
+"name":"坎波巴索",
+"pid":207100000,
+"code":"COB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100017,
+"name":"克罗托内",
+"pid":207100000,
+"code":"CRV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100018,
+"name":"卡塞塔",
+"pid":207100000,
+"code":"CST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100019,
+"name":"卡塔尼亚",
+"pid":207100000,
+"code":"CTA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100020,
+"name":"库内奥",
+"pid":207100000,
+"code":"CUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100021,
+"name":"佛罗伦萨",
+"pid":207100000,
+"code":"FLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100022,
+"name":"福贾",
+"pid":207100000,
+"code":"FOG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100023,
+"name":"费拉拉",
+"pid":207100000,
+"code":"FRR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100024,
+"name":"伊塞尔尼亚",
+"pid":207100000,
+"code":"ISE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100025,
+"name":"科森扎",
+"pid":207100000,
+"code":"QCS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100026,
+"name":"卡坦扎罗",
+"pid":207100000,
+"code":"QCZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100027,
+"name":"努奥罗",
+"pid":207100000,
+"code":"QNU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100028,
+"name":"奥里斯塔诺",
+"pid":207100000,
+"code":"QOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100029,
+"name":"波坦察",
+"pid":207100000,
+"code":"QPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100030,
+"name":"萨萨里",
+"pid":207100000,
+"code":"QSS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100031,
+"name":"拉奎拉",
+"pid":207100000,
+"code":"LAQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100032,
+"name":"莱切",
+"pid":207100000,
+"code":"LCC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100033,
+"name":"莱科",
+"pid":207100000,
+"code":"LCO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100034,
+"name":"里窝那",
+"pid":207100000,
+"code":"LIV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100035,
+"name":"马萨",
+"pid":207100000,
+"code":"MCR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100036,
+"name":"米兰",
+"pid":207100000,
+"code":"MIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100037,
+"name":"摩德纳",
+"pid":207100000,
+"code":"MOD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100038,
+"name":"墨西拿",
+"pid":207100000,
+"code":"MSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100039,
+"name":"马泰拉",
+"pid":207100000,
+"code":"MTR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100040,
+"name":"蒙扎",
+"pid":207100000,
+"code":"MZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100041,
+"name":"那不勒斯",
+"pid":207100000,
+"code":"NAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100042,
+"name":"诺瓦拉",
+"pid":207100000,
+"code":"NVR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100043,
+"name":"奥尔比亚",
+"pid":207100000,
+"code":"OLB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100044,
+"name":"帕维亚",
+"pid":207100000,
+"code":"PAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100045,
+"name":"佩鲁贾",
+"pid":207100000,
+"code":"PEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100046,
+"name":"帕尔马",
+"pid":207100000,
+"code":"PMF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100047,
+"name":"巴勒莫",
+"pid":207100000,
+"code":"PMO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100048,
+"name":"波代诺内",
+"pid":207100000,
+"code":"PRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100049,
+"name":"比萨",
+"pid":207100000,
+"code":"PSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100050,
+"name":"雷焦卡拉布里亚",
+"pid":207100000,
+"code":"REG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100051,
+"name":"雷焦艾米利亚",
+"pid":207100000,
+"code":"RNE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100052,
+"name":"罗马",
+"pid":207100000,
+"code":"ROM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100053,
+"name":"萨莱诺",
+"pid":207100000,
+"code":"SAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100054,
+"name":"锡耶纳",
+"pid":207100000,
+"code":"SNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100055,
+"name":"拉斯佩齐亚",
+"pid":207100000,
+"code":"SPE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100056,
+"name":"萨沃纳",
+"pid":207100000,
+"code":"SVN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100057,
+"name":"锡拉库扎",
+"pid":207100000,
+"code":"SYR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100058,
+"name":"塔兰托",
+"pid":207100000,
+"code":"TAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100059,
+"name":"特拉帕尼",
+"pid":207100000,
+"code":"TPS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100060,
+"name":"都灵",
+"pid":207100000,
+"code":"TRN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100061,
+"name":"的里雅斯特",
+"pid":207100000,
+"code":"TRS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100062,
+"name":"特伦托",
+"pid":207100000,
+"code":"TRT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100063,
+"name":"乌迪内",
+"pid":207100000,
+"code":"UDN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100064,
+"name":"威尼斯",
+"pid":207100000,
+"code":"VCE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100065,
+"name":"维泰博",
+"pid":207100000,
+"code":"VIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":207100066,
+"name":"韦尔切利",
+"pid":207100000,
+"code":"VRL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208000000,
+"name":"牙买加",
+"pid":0,
+"code":"JAM",
+"pinyin":"Jamaica",
+"ccode":"jm",
+"level":1
+},
+    {
+        "id":208100001,
+"name":"圣安德鲁斯",
+"pid":208100000,
+"code":"AND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100002,
+"name":"圣安娜",
+"pid":208100000,
+"code":"ANN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100003,
+"name":"圣凯瑟琳",
+"pid":208100000,
+"code":"CAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100004,
+"name":"克拉伦登",
+"pid":208100000,
+"code":"CLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100005,
+"name":"圣伊丽莎白",
+"pid":208100000,
+"code":"ELI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100006,
+"name":"汉诺威",
+"pid":208100000,
+"code":"HAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100007,
+"name":"圣詹姆斯",
+"pid":208100000,
+"code":"JAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100008,
+"name":"金斯敦",
+"pid":208100000,
+"code":"KIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100009,
+"name":"曼彻斯特",
+"pid":208100000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100010,
+"name":"圣玛丽",
+"pid":208100000,
+"code":"MAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100011,
+"name":"波特兰",
+"pid":208100000,
+"code":"POR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100012,
+"name":"圣托马斯",
+"pid":208100000,
+"code":"THO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100013,
+"name":"特里洛尼",
+"pid":208100000,
+"code":"TRL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":208100014,
+"name":"西摩兰",
+"pid":208100000,
+"code":"WML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":209000000,
+"name":"泽西岛",
+"pid":0,
+"code":"JEY",
+"pinyin":"Jersey",
+"ccode":"je",
+"level":1
+},
+    {
+        "id":210000000,
+"name":"约旦",
+"pid":0,
+"code":"JOR",
+"pinyin":"Jordan",
+"ccode":"jo",
+"level":1
+},
+    {
+        "id":210100001,
+"name":"阿吉隆",
+"pid":210100000,
+"code":"AJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100002,
+"name":"亚喀巴",
+"pid":210100000,
+"code":"AQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100003,
+"name":"安曼",
+"pid":210100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100004,
+"name":"拜勒加",
+"pid":210100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100005,
+"name":"伊尔比德",
+"pid":210100000,
+"code":"IR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100006,
+"name":"杰拉什",
+"pid":210100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100007,
+"name":"卡拉克",
+"pid":210100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100008,
+"name":"马德巴",
+"pid":210100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100009,
+"name":"马夫拉克",
+"pid":210100000,
+"code":"MF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100010,
+"name":"马安",
+"pid":210100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100011,
+"name":"鲁赛法",
+"pid":210100000,
+"code":"RU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100012,
+"name":"塔菲拉",
+"pid":210100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":210100013,
+"name":"扎尔卡",
+"pid":210100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211000000,
+"name":"日本",
+"pid":0,
+"code":"JPN",
+"pinyin":"Japan",
+"ccode":"jp",
+"level":1
+},
+    {
+        "id":211100001,
+"name":"北海道",
+"pid":211100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100002,
+"name":"群马",
+"pid":211100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100003,
+"name":"埼玉",
+"pid":211100000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100004,
+"name":"千叶",
+"pid":211100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100005,
+"name":"东京",
+"pid":211100000,
+"code":"13",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100006,
+"name":"神奈川",
+"pid":211100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100007,
+"name":"新潟",
+"pid":211100000,
+"code":"15",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100008,
+"name":"富山",
+"pid":211100000,
+"code":"16",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100009,
+"name":"石川",
+"pid":211100000,
+"code":"17",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100010,
+"name":"福井",
+"pid":211100000,
+"code":"18",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100011,
+"name":"山梨",
+"pid":211100000,
+"code":"19",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100012,
+"name":"青森",
+"pid":211100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100013,
+"name":"长野",
+"pid":211100000,
+"code":"20",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100014,
+"name":"岐阜",
+"pid":211100000,
+"code":"21",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100015,
+"name":"静冈",
+"pid":211100000,
+"code":"22",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100016,
+"name":"爱知",
+"pid":211100000,
+"code":"23",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100017,
+"name":"三重",
+"pid":211100000,
+"code":"24",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100018,
+"name":"滋贺",
+"pid":211100000,
+"code":"25",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100019,
+"name":"京都",
+"pid":211100000,
+"code":"26",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100020,
+"name":"大阪",
+"pid":211100000,
+"code":"27",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100021,
+"name":"兵库",
+"pid":211100000,
+"code":"28",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100022,
+"name":"奈良",
+"pid":211100000,
+"code":"29",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100023,
+"name":"岩手",
+"pid":211100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100024,
+"name":"和歌山",
+"pid":211100000,
+"code":"30",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100025,
+"name":"鸟取",
+"pid":211100000,
+"code":"31",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100026,
+"name":"岛根",
+"pid":211100000,
+"code":"32",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100027,
+"name":"冈山",
+"pid":211100000,
+"code":"33",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100028,
+"name":"广岛",
+"pid":211100000,
+"code":"34",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100029,
+"name":"山口",
+"pid":211100000,
+"code":"35",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100030,
+"name":"徳岛",
+"pid":211100000,
+"code":"36",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100031,
+"name":"香川",
+"pid":211100000,
+"code":"37",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100032,
+"name":"爱媛",
+"pid":211100000,
+"code":"38",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100033,
+"name":"高知",
+"pid":211100000,
+"code":"39",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100034,
+"name":"宮城",
+"pid":211100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100035,
+"name":"福冈",
+"pid":211100000,
+"code":"40",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100036,
+"name":"佐贺",
+"pid":211100000,
+"code":"41",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100037,
+"name":"长崎",
+"pid":211100000,
+"code":"42",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100038,
+"name":"熊本",
+"pid":211100000,
+"code":"43",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100039,
+"name":"大分",
+"pid":211100000,
+"code":"44",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100040,
+"name":"宫崎",
+"pid":211100000,
+"code":"45",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100041,
+"name":"鹿儿岛",
+"pid":211100000,
+"code":"46",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100042,
+"name":"冲绳",
+"pid":211100000,
+"code":"47",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100043,
+"name":"秋田",
+"pid":211100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100044,
+"name":"山形",
+"pid":211100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100045,
+"name":"福岛",
+"pid":211100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100046,
+"name":"茨城",
+"pid":211100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":211100047,
+"name":"枥木",
+"pid":211100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212000000,
+"name":"哈萨克斯坦",
+"pid":0,
+"code":"KAZ",
+"pinyin":"Kazakhstan",
+"ccode":"kz",
+"level":1
+},
+    {
+        "id":212100001,
+"name":"阿克莫拉",
+"pid":212100000,
+"code":"AKM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100002,
+"name":"阿克苏",
+"pid":212100000,
+"code":"AKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100003,
+"name":"阿克托别",
+"pid":212100000,
+"code":"AKT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100004,
+"name":"阿拉木图",
+"pid":212100000,
+"code":"ALA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100005,
+"name":"阿雷斯",
+"pid":212100000,
+"code":"ARY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100006,
+"name":"阿斯塔纳市",
+"pid":212100000,
+"code":"AST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100007,
+"name":"阿特劳",
+"pid":212100000,
+"code":"ATY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100008,
+"name":"阿尔卡累克",
+"pid":212100000,
+"code":"AYK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100009,
+"name":"巴尔喀什",
+"pid":212100000,
+"code":"BXH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100010,
+"name":"江布尔",
+"pid":212100000,
+"code":"DMB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100011,
+"name":"杰兹卡兹甘",
+"pid":212100000,
+"code":"DZH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100012,
+"name":"埃基巴斯图兹",
+"pid":212100000,
+"code":"EKB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100013,
+"name":"卡普恰盖",
+"pid":212100000,
+"code":"KAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100014,
+"name":"卡拉干达",
+"pid":212100000,
+"code":"KAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100015,
+"name":"肯套",
+"pid":212100000,
+"code":"KEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100016,
+"name":"南哈萨克斯坦",
+"pid":212100000,
+"code":"KGT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100017,
+"name":"科斯塔奈",
+"pid":212100000,
+"code":"KST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100018,
+"name":"库尔恰托夫",
+"pid":212100000,
+"code":"KUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100019,
+"name":"卡拉扎尔",
+"pid":212100000,
+"code":"KZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100020,
+"name":"克孜勒奥尔达",
+"pid":212100000,
+"code":"KZY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100021,
+"name":"列宁诺戈尔斯克",
+"pid":212100000,
+"code":"LEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100022,
+"name":"利萨科夫斯克",
+"pid":212100000,
+"code":"LKK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100023,
+"name":"曼格斯套",
+"pid":212100000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100024,
+"name":"巴甫洛达尔",
+"pid":212100000,
+"code":"PAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100025,
+"name":"鲁德内",
+"pid":212100000,
+"code":"RUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100026,
+"name":"沙赫京斯克",
+"pid":212100000,
+"code":"SAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100027,
+"name":"萨兰",
+"pid":212100000,
+"code":"SAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100028,
+"name":"塞梅伊",
+"pid":212100000,
+"code":"SEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100029,
+"name":"北哈萨克斯坦",
+"pid":212100000,
+"code":"SEV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100030,
+"name":"斯捷普诺戈尔斯克",
+"pid":212100000,
+"code":"STE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100031,
+"name":"铁克利",
+"pid":212100000,
+"code":"TEK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100032,
+"name":"铁米尔套",
+"pid":212100000,
+"code":"TEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100033,
+"name":"突厥斯坦",
+"pid":212100000,
+"code":"TUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100034,
+"name":"东哈萨克斯坦",
+"pid":212100000,
+"code":"VOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100035,
+"name":"西哈萨克斯坦",
+"pid":212100000,
+"code":"ZAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100036,
+"name":"扎纳奥津",
+"pid":212100000,
+"code":"ZHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":212100037,
+"name":"济良诺夫斯克",
+"pid":212100000,
+"code":"ZYR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213000000,
+"name":"肯尼亚",
+"pid":0,
+"code":"KEN",
+"pinyin":"Kenya",
+"ccode":"ke",
+"level":1
+},
+    {
+        "id":213100001,
+"name":"巴林戈",
+"pid":213100000,
+"code":"BAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100002,
+"name":"博美特",
+"pid":213100000,
+"code":"BOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100003,
+"name":"邦戈马",
+"pid":213100000,
+"code":"BUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100004,
+"name":"布希亚",
+"pid":213100000,
+"code":"BUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100005,
+"name":"中央",
+"pid":213100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100006,
+"name":"埃尔格约-马拉奎特",
+"pid":213100000,
+"code":"EMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100007,
+"name":"恩布",
+"pid":213100000,
+"code":"EMB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100008,
+"name":"加里萨",
+"pid":213100000,
+"code":"GAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100009,
+"name":"霍马湾",
+"pid":213100000,
+"code":"HOB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100010,
+"name":"伊希约洛",
+"pid":213100000,
+"code":"ISI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100011,
+"name":"卡耶亚多",
+"pid":213100000,
+"code":"KAJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100012,
+"name":"卡卡梅加",
+"pid":213100000,
+"code":"KAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100013,
+"name":"凯里乔",
+"pid":213100000,
+"code":"KEY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100014,
+"name":"基安布",
+"pid":213100000,
+"code":"KIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100015,
+"name":"基西",
+"pid":213100000,
+"code":"KII",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100016,
+"name":"基里菲",
+"pid":213100000,
+"code":"KIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100017,
+"name":"基里尼亚加",
+"pid":213100000,
+"code":"KIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100018,
+"name":"基苏木",
+"pid":213100000,
+"code":"KIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100019,
+"name":"基图伊",
+"pid":213100000,
+"code":"KIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100020,
+"name":"夸勒",
+"pid":213100000,
+"code":"KWA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100021,
+"name":"莱基皮亚",
+"pid":213100000,
+"code":"LAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100022,
+"name":"拉木",
+"pid":213100000,
+"code":"LAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100023,
+"name":"马查科斯",
+"pid":213100000,
+"code":"MAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100024,
+"name":"马瓜尼",
+"pid":213100000,
+"code":"MAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100025,
+"name":"曼德拉",
+"pid":213100000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100026,
+"name":"梅鲁",
+"pid":213100000,
+"code":"MER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100027,
+"name":"米戈利",
+"pid":213100000,
+"code":"MIG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100028,
+"name":"蒙巴萨",
+"pid":213100000,
+"code":"MOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100029,
+"name":"穆兰卡",
+"pid":213100000,
+"code":"MUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100030,
+"name":"内罗毕",
+"pid":213100000,
+"code":"NA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100031,
+"name":"南迪",
+"pid":213100000,
+"code":"NAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100032,
+"name":"纳罗克",
+"pid":213100000,
+"code":"NAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100033,
+"name":"尼蒂",
+"pid":213100000,
+"code":"NIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100034,
+"name":"纳库鲁",
+"pid":213100000,
+"code":"NUU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100035,
+"name":"涅里",
+"pid":213100000,
+"code":"NYE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100036,
+"name":"尼亚米拉",
+"pid":213100000,
+"code":"NYM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100037,
+"name":"年达鲁阿",
+"pid":213100000,
+"code":"NYN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100038,
+"name":"马萨布布",
+"pid":213100000,
+"code":"RBT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100039,
+"name":"夏亚",
+"pid":213100000,
+"code":"SIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100040,
+"name":"特兰斯-恩佐亚",
+"pid":213100000,
+"code":"TNZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100041,
+"name":"塔纳河",
+"pid":213100000,
+"code":"TRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100042,
+"name":"泰塔塔维塔",
+"pid":213100000,
+"code":"TTA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100043,
+"name":"图尔卡纳",
+"pid":213100000,
+"code":"TUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100044,
+"name":"桑布卢",
+"pid":213100000,
+"code":"UAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100045,
+"name":"瓦辛基苏",
+"pid":213100000,
+"code":"UGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100046,
+"name":"韦希加",
+"pid":213100000,
+"code":"VIH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100047,
+"name":"瓦吉尔",
+"pid":213100000,
+"code":"WJR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":213100048,
+"name":"西波克特",
+"pid":213100000,
+"code":"WPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214000000,
+"name":"吉尔吉斯斯坦",
+"pid":0,
+"code":"KGZ",
+"pinyin":"Kyrgyzstan",
+"ccode":"kg",
+"level":1
+},
+    {
+        "id":214100001,
+"name":"巴特肯",
+"pid":214100000,
+"code":"B",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100002,
+"name":"楚河",
+"pid":214100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100003,
+"name":"比什凯克市",
+"pid":214100000,
+"code":"GB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100004,
+"name":"贾拉拉巴德",
+"pid":214100000,
+"code":"J",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100005,
+"name":"坎特",
+"pid":214100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100006,
+"name":"卡拉巴尔塔",
+"pid":214100000,
+"code":"KBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100007,
+"name":"科克扬加克",
+"pid":214100000,
+"code":"KJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100008,
+"name":"卡拉库尔",
+"pid":214100000,
+"code":"KKO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100009,
+"name":"迈利赛",
+"pid":214100000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100010,
+"name":"纳伦",
+"pid":214100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100011,
+"name":"奥什",
+"pid":214100000,
+"code":"O",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100012,
+"name":"苏卢克图",
+"pid":214100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100013,
+"name":"塔拉斯",
+"pid":214100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100014,
+"name":"塔什库梅尔",
+"pid":214100000,
+"code":"TK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100015,
+"name":"乌兹根",
+"pid":214100000,
+"code":"UG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":214100016,
+"name":"伊塞克湖",
+"pid":214100000,
+"code":"Y",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215000000,
+"name":"柬埔寨",
+"pid":0,
+"code":"KHM",
+"pinyin":"Cambodia",
+"ccode":"kh",
+"level":1
+},
+    {
+        "id":215100001,
+"name":"马德望",
+"pid":215100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100002,
+"name":"班迭棉吉",
+"pid":215100000,
+"code":"BM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100003,
+"name":"西哈努克市",
+"pid":215100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100004,
+"name":"白马市",
+"pid":215100000,
+"code":"KB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100005,
+"name":"桔井",
+"pid":215100000,
+"code":"KH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100006,
+"name":"戈公",
+"pid":215100000,
+"code":"KKZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100007,
+"name":"干丹",
+"pid":215100000,
+"code":"KL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100008,
+"name":"磅湛",
+"pid":215100000,
+"code":"KM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100009,
+"name":"贡布",
+"pid":215100000,
+"code":"KMT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100010,
+"name":"磅士卑",
+"pid":215100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100011,
+"name":"磅清扬",
+"pid":215100000,
+"code":"KZC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100012,
+"name":"磅同",
+"pid":215100000,
+"code":"KZK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100013,
+"name":"蒙多基里",
+"pid":215100000,
+"code":"MWV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100014,
+"name":"奥多棉吉",
+"pid":215100000,
+"code":"OC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100015,
+"name":"波罗勉",
+"pid":215100000,
+"code":"PG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100016,
+"name":"拜林市",
+"pid":215100000,
+"code":"PL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100017,
+"name":"金边市",
+"pid":215100000,
+"code":"PNH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100018,
+"name":"菩萨",
+"pid":215100000,
+"code":"PO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100019,
+"name":"柏威夏",
+"pid":215100000,
+"code":"PR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100020,
+"name":"腊塔纳基里",
+"pid":215100000,
+"code":"RBE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100021,
+"name":"暹粒",
+"pid":215100000,
+"code":"REP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100022,
+"name":"柴桢",
+"pid":215100000,
+"code":"SVR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100023,
+"name":"茶胶",
+"pid":215100000,
+"code":"TK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":215100024,
+"name":"上丁",
+"pid":215100000,
+"code":"TNX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":216000000,
+"name":"基里巴斯",
+"pid":0,
+"code":"KIR",
+"pinyin":"Kiribati",
+"ccode":"ki",
+"level":1
+},
+    {
+        "id":216100001,
+"name":"吉尔伯特群岛",
+"pid":216100000,
+"code":"GIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":216100002,
+"name":"莱恩群岛",
+"pid":216100000,
+"code":"LIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":216100003,
+"name":"菲尼克斯群岛",
+"pid":216100000,
+"code":"PHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":217000000,
+"name":"圣基茨和尼维斯",
+"pid":0,
+"code":"KNA",
+"pinyin":"Saint Kitts and Nevis",
+"ccode":"kn",
+"level":1
+},
+    {
+        "id":218000000,
+"name":"韩国",
+"pid":0,
+"code":"KOR",
+"pinyin":"South Korea",
+"ccode":"kr",
+"level":1
+},
+    {
+        "id":218101000,
+"name":"首尔",
+"pid":218000000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218102000,
+"name":"釜山",
+"pid":218000000,
+"code":"26",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218103000,
+"name":"大邱",
+"pid":218000000,
+"code":"27",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218103001,
+"name":"达城郡",
+"pid":218103000,
+"code":"DSG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218103002,
+"name":"寿城区",
+"pid":218103000,
+"code":"SUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218103003,
+"name":"大邱",
+"pid":218103000,
+"code":"TAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218104000,
+"name":"仁川",
+"pid":218000000,
+"code":"28",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218105000,
+"name":"光州",
+"pid":218000000,
+"code":"29",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218106000,
+"name":"大田",
+"pid":218000000,
+"code":"30",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218107000,
+"name":"蔚山",
+"pid":218000000,
+"code":"31",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218108000,
+"name":"济州特别自治道",
+"pid":218000000,
+"code":"41",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218109000,
+"name":"江原道",
+"pid":218000000,
+"code":"42",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218109001,
+"name":"春川市",
+"pid":218109000,
+"code":"CHC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109002,
+"name":"铁原郡",
+"pid":218109000,
+"code":"CWN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109003,
+"name":"高城郡",
+"pid":218109000,
+"code":"GSG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109004,
+"name":"华川郡",
+"pid":218109000,
+"code":"HCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109005,
+"name":"洪川郡",
+"pid":218109000,
+"code":"HCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109006,
+"name":"横城郡",
+"pid":218109000,
+"code":"HSG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109007,
+"name":"麟蹄郡",
+"pid":218109000,
+"code":"IJE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109008,
+"name":"旌善郡",
+"pid":218109000,
+"code":"JSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109009,
+"name":"江陵市",
+"pid":218109000,
+"code":"KAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109010,
+"name":"平昌郡",
+"pid":218109000,
+"code":"POG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109011,
+"name":"束草市",
+"pid":218109000,
+"code":"SHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109012,
+"name":"三陟市",
+"pid":218109000,
+"code":"SUK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109013,
+"name":"太白市",
+"pid":218109000,
+"code":"TBK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109014,
+"name":"东海市",
+"pid":218109000,
+"code":"TGH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109015,
+"name":"原州市",
+"pid":218109000,
+"code":"WJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109016,
+"name":"杨口郡",
+"pid":218109000,
+"code":"YGU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109017,
+"name":"襄阳郡",
+"pid":218109000,
+"code":"YNY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218109018,
+"name":"宁越郡",
+"pid":218109000,
+"code":"YWL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110000,
+"name":"庆尚北道",
+"pid":218000000,
+"code":"43",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218110001,
+"name":"安东市",
+"pid":218110000,
+"code":"ADG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110002,
+"name":"奉化郡",
+"pid":218110000,
+"code":"BHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110003,
+"name":"淸道郡",
+"pid":218110000,
+"code":"CDO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110004,
+"name":"漆谷郡",
+"pid":218110000,
+"code":"CGK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110005,
+"name":"靑松郡",
+"pid":218110000,
+"code":"CSG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110006,
+"name":"庆州市",
+"pid":218110000,
+"code":"GJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110007,
+"name":"高灵郡",
+"pid":218110000,
+"code":"GRG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110008,
+"name":"军威郡",
+"pid":218110000,
+"code":"GWI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110009,
+"name":"庆山市",
+"pid":218110000,
+"code":"GYS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110010,
+"name":"金泉市",
+"pid":218110000,
+"code":"KMC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110011,
+"name":"浦项市",
+"pid":218110000,
+"code":"KPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110012,
+"name":"龟尾市",
+"pid":218110000,
+"code":"KUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110013,
+"name":"闻庆市",
+"pid":218110000,
+"code":"MGG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110014,
+"name":"星州郡",
+"pid":218110000,
+"code":"SEJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110015,
+"name":"尙州市",
+"pid":218110000,
+"code":"SJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110016,
+"name":"蔚珍郡",
+"pid":218110000,
+"code":"UJN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110017,
+"name":"郁陵郡",
+"pid":218110000,
+"code":"ULG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110018,
+"name":"义城郡",
+"pid":218110000,
+"code":"USG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110019,
+"name":"永川市",
+"pid":218110000,
+"code":"YCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110020,
+"name":"盈德郡",
+"pid":218110000,
+"code":"YDK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110021,
+"name":"醴泉郡",
+"pid":218110000,
+"code":"YEC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110022,
+"name":"荣州市",
+"pid":218110000,
+"code":"YEJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218110023,
+"name":"英阳郡",
+"pid":218110000,
+"code":"YYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111000,
+"name":"庆尚南道",
+"pid":218000000,
+"code":"44",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218111001,
+"name":"鎭海市",
+"pid":218111000,
+"code":"CHF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111002,
+"name":"昌原市",
+"pid":218111000,
+"code":"CHW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111003,
+"name":"昌宁郡",
+"pid":218111000,
+"code":"CNG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111004,
+"name":"居昌郡",
+"pid":218111000,
+"code":"GCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111005,
+"name":"固城郡",
+"pid":218111000,
+"code":"GSO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111006,
+"name":"咸安郡",
+"pid":218111000,
+"code":"HAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111007,
+"name":"陜川郡",
+"pid":218111000,
+"code":"HCE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111008,
+"name":"河东郡",
+"pid":218111000,
+"code":"HDG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111009,
+"name":"晋州市",
+"pid":218111000,
+"code":"HIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111010,
+"name":"咸阳郡",
+"pid":218111000,
+"code":"HYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111011,
+"name":"巨济市",
+"pid":218111000,
+"code":"KJE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111012,
+"name":"金海市",
+"pid":218111000,
+"code":"KMH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111013,
+"name":"马山市",
+"pid":218111000,
+"code":"MAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111014,
+"name":"密阳市",
+"pid":218111000,
+"code":"MIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111015,
+"name":"南海郡",
+"pid":218111000,
+"code":"NHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111016,
+"name":"泗川市",
+"pid":218111000,
+"code":"SAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111017,
+"name":"山淸郡",
+"pid":218111000,
+"code":"SCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111018,
+"name":"统营市",
+"pid":218111000,
+"code":"TYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111019,
+"name":"宜宁郡",
+"pid":218111000,
+"code":"URG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218111020,
+"name":"梁山市",
+"pid":218111000,
+"code":"YSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112000,
+"name":"忠清北道",
+"pid":218000000,
+"code":"45",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218112001,
+"name":"报恩郡",
+"pid":218112000,
+"code":"BEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112002,
+"name":"忠州市",
+"pid":218112000,
+"code":"CHU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112003,
+"name":"淸州市",
+"pid":218112000,
+"code":"CJJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112004,
+"name":"淸原郡",
+"pid":218112000,
+"code":"CWO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112005,
+"name":"丹阳郡",
+"pid":218112000,
+"code":"DYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112006,
+"name":"阴城郡",
+"pid":218112000,
+"code":"ESG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112007,
+"name":"槐山郡",
+"pid":218112000,
+"code":"GSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112008,
+"name":"堤川市",
+"pid":218112000,
+"code":"JCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112009,
+"name":"鎭川郡",
+"pid":218112000,
+"code":"JCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112010,
+"name":"曾坪郡",
+"pid":218112000,
+"code":"JYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112011,
+"name":"沃川郡",
+"pid":218112000,
+"code":"OCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218112012,
+"name":"永同郡",
+"pid":218112000,
+"code":"YDG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113000,
+"name":"忠清南道",
+"pid":218000000,
+"code":"46",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218113001,
+"name":"牙山市",
+"pid":218113000,
+"code":"ASA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113002,
+"name":"保宁市",
+"pid":218113000,
+"code":"BOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113003,
+"name":"扶余郡",
+"pid":218113000,
+"code":"BYO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113004,
+"name":"天安市",
+"pid":218113000,
+"code":"CHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113005,
+"name":"青阳郡",
+"pid":218113000,
+"code":"CYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113006,
+"name":"公州市",
+"pid":218113000,
+"code":"GOJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113007,
+"name":"锦山郡",
+"pid":218113000,
+"code":"GSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113008,
+"name":"鸡龙市",
+"pid":218113000,
+"code":"GYE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113009,
+"name":"洪城郡",
+"pid":218113000,
+"code":"HSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113010,
+"name":"论山市",
+"pid":218113000,
+"code":"NSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113011,
+"name":"舒川郡",
+"pid":218113000,
+"code":"SCE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113012,
+"name":"瑞山市",
+"pid":218113000,
+"code":"SSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113013,
+"name":"泰安郡",
+"pid":218113000,
+"code":"TAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113014,
+"name":"唐津郡",
+"pid":218113000,
+"code":"TJI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113015,
+"name":"燕岐郡",
+"pid":218113000,
+"code":"YGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218113016,
+"name":"礼山郡",
+"pid":218113000,
+"code":"YOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114000,
+"name":"全罗北道",
+"pid":218000000,
+"code":"47",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218114001,
+"name":"高敞郡",
+"pid":218114000,
+"code":"GCG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114002,
+"name":"金堤市",
+"pid":218114000,
+"code":"GJE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114003,
+"name":"益山市",
+"pid":218114000,
+"code":"IKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114004,
+"name":"任实郡",
+"pid":218114000,
+"code":"ISL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114005,
+"name":"鎭安郡",
+"pid":218114000,
+"code":"JAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114006,
+"name":"井邑市",
+"pid":218114000,
+"code":"JEO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114007,
+"name":"全州市",
+"pid":218114000,
+"code":"JNJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114008,
+"name":"长水郡",
+"pid":218114000,
+"code":"JSU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114009,
+"name":"群山市",
+"pid":218114000,
+"code":"KUV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114010,
+"name":"茂朱郡",
+"pid":218114000,
+"code":"MJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114011,
+"name":"南原市",
+"pid":218114000,
+"code":"NWN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114012,
+"name":"扶安郡",
+"pid":218114000,
+"code":"PUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114013,
+"name":"淳昌郡",
+"pid":218114000,
+"code":"SCG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218114014,
+"name":"完州郡",
+"pid":218114000,
+"code":"WAJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115000,
+"name":"全罗南道",
+"pid":218000000,
+"code":"48",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218115001,
+"name":"宝城郡",
+"pid":218115000,
+"code":"BSG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115002,
+"name":"潭阳郡",
+"pid":218115000,
+"code":"DYA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115003,
+"name":"高兴郡",
+"pid":218115000,
+"code":"GHG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115004,
+"name":"康津郡",
+"pid":218115000,
+"code":"GJN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115005,
+"name":"求礼郡",
+"pid":218115000,
+"code":"GRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115006,
+"name":"谷城郡",
+"pid":218115000,
+"code":"GSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115007,
+"name":"海南郡",
+"pid":218115000,
+"code":"HAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115008,
+"name":"咸平郡",
+"pid":218115000,
+"code":"HPG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115009,
+"name":"和顺郡",
+"pid":218115000,
+"code":"HSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115010,
+"name":"珍岛郡",
+"pid":218115000,
+"code":"JDO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115011,
+"name":"长兴郡",
+"pid":218115000,
+"code":"JHG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115012,
+"name":"长城郡",
+"pid":218115000,
+"code":"JSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115013,
+"name":"光阳市",
+"pid":218115000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115014,
+"name":"务安郡",
+"pid":218115000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115015,
+"name":"木浦市",
+"pid":218115000,
+"code":"MOK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115016,
+"name":"罗州市",
+"pid":218115000,
+"code":"NJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115017,
+"name":"新安郡",
+"pid":218115000,
+"code":"SAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115018,
+"name":"顺天市",
+"pid":218115000,
+"code":"SYS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115019,
+"name":"莞岛郡",
+"pid":218115000,
+"code":"WND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115020,
+"name":"灵岩郡",
+"pid":218115000,
+"code":"YAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115021,
+"name":"灵光郡",
+"pid":218115000,
+"code":"YGG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218115022,
+"name":"丽水市",
+"pid":218115000,
+"code":"YOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116000,
+"name":"京畿道",
+"pid":218000000,
+"code":"49",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":218116001,
+"name":"安养市",
+"pid":218116000,
+"code":"ANY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116002,
+"name":"安城市",
+"pid":218116000,
+"code":"ASG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116003,
+"name":"安山市",
+"pid":218116000,
+"code":"ASN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116004,
+"name":"富川市",
+"pid":218116000,
+"code":"BCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116005,
+"name":"东豆川市",
+"pid":218116000,
+"code":"DDC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116006,
+"name":"果川市",
+"pid":218116000,
+"code":"GCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116007,
+"name":"光明市",
+"pid":218116000,
+"code":"GMG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116008,
+"name":"金浦市",
+"pid":218116000,
+"code":"GMP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116009,
+"name":"加平郡",
+"pid":218116000,
+"code":"GPG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116010,
+"name":"九里市",
+"pid":218116000,
+"code":"GRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116011,
+"name":"军浦市",
+"pid":218116000,
+"code":"GUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116012,
+"name":"高阳市",
+"pid":218116000,
+"code":"GYG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116013,
+"name":"华城市",
+"pid":218116000,
+"code":"HCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116014,
+"name":"河南市",
+"pid":218116000,
+"code":"HNM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116015,
+"name":"利川市",
+"pid":218116000,
+"code":"ICE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116016,
+"name":"广州市",
+"pid":218116000,
+"code":"KWU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116017,
+"name":"南杨州市",
+"pid":218116000,
+"code":"NYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116018,
+"name":"乌山市",
+"pid":218116000,
+"code":"OSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116019,
+"name":"坡州市",
+"pid":218116000,
+"code":"PJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116020,
+"name":"抱川市",
+"pid":218116000,
+"code":"POC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116021,
+"name":"平泽市",
+"pid":218116000,
+"code":"PTK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116022,
+"name":"城南市",
+"pid":218116000,
+"code":"SEO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116023,
+"name":"始兴市",
+"pid":218116000,
+"code":"SHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116024,
+"name":"水原市",
+"pid":218116000,
+"code":"SUO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116025,
+"name":"议政府市",
+"pid":218116000,
+"code":"UIJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116026,
+"name":"仪旺市",
+"pid":218116000,
+"code":"UWN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116027,
+"name":"涟川郡",
+"pid":218116000,
+"code":"YCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116028,
+"name":"骊州郡",
+"pid":218116000,
+"code":"YJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116029,
+"name":"龙仁市",
+"pid":218116000,
+"code":"YNG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116030,
+"name":"扬平郡",
+"pid":218116000,
+"code":"YPG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":218116031,
+"name":"杨州市",
+"pid":218116000,
+"code":"YYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":219000000,
+"name":"科威特",
+"pid":0,
+"code":"KWT",
+"pinyin":"Kuwait",
+"ccode":"kw",
+"level":1
+},
+    {
+        "id":220000000,
+"name":"卡塔尔",
+"pid":0,
+"code":"QAT",
+"pinyin":"Qatar",
+"ccode":"qa",
+"level":1
+},
+    {
+        "id":220100001,
+"name":"多哈",
+"pid":220100000,
+"code":"DW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100002,
+"name":"古韦里耶",
+"pid":220100000,
+"code":"GW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100003,
+"name":"杰里扬拜特奈",
+"pid":220100000,
+"code":"JB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100004,
+"name":"朱迈利耶",
+"pid":220100000,
+"code":"JM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100005,
+"name":"豪尔",
+"pid":220100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100006,
+"name":"北部",
+"pid":220100000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100007,
+"name":"赖扬",
+"pid":220100000,
+"code":"RN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100008,
+"name":"乌姆锡拉勒",
+"pid":220100000,
+"code":"UL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":220100009,
+"name":"沃克拉",
+"pid":220100000,
+"code":"WK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221000000,
+"name":"老挝",
+"pid":0,
+"code":"LAO",
+"pinyin":"Laos",
+"ccode":"la",
+"level":1
+},
+    {
+        "id":221100001,
+"name":"阿速坡",
+"pid":221100000,
+"code":"AT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100002,
+"name":"博乔",
+"pid":221100000,
+"code":"BK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100003,
+"name":"波里坎赛",
+"pid":221100000,
+"code":"BL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100004,
+"name":"占巴塞",
+"pid":221100000,
+"code":"CH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100005,
+"name":"华潘",
+"pid":221100000,
+"code":"HO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100006,
+"name":"沙耶武里",
+"pid":221100000,
+"code":"XA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100007,
+"name":"色贡",
+"pid":221100000,
+"code":"XE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100008,
+"name":"川圹",
+"pid":221100000,
+"code":"XI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100009,
+"name":"赛宋本行政特区",
+"pid":221100000,
+"code":"XN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100010,
+"name":"甘蒙",
+"pid":221100000,
+"code":"KH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100011,
+"name":"琅南塔",
+"pid":221100000,
+"code":"LM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100012,
+"name":"琅勃拉邦",
+"pid":221100000,
+"code":"LP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100013,
+"name":"乌多姆赛",
+"pid":221100000,
+"code":"OU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100014,
+"name":"丰沙里",
+"pid":221100000,
+"code":"PH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100015,
+"name":"沙拉湾",
+"pid":221100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100016,
+"name":"沙湾拿吉",
+"pid":221100000,
+"code":"SV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":221100017,
+"name":"万象",
+"pid":221100000,
+"code":"VI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222000000,
+"name":"黎巴嫩",
+"pid":0,
+"code":"LBN",
+"pinyin":"Lebanon",
+"ccode":"lb",
+"level":1
+},
+    {
+        "id":222100001,
+"name":"北部",
+"pid":222100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222100002,
+"name":"贝鲁特",
+"pid":222100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222100003,
+"name":"贝卡",
+"pid":222100000,
+"code":"BI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222100004,
+"name":"南部",
+"pid":222100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222100005,
+"name":"黎巴嫩山",
+"pid":222100000,
+"code":"JL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":222100006,
+"name":"奈拜提耶市",
+"pid":222100000,
+"code":"NA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223000000,
+"name":"利比里亚",
+"pid":0,
+"code":"LBR",
+"pinyin":"Liberia",
+"ccode":"lr",
+"level":1
+},
+    {
+        "id":223100001,
+"name":"邦",
+"pid":223100000,
+"code":"BG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100002,
+"name":"博米",
+"pid":223100000,
+"code":"BM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100003,
+"name":"博波卢",
+"pid":223100000,
+"code":"BOP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100004,
+"name":"大角山",
+"pid":223100000,
+"code":"CM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100005,
+"name":"菲什敦",
+"pid":223100000,
+"code":"FT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100006,
+"name":"大巴萨",
+"pid":223100000,
+"code":"GB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100007,
+"name":"巴波卢",
+"pid":223100000,
+"code":"GBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100008,
+"name":"大吉德",
+"pid":223100000,
+"code":"GG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100009,
+"name":"大克鲁",
+"pid":223100000,
+"code":"GK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100010,
+"name":"洛法",
+"pid":223100000,
+"code":"LO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100011,
+"name":"马吉比",
+"pid":223100000,
+"code":"MG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100012,
+"name":"蒙特塞拉多",
+"pid":223100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100013,
+"name":"马里兰",
+"pid":223100000,
+"code":"MY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100014,
+"name":"宁巴",
+"pid":223100000,
+"code":"NI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100015,
+"name":"吉河",
+"pid":223100000,
+"code":"RG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100016,
+"name":"里弗塞斯",
+"pid":223100000,
+"code":"RI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":223100017,
+"name":"锡诺",
+"pid":223100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":224000000,
+"name":"利比亚",
+"pid":0,
+"code":"LBY",
+"pinyin":"Libya",
+"ccode":"ly",
+"level":1
+},
+    {
+        "id":225000000,
+"name":"圣卢西亚",
+"pid":0,
+"code":"LCA",
+"pinyin":"Saint Lucia",
+"ccode":"lc",
+"level":1
+},
+    {
+        "id":226000000,
+"name":"列支敦士登",
+"pid":0,
+"code":"LIE",
+"pinyin":"Liechtenstein",
+"ccode":"li",
+"level":1
+},
+    {
+        "id":227000000,
+"name":"斯里兰卡",
+"pid":0,
+"code":"LKA",
+"pinyin":"Sri Lanka",
+"ccode":"lk",
+"level":1
+},
+    {
+        "id":227100001,
+"name":"阿努拉德普勒",
+"pid":227100000,
+"code":"ADP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100002,
+"name":"安帕赖",
+"pid":227100000,
+"code":"AMP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100003,
+"name":"巴杜勒",
+"pid":227100000,
+"code":"BAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100004,
+"name":"拜蒂克洛",
+"pid":227100000,
+"code":"BTC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100005,
+"name":"科伦坡",
+"pid":227100000,
+"code":"CMB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100006,
+"name":"加勒",
+"pid":227100000,
+"code":"GAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100007,
+"name":"加姆珀哈",
+"pid":227100000,
+"code":"GAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100008,
+"name":"汉班托特",
+"pid":227100000,
+"code":"HBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100009,
+"name":"贾夫纳",
+"pid":227100000,
+"code":"JAF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100010,
+"name":"康提",
+"pid":227100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100011,
+"name":"凯格勒",
+"pid":227100000,
+"code":"KEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100012,
+"name":"基里诺奇",
+"pid":227100000,
+"code":"KIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100013,
+"name":"卡卢特勒",
+"pid":227100000,
+"code":"KLT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100014,
+"name":"库鲁内格勒",
+"pid":227100000,
+"code":"KUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100015,
+"name":"马特勒",
+"pid":227100000,
+"code":"MAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100016,
+"name":"马纳尔",
+"pid":227100000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100017,
+"name":"马特莱",
+"pid":227100000,
+"code":"MAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100018,
+"name":"莫讷勒格勒",
+"pid":227100000,
+"code":"MON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100019,
+"name":"穆莱蒂武",
+"pid":227100000,
+"code":"MUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100020,
+"name":"努沃勒埃利耶",
+"pid":227100000,
+"code":"NUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100021,
+"name":"波隆纳鲁沃",
+"pid":227100000,
+"code":"POL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100022,
+"name":"普塔勒姆",
+"pid":227100000,
+"code":"PUT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100023,
+"name":"拉特纳普勒",
+"pid":227100000,
+"code":"RAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100024,
+"name":"亭可马里",
+"pid":227100000,
+"code":"TRR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":227100025,
+"name":"瓦武尼亚",
+"pid":227100000,
+"code":"VAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228000000,
+"name":"莱索托",
+"pid":0,
+"code":"LSO",
+"pinyin":"Lesotho",
+"ccode":"ls",
+"level":1
+},
+    {
+        "id":228100001,
+"name":"马塞卢",
+"pid":228100000,
+"code":"A",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100002,
+"name":"布塔布泰",
+"pid":228100000,
+"code":"B",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100003,
+"name":"莱里贝",
+"pid":228100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100004,
+"name":"伯里亚",
+"pid":228100000,
+"code":"D",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100005,
+"name":"马费滕",
+"pid":228100000,
+"code":"E",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100006,
+"name":"莫哈莱斯胡克",
+"pid":228100000,
+"code":"F",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100007,
+"name":"古廷",
+"pid":228100000,
+"code":"G",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100008,
+"name":"加查斯内克",
+"pid":228100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100009,
+"name":"莫霍特隆",
+"pid":228100000,
+"code":"J",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":228100010,
+"name":"塔巴采卡",
+"pid":228100000,
+"code":"K",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229000000,
+"name":"立陶宛",
+"pid":0,
+"code":"LTU",
+"pinyin":"Lithuania",
+"ccode":"lt",
+"level":1
+},
+    {
+        "id":229100001,
+"name":"亚克曼",
+"pid":229100000,
+"code":"AKM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100002,
+"name":"阿利图斯",
+"pid":229100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100003,
+"name":"考纳斯",
+"pid":229100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100004,
+"name":"克莱佩达",
+"pid":229100000,
+"code":"KL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100005,
+"name":"马里扬泊列",
+"pid":229100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100006,
+"name":"帕涅韦日斯",
+"pid":229100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100007,
+"name":"希奥利艾",
+"pid":229100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100008,
+"name":"陶拉格",
+"pid":229100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100009,
+"name":"特尔希艾",
+"pid":229100000,
+"code":"TE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100010,
+"name":"乌田纳",
+"pid":229100000,
+"code":"UT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":229100011,
+"name":"维尔纽斯",
+"pid":229100000,
+"code":"VI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":230000000,
+"name":"卢森堡",
+"pid":0,
+"code":"LUX",
+"pinyin":"Luxembourg",
+"ccode":"lu",
+"level":1
+},
+    {
+        "id":230100001,
+"name":"迪基希",
+"pid":230100000,
+"code":"DD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":230100002,
+"name":"格雷文马赫",
+"pid":230100000,
+"code":"GG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":230100003,
+"name":"卢森堡",
+"pid":230100000,
+"code":"LL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231000000,
+"name":"拉脱维亚",
+"pid":0,
+"code":"LVA",
+"pinyin":"Latvia",
+"ccode":"lv",
+"level":1
+},
+    {
+        "id":231100001,
+"name":"爱兹克劳克雷",
+"pid":231100000,
+"code":"AIZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100002,
+"name":"阿卢克斯内",
+"pid":231100000,
+"code":"ALU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100003,
+"name":"巴尔维",
+"pid":231100000,
+"code":"BAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100004,
+"name":"包斯卡",
+"pid":231100000,
+"code":"BAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100005,
+"name":"采西斯",
+"pid":231100000,
+"code":"CES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100006,
+"name":"陶格夫皮尔斯",
+"pid":231100000,
+"code":"DGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100007,
+"name":"多贝莱",
+"pid":231100000,
+"code":"DOB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100008,
+"name":"古尔贝内",
+"pid":231100000,
+"code":"GUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100009,
+"name":"杰卡布皮尔斯",
+"pid":231100000,
+"code":"JEK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100010,
+"name":"叶尔加瓦",
+"pid":231100000,
+"code":"JGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100011,
+"name":"克拉斯拉瓦",
+"pid":231100000,
+"code":"KRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100012,
+"name":"库尔迪加",
+"pid":231100000,
+"code":"KUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100013,
+"name":"林巴济",
+"pid":231100000,
+"code":"LIM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100014,
+"name":"利耶帕亚",
+"pid":231100000,
+"code":"LPK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100015,
+"name":"卢扎",
+"pid":231100000,
+"code":"LUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100016,
+"name":"马多纳",
+"pid":231100000,
+"code":"MAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100017,
+"name":"奥格雷",
+"pid":231100000,
+"code":"OGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100018,
+"name":"普雷利",
+"pid":231100000,
+"code":"PRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100019,
+"name":"里加",
+"pid":231100000,
+"code":"RGA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100020,
+"name":"雷泽克内",
+"pid":231100000,
+"code":"RZR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100021,
+"name":"萨尔杜斯",
+"pid":231100000,
+"code":"SAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100022,
+"name":"塔尔西",
+"pid":231100000,
+"code":"TAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100023,
+"name":"图库马",
+"pid":231100000,
+"code":"TUK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100024,
+"name":"瓦尔加",
+"pid":231100000,
+"code":"VLK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100025,
+"name":"瓦尔米耶拉",
+"pid":231100000,
+"code":"VLM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":231100026,
+"name":"文茨皮尔斯",
+"pid":231100000,
+"code":"VSL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232000000,
+"name":"摩洛哥",
+"pid":0,
+"code":"MAR",
+"pinyin":"Morocco",
+"ccode":"ma",
+"level":1
+},
+    {
+        "id":232100001,
+"name":"卡萨布兰卡",
+"pid":232100000,
+"code":"CBL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100002,
+"name":"非斯",
+"pid":232100000,
+"code":"FES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100003,
+"name":"梅克内斯",
+"pid":232100000,
+"code":"MKN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100004,
+"name":"马拉喀什",
+"pid":232100000,
+"code":"MRK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100005,
+"name":"乌季达",
+"pid":232100000,
+"code":"OUJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100006,
+"name":"拉巴特",
+"pid":232100000,
+"code":"RSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100007,
+"name":"得土安",
+"pid":232100000,
+"code":"TET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100008,
+"name":"丹吉尔",
+"pid":232100000,
+"code":"TGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":232100009,
+"name":"西撒哈拉",
+"pid":232100000,
+"code":"WSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":233000000,
+"name":"摩纳哥",
+"pid":0,
+"code":"MCO",
+"pinyin":"Monaco",
+"ccode":"mc",
+"level":1
+},
+    {
+        "id":234000000,
+"name":"摩尔多瓦",
+"pid":0,
+"code":"MDA",
+"pinyin":"Moldova",
+"ccode":"md",
+"level":1
+},
+    {
+        "id":235000000,
+"name":"马达加斯加",
+"pid":0,
+"code":"MDG",
+"pinyin":"Madagascar",
+"ccode":"mg",
+"level":1
+},
+    {
+        "id":235100001,
+"name":"塔那那利佛",
+"pid":235100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":235100002,
+"name":"安齐拉纳纳",
+"pid":235100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":235100003,
+"name":"菲亚纳兰楚阿",
+"pid":235100000,
+"code":"FN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":235100004,
+"name":"马哈赞加",
+"pid":235100000,
+"code":"MJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":235100005,
+"name":"图利亚拉",
+"pid":235100000,
+"code":"TL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":235100006,
+"name":"图阿马西拉",
+"pid":235100000,
+"code":"TM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236000000,
+"name":"马尔代夫",
+"pid":0,
+"code":"MDV",
+"pinyin":"Maldives",
+"ccode":"mv",
+"level":1
+},
+    {
+        "id":236100001,
+"name":"北阿里",
+"pid":236100000,
+"code":"AAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100002,
+"name":"南阿里",
+"pid":236100000,
+"code":"AAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100003,
+"name":"阿杜",
+"pid":236100000,
+"code":"ADD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100004,
+"name":"法迪福卢",
+"pid":236100000,
+"code":"FAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100005,
+"name":"费利杜",
+"pid":236100000,
+"code":"FEA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100006,
+"name":"福阿穆拉库",
+"pid":236100000,
+"code":"FMU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100007,
+"name":"北苏瓦迪瓦",
+"pid":236100000,
+"code":"HAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100008,
+"name":"南苏瓦迪瓦",
+"pid":236100000,
+"code":"HAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100009,
+"name":"哈杜马蒂",
+"pid":236100000,
+"code":"HDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100010,
+"name":"科卢马杜卢",
+"pid":236100000,
+"code":"KLH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100011,
+"name":"马累岛",
+"pid":236100000,
+"code":"MAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100012,
+"name":"北马洛斯马杜卢",
+"pid":236100000,
+"code":"MAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100013,
+"name":"马累",
+"pid":236100000,
+"code":"MAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100014,
+"name":"南马洛斯马杜卢",
+"pid":236100000,
+"code":"MAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100015,
+"name":"北米拉杜马杜卢",
+"pid":236100000,
+"code":"MLD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100016,
+"name":"南米拉杜马杜卢",
+"pid":236100000,
+"code":"MLU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100017,
+"name":"穆拉库",
+"pid":236100000,
+"code":"MUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100018,
+"name":"北尼兰杜",
+"pid":236100000,
+"code":"NAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100019,
+"name":"南尼兰杜",
+"pid":236100000,
+"code":"NAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100020,
+"name":"北蒂拉杜马蒂",
+"pid":236100000,
+"code":"THD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":236100021,
+"name":"南蒂拉杜马蒂",
+"pid":236100000,
+"code":"THU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237000000,
+"name":"墨西哥",
+"pid":0,
+"code":"MEX",
+"pinyin":"Mexico",
+"ccode":"mx",
+"level":1
+},
+    {
+        "id":237100001,
+"name":"阿卡普尔科",
+"pid":237100000,
+"code":"ACA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100002,
+"name":"阿瓜斯卡连斯特",
+"pid":237100000,
+"code":"AGU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100003,
+"name":"华雷斯港",
+"pid":237100000,
+"code":"BJU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100004,
+"name":"埃佩切",
+"pid":237100000,
+"code":"CAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100005,
+"name":"卡门",
+"pid":237100000,
+"code":"CAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100006,
+"name":"奇瓦瓦",
+"pid":237100000,
+"code":"CHH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100007,
+"name":"奇尔潘辛戈",
+"pid":237100000,
+"code":"CHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100008,
+"name":"塞拉亚",
+"pid":237100000,
+"code":"CLY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100009,
+"name":"夸察夸拉克斯",
+"pid":237100000,
+"code":"COA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100010,
+"name":"科利马",
+"pid":237100000,
+"code":"COL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100011,
+"name":"切图马尔",
+"pid":237100000,
+"code":"CTM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100012,
+"name":"库利阿坎",
+"pid":237100000,
+"code":"CUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100013,
+"name":"库埃纳瓦卡",
+"pid":237100000,
+"code":"CVC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100014,
+"name":"杜兰戈",
+"pid":237100000,
+"code":"DUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100015,
+"name":"恩塞纳达",
+"pid":237100000,
+"code":"ESE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100016,
+"name":"瓜达拉哈拉",
+"pid":237100000,
+"code":"GDL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100017,
+"name":"瓜纳华托",
+"pid":237100000,
+"code":"GUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100018,
+"name":"埃莫西约",
+"pid":237100000,
+"code":"HMO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100019,
+"name":"伊拉普阿托",
+"pid":237100000,
+"code":"IRP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100020,
+"name":"哈拉帕",
+"pid":237100000,
+"code":"JAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100021,
+"name":"华雷斯",
+"pid":237100000,
+"code":"JUZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100022,
+"name":"克雷塔罗",
+"pid":237100000,
+"code":"QUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100023,
+"name":"拉巴斯",
+"pid":237100000,
+"code":"LAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100024,
+"name":"莱昂",
+"pid":237100000,
+"code":"LEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100025,
+"name":"洛斯莫奇斯",
+"pid":237100000,
+"code":"LMM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100026,
+"name":"蒙克洛瓦",
+"pid":237100000,
+"code":"LOV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100027,
+"name":"马塔莫罗斯",
+"pid":237100000,
+"code":"MAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100028,
+"name":"墨西哥城",
+"pid":237100000,
+"code":"MEX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100029,
+"name":"墨西卡利",
+"pid":237100000,
+"code":"MXL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100030,
+"name":"梅里达",
+"pid":237100000,
+"code":"MID",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100031,
+"name":"莫雷利亚",
+"pid":237100000,
+"code":"MLM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100032,
+"name":"蒙特雷",
+"pid":237100000,
+"code":"MTY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100033,
+"name":"马萨特兰",
+"pid":237100000,
+"code":"MZT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100034,
+"name":"新拉雷多",
+"pid":237100000,
+"code":"NLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100035,
+"name":"诺加莱斯",
+"pid":237100000,
+"code":"NOG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100036,
+"name":"瓦哈卡",
+"pid":237100000,
+"code":"OAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100037,
+"name":"奥夫雷贡城",
+"pid":237100000,
+"code":"OBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100038,
+"name":"奥里萨巴",
+"pid":237100000,
+"code":"ORI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100039,
+"name":"帕丘卡",
+"pid":237100000,
+"code":"PAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100040,
+"name":"波萨里卡",
+"pid":237100000,
+"code":"PRH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100041,
+"name":"普埃布拉",
+"pid":237100000,
+"code":"PUE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100042,
+"name":"巴亚尔塔港",
+"pid":237100000,
+"code":"PVR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100043,
+"name":"雷诺萨",
+"pid":237100000,
+"code":"REX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100044,
+"name":"圣路易斯波托亚",
+"pid":237100000,
+"code":"SLP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100045,
+"name":"萨尔蒂约",
+"pid":237100000,
+"code":"SLW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100046,
+"name":"坦皮科",
+"pid":237100000,
+"code":"TAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100047,
+"name":"塔帕丘拉",
+"pid":237100000,
+"code":"TAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100048,
+"name":"特瓦坎",
+"pid":237100000,
+"code":"TCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100049,
+"name":"图斯特拉-古铁雷斯",
+"pid":237100000,
+"code":"TGZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100050,
+"name":"蒂华纳",
+"pid":237100000,
+"code":"TIJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100051,
+"name":"特拉斯卡拉",
+"pid":237100000,
+"code":"TLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100052,
+"name":"托卢卡",
+"pid":237100000,
+"code":"TLC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100053,
+"name":"特皮克",
+"pid":237100000,
+"code":"TPQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100054,
+"name":"托雷翁",
+"pid":237100000,
+"code":"TRC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100055,
+"name":"乌鲁阿潘",
+"pid":237100000,
+"code":"UPN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100056,
+"name":"韦拉克鲁斯",
+"pid":237100000,
+"code":"VER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100057,
+"name":"巴利城",
+"pid":237100000,
+"code":"VHM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100058,
+"name":"维多利亚城",
+"pid":237100000,
+"code":"VIC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100059,
+"name":"比利亚埃尔莫萨",
+"pid":237100000,
+"code":"VSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":237100060,
+"name":"萨卡特卡斯",
+"pid":237100000,
+"code":"ZAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":238000000,
+"name":"马绍尔群岛",
+"pid":0,
+"code":"MHL",
+"pinyin":"Marshall Islands",
+"ccode":"mh",
+"level":1
+},
+    {
+        "id":239000000,
+"name":"马其顿",
+"pid":0,
+"code":"MKD",
+"pinyin":"Macedonia",
+"ccode":"mk",
+"level":1
+},
+    {
+        "id":240000000,
+"name":"马里",
+"pid":0,
+"code":"MLI",
+"pinyin":"Northern Mariana Islands",
+"ccode":"mp",
+"level":1
+},
+    {
+        "id":240100001,
+"name":"巴马科首都区",
+"pid":240100000,
+"code":"CD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100002,
+"name":"加奥",
+"pid":240100000,
+"code":"GA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100003,
+"name":"基达尔",
+"pid":240100000,
+"code":"KD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100004,
+"name":"库利科罗",
+"pid":240100000,
+"code":"KL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100005,
+"name":"卡伊",
+"pid":240100000,
+"code":"KY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100006,
+"name":"莫普提",
+"pid":240100000,
+"code":"MP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100007,
+"name":"塞古",
+"pid":240100000,
+"code":"SG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100008,
+"name":"锡卡索",
+"pid":240100000,
+"code":"SK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":240100009,
+"name":"通布图",
+"pid":240100000,
+"code":"TB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":241000000,
+"name":"马耳他",
+"pid":0,
+"code":"MLT",
+"pinyin":"Malta",
+"ccode":"mt",
+"level":1
+},
+    {
+        "id":242000000,
+"name":"缅甸",
+"pid":0,
+"code":"MMR",
+"pinyin":"Myanmar",
+"ccode":"mm",
+"level":1
+},
+    {
+        "id":242100001,
+"name":"伊洛瓦底省",
+"pid":242100000,
+"code":"AY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100002,
+"name":"勃固省",
+"pid":242100000,
+"code":"BG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100003,
+"name":"钦邦",
+"pid":242100000,
+"code":"CH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100004,
+"name":"克钦邦",
+"pid":242100000,
+"code":"KC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100005,
+"name":"克耶邦",
+"pid":242100000,
+"code":"KH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100006,
+"name":"克伦邦",
+"pid":242100000,
+"code":"KN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100007,
+"name":"曼德勒省",
+"pid":242100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100008,
+"name":"马圭省",
+"pid":242100000,
+"code":"MG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100009,
+"name":"孟邦",
+"pid":242100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100010,
+"name":"若开邦",
+"pid":242100000,
+"code":"RK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100011,
+"name":"实皆省",
+"pid":242100000,
+"code":"SG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100012,
+"name":"掸邦",
+"pid":242100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100013,
+"name":"德林达依省",
+"pid":242100000,
+"code":"TN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":242100014,
+"name":"仰光省",
+"pid":242100000,
+"code":"YG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243000000,
+"name":"蒙古",
+"pid":0,
+"code":"MNG",
+"pinyin":"Mongolia",
+"ccode":"mn",
+"level":1
+},
+    {
+        "id":243100001,
+"name":"乌兰巴托市",
+"pid":243100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100002,
+"name":"鄂尔浑",
+"pid":243100000,
+"code":"35",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100003,
+"name":"达尔汗乌勒",
+"pid":243100000,
+"code":"37",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100004,
+"name":"肯特",
+"pid":243100000,
+"code":"39",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100005,
+"name":"库苏古尔",
+"pid":243100000,
+"code":"41",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100006,
+"name":"科布多",
+"pid":243100000,
+"code":"43",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100007,
+"name":"乌布苏",
+"pid":243100000,
+"code":"46",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100008,
+"name":"中央",
+"pid":243100000,
+"code":"47",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100009,
+"name":"色楞格",
+"pid":243100000,
+"code":"49",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100010,
+"name":"苏赫巴托尔",
+"pid":243100000,
+"code":"51",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100011,
+"name":"扎布汗",
+"pid":243100000,
+"code":"57",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100012,
+"name":"中戈壁",
+"pid":243100000,
+"code":"59",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100013,
+"name":"东方",
+"pid":243100000,
+"code":"61",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100014,
+"name":"东戈壁",
+"pid":243100000,
+"code":"63",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100015,
+"name":"戈壁苏木贝尔",
+"pid":243100000,
+"code":"64",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100016,
+"name":"戈壁阿尔泰",
+"pid":243100000,
+"code":"65",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100017,
+"name":"布尔干",
+"pid":243100000,
+"code":"67",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100018,
+"name":"巴彦洪格尔",
+"pid":243100000,
+"code":"69",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100019,
+"name":"巴彦乌勒盖",
+"pid":243100000,
+"code":"71",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100020,
+"name":"后杭爱",
+"pid":243100000,
+"code":"73",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100021,
+"name":"南戈壁",
+"pid":243100000,
+"code":"UMN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":243100022,
+"name":"前杭爱",
+"pid":243100000,
+"code":"UVO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":244000000,
+"name":"北马里亚纳群岛",
+"pid":0,
+"code":"MNP",
+"pinyin":"Northern Mariana Islands",
+"ccode":"mp",
+"level":1
+},
+    {
+        "id":245000000,
+"name":"莫桑比克",
+"pid":0,
+"code":"MOZ",
+"pinyin":"Mozambique",
+"ccode":"mz",
+"level":1
+},
+    {
+        "id":246000000,
+"name":"毛里塔尼亚",
+"pid":0,
+"code":"MRT",
+"pinyin":"Mauritania",
+"ccode":"mr",
+"level":1
+},
+    {
+        "id":246100001,
+"name":"阿德拉尔",
+"pid":246100000,
+"code":"AD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100002,
+"name":"阿萨巴",
+"pid":246100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100003,
+"name":"卜拉克纳",
+"pid":246100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100004,
+"name":"努瓦迪布湾",
+"pid":246100000,
+"code":"DN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100005,
+"name":"吉迪马卡",
+"pid":246100000,
+"code":"GM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100006,
+"name":"戈尔戈勒",
+"pid":246100000,
+"code":"GO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100007,
+"name":"西胡德",
+"pid":246100000,
+"code":"HC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100008,
+"name":"东胡德",
+"pid":246100000,
+"code":"HG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100009,
+"name":"因希里",
+"pid":246100000,
+"code":"IN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100010,
+"name":"努瓦克肖特特区",
+"pid":246100000,
+"code":"NO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100011,
+"name":"塔甘特",
+"pid":246100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100012,
+"name":"特拉扎",
+"pid":246100000,
+"code":"TR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":246100013,
+"name":"提里斯-宰穆尔",
+"pid":246100000,
+"code":"TZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":247000000,
+"name":"蒙特塞拉特",
+"pid":0,
+"code":"MSR",
+"pinyin":"Montserrat",
+"ccode":"ms",
+"level":1
+},
+    {
+        "id":248000000,
+"name":"马提尼克",
+"pid":0,
+"code":"MTQ",
+"pinyin":"Martinique",
+"ccode":"mq",
+"level":1
+},
+    {
+        "id":249000000,
+"name":"毛里求斯",
+"pid":0,
+"code":"MUS",
+"pinyin":"Mauritius",
+"ccode":"mu",
+"level":1
+},
+    {
+        "id":250000000,
+"name":"马拉维",
+"pid":0,
+"code":"MWI",
+"pinyin":"Malawi",
+"ccode":"mw",
+"level":1
+},
+    {
+        "id":250100001,
+"name":"中央区",
+"pid":250100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":250100002,
+"name":"北部区",
+"pid":250100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":250100003,
+"name":"南部区",
+"pid":250100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251000000,
+"name":"马来西亚",
+"pid":0,
+"code":"MYS",
+"pinyin":"Malaysia",
+"ccode":"my",
+"level":1
+},
+    {
+        "id":251101000,
+"name":"柔佛",
+"pid":251000000,
+"code":"JH",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251101001,
+"name":"峇株巴辖",
+"pid":251101000,
+"code":"BAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101002,
+"name":"新山",
+"pid":251101000,
+"code":"JHB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101003,
+"name":"居銮",
+"pid":251101000,
+"code":"KLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101004,
+"name":"哥打丁宜",
+"pid":251101000,
+"code":"KTI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101005,
+"name":"丰盛港",
+"pid":251101000,
+"code":"MEP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101006,
+"name":"麻坡",
+"pid":251101000,
+"code":"MUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101007,
+"name":"笨珍",
+"pid":251101000,
+"code":"POW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251101008,
+"name":"昔加末",
+"pid":251101000,
+"code":"SGM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102000,
+"name":"吉打",
+"pid":251000000,
+"code":"KD",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251102001,
+"name":"华玲",
+"pid":251102000,
+"code":"BLZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102002,
+"name":"万拉峇鲁",
+"pid":251102000,
+"code":"BMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102003,
+"name":"居林",
+"pid":251102000,
+"code":"KLM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102004,
+"name":"瓜拉姆达",
+"pid":251102000,
+"code":"KMU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102005,
+"name":"哥打士打",
+"pid":251102000,
+"code":"KOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102006,
+"name":"古邦巴素",
+"pid":251102000,
+"code":"KPA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102007,
+"name":"浮罗交怡",
+"pid":251102000,
+"code":"LGK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102008,
+"name":"笨筒",
+"pid":251102000,
+"code":"PEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251102009,
+"name":"巴东得腊",
+"pid":251102000,
+"code":"PGT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251103000,
+"name":"吉隆坡",
+"pid":251000000,
+"code":"KL",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251103001,
+"name":"吉隆坡",
+"pid":251103000,
+"code":"KUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104000,
+"name":"吉兰丹",
+"pid":251000000,
+"code":"KN",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251104001,
+"name":"登卓",
+"pid":251104000,
+"code":"BAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104002,
+"name":"话望生",
+"pid":251104000,
+"code":"GMU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104003,
+"name":"日里",
+"pid":251104000,
+"code":"JEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104004,
+"name":"哥打巴鲁",
+"pid":251104000,
+"code":"KBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104005,
+"name":"瓜拉吉赖",
+"pid":251104000,
+"code":"KUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104006,
+"name":"马樟",
+"pid":251104000,
+"code":"MAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104007,
+"name":"巴西马",
+"pid":251104000,
+"code":"PMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104008,
+"name":"巴西富地",
+"pid":251104000,
+"code":"PPU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104009,
+"name":"丹那美拉",
+"pid":251104000,
+"code":"TMR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251104010,
+"name":"道北",
+"pid":251104000,
+"code":"TUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251105000,
+"name":"纳闽",
+"pid":251000000,
+"code":"LB",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251105001,
+"name":"纳闽",
+"pid":251105000,
+"code":"LBU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251105002,
+"name":"维多利亚",
+"pid":251105000,
+"code":"VIC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251106000,
+"name":"马六甲",
+"pid":251000000,
+"code":"ML",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251106001,
+"name":"亚罗牙也",
+"pid":251106000,
+"code":"AOG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251106002,
+"name":"野新",
+"pid":251106000,
+"code":"JAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251106003,
+"name":"马六甲市",
+"pid":251106000,
+"code":"MEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107000,
+"name":"森美兰",
+"pid":251000000,
+"code":"NS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251107001,
+"name":"日叻务",
+"pid":251107000,
+"code":"JEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107002,
+"name":"仁保",
+"pid":251107000,
+"code":"JEP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107003,
+"name":"瓜拉庇劳",
+"pid":251107000,
+"code":"KPI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107004,
+"name":"波德申",
+"pid":251107000,
+"code":"PDI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107005,
+"name":"林茂",
+"pid":251107000,
+"code":"REM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107006,
+"name":"芙蓉",
+"pid":251107000,
+"code":"SRB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251107007,
+"name":"淡边",
+"pid":251107000,
+"code":"TAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108000,
+"name":"彭亨",
+"pid":251000000,
+"code":"PG",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251108001,
+"name":"文冬",
+"pid":251108000,
+"code":"BEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108002,
+"name":"百乐",
+"pid":251108000,
+"code":"BER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108003,
+"name":"金马仑高原",
+"pid":251108000,
+"code":"CAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108004,
+"name":"而连突",
+"pid":251108000,
+"code":"JER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108005,
+"name":"关丹",
+"pid":251108000,
+"code":"KUA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108006,
+"name":"立卑",
+"pid":251108000,
+"code":"KUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108007,
+"name":"马兰",
+"pid":251108000,
+"code":"MAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108008,
+"name":"北根",
+"pid":251108000,
+"code":"PEK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108009,
+"name":"劳勿",
+"pid":251108000,
+"code":"RAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108010,
+"name":"淡马鲁",
+"pid":251108000,
+"code":"TEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251108011,
+"name":"云冰",
+"pid":251108000,
+"code":"TOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251109000,
+"name":"槟榔屿",
+"pid":251000000,
+"code":"PH",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251109001,
+"name":"大山脚",
+"pid":251109000,
+"code":"BMJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251109002,
+"name":"北海",
+"pid":251109000,
+"code":"BWH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251109003,
+"name":"高渊",
+"pid":251109000,
+"code":"NTE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251109004,
+"name":"槟城",
+"pid":251109000,
+"code":"PEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110000,
+"name":"霹雳",
+"pid":251000000,
+"code":"PK",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251110001,
+"name":"华都牙也",
+"pid":251110000,
+"code":"BGA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110002,
+"name":"怡保",
+"pid":251110000,
+"code":"IPH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110003,
+"name":"江沙",
+"pid":251110000,
+"code":"KAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110004,
+"name":"紅土坎",
+"pid":251110000,
+"code":"LUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110005,
+"name":"和丰",
+"pid":251110000,
+"code":"SSP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110006,
+"name":"丹绒马",
+"pid":251110000,
+"code":"TAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110007,
+"name":"安顺",
+"pid":251110000,
+"code":"TAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251110008,
+"name":"太平",
+"pid":251110000,
+"code":"TPG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251111000,
+"name":"玻璃市",
+"pid":251000000,
+"code":"PS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251111001,
+"name":"加央",
+"pid":251111000,
+"code":"KGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112000,
+"name":"沙巴",
+"pid":251000000,
+"code":"SB",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251112001,
+"name":"保佛",
+"pid":251112000,
+"code":"BEF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112002,
+"name":"比鲁兰",
+"pid":251112000,
+"code":"BEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112003,
+"name":"哥打基纳巴鲁",
+"pid":251112000,
+"code":"BKI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112004,
+"name":"古打毛律",
+"pid":251112000,
+"code":"KBD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112005,
+"name":"京那巴登岸",
+"pid":251112000,
+"code":"KBT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112006,
+"name":"根地咬",
+"pid":251112000,
+"code":"KEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112007,
+"name":"哥打马鲁都",
+"pid":251112000,
+"code":"KMU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112008,
+"name":"瓜拉班尤",
+"pid":251112000,
+"code":"KPU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112009,
+"name":"古达",
+"pid":251112000,
+"code":"KUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112010,
+"name":"古纳",
+"pid":251112000,
+"code":"KUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112011,
+"name":"拿笃",
+"pid":251112000,
+"code":"LDU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112012,
+"name":"纳巴湾",
+"pid":251112000,
+"code":"NAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112013,
+"name":"吧巴",
+"pid":251112000,
+"code":"PAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112014,
+"name":"必达士",
+"pid":251112000,
+"code":"PIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112015,
+"name":"兵南邦",
+"pid":251112000,
+"code":"PMP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112016,
+"name":"兰脑",
+"pid":251112000,
+"code":"RNU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112017,
+"name":"山打根",
+"pid":251112000,
+"code":"SDK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112018,
+"name":"仙本那",
+"pid":251112000,
+"code":"SMM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112019,
+"name":"西比陶",
+"pid":251112000,
+"code":"SPT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112020,
+"name":"担布南",
+"pid":251112000,
+"code":"TAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112021,
+"name":"斗湖",
+"pid":251112000,
+"code":"TAW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112022,
+"name":"丹南",
+"pid":251112000,
+"code":"TEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251112023,
+"name":"斗亚兰",
+"pid":251112000,
+"code":"TUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113000,
+"name":"雪兰莪",
+"pid":251000000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251113001,
+"name":"鹅麦",
+"pid":251113000,
+"code":"GOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113002,
+"name":"乌鲁冷岳",
+"pid":251113000,
+"code":"HUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113003,
+"name":"乌鲁雪兰莪",
+"pid":251113000,
+"code":"HUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113004,
+"name":"瓜拉冷岳",
+"pid":251113000,
+"code":"KLG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113005,
+"name":"瓜拉雪兰莪",
+"pid":251113000,
+"code":"KSL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113006,
+"name":"八打灵",
+"pid":251113000,
+"code":"PJA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113007,
+"name":"沙白安南",
+"pid":251113000,
+"code":"SBM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251113008,
+"name":"雪邦",
+"pid":251113000,
+"code":"SEP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114000,
+"name":"沙捞越",
+"pid":251000000,
+"code":"SR",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251114001,
+"name":"木中",
+"pid":251114000,
+"code":"BTG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114002,
+"name":"民都鲁",
+"pid":251114000,
+"code":"BTU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114003,
+"name":"古晋",
+"pid":251114000,
+"code":"KCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114004,
+"name":"加帛",
+"pid":251114000,
+"code":"KPI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114005,
+"name":"林梦",
+"pid":251114000,
+"code":"LMN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114006,
+"name":"木胶",
+"pid":251114000,
+"code":"MKM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114007,
+"name":"美里",
+"pid":251114000,
+"code":"MYY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114008,
+"name":"斯里阿曼",
+"pid":251114000,
+"code":"SAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114009,
+"name":"泗里街",
+"pid":251114000,
+"code":"SAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114010,
+"name":"泗务",
+"pid":251114000,
+"code":"SBW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251114011,
+"name":"三马拉汉",
+"pid":251114000,
+"code":"SMH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115000,
+"name":"丁加奴",
+"pid":251000000,
+"code":"TR",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":251115001,
+"name":"勿述",
+"pid":251115000,
+"code":"BES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115002,
+"name":"龙运",
+"pid":251115000,
+"code":"DGN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115003,
+"name":"乌鲁",
+"pid":251115000,
+"code":"HUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115004,
+"name":"甘马挽",
+"pid":251115000,
+"code":"KEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115005,
+"name":"马江",
+"pid":251115000,
+"code":"MAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115006,
+"name":"实兆",
+"pid":251115000,
+"code":"SET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":251115007,
+"name":"瓜拉丁加奴",
+"pid":251115000,
+"code":"TGG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":252000000,
+"name":"马约特",
+"pid":0,
+"code":"MYT",
+"pinyin":"Mayotte",
+"ccode":"yt",
+"level":1
+},
+    {
+        "id":253000000,
+"name":"纳米比亚",
+"pid":0,
+"code":"NAM",
+"pinyin":"Namibia",
+"ccode":"na",
+"level":1
+},
+    {
+        "id":253100001,
+"name":"卡普里维",
+"pid":253100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100002,
+"name":"埃龙戈",
+"pid":253100000,
+"code":"ER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100003,
+"name":"哈达普",
+"pid":253100000,
+"code":"HA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100004,
+"name":"霍马斯",
+"pid":253100000,
+"code":"KH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100005,
+"name":"卡拉斯",
+"pid":253100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100006,
+"name":"库内内",
+"pid":253100000,
+"code":"KU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100007,
+"name":"奥卡万戈",
+"pid":253100000,
+"code":"KV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100008,
+"name":"奥乔宗蒂约巴",
+"pid":253100000,
+"code":"OJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100009,
+"name":"奥马赫科",
+"pid":253100000,
+"code":"OK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100010,
+"name":"奥沙纳",
+"pid":253100000,
+"code":"ON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100011,
+"name":"奥希科托",
+"pid":253100000,
+"code":"OO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100012,
+"name":"奥姆沙蒂",
+"pid":253100000,
+"code":"OT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":253100013,
+"name":"奥汉圭纳",
+"pid":253100000,
+"code":"OW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":254000000,
+"name":"新喀里多尼亚",
+"pid":0,
+"code":"NCL",
+"pinyin":"New Caledonia",
+"ccode":"nc",
+"level":1
+},
+    {
+        "id":255000000,
+"name":"尼日尔",
+"pid":0,
+"code":"NER",
+"pinyin":"Niger",
+"ccode":"ne",
+"level":1
+},
+    {
+        "id":255100001,
+"name":"阿加德兹",
+"pid":255100000,
+"code":"AJY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100002,
+"name":"迪法",
+"pid":255100000,
+"code":"DIF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100003,
+"name":"多索",
+"pid":255100000,
+"code":"DSS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100004,
+"name":"马拉迪",
+"pid":255100000,
+"code":"MFQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100005,
+"name":"尼亚美市",
+"pid":255100000,
+"code":"NIM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100006,
+"name":"塔瓦",
+"pid":255100000,
+"code":"THZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100007,
+"name":"蒂拉贝里",
+"pid":255100000,
+"code":"TIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":255100008,
+"name":"津德尔",
+"pid":255100000,
+"code":"ZND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":256000000,
+"name":"诺福克",
+"pid":0,
+"code":"NFK",
+"pinyin":"Norfolk Island",
+"ccode":"nf",
+"level":1
+},
+    {
+        "id":257000000,
+"name":"尼日利亚",
+"pid":0,
+"code":"NGA",
+"pinyin":"Nigeria",
+"ccode":"ng",
+"level":1
+},
+    {
+        "id":257100001,
+"name":"阿比亚",
+"pid":257100000,
+"code":"ABV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":257100002,
+"name":"伊巴丹",
+"pid":257100000,
+"code":"IBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":257100003,
+"name":"卡诺",
+"pid":257100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":257100004,
+"name":"拉各斯",
+"pid":257100000,
+"code":"LOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":257100005,
+"name":"奥博莫绍",
+"pid":257100000,
+"code":"OGB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258000000,
+"name":"尼加拉瓜",
+"pid":0,
+"code":"NIC",
+"pinyin":"Nicaragua",
+"ccode":"ni",
+"level":1
+},
+    {
+        "id":258100001,
+"name":"北大西洋",
+"pid":258100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100002,
+"name":"南大西洋",
+"pid":258100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100003,
+"name":"博阿科",
+"pid":258100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100004,
+"name":"卡拉索",
+"pid":258100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100005,
+"name":"奇南德加",
+"pid":258100000,
+"code":"CD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100006,
+"name":"琼塔莱斯",
+"pid":258100000,
+"code":"CT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100007,
+"name":"埃斯特利",
+"pid":258100000,
+"code":"ES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100008,
+"name":"格拉纳达",
+"pid":258100000,
+"code":"GR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100009,
+"name":"希诺特加",
+"pid":258100000,
+"code":"JI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100010,
+"name":"莱昂",
+"pid":258100000,
+"code":"LE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100011,
+"name":"马德里斯",
+"pid":258100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100012,
+"name":"马那瓜",
+"pid":258100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100013,
+"name":"马萨亚",
+"pid":258100000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100014,
+"name":"马塔加尔帕",
+"pid":258100000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100015,
+"name":"新塞哥维亚",
+"pid":258100000,
+"code":"NS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100016,
+"name":"里瓦斯",
+"pid":258100000,
+"code":"RV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":258100017,
+"name":"圣胡安河",
+"pid":258100000,
+"code":"SJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":259000000,
+"name":"纽埃",
+"pid":0,
+"code":"NIU",
+"pinyin":"Niue",
+"ccode":"nu",
+"level":1
+},
+    {
+        "id":260000000,
+"name":"荷兰",
+"pid":0,
+"code":"NLD",
+"pinyin":"Netherlands",
+"ccode":"nl",
+"level":1
+},
+    {
+        "id":260100001,
+"name":"阿尔梅勒",
+"pid":260100000,
+"code":"AER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100002,
+"name":"阿默斯福特",
+"pid":260100000,
+"code":"AME",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100003,
+"name":"阿姆斯特丹",
+"pid":260100000,
+"code":"AMS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100004,
+"name":"阿珀尔多伦",
+"pid":260100000,
+"code":"APE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100005,
+"name":"阿纳姆",
+"pid":260100000,
+"code":"ARN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100006,
+"name":"阿森",
+"pid":260100000,
+"code":"ASS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100007,
+"name":"布雷达",
+"pid":260100000,
+"code":"BRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100008,
+"name":"多德雷赫特",
+"pid":260100000,
+"code":"DOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100009,
+"name":"埃德",
+"pid":260100000,
+"code":"EDE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100010,
+"name":"埃因霍芬",
+"pid":260100000,
+"code":"EIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100011,
+"name":"埃门",
+"pid":260100000,
+"code":"EMM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100012,
+"name":"恩斯赫德",
+"pid":260100000,
+"code":"ENS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100013,
+"name":"格罗宁根",
+"pid":260100000,
+"code":"GRQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100014,
+"name":"海牙",
+"pid":260100000,
+"code":"HAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100015,
+"name":"霍夫多尔普",
+"pid":260100000,
+"code":"HFD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100016,
+"name":"哈勒姆",
+"pid":260100000,
+"code":"HRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100017,
+"name":"斯海尔托亨博思",
+"pid":260100000,
+"code":"HTB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100018,
+"name":"莱利斯塔德",
+"pid":260100000,
+"code":"LEY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100019,
+"name":"莱顿",
+"pid":260100000,
+"code":"LID",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100020,
+"name":"吕伐登",
+"pid":260100000,
+"code":"LWR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100021,
+"name":"米德尔堡",
+"pid":260100000,
+"code":"MDL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100022,
+"name":"马斯特里赫特",
+"pid":260100000,
+"code":"MST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100023,
+"name":"奈梅亨",
+"pid":260100000,
+"code":"NIJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100024,
+"name":"鹿特丹",
+"pid":260100000,
+"code":"RTM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100025,
+"name":"蒂尔堡",
+"pid":260100000,
+"code":"TLB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100026,
+"name":"乌得勒支",
+"pid":260100000,
+"code":"UTC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100027,
+"name":"佐特尔梅",
+"pid":260100000,
+"code":"ZTM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":260100028,
+"name":"兹沃勒",
+"pid":260100000,
+"code":"ZWO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261000000,
+"name":"挪威",
+"pid":0,
+"code":"NOR",
+"pinyin":"Norway",
+"ccode":"no",
+"level":1
+},
+    {
+        "id":261100001,
+"name":"东福尔",
+"pid":261100000,
+"code":"1",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100002,
+"name":"西阿格德尔",
+"pid":261100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100003,
+"name":"罗加兰",
+"pid":261100000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100004,
+"name":"霍达兰",
+"pid":261100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100005,
+"name":"松恩－菲尤拉讷",
+"pid":261100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100006,
+"name":"默勒－鲁姆斯达尔",
+"pid":261100000,
+"code":"15",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100007,
+"name":"南特伦德拉格",
+"pid":261100000,
+"code":"16",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100008,
+"name":"北特伦德拉格",
+"pid":261100000,
+"code":"17",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100009,
+"name":"诺尔兰",
+"pid":261100000,
+"code":"18",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100010,
+"name":"特罗姆斯",
+"pid":261100000,
+"code":"19",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100011,
+"name":"阿克什胡斯",
+"pid":261100000,
+"code":"2",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100012,
+"name":"芬马克",
+"pid":261100000,
+"code":"20",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100013,
+"name":"奥斯陆市",
+"pid":261100000,
+"code":"3",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100014,
+"name":"海德马克",
+"pid":261100000,
+"code":"4",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100015,
+"name":"奥普兰",
+"pid":261100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100016,
+"name":"布斯克吕",
+"pid":261100000,
+"code":"6",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100017,
+"name":"西福尔",
+"pid":261100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100018,
+"name":"泰勒马克",
+"pid":261100000,
+"code":"8",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":261100019,
+"name":"东阿格德尔",
+"pid":261100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262000000,
+"name":"尼泊尔",
+"pid":0,
+"code":"NPL",
+"pinyin":"Nepal",
+"ccode":"np",
+"level":1
+},
+    {
+        "id":262100001,
+"name":"巴格马蒂",
+"pid":262100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100002,
+"name":"佩里",
+"pid":262100000,
+"code":"BH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100003,
+"name":"道拉吉里",
+"pid":262100000,
+"code":"DH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100004,
+"name":"甘达基",
+"pid":262100000,
+"code":"GA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100005,
+"name":"贾纳克布尔",
+"pid":262100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100006,
+"name":"格尔纳利",
+"pid":262100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100007,
+"name":"戈西",
+"pid":262100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100008,
+"name":"蓝毗尼",
+"pid":262100000,
+"code":"LU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100009,
+"name":"马哈卡利",
+"pid":262100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100010,
+"name":"梅吉",
+"pid":262100000,
+"code":"ME",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100011,
+"name":"纳拉亚尼",
+"pid":262100000,
+"code":"NA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100012,
+"name":"拉布蒂",
+"pid":262100000,
+"code":"RA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100013,
+"name":"萨加玛塔",
+"pid":262100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":262100014,
+"name":"塞蒂",
+"pid":262100000,
+"code":"SE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":263000000,
+"name":"瑙鲁",
+"pid":0,
+"code":"NRU",
+"pinyin":"Nauru",
+"ccode":"nr",
+"level":1
+},
+    {
+        "id":264000000,
+"name":"新西兰",
+"pid":0,
+"code":"NZL",
+"pinyin":"New Zealand",
+"ccode":"nz",
+"level":1
+},
+    {
+        "id":264100001,
+"name":"奥克兰",
+"pid":264100000,
+"code":"AUK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100002,
+"name":"布莱尼姆",
+"pid":264100000,
+"code":"BHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100003,
+"name":"克赖斯特彻奇",
+"pid":264100000,
+"code":"CHC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100004,
+"name":"达尼丁",
+"pid":264100000,
+"code":"DUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100005,
+"name":"北远",
+"pid":264100000,
+"code":"FNR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100006,
+"name":"吉斯伯恩",
+"pid":264100000,
+"code":"GIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100007,
+"name":"格雷茅斯",
+"pid":264100000,
+"code":"GMN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100008,
+"name":"黑斯廷斯",
+"pid":264100000,
+"code":"HAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100009,
+"name":"哈密尔顿",
+"pid":264100000,
+"code":"HLZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100010,
+"name":"因弗卡吉尔",
+"pid":264100000,
+"code":"IVC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100011,
+"name":"凯帕拉",
+"pid":264100000,
+"code":"KAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100012,
+"name":"马努考",
+"pid":264100000,
+"code":"MNK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100013,
+"name":"内皮尔",
+"pid":264100000,
+"code":"NPE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100014,
+"name":"新普利茅斯",
+"pid":264100000,
+"code":"NPL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100015,
+"name":"北岸",
+"pid":264100000,
+"code":"NSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100016,
+"name":"纳尔逊",
+"pid":264100000,
+"code":"NSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100017,
+"name":"北帕默斯顿",
+"pid":264100000,
+"code":"PMR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100018,
+"name":"里士满",
+"pid":264100000,
+"code":"RMD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100019,
+"name":"斯特拉特福德",
+"pid":264100000,
+"code":"STR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100020,
+"name":"陶马鲁努伊",
+"pid":264100000,
+"code":"TAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100021,
+"name":"怀塔科拉",
+"pid":264100000,
+"code":"WAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100022,
+"name":"旺格努伊",
+"pid":264100000,
+"code":"WAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100023,
+"name":"瓦卡塔尼",
+"pid":264100000,
+"code":"WHK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":264100024,
+"name":"旺阿雷",
+"pid":264100000,
+"code":"WRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265000000,
+"name":"阿曼",
+"pid":0,
+"code":"OMN",
+"pinyin":"Oman",
+"ccode":"om",
+"level":1
+},
+    {
+        "id":265100001,
+"name":"巴提奈地区",
+"pid":265100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100002,
+"name":"内地地区",
+"pid":265100000,
+"code":"DA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100003,
+"name":"马斯喀特省",
+"pid":265100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100004,
+"name":"穆桑达姆省",
+"pid":265100000,
+"code":"MU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100005,
+"name":"东部地区",
+"pid":265100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100006,
+"name":"中部地区",
+"pid":265100000,
+"code":"WU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100007,
+"name":"达希莱地区",
+"pid":265100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":265100008,
+"name":"佐法尔省",
+"pid":265100000,
+"code":"ZU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266000000,
+"name":"巴基斯坦",
+"pid":0,
+"code":"PAK",
+"pinyin":"Pakistan",
+"ccode":"pk",
+"level":1
+},
+    {
+        "id":266100001,
+"name":"故吉软瓦拉",
+"pid":266100000,
+"code":"GUJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100002,
+"name":"海德拉巴",
+"pid":266100000,
+"code":"HDD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100003,
+"name":"伊斯兰堡",
+"pid":266100000,
+"code":"ISB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100004,
+"name":"卡拉奇",
+"pid":266100000,
+"code":"KCT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100005,
+"name":"拉合尔",
+"pid":266100000,
+"code":"LHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100006,
+"name":"费萨拉巴德",
+"pid":266100000,
+"code":"LYP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100007,
+"name":"木尔坦",
+"pid":266100000,
+"code":"MUX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100008,
+"name":"白沙瓦",
+"pid":266100000,
+"code":"PEW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":266100009,
+"name":"拉瓦尔品第",
+"pid":266100000,
+"code":"RWP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":267000000,
+"name":"巴拿马",
+"pid":0,
+"code":"PAN",
+"pinyin":"Panama",
+"ccode":"pa",
+"level":1
+},
+    {
+        "id":268000000,
+"name":"皮特凯恩",
+"pid":0,
+"code":"PCN",
+"pinyin":"Pitcairn",
+"ccode":"pn",
+"level":1
+},
+    {
+        "id":269000000,
+"name":"秘鲁",
+"pid":0,
+"code":"PER",
+"pinyin":"Peru",
+"ccode":"pe",
+"level":1
+},
+    {
+        "id":269100001,
+"name":"亚马孙",
+"pid":269100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100002,
+"name":"安卡什",
+"pid":269100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100003,
+"name":"阿普里马克",
+"pid":269100000,
+"code":"AP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100004,
+"name":"阿雷基帕",
+"pid":269100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100005,
+"name":"阿亚库乔",
+"pid":269100000,
+"code":"AY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100006,
+"name":"钦查阿尔塔",
+"pid":269100000,
+"code":"CHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100007,
+"name":"钦博特",
+"pid":269100000,
+"code":"CHM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100008,
+"name":"卡哈马卡",
+"pid":269100000,
+"code":"CJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100009,
+"name":"卡亚俄",
+"pid":269100000,
+"code":"CL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100010,
+"name":"库斯科",
+"pid":269100000,
+"code":"CU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100011,
+"name":"瓦努科",
+"pid":269100000,
+"code":"HO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100012,
+"name":"万卡维利卡",
+"pid":269100000,
+"code":"HV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100013,
+"name":"伊卡",
+"pid":269100000,
+"code":"IC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100014,
+"name":"胡宁",
+"pid":269100000,
+"code":"JU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100015,
+"name":"胡利亚卡",
+"pid":269100000,
+"code":"JUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100016,
+"name":"拉利伯塔德",
+"pid":269100000,
+"code":"LD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100017,
+"name":"利马",
+"pid":269100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100018,
+"name":"洛雷托",
+"pid":269100000,
+"code":"LO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100019,
+"name":"兰巴耶克",
+"pid":269100000,
+"code":"LY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100020,
+"name":"马德雷德迪奥斯",
+"pid":269100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100021,
+"name":"莫克瓜",
+"pid":269100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100022,
+"name":"帕斯科",
+"pid":269100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100023,
+"name":"皮乌拉",
+"pid":269100000,
+"code":"PI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100024,
+"name":"普诺",
+"pid":269100000,
+"code":"PU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100025,
+"name":"圣马丁",
+"pid":269100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100026,
+"name":"苏拉纳",
+"pid":269100000,
+"code":"SUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100027,
+"name":"塔克纳",
+"pid":269100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100028,
+"name":"通贝斯",
+"pid":269100000,
+"code":"TU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":269100029,
+"name":"乌卡亚利",
+"pid":269100000,
+"code":"UC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":270000000,
+"name":"菲律宾",
+"pid":0,
+"code":"PHL",
+"pinyin":"Philippines",
+"ccode":"ph",
+"level":1
+},
+    {
+        "id":270100001,
+"name":"卡卢坎",
+"pid":270100000,
+"code":"CAO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":270100002,
+"name":"宿务",
+"pid":270100000,
+"code":"CEB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":270100003,
+"name":"达沃",
+"pid":270100000,
+"code":"DOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":270100004,
+"name":"马尼拉",
+"pid":270100000,
+"code":"MNL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":271000000,
+"name":"帕劳",
+"pid":0,
+"code":"PLW",
+"pinyin":"Palau",
+"ccode":"pw",
+"level":1
+},
+    {
+        "id":272000000,
+"name":"巴布亚新几内亚",
+"pid":0,
+"code":"PNG",
+"pinyin":"Papua New Guinea",
+"ccode":"pg",
+"level":1
+},
+    {
+        "id":272100001,
+"name":"布干维尔",
+"pid":272100000,
+"code":"BV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100002,
+"name":"东新不列颠",
+"pid":272100000,
+"code":"EB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100003,
+"name":"东部高地",
+"pid":272100000,
+"code":"EH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100004,
+"name":"恩加",
+"pid":272100000,
+"code":"EN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100005,
+"name":"东塞皮克",
+"pid":272100000,
+"code":"ES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100006,
+"name":"海湾",
+"pid":272100000,
+"code":"GU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100007,
+"name":"米尔恩湾",
+"pid":272100000,
+"code":"MB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100008,
+"name":"马当",
+"pid":272100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100009,
+"name":"马努斯",
+"pid":272100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100010,
+"name":"莫罗贝",
+"pid":272100000,
+"code":"MR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100011,
+"name":"莫尔兹比港",
+"pid":272100000,
+"code":"NC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100012,
+"name":"新爱尔兰",
+"pid":272100000,
+"code":"NI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100013,
+"name":"北部",
+"pid":272100000,
+"code":"NO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100014,
+"name":"桑道恩",
+"pid":272100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100015,
+"name":"南部高地",
+"pid":272100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100016,
+"name":"钦布",
+"pid":272100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100017,
+"name":"西新不列颠",
+"pid":272100000,
+"code":"WB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100018,
+"name":"西部",
+"pid":272100000,
+"code":"WE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":272100019,
+"name":"西部高地",
+"pid":272100000,
+"code":"WH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273000000,
+"name":"波兰",
+"pid":0,
+"code":"POL",
+"pinyin":"Poland",
+"ccode":"pl",
+"level":1
+},
+    {
+        "id":273100001,
+"name":"比亚瓦波德拉斯卡",
+"pid":273100000,
+"code":"BAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100002,
+"name":"比亚维斯托克",
+"pid":273100000,
+"code":"BIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100003,
+"name":"比托姆",
+"pid":273100000,
+"code":"BYT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100004,
+"name":"比得哥什",
+"pid":273100000,
+"code":"BZG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100005,
+"name":"海乌姆",
+"pid":273100000,
+"code":"CHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100006,
+"name":"霍茹夫",
+"pid":273100000,
+"code":"CHZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100007,
+"name":"切哈努夫",
+"pid":273100000,
+"code":"CIE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100008,
+"name":"达布罗瓦戈尼察",
+"pid":273100000,
+"code":"DAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100009,
+"name":"埃尔布隆格",
+"pid":273100000,
+"code":"ELB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100010,
+"name":"格但斯克",
+"pid":273100000,
+"code":"GDN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100011,
+"name":"格丁尼亚",
+"pid":273100000,
+"code":"GDY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100012,
+"name":"大波兰地区戈茹夫",
+"pid":273100000,
+"code":"GOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100013,
+"name":"格鲁琼兹",
+"pid":273100000,
+"code":"GRU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100014,
+"name":"格利维采",
+"pid":273100000,
+"code":"GWC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100015,
+"name":"绿山城",
+"pid":273100000,
+"code":"IEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100016,
+"name":"雅沃兹诺",
+"pid":273100000,
+"code":"JAW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100017,
+"name":"耶莱尼亚古拉",
+"pid":273100000,
+"code":"JEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100018,
+"name":"卡利什",
+"pid":273100000,
+"code":"KAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100019,
+"name":"凯尔采",
+"pid":273100000,
+"code":"KLC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100020,
+"name":"科宁",
+"pid":273100000,
+"code":"KON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100021,
+"name":"克拉科夫",
+"pid":273100000,
+"code":"KRK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100022,
+"name":"克罗斯诺",
+"pid":273100000,
+"code":"KRO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100023,
+"name":"卡托维兹",
+"pid":273100000,
+"code":"KTW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100024,
+"name":"塔尔诺布热格",
+"pid":273100000,
+"code":"QEP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100025,
+"name":"沃姆扎",
+"pid":273100000,
+"code":"QOY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100026,
+"name":"莱格尼察",
+"pid":273100000,
+"code":"LEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100027,
+"name":"莱什诺",
+"pid":273100000,
+"code":"LEZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100028,
+"name":"罗兹",
+"pid":273100000,
+"code":"LOD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100029,
+"name":"卢布林",
+"pid":273100000,
+"code":"LUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100030,
+"name":"米什洛维采",
+"pid":273100000,
+"code":"MYL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100031,
+"name":"新松奇",
+"pid":273100000,
+"code":"NOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100032,
+"name":"奥尔什丁",
+"pid":273100000,
+"code":"OLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100033,
+"name":"波莱",
+"pid":273100000,
+"code":"OPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100034,
+"name":"奥斯特罗文卡",
+"pid":273100000,
+"code":"OSS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100035,
+"name":"科沙林",
+"pid":273100000,
+"code":"OSZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100036,
+"name":"皮瓦",
+"pid":273100000,
+"code":"PIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100037,
+"name":"彼得库夫",
+"pid":273100000,
+"code":"PIO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100038,
+"name":"普沃茨克",
+"pid":273100000,
+"code":"PLO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100039,
+"name":"波兹南",
+"pid":273100000,
+"code":"POZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100040,
+"name":"普热梅希尔",
+"pid":273100000,
+"code":"PRZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100041,
+"name":"拉多姆",
+"pid":273100000,
+"code":"RDM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100042,
+"name":"鲁达",
+"pid":273100000,
+"code":"RDS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100043,
+"name":"热舒夫",
+"pid":273100000,
+"code":"RZE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100044,
+"name":"谢德尔采",
+"pid":273100000,
+"code":"SDC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100045,
+"name":"谢拉兹",
+"pid":273100000,
+"code":"SIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100046,
+"name":"斯凯尔涅维采",
+"pid":273100000,
+"code":"SKI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100047,
+"name":"斯武普斯克",
+"pid":273100000,
+"code":"SLP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100048,
+"name":"索波特",
+"pid":273100000,
+"code":"SOP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100049,
+"name":"希米亚诺维采",
+"pid":273100000,
+"code":"SOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100050,
+"name":"索斯诺维茨",
+"pid":273100000,
+"code":"SWC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100051,
+"name":"希维诺乌伊希切",
+"pid":273100000,
+"code":"SWI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100052,
+"name":"苏瓦乌基",
+"pid":273100000,
+"code":"SWL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100053,
+"name":"希维托赫洛维采",
+"pid":273100000,
+"code":"SWT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100054,
+"name":"什切青",
+"pid":273100000,
+"code":"SZZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100055,
+"name":"塔尔努夫",
+"pid":273100000,
+"code":"TAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100056,
+"name":"托伦",
+"pid":273100000,
+"code":"TOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100057,
+"name":"特切",
+"pid":273100000,
+"code":"TYY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100058,
+"name":"华沙",
+"pid":273100000,
+"code":"WAW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100059,
+"name":"弗沃茨瓦韦克",
+"pid":273100000,
+"code":"WLO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100060,
+"name":"弗罗茨瓦夫",
+"pid":273100000,
+"code":"WRO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100061,
+"name":"瓦乌布日赫",
+"pid":273100000,
+"code":"WZH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100062,
+"name":"扎布热",
+"pid":273100000,
+"code":"ZAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":273100063,
+"name":"扎莫希奇",
+"pid":273100000,
+"code":"ZAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":274000000,
+"name":"波多黎各",
+"pid":0,
+"code":"PRI",
+"pinyin":"Puerto Rico",
+"ccode":"pr",
+"level":1
+},
+    {
+        "id":275000000,
+"name":"朝鲜",
+"pid":0,
+"code":"PRK",
+"pinyin":"North Korea",
+"ccode":"kp",
+"level":1
+},
+    {
+        "id":275100001,
+"name":"清津",
+"pid":275100000,
+"code":"CHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100002,
+"name":"平壤",
+"pid":275100000,
+"code":"FNJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100003,
+"name":"海州",
+"pid":275100000,
+"code":"HAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100004,
+"name":"咸兴",
+"pid":275100000,
+"code":"HAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100005,
+"name":"惠山",
+"pid":275100000,
+"code":"HYE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100006,
+"name":"江界",
+"pid":275100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100007,
+"name":"开城",
+"pid":275100000,
+"code":"KSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100008,
+"name":"南浦",
+"pid":275100000,
+"code":"NAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100009,
+"name":"罗先",
+"pid":275100000,
+"code":"NAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100010,
+"name":"沙里院",
+"pid":275100000,
+"code":"SAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100011,
+"name":"新义州",
+"pid":275100000,
+"code":"SII",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":275100012,
+"name":"元山",
+"pid":275100000,
+"code":"WON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276000000,
+"name":"葡萄牙",
+"pid":0,
+"code":"PRT",
+"pinyin":"Portugal",
+"ccode":"pt",
+"level":1
+},
+    {
+        "id":276100001,
+"name":"上阿连特茹",
+"pid":276100000,
+"code":"AAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100002,
+"name":"万福",
+"pid":276100000,
+"code":"AES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100003,
+"name":"中阿连特茹",
+"pid":276100000,
+"code":"ALC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100004,
+"name":"滨海阿连特茹",
+"pid":276100000,
+"code":"ALL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100005,
+"name":"上特拉斯山",
+"pid":276100000,
+"code":"ATM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100006,
+"name":"下阿连特茹",
+"pid":276100000,
+"code":"BAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100007,
+"name":"内贝拉北",
+"pid":276100000,
+"code":"BIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100008,
+"name":"内贝拉南",
+"pid":276100000,
+"code":"BIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100009,
+"name":"下蒙德古",
+"pid":276100000,
+"code":"BMO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100010,
+"name":"下伏日",
+"pid":276100000,
+"code":"BVO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100011,
+"name":"卡瓦多",
+"pid":276100000,
+"code":"CAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100012,
+"name":"科瓦贝拉",
+"pid":276100000,
+"code":"CLB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100013,
+"name":"恩特拉杜罗伏日",
+"pid":276100000,
+"code":"EDV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100014,
+"name":"法鲁",
+"pid":276100000,
+"code":"FAO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100015,
+"name":"丰沙尔",
+"pid":276100000,
+"code":"FUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100016,
+"name":"里斯本",
+"pid":276100000,
+"code":"LIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100017,
+"name":"利巴特茹",
+"pid":276100000,
+"code":"LTE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100018,
+"name":"杜罗",
+"pid":276100000,
+"code":"MDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100019,
+"name":"米尼奥-利马",
+"pid":276100000,
+"code":"MLI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100020,
+"name":"梅地奥特茹",
+"pid":276100000,
+"code":"MTE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100021,
+"name":"西部",
+"pid":276100000,
+"code":"OES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100022,
+"name":"蓬塔德尔加达",
+"pid":276100000,
+"code":"PDL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100023,
+"name":"内皮尼亚尔北",
+"pid":276100000,
+"code":"PIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100024,
+"name":"内皮尼亚尔南",
+"pid":276100000,
+"code":"PIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100025,
+"name":"滨海皮尼亚尔",
+"pid":276100000,
+"code":"PLT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100026,
+"name":"塞图巴尔半岛",
+"pid":276100000,
+"code":"PSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100027,
+"name":"山后",
+"pid":276100000,
+"code":"SES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100028,
+"name":"塔梅加",
+"pid":276100000,
+"code":"TAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":276100029,
+"name":"波尔图",
+"pid":276100000,
+"code":"VDP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277000000,
+"name":"巴拉圭",
+"pid":0,
+"code":"PRY",
+"pinyin":"Paraguay",
+"ccode":"py",
+"level":1
+},
+    {
+        "id":277100001,
+"name":"上巴拉圭",
+"pid":277100000,
+"code":"AG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100002,
+"name":"阿曼拜",
+"pid":277100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100003,
+"name":"上巴拉那",
+"pid":277100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100004,
+"name":"亚松森特别区",
+"pid":277100000,
+"code":"AS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100005,
+"name":"博克龙",
+"pid":277100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100006,
+"name":"康塞普西翁",
+"pid":277100000,
+"code":"CC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100007,
+"name":"科迪勒拉",
+"pid":277100000,
+"code":"CD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100008,
+"name":"中央",
+"pid":277100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100009,
+"name":"卡瓜苏",
+"pid":277100000,
+"code":"CG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100010,
+"name":"卡嫩迪尤",
+"pid":277100000,
+"code":"CN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100011,
+"name":"卡萨帕",
+"pid":277100000,
+"code":"CZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100012,
+"name":"瓜伊拉",
+"pid":277100000,
+"code":"GU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100013,
+"name":"伊塔普亚",
+"pid":277100000,
+"code":"IT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100014,
+"name":"米西奥内斯",
+"pid":277100000,
+"code":"MI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100015,
+"name":"涅恩布库",
+"pid":277100000,
+"code":"NE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100016,
+"name":"巴拉瓜里",
+"pid":277100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100017,
+"name":"阿耶斯总统省",
+"pid":277100000,
+"code":"PH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":277100018,
+"name":"圣佩德罗",
+"pid":277100000,
+"code":"SP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":278000000,
+"name":"巴勒斯坦",
+"pid":0,
+"code":"PSE",
+"pinyin":"Palestine",
+"ccode":"ps",
+"level":1
+},
+    {
+        "id":278100001,
+"name":"加沙地带",
+"pid":278100000,
+"code":"GZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":278100002,
+"name":"西岸",
+"pid":278100000,
+"code":"WE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":279000000,
+"name":"法属波利尼西亚",
+"pid":0,
+"code":"PYF",
+"pinyin":"French Polynesia",
+"ccode":"pf",
+"level":1
+},
+    {
+        "id":280000000,
+"name":"留尼汪",
+"pid":0,
+"code":"REU",
+"pinyin":"Réunion",
+"ccode":"re",
+"level":1
+},
+    {
+        "id":281000000,
+"name":"罗马尼亚",
+"pid":0,
+"code":"ROU",
+"pinyin":"Romania",
+"ccode":"ro",
+"level":1
+},
+    {
+        "id":281100001,
+"name":"亚厉山德里亚",
+"pid":281100000,
+"code":"AD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100002,
+"name":"阿尔巴尤利亚",
+"pid":281100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100003,
+"name":"阿拉德",
+"pid":281100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100004,
+"name":"巴克乌",
+"pid":281100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100005,
+"name":"布加勒斯特",
+"pid":281100000,
+"code":"BC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100006,
+"name":"布勒伊拉",
+"pid":281100000,
+"code":"BL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100007,
+"name":"巴亚马雷",
+"pid":281100000,
+"code":"BM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100008,
+"name":"比斯特里察",
+"pid":281100000,
+"code":"BN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100009,
+"name":"博托沙尼",
+"pid":281100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100010,
+"name":"布拉索夫",
+"pid":281100000,
+"code":"BS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100011,
+"name":"布泽乌",
+"pid":281100000,
+"code":"BZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100012,
+"name":"克卢日纳波卡",
+"pid":281100000,
+"code":"CN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100013,
+"name":"克勒拉希",
+"pid":281100000,
+"code":"CR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100014,
+"name":"康斯坦察",
+"pid":281100000,
+"code":"CT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100015,
+"name":"德瓦",
+"pid":281100000,
+"code":"DE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100016,
+"name":"克拉约瓦",
+"pid":281100000,
+"code":"DO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100017,
+"name":"德罗贝塔-塞维林堡",
+"pid":281100000,
+"code":"DT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100018,
+"name":"福克沙尼",
+"pid":281100000,
+"code":"FO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100019,
+"name":"久尔久",
+"pid":281100000,
+"code":"GG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100020,
+"name":"加拉茨",
+"pid":281100000,
+"code":"GL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100021,
+"name":"雅西",
+"pid":281100000,
+"code":"IS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100022,
+"name":"梅尔库里亚丘克",
+"pid":281100000,
+"code":"MC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100023,
+"name":"奥拉迪亚",
+"pid":281100000,
+"code":"OR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100024,
+"name":"皮特什蒂",
+"pid":281100000,
+"code":"PI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100025,
+"name":"普洛耶什蒂",
+"pid":281100000,
+"code":"PL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100026,
+"name":"皮亚特拉尼亚姆茨",
+"pid":281100000,
+"code":"PN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100027,
+"name":"雷希察",
+"pid":281100000,
+"code":"RE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100028,
+"name":"斯洛博齐亚",
+"pid":281100000,
+"code":"SB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100029,
+"name":"圣格奥尔基",
+"pid":281100000,
+"code":"SG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100030,
+"name":"萨图·马雷",
+"pid":281100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100031,
+"name":"锡比乌",
+"pid":281100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100032,
+"name":"斯拉蒂纳",
+"pid":281100000,
+"code":"ST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100033,
+"name":"苏恰瓦",
+"pid":281100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100034,
+"name":"特尔戈维什泰",
+"pid":281100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100035,
+"name":"蒂米什瓦拉",
+"pid":281100000,
+"code":"TI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100036,
+"name":"特尔古日乌",
+"pid":281100000,
+"code":"TJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100037,
+"name":"特尔古穆列什",
+"pid":281100000,
+"code":"TM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100038,
+"name":"图尔恰",
+"pid":281100000,
+"code":"TU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100039,
+"name":"瓦斯卢伊",
+"pid":281100000,
+"code":"VA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100040,
+"name":"勒姆尼库沃尔恰",
+"pid":281100000,
+"code":"VI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":281100041,
+"name":"扎勒乌",
+"pid":281100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282000000,
+"name":"俄罗斯",
+"pid":0,
+"code":"RUS",
+"pinyin":"Belarus",
+"ccode":"by",
+"level":1
+},
+    {
+        "id":282100001,
+"name":"阿巴坎",
+"pid":282100000,
+"code":"ABA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100002,
+"name":"阿金斯科耶",
+"pid":282100000,
+"code":"AGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100003,
+"name":"阿尔汉格尔斯克",
+"pid":282100000,
+"code":"ARK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100004,
+"name":"阿斯特拉罕",
+"pid":282100000,
+"code":"AST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100005,
+"name":"巴尔瑙尔",
+"pid":282100000,
+"code":"BAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100006,
+"name":"比罗比詹",
+"pid":282100000,
+"code":"BBZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100007,
+"name":"别尔哥罗德",
+"pid":282100000,
+"code":"BEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100008,
+"name":"布拉戈维申斯克",
+"pid":282100000,
+"code":"BQS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100009,
+"name":"布良斯克",
+"pid":282100000,
+"code":"BRY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100010,
+"name":"车里雅宾斯克",
+"pid":282100000,
+"code":"CHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100011,
+"name":"赤塔",
+"pid":282100000,
+"code":"CHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100012,
+"name":"切尔克斯克",
+"pid":282100000,
+"code":"CKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100013,
+"name":"伯力",
+"pid":282100000,
+"code":"COK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100014,
+"name":"切博克萨雷",
+"pid":282100000,
+"code":"CSY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100015,
+"name":"阿纳德尔",
+"pid":282100000,
+"code":"DYR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100016,
+"name":"埃利斯塔",
+"pid":282100000,
+"code":"ESL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100017,
+"name":"戈尔诺－阿尔泰斯克",
+"pid":282100000,
+"code":"GOA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100018,
+"name":"下诺夫哥罗德",
+"pid":282100000,
+"code":"GOJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100019,
+"name":"格罗兹尼",
+"pid":282100000,
+"code":"GRV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100020,
+"name":"伊热夫斯克",
+"pid":282100000,
+"code":"IJK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100021,
+"name":"伊尔库茨克",
+"pid":282100000,
+"code":"IKT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100022,
+"name":"马加斯",
+"pid":282100000,
+"code":"IN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100023,
+"name":"伊万诺沃",
+"pid":282100000,
+"code":"IVO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100024,
+"name":"雅库茨克",
+"pid":282100000,
+"code":"JAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100025,
+"name":"雅罗斯拉夫尔",
+"pid":282100000,
+"code":"JAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100026,
+"name":"叶卡捷林堡",
+"pid":282100000,
+"code":"JEK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100027,
+"name":"南萨哈林斯克",
+"pid":282100000,
+"code":"JSA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100028,
+"name":"克麦罗沃",
+"pid":282100000,
+"code":"KEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100029,
+"name":"加里宁格勒",
+"pid":282100000,
+"code":"KGD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100030,
+"name":"汉特－曼西斯克",
+"pid":282100000,
+"code":"KHM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100031,
+"name":"基洛夫",
+"pid":282100000,
+"code":"KIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100032,
+"name":"卡卢加",
+"pid":282100000,
+"code":"KLF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100033,
+"name":"科斯特罗马",
+"pid":282100000,
+"code":"KOS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100034,
+"name":"库尔干",
+"pid":282100000,
+"code":"KRO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100035,
+"name":"克拉斯诺达尔",
+"pid":282100000,
+"code":"KRR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100036,
+"name":"库德姆卡尔",
+"pid":282100000,
+"code":"KUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100037,
+"name":"克拉斯诺亚尔斯克",
+"pid":282100000,
+"code":"KYA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100038,
+"name":"克孜勒",
+"pid":282100000,
+"code":"KYZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100039,
+"name":"喀山",
+"pid":282100000,
+"code":"KZN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100040,
+"name":"利佩茨克",
+"pid":282100000,
+"code":"LIP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100041,
+"name":"斯摩棱斯克",
+"pid":282100000,
+"code":"LNX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100042,
+"name":"马加丹",
+"pid":282100000,
+"code":"MAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100043,
+"name":"迈科普",
+"pid":282100000,
+"code":"MAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100044,
+"name":"马哈奇卡拉",
+"pid":282100000,
+"code":"MCX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100045,
+"name":"摩尔曼斯克",
+"pid":282100000,
+"code":"MMK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100046,
+"name":"莫斯科",
+"pid":282100000,
+"code":"MOW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100047,
+"name":"纳尔奇克",
+"pid":282100000,
+"code":"NAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100048,
+"name":"纳里扬马尔",
+"pid":282100000,
+"code":"NNM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100049,
+"name":"新西伯利亚",
+"pid":282100000,
+"code":"NVS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100050,
+"name":"鄂木斯克",
+"pid":282100000,
+"code":"OMS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100051,
+"name":"奥伦堡",
+"pid":282100000,
+"code":"ORE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100052,
+"name":"奥廖尔",
+"pid":282100000,
+"code":"ORL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100053,
+"name":"帕拉纳",
+"pid":282100000,
+"code":"PAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100054,
+"name":"彼尔姆",
+"pid":282100000,
+"code":"PER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100055,
+"name":"彼得罗扎沃茨克",
+"pid":282100000,
+"code":"PES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100056,
+"name":"彼得罗巴甫洛夫斯克",
+"pid":282100000,
+"code":"PKC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100057,
+"name":"奔萨",
+"pid":282100000,
+"code":"PNZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100058,
+"name":"普斯科夫",
+"pid":282100000,
+"code":"PSK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100059,
+"name":"顿河畔罗斯托夫",
+"pid":282100000,
+"code":"ROS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100060,
+"name":"梁赞",
+"pid":282100000,
+"code":"RYA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100061,
+"name":"萨马拉",
+"pid":282100000,
+"code":"SAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100062,
+"name":"萨拉托夫",
+"pid":282100000,
+"code":"SAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100063,
+"name":"瑟克特夫卡尔",
+"pid":282100000,
+"code":"SCW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100064,
+"name":"萨兰斯克",
+"pid":282100000,
+"code":"SKX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100065,
+"name":"萨列哈尔德",
+"pid":282100000,
+"code":"SLY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100066,
+"name":"圣彼得堡",
+"pid":282100000,
+"code":"SPE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100067,
+"name":"斯塔夫罗波尔",
+"pid":282100000,
+"code":"STA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100068,
+"name":"坦波夫",
+"pid":282100000,
+"code":"TAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100069,
+"name":"托木斯克",
+"pid":282100000,
+"code":"TOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100070,
+"name":"图拉",
+"pid":282100000,
+"code":"TUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100071,
+"name":"特维尔",
+"pid":282100000,
+"code":"TVE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100072,
+"name":"秋明",
+"pid":282100000,
+"code":"TYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100073,
+"name":"乌法",
+"pid":282100000,
+"code":"UFA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100074,
+"name":"乌里扬诺夫斯克",
+"pid":282100000,
+"code":"ULY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100075,
+"name":"乌斯季奥尔登斯基",
+"pid":282100000,
+"code":"UOB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100076,
+"name":"库尔斯克",
+"pid":282100000,
+"code":"URS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100077,
+"name":"乌兰乌德",
+"pid":282100000,
+"code":"UUD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100078,
+"name":"弗拉季高加索",
+"pid":282100000,
+"code":"VLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100079,
+"name":"沃洛格达",
+"pid":282100000,
+"code":"VLG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100080,
+"name":"弗拉基米尔",
+"pid":282100000,
+"code":"VMR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100081,
+"name":"伏尔加格勒",
+"pid":282100000,
+"code":"VOG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100082,
+"name":"沃罗涅什",
+"pid":282100000,
+"code":"VOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100083,
+"name":"诺夫哥罗德",
+"pid":282100000,
+"code":"VUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100084,
+"name":"海参崴",
+"pid":282100000,
+"code":"VVO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":282100085,
+"name":"约什卡尔奥拉",
+"pid":282100000,
+"code":"YOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283000000,
+"name":"卢旺达",
+"pid":0,
+"code":"RWA",
+"pinyin":"Rwanda",
+"ccode":"rw",
+"level":1
+},
+    {
+        "id":283100001,
+"name":"布塔雷",
+"pid":283100000,
+"code":"BU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100002,
+"name":"比温巴",
+"pid":283100000,
+"code":"BY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100003,
+"name":"尚古古",
+"pid":283100000,
+"code":"CY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100004,
+"name":"吉孔戈罗",
+"pid":283100000,
+"code":"GK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100005,
+"name":"吉塞尼",
+"pid":283100000,
+"code":"GS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100006,
+"name":"吉塔拉马",
+"pid":283100000,
+"code":"GT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100007,
+"name":"卡布加",
+"pid":283100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100008,
+"name":"基本古",
+"pid":283100000,
+"code":"KG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100009,
+"name":"基加利-恩加利",
+"pid":283100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100010,
+"name":"基加利市",
+"pid":283100000,
+"code":"KV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100011,
+"name":"基布耶",
+"pid":283100000,
+"code":"KY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100012,
+"name":"恩延扎",
+"pid":283100000,
+"code":"NY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100013,
+"name":"鲁汉戈",
+"pid":283100000,
+"code":"RH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100014,
+"name":"鲁亨盖里",
+"pid":283100000,
+"code":"RU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100015,
+"name":"卢瓦马加纳",
+"pid":283100000,
+"code":"RW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":283100016,
+"name":"乌姆塔拉",
+"pid":283100000,
+"code":"UM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284000000,
+"name":"沙特阿拉伯",
+"pid":0,
+"code":"SAU",
+"pinyin":"Saudi Arabia",
+"ccode":"sa",
+"level":1
+},
+    {
+        "id":284100001,
+"name":"艾卜哈",
+"pid":284100000,
+"code":"AHB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100002,
+"name":"海耶",
+"pid":284100000,
+"code":"AKH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100003,
+"name":"阿尔阿尔",
+"pid":284100000,
+"code":"ARA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100004,
+"name":"巴哈",
+"pid":284100000,
+"code":"BH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100005,
+"name":"布赖代",
+"pid":284100000,
+"code":"BUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100006,
+"name":"达曼",
+"pid":284100000,
+"code":"DAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100007,
+"name":"哈费尔巴廷",
+"pid":284100000,
+"code":"HBT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100008,
+"name":"胡富夫",
+"pid":284100000,
+"code":"HFF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100009,
+"name":"哈伊勒",
+"pid":284100000,
+"code":"HL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100010,
+"name":"朱拜勒",
+"pid":284100000,
+"code":"JBI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100011,
+"name":"吉达",
+"pid":284100000,
+"code":"JED",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100012,
+"name":"吉赞",
+"pid":284100000,
+"code":"JZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100013,
+"name":"海米斯穆谢特",
+"pid":284100000,
+"code":"KMX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100014,
+"name":"姆巴拉兹",
+"pid":284100000,
+"code":"MBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100015,
+"name":"麦地那",
+"pid":284100000,
+"code":"MED",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100016,
+"name":"麦加",
+"pid":284100000,
+"code":"ML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100017,
+"name":"纳季兰",
+"pid":284100000,
+"code":"NR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100018,
+"name":"利雅得",
+"pid":284100000,
+"code":"RD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100019,
+"name":"塞卡卡",
+"pid":284100000,
+"code":"SAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100020,
+"name":"塔伊夫",
+"pid":284100000,
+"code":"TAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100021,
+"name":"塔布克",
+"pid":284100000,
+"code":"TB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":284100022,
+"name":"延布",
+"pid":284100000,
+"code":"YNB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285000000,
+"name":"黑山",
+"pid":0,
+"code":"SCG",
+"pinyin":"Montenegro",
+"ccode":"me",
+"level":1
+},
+    {
+        "id":285100001,
+"name":"贝尔格莱德",
+"pid":285100000,
+"code":"BEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100002,
+"name":"尼什",
+"pid":285100000,
+"code":"INI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100003,
+"name":"克拉古涅瓦茨",
+"pid":285100000,
+"code":"KGV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100004,
+"name":"诺维萨德",
+"pid":285100000,
+"code":"NVS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100005,
+"name":"波德戈里察",
+"pid":285100000,
+"code":"POD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100006,
+"name":"普里什蒂纳",
+"pid":285100000,
+"code":"PRN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100007,
+"name":"苏博蒂察",
+"pid":285100000,
+"code":"SUB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":285100008,
+"name":"泽蒙",
+"pid":285100000,
+"code":"ZEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286000000,
+"name":"苏丹",
+"pid":0,
+"code":"SDN",
+"pinyin":"South Sudan",
+"ccode":"ss",
+"level":1
+},
+    {
+        "id":286100001,
+"name":"上尼罗",
+"pid":286100000,
+"code":"ANB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100002,
+"name":"北部",
+"pid":286100000,
+"code":"ASH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100003,
+"name":"科尔多凡",
+"pid":286100000,
+"code":"GKU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100004,
+"name":"喀土穆",
+"pid":286100000,
+"code":"KRT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100005,
+"name":"加扎勒河",
+"pid":286100000,
+"code":"SBG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100006,
+"name":"达尔富尔",
+"pid":286100000,
+"code":"SDA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100007,
+"name":"东部",
+"pid":286100000,
+"code":"SHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100008,
+"name":"赤道",
+"pid":286100000,
+"code":"SIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":286100009,
+"name":"中部",
+"pid":286100000,
+"code":"WDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287000000,
+"name":"塞内加尔",
+"pid":0,
+"code":"SEN",
+"pinyin":"Senegal",
+"ccode":"sn",
+"level":1
+},
+    {
+        "id":287100001,
+"name":"达喀尔",
+"pid":287100000,
+"code":"DA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100002,
+"name":"久尔贝勒",
+"pid":287100000,
+"code":"DI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100003,
+"name":"法蒂克",
+"pid":287100000,
+"code":"FA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100004,
+"name":"考拉克",
+"pid":287100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100005,
+"name":"科尔达",
+"pid":287100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100006,
+"name":"卢加",
+"pid":287100000,
+"code":"LO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100007,
+"name":"马塔姆",
+"pid":287100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100008,
+"name":"圣路易",
+"pid":287100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100009,
+"name":"坦巴昆达",
+"pid":287100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100010,
+"name":"捷斯",
+"pid":287100000,
+"code":"TH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":287100011,
+"name":"济金绍尔",
+"pid":287100000,
+"code":"ZI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":288000000,
+"name":"新加坡",
+"pid":0,
+"code":"SGP",
+"pinyin":"Singapore",
+"ccode":"sg",
+"level":1
+},
+    {
+        "id":289000000,
+"name":"南乔治亚和南桑威奇群岛",
+"pid":0,
+"code":"SGS",
+"pinyin":"South Georgia \\x26 South Sandwich Islands",
+"ccode":"gs",
+"level":1
+},
+    {
+        "id":290000000,
+"name":"圣赫勒拿",
+"pid":0,
+"code":"SHN",
+"pinyin":"Saint Helena",
+"ccode":"sh",
+"level":1
+},
+    {
+        "id":291000000,
+"name":"斯瓦尔巴和扬马延",
+"pid":0,
+"code":"SJM",
+"pinyin":"Svalbard and Jan Mayen",
+"ccode":"sj",
+"level":1
+},
+    {
+        "id":292000000,
+"name":"所罗门群岛",
+"pid":0,
+"code":"SLB",
+"pinyin":"Solomon Islands",
+"ccode":"sb",
+"level":1
+},
+    {
+        "id":292100001,
+"name":"中部群岛",
+"pid":292100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100002,
+"name":"乔伊索",
+"pid":292100000,
+"code":"CH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100003,
+"name":"瓜达尔卡纳尔",
+"pid":292100000,
+"code":"GC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100004,
+"name":"霍尼亚拉",
+"pid":292100000,
+"code":"HO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100005,
+"name":"伊萨贝尔",
+"pid":292100000,
+"code":"IS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100006,
+"name":"马基拉",
+"pid":292100000,
+"code":"MK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100007,
+"name":"马莱塔",
+"pid":292100000,
+"code":"ML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100008,
+"name":"拉纳尔和贝罗纳",
+"pid":292100000,
+"code":"RB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100009,
+"name":"泰莫图",
+"pid":292100000,
+"code":"TM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":292100010,
+"name":"西部",
+"pid":292100000,
+"code":"WE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":293000000,
+"name":"塞拉利昂",
+"pid":0,
+"code":"SLE",
+"pinyin":"Sierra Leone",
+"ccode":"sl",
+"level":1
+},
+    {
+        "id":293100001,
+"name":"东部",
+"pid":293100000,
+"code":"E",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":293100002,
+"name":"北部",
+"pid":293100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":293100003,
+"name":"南部",
+"pid":293100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":293100004,
+"name":"西部区",
+"pid":293100000,
+"code":"W",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294000000,
+"name":"萨尔瓦多",
+"pid":0,
+"code":"SLV",
+"pinyin":"El Salvador",
+"ccode":"sv",
+"level":1
+},
+    {
+        "id":294100001,
+"name":"阿瓦查潘",
+"pid":294100000,
+"code":"AH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100002,
+"name":"阿波帕",
+"pid":294100000,
+"code":"APO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100003,
+"name":"卡瓦尼亚斯",
+"pid":294100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100004,
+"name":"查拉特南戈",
+"pid":294100000,
+"code":"CH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100005,
+"name":"中南",
+"pid":294100000,
+"code":"CS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100006,
+"name":"库斯卡特兰",
+"pid":294100000,
+"code":"CU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100007,
+"name":"德尔加多",
+"pid":294100000,
+"code":"DE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100008,
+"name":"伊洛潘戈",
+"pid":294100000,
+"code":"IL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100009,
+"name":"基埃-恩特姆",
+"pid":294100000,
+"code":"KN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100010,
+"name":"拉利伯塔德",
+"pid":294100000,
+"code":"LB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100011,
+"name":"滨海",
+"pid":294100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100012,
+"name":"梅基卡诺斯",
+"pid":294100000,
+"code":"MEJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100013,
+"name":"莫拉桑",
+"pid":294100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100014,
+"name":"拉巴斯",
+"pid":294100000,
+"code":"PZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100015,
+"name":"圣安娜",
+"pid":294100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100016,
+"name":"圣米格尔",
+"pid":294100000,
+"code":"SM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100017,
+"name":"松索纳特",
+"pid":294100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100018,
+"name":"索亚潘戈",
+"pid":294100000,
+"code":"SOY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100019,
+"name":"圣萨尔瓦多",
+"pid":294100000,
+"code":"SS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100020,
+"name":"圣维森特",
+"pid":294100000,
+"code":"SV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100021,
+"name":"拉乌尼翁",
+"pid":294100000,
+"code":"UN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100022,
+"name":"乌苏卢坦",
+"pid":294100000,
+"code":"US",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":294100023,
+"name":"韦莱-恩萨斯",
+"pid":294100000,
+"code":"WN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":295000000,
+"name":"圣马力诺",
+"pid":0,
+"code":"SMR",
+"pinyin":"San Marino",
+"ccode":"sm",
+"level":1
+},
+    {
+        "id":296000000,
+"name":"索马里",
+"pid":0,
+"code":"SOM",
+"pinyin":"Somalia",
+"ccode":"so",
+"level":1
+},
+    {
+        "id":297000000,
+"name":"圣皮埃尔和密克隆群岛",
+"pid":0,
+"code":"SPM",
+"pinyin":"Saint Pierre and Miquelon",
+"ccode":"pm",
+"level":1
+},
+    {
+        "id":298000000,
+"name":"圣多美和普林西比",
+"pid":0,
+"code":"STP",
+"pinyin":"São Tomé and Príncipe",
+"ccode":"st",
+"level":1
+},
+    {
+        "id":299000000,
+"name":"苏里南",
+"pid":0,
+"code":"SUR",
+"pinyin":"Suriname",
+"ccode":"sr",
+"level":1
+},
+    {
+        "id":299100001,
+"name":"布罗科蓬多",
+"pid":299100000,
+"code":"BR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100002,
+"name":"科默韦讷",
+"pid":299100000,
+"code":"CM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100003,
+"name":"科罗尼",
+"pid":299100000,
+"code":"CR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100004,
+"name":"马罗韦讷",
+"pid":299100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100005,
+"name":"尼克里",
+"pid":299100000,
+"code":"NI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100006,
+"name":"帕拉",
+"pid":299100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100007,
+"name":"帕拉马里博",
+"pid":299100000,
+"code":"PM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100008,
+"name":"萨拉马卡",
+"pid":299100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100009,
+"name":"西帕里韦尼",
+"pid":299100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":299100010,
+"name":"瓦尼卡",
+"pid":299100000,
+"code":"WA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300000000,
+"name":"斯洛伐克",
+"pid":0,
+"code":"SVK",
+"pinyin":"Slovakia",
+"ccode":"sk",
+"level":1
+},
+    {
+        "id":300100001,
+"name":"班斯卡-比斯特里察",
+"pid":300100000,
+"code":"BBY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100002,
+"name":"布拉迪斯拉发",
+"pid":300100000,
+"code":"BTS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100003,
+"name":"科希策",
+"pid":300100000,
+"code":"KOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100004,
+"name":"尼特拉",
+"pid":300100000,
+"code":"NRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100005,
+"name":"普雷绍夫",
+"pid":300100000,
+"code":"POV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100006,
+"name":"日利纳",
+"pid":300100000,
+"code":"RIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100007,
+"name":"特尔纳瓦",
+"pid":300100000,
+"code":"TNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":300100008,
+"name":"特伦钦",
+"pid":300100000,
+"code":"TRE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301000000,
+"name":"斯洛文尼亚",
+"pid":0,
+"code":"SVN",
+"pinyin":"Slovenia",
+"ccode":"si",
+"level":1
+},
+    {
+        "id":301100001,
+"name":"多雷尼",
+"pid":301100000,
+"code":"DLJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100002,
+"name":"戈里",
+"pid":301100000,
+"code":"GSK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100003,
+"name":"戈雷尼",
+"pid":301100000,
+"code":"GSZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100004,
+"name":"科洛",
+"pid":301100000,
+"code":"KOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100005,
+"name":"诺特拉尼",
+"pid":301100000,
+"code":"NKR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100006,
+"name":"奥巴尔诺-克拉",
+"pid":301100000,
+"code":"OKR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100007,
+"name":"奥斯雷德涅斯洛文",
+"pid":301100000,
+"code":"OSR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100008,
+"name":"波德拉夫",
+"pid":301100000,
+"code":"POD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100009,
+"name":"波穆尔",
+"pid":301100000,
+"code":"POM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100010,
+"name":"萨维尼",
+"pid":301100000,
+"code":"SAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100011,
+"name":"斯波德涅波萨夫",
+"pid":301100000,
+"code":"SPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":301100012,
+"name":"扎萨夫",
+"pid":301100000,
+"code":"ZAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302000000,
+"name":"瑞典",
+"pid":0,
+"code":"SWE",
+"pinyin":"Sweden",
+"ccode":"se",
+"level":1
+},
+    {
+        "id":302100001,
+"name":"斯德哥尔摩",
+"pid":302100000,
+"code":"AB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100002,
+"name":"西博滕",
+"pid":302100000,
+"code":"AC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100003,
+"name":"北博滕",
+"pid":302100000,
+"code":"BD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100004,
+"name":"乌普萨拉",
+"pid":302100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100005,
+"name":"南曼兰",
+"pid":302100000,
+"code":"D",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100006,
+"name":"达拉纳",
+"pid":302100000,
+"code":"DLN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100007,
+"name":"延雪平",
+"pid":302100000,
+"code":"F",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100008,
+"name":"克鲁努贝里",
+"pid":302100000,
+"code":"G",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100009,
+"name":"卡尔马",
+"pid":302100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100010,
+"name":"耶夫勒堡",
+"pid":302100000,
+"code":"X",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100011,
+"name":"哥得兰",
+"pid":302100000,
+"code":"I",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100012,
+"name":"布莱金厄",
+"pid":302100000,
+"code":"K",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100013,
+"name":"斯科耐",
+"pid":302100000,
+"code":"M",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100014,
+"name":"哈兰",
+"pid":302100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100015,
+"name":"西约特兰",
+"pid":302100000,
+"code":"O",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100016,
+"name":"韦姆兰",
+"pid":302100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100017,
+"name":"厄勒布鲁",
+"pid":302100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100018,
+"name":"西曼兰",
+"pid":302100000,
+"code":"U",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100019,
+"name":"东约特兰",
+"pid":302100000,
+"code":"UGL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100020,
+"name":"西诺尔兰",
+"pid":302100000,
+"code":"Y",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":302100021,
+"name":"耶姆特兰",
+"pid":302100000,
+"code":"Z",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":303000000,
+"name":"斯威士兰",
+"pid":0,
+"code":"SWZ",
+"pinyin":"Swaziland",
+"ccode":"sz",
+"level":1
+},
+    {
+        "id":304000000,
+"name":"塞舌尔",
+"pid":0,
+"code":"SYC",
+"pinyin":"Seychelles",
+"ccode":"sc",
+"level":1
+},
+    {
+        "id":305000000,
+"name":"叙利亚",
+"pid":0,
+"code":"SYR",
+"pinyin":"Syria",
+"ccode":"sy",
+"level":1
+},
+    {
+        "id":305100001,
+"name":"德拉",
+"pid":305100000,
+"code":"DA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100002,
+"name":"大马士革市",
+"pid":305100000,
+"code":"DI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100003,
+"name":"代尔祖尔",
+"pid":305100000,
+"code":"DZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100004,
+"name":"加布",
+"pid":305100000,
+"code":"GH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100005,
+"name":"哈塞克",
+"pid":305100000,
+"code":"HA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100006,
+"name":"霍姆斯",
+"pid":305100000,
+"code":"HI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100007,
+"name":"阿勒颇",
+"pid":305100000,
+"code":"HL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100008,
+"name":"哈马",
+"pid":305100000,
+"code":"HM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100009,
+"name":"伊德利卜",
+"pid":305100000,
+"code":"ID",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100010,
+"name":"卡米什利",
+"pid":305100000,
+"code":"QA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100011,
+"name":"库奈特拉",
+"pid":305100000,
+"code":"QU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100012,
+"name":"拉塔基亚",
+"pid":305100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100013,
+"name":"大马士革",
+"pid":305100000,
+"code":"RD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100014,
+"name":"拉卡",
+"pid":305100000,
+"code":"RQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100015,
+"name":"苏韦达",
+"pid":305100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":305100016,
+"name":"塔尔图斯",
+"pid":305100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":307000000,
+"name":"特克斯和凯科斯群岛",
+"pid":0,
+"code":"TCA",
+"pinyin":"Turks and Caicos Islands",
+"ccode":"tc",
+"level":1
+},
+    {
+        "id":308000000,
+"name":"乍得",
+"pid":0,
+"code":"TCD",
+"pinyin":"Chad",
+"ccode":"td",
+"level":1
+},
+    {
+        "id":309000000,
+"name":"多哥",
+"pid":0,
+"code":"TGO",
+"pinyin":"Togo",
+"ccode":"tg",
+"level":1
+},
+    {
+        "id":309100001,
+"name":"中部区",
+"pid":309100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":309100002,
+"name":"卡拉区",
+"pid":309100000,
+"code":"K",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":309100003,
+"name":"滨海区",
+"pid":309100000,
+"code":"M",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":309100004,
+"name":"高原区",
+"pid":309100000,
+"code":"P",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":309100005,
+"name":"草原区",
+"pid":309100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310000000,
+"name":"泰国",
+"pid":0,
+"code":"THA",
+"pinyin":"Thailand",
+"ccode":"th",
+"level":1
+},
+    {
+        "id":310100001,
+"name":"曼谷",
+"pid":310100000,
+"code":"10",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100002,
+"name":"北揽",
+"pid":310100000,
+"code":"11",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100003,
+"name":"暖武里",
+"pid":310100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100004,
+"name":"巴吞他尼",
+"pid":310100000,
+"code":"13",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100005,
+"name":"大城",
+"pid":310100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100006,
+"name":"红统",
+"pid":310100000,
+"code":"15",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100007,
+"name":"华富里",
+"pid":310100000,
+"code":"16",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100008,
+"name":"信武里",
+"pid":310100000,
+"code":"17",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100009,
+"name":"猜那",
+"pid":310100000,
+"code":"18",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100010,
+"name":"北标",
+"pid":310100000,
+"code":"19",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100011,
+"name":"春武里",
+"pid":310100000,
+"code":"20",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100012,
+"name":"拉农",
+"pid":310100000,
+"code":"21",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100013,
+"name":"尖竹汶",
+"pid":310100000,
+"code":"22",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100014,
+"name":"达叻",
+"pid":310100000,
+"code":"23",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100015,
+"name":"北柳",
+"pid":310100000,
+"code":"24",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100016,
+"name":"巴真",
+"pid":310100000,
+"code":"25",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100017,
+"name":"那空那育",
+"pid":310100000,
+"code":"26",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100018,
+"name":"沙缴",
+"pid":310100000,
+"code":"27",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100019,
+"name":"武里南",
+"pid":310100000,
+"code":"31",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100020,
+"name":"素林",
+"pid":310100000,
+"code":"32",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100021,
+"name":"四色菊",
+"pid":310100000,
+"code":"33",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100022,
+"name":"乌汶",
+"pid":310100000,
+"code":"34",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100023,
+"name":"耶梭通",
+"pid":310100000,
+"code":"35",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100024,
+"name":"猜也奔",
+"pid":310100000,
+"code":"36",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100025,
+"name":"安纳乍能",
+"pid":310100000,
+"code":"37",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100026,
+"name":"廊莫那浦",
+"pid":310100000,
+"code":"39",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100027,
+"name":"孔敬",
+"pid":310100000,
+"code":"40",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100028,
+"name":"乌隆",
+"pid":310100000,
+"code":"41",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100029,
+"name":"黎",
+"pid":310100000,
+"code":"42",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100030,
+"name":"廊开",
+"pid":310100000,
+"code":"43",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100031,
+"name":"玛哈沙拉堪",
+"pid":310100000,
+"code":"44",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100032,
+"name":"黎逸",
+"pid":310100000,
+"code":"45",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100033,
+"name":"加拉信",
+"pid":310100000,
+"code":"46",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100034,
+"name":"色军",
+"pid":310100000,
+"code":"47",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100035,
+"name":"那空帕农",
+"pid":310100000,
+"code":"48",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100036,
+"name":"莫达汉",
+"pid":310100000,
+"code":"49",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100037,
+"name":"清迈",
+"pid":310100000,
+"code":"50",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100038,
+"name":"南奔",
+"pid":310100000,
+"code":"51",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100039,
+"name":"程逸",
+"pid":310100000,
+"code":"53",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100040,
+"name":"帕",
+"pid":310100000,
+"code":"54",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100041,
+"name":"难",
+"pid":310100000,
+"code":"55",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100042,
+"name":"帕尧",
+"pid":310100000,
+"code":"56",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100043,
+"name":"清莱",
+"pid":310100000,
+"code":"57",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100044,
+"name":"夜丰颂",
+"pid":310100000,
+"code":"58",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100045,
+"name":"北榄坡",
+"pid":310100000,
+"code":"60",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100046,
+"name":"乌泰他尼",
+"pid":310100000,
+"code":"61",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100047,
+"name":"甘烹碧",
+"pid":310100000,
+"code":"62",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100048,
+"name":"达",
+"pid":310100000,
+"code":"63",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100049,
+"name":"素可泰",
+"pid":310100000,
+"code":"64",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100050,
+"name":"彭世洛",
+"pid":310100000,
+"code":"65",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100051,
+"name":"披集",
+"pid":310100000,
+"code":"66",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100052,
+"name":"叻丕",
+"pid":310100000,
+"code":"70",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100053,
+"name":"北碧",
+"pid":310100000,
+"code":"71",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100054,
+"name":"素攀武里",
+"pid":310100000,
+"code":"72",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100055,
+"name":"佛统",
+"pid":310100000,
+"code":"73",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100056,
+"name":"龙仔厝",
+"pid":310100000,
+"code":"74",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100057,
+"name":"夜功",
+"pid":310100000,
+"code":"75",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100058,
+"name":"碧差汶",
+"pid":310100000,
+"code":"76",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100059,
+"name":"巴蜀",
+"pid":310100000,
+"code":"77",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100060,
+"name":"佛丕",
+"pid":310100000,
+"code":"78",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100061,
+"name":"洛坤",
+"pid":310100000,
+"code":"80",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100062,
+"name":"甲米",
+"pid":310100000,
+"code":"81",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100063,
+"name":"攀牙",
+"pid":310100000,
+"code":"82",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100064,
+"name":"普吉",
+"pid":310100000,
+"code":"83",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100065,
+"name":"素叻",
+"pid":310100000,
+"code":"84",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100066,
+"name":"罗勇",
+"pid":310100000,
+"code":"85",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100067,
+"name":"春蓬",
+"pid":310100000,
+"code":"86",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100068,
+"name":"宋卡",
+"pid":310100000,
+"code":"90",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100069,
+"name":"沙敦",
+"pid":310100000,
+"code":"91",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100070,
+"name":"董里",
+"pid":310100000,
+"code":"92",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100071,
+"name":"博达伦",
+"pid":310100000,
+"code":"93",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100072,
+"name":"北大年",
+"pid":310100000,
+"code":"94",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100073,
+"name":"也拉",
+"pid":310100000,
+"code":"95",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":310100074,
+"name":"陶公",
+"pid":310100000,
+"code":"96",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311000000,
+"name":"塔吉克斯坦",
+"pid":0,
+"code":"TJK",
+"pinyin":"Tajikistan",
+"ccode":"tj",
+"level":1
+},
+    {
+        "id":311100001,
+"name":"杜尚别",
+"pid":311100000,
+"code":"DYU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100002,
+"name":"伊斯法拉",
+"pid":311100000,
+"code":"ISF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100003,
+"name":"卡尼巴达姆",
+"pid":311100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100004,
+"name":"霍罗格",
+"pid":311100000,
+"code":"KHO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100005,
+"name":"苦盏",
+"pid":311100000,
+"code":"KHU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100006,
+"name":"库洛布",
+"pid":311100000,
+"code":"KLB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100007,
+"name":"科法尔尼洪",
+"pid":311100000,
+"code":"KOF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100008,
+"name":"库尔干-秋别",
+"pid":311100000,
+"code":"KTJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100009,
+"name":"努雷克",
+"pid":311100000,
+"code":"NUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100010,
+"name":"彭吉肯特",
+"pid":311100000,
+"code":"PJK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100011,
+"name":"洛贡",
+"pid":311100000,
+"code":"RGU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100012,
+"name":"萨班特",
+"pid":311100000,
+"code":"SBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100013,
+"name":"塔博沙尔",
+"pid":311100000,
+"code":"TBS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100014,
+"name":"图尔孙扎德",
+"pid":311100000,
+"code":"TSZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":311100015,
+"name":"乌拉秋别",
+"pid":311100000,
+"code":"UTJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":312000000,
+"name":"托克劳",
+"pid":0,
+"code":"TKL",
+"pinyin":"Tokelau",
+"ccode":"tk",
+"level":1
+},
+    {
+        "id":313000000,
+"name":"土库曼斯坦",
+"pid":0,
+"code":"TKM",
+"pinyin":"Turkmenistan",
+"ccode":"tm",
+"level":1
+},
+    {
+        "id":313100001,
+"name":"阿哈尔",
+"pid":313100000,
+"code":"A",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100002,
+"name":"阿什哈巴德市",
+"pid":313100000,
+"code":"ASB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100003,
+"name":"巴尔坎",
+"pid":313100000,
+"code":"B",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100004,
+"name":"达沙古兹",
+"pid":313100000,
+"code":"D",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100005,
+"name":"列巴普",
+"pid":313100000,
+"code":"L",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100006,
+"name":"马雷",
+"pid":313100000,
+"code":"M",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":313100007,
+"name":"涅比特达格",
+"pid":313100000,
+"code":"NEB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314000000,
+"name":"东帝汶",
+"pid":0,
+"code":"TLS",
+"pinyin":"Timor-Leste",
+"ccode":"tl",
+"level":1
+},
+    {
+        "id":314100001,
+"name":"阿伊莱乌",
+"pid":314100000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100002,
+"name":"安贝诺",
+"pid":314100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100003,
+"name":"阿伊纳罗",
+"pid":314100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100004,
+"name":"包考",
+"pid":314100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100005,
+"name":"博博纳罗",
+"pid":314100000,
+"code":"BO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100006,
+"name":"帝力",
+"pid":314100000,
+"code":"DI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100007,
+"name":"埃尔梅拉",
+"pid":314100000,
+"code":"ER",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100008,
+"name":"科瓦利马",
+"pid":314100000,
+"code":"KO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100009,
+"name":"劳滕",
+"pid":314100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100010,
+"name":"利基卡",
+"pid":314100000,
+"code":"LI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100011,
+"name":"马努法伊",
+"pid":314100000,
+"code":"MF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100012,
+"name":"马纳图托",
+"pid":314100000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":314100013,
+"name":"维克克",
+"pid":314100000,
+"code":"VI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":315000000,
+"name":"汤加",
+"pid":0,
+"code":"TON",
+"pinyin":"Tonga",
+"ccode":"to",
+"level":1
+},
+    {
+        "id":315100001,
+"name":"埃瓦",
+"pid":315100000,
+"code":"E",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":315100002,
+"name":"哈派",
+"pid":315100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":315100003,
+"name":"纽阿斯",
+"pid":315100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":315100004,
+"name":"汤加塔布",
+"pid":315100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":315100005,
+"name":"瓦瓦乌",
+"pid":315100000,
+"code":"V",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":316000000,
+"name":"特立尼达和多巴哥",
+"pid":0,
+"code":"TTO",
+"pinyin":"Trinidad and Tobago",
+"ccode":"tt",
+"level":1
+},
+    {
+        "id":317000000,
+"name":"突尼斯",
+"pid":0,
+"code":"TUN",
+"pinyin":"Tunisia",
+"ccode":"tn",
+"level":1
+},
+    {
+        "id":317100001,
+"name":"艾尔亚奈",
+"pid":317100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100002,
+"name":"本阿鲁斯",
+"pid":317100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100003,
+"name":"比塞大",
+"pid":317100000,
+"code":"BI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100004,
+"name":"巴杰",
+"pid":317100000,
+"code":"BJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100005,
+"name":"加贝斯",
+"pid":317100000,
+"code":"GB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100006,
+"name":"加夫萨",
+"pid":317100000,
+"code":"GF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100007,
+"name":"坚杜拜",
+"pid":317100000,
+"code":"JE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100008,
+"name":"吉比利",
+"pid":317100000,
+"code":"KB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100009,
+"name":"凯鲁万",
+"pid":317100000,
+"code":"KR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100010,
+"name":"卡塞林",
+"pid":317100000,
+"code":"KS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100011,
+"name":"卡夫",
+"pid":317100000,
+"code":"LK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100012,
+"name":"梅德宁",
+"pid":317100000,
+"code":"ME",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100013,
+"name":"马赫迪耶",
+"pid":317100000,
+"code":"MH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100014,
+"name":"马努巴",
+"pid":317100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100015,
+"name":"莫纳斯提尔",
+"pid":317100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100016,
+"name":"纳布勒",
+"pid":317100000,
+"code":"NA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100017,
+"name":"西迪布济德",
+"pid":317100000,
+"code":"SD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100018,
+"name":"斯法克斯",
+"pid":317100000,
+"code":"SF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100019,
+"name":"锡勒亚奈",
+"pid":317100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100020,
+"name":"苏塞",
+"pid":317100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100021,
+"name":"泰塔温",
+"pid":317100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100022,
+"name":"托泽尔",
+"pid":317100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100023,
+"name":"突尼斯",
+"pid":317100000,
+"code":"TU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":317100024,
+"name":"宰格万",
+"pid":317100000,
+"code":"ZA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318000000,
+"name":"土耳其",
+"pid":0,
+"code":"TUR",
+"pinyin":"Turkey",
+"ccode":"tr",
+"level":1
+},
+    {
+        "id":318100001,
+"name":"阿达纳",
+"pid":318100000,
+"code":"ADA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100002,
+"name":"阿德亚曼",
+"pid":318100000,
+"code":"ADI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100003,
+"name":"阿菲永",
+"pid":318100000,
+"code":"AFY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100004,
+"name":"阿勒",
+"pid":318100000,
+"code":"AGR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100005,
+"name":"阿克萨赖",
+"pid":318100000,
+"code":"AKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100006,
+"name":"阿马西亚",
+"pid":318100000,
+"code":"AMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100007,
+"name":"安卡拉",
+"pid":318100000,
+"code":"ANK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100008,
+"name":"安塔利亚",
+"pid":318100000,
+"code":"ANT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100009,
+"name":"阿尔达罕",
+"pid":318100000,
+"code":"ARD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100010,
+"name":"阿尔特温",
+"pid":318100000,
+"code":"ART",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100011,
+"name":"艾登",
+"pid":318100000,
+"code":"AYI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100012,
+"name":"巴勒克埃西尔",
+"pid":318100000,
+"code":"BAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100013,
+"name":"巴尔腾",
+"pid":318100000,
+"code":"BAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100014,
+"name":"巴特曼",
+"pid":318100000,
+"code":"BAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100015,
+"name":"巴伊布尔特",
+"pid":318100000,
+"code":"BAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100016,
+"name":"比莱吉克",
+"pid":318100000,
+"code":"BIL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100017,
+"name":"宾格尔",
+"pid":318100000,
+"code":"BIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100018,
+"name":"比特利斯",
+"pid":318100000,
+"code":"BIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100019,
+"name":"博卢",
+"pid":318100000,
+"code":"BOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100020,
+"name":"布尔杜尔",
+"pid":318100000,
+"code":"BRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100021,
+"name":"布尔萨",
+"pid":318100000,
+"code":"BRS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100022,
+"name":"恰纳卡莱",
+"pid":318100000,
+"code":"CKL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100023,
+"name":"昌克勒",
+"pid":318100000,
+"code":"CKR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100024,
+"name":"乔鲁姆",
+"pid":318100000,
+"code":"COR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100025,
+"name":"代尼兹利",
+"pid":318100000,
+"code":"DEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100026,
+"name":"迪亚巴克尔",
+"pid":318100000,
+"code":"DIY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100027,
+"name":"埃迪尔内",
+"pid":318100000,
+"code":"EDI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100028,
+"name":"埃拉泽",
+"pid":318100000,
+"code":"ELA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100029,
+"name":"埃斯基谢希尔",
+"pid":318100000,
+"code":"ESK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100030,
+"name":"埃尔津詹",
+"pid":318100000,
+"code":"EZC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100031,
+"name":"埃尔祖鲁姆",
+"pid":318100000,
+"code":"EZR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100032,
+"name":"加济安泰普",
+"pid":318100000,
+"code":"GAZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100033,
+"name":"吉雷松",
+"pid":318100000,
+"code":"GIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100034,
+"name":"居米什哈内",
+"pid":318100000,
+"code":"GMS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100035,
+"name":"哈卡里",
+"pid":318100000,
+"code":"HKR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100036,
+"name":"哈塔伊",
+"pid":318100000,
+"code":"HTY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100037,
+"name":"伊切尔",
+"pid":318100000,
+"code":"ICE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100038,
+"name":"伊迪尔",
+"pid":318100000,
+"code":"IGD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100039,
+"name":"伊斯帕尔塔",
+"pid":318100000,
+"code":"ISP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100040,
+"name":"伊斯坦布尔",
+"pid":318100000,
+"code":"IST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100041,
+"name":"伊兹密尔",
+"pid":318100000,
+"code":"IZM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100042,
+"name":"卡赫拉曼马拉什",
+"pid":318100000,
+"code":"KAH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100043,
+"name":"卡斯塔莫努",
+"pid":318100000,
+"code":"KAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100044,
+"name":"开塞利",
+"pid":318100000,
+"code":"KAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100045,
+"name":"柯克拉雷利",
+"pid":318100000,
+"code":"KLR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100046,
+"name":"基利斯",
+"pid":318100000,
+"code":"KLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100047,
+"name":"科贾埃利",
+"pid":318100000,
+"code":"KOC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100048,
+"name":"科尼亚",
+"pid":318100000,
+"code":"KON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100049,
+"name":"卡拉比克",
+"pid":318100000,
+"code":"KRB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100050,
+"name":"克尔谢希尔",
+"pid":318100000,
+"code":"KRH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100051,
+"name":"克勒克卡莱",
+"pid":318100000,
+"code":"KRK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100052,
+"name":"卡拉曼",
+"pid":318100000,
+"code":"KRM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100053,
+"name":"卡尔斯",
+"pid":318100000,
+"code":"KRS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100054,
+"name":"屈塔希亚",
+"pid":318100000,
+"code":"KUT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100055,
+"name":"马拉蒂亚",
+"pid":318100000,
+"code":"MAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100056,
+"name":"马尼萨",
+"pid":318100000,
+"code":"MAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100057,
+"name":"马尔丁",
+"pid":318100000,
+"code":"MAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100058,
+"name":"穆拉",
+"pid":318100000,
+"code":"MUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100059,
+"name":"穆什",
+"pid":318100000,
+"code":"MUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100060,
+"name":"内夫谢希尔",
+"pid":318100000,
+"code":"NEV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100061,
+"name":"尼代",
+"pid":318100000,
+"code":"NIG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100062,
+"name":"奥尔杜",
+"pid":318100000,
+"code":"ORD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100063,
+"name":"里泽",
+"pid":318100000,
+"code":"RIZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100064,
+"name":"萨卡里亚",
+"pid":318100000,
+"code":"SAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100065,
+"name":"萨姆松",
+"pid":318100000,
+"code":"SAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100066,
+"name":"锡尔特",
+"pid":318100000,
+"code":"SII",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100067,
+"name":"锡诺普",
+"pid":318100000,
+"code":"SIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100068,
+"name":"锡尔纳克",
+"pid":318100000,
+"code":"SIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100069,
+"name":"锡瓦斯",
+"pid":318100000,
+"code":"SIV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100070,
+"name":"泰基尔达",
+"pid":318100000,
+"code":"TEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100071,
+"name":"托卡特",
+"pid":318100000,
+"code":"TOK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100072,
+"name":"特拉布宗",
+"pid":318100000,
+"code":"TRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100073,
+"name":"通杰利",
+"pid":318100000,
+"code":"TUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100074,
+"name":"拉飞",
+"pid":318100000,
+"code":"URF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100075,
+"name":"乌萨克",
+"pid":318100000,
+"code":"USK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100076,
+"name":"凡",
+"pid":318100000,
+"code":"VAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100077,
+"name":"约兹加特",
+"pid":318100000,
+"code":"YOZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":318100078,
+"name":"宗古尔达克",
+"pid":318100000,
+"code":"ZON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":319000000,
+"name":"图瓦卢",
+"pid":0,
+"code":"TUV",
+"pinyin":"Tuvalu",
+"ccode":"tv",
+"level":1
+},
+    {
+        "id":320000000,
+"name":"坦桑尼亚",
+"pid":0,
+"code":"TZA",
+"pinyin":"Tanzania",
+"ccode":"tz",
+"level":1
+},
+    {
+        "id":320100001,
+"name":"阿鲁沙",
+"pid":320100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100002,
+"name":"多多马",
+"pid":320100000,
+"code":"DO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100003,
+"name":"达累斯萨拉姆",
+"pid":320100000,
+"code":"DS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100004,
+"name":"伊林加",
+"pid":320100000,
+"code":"IR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100005,
+"name":"卡盖拉",
+"pid":320100000,
+"code":"KA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100006,
+"name":"基戈马",
+"pid":320100000,
+"code":"KI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100007,
+"name":"乞力马扎罗",
+"pid":320100000,
+"code":"KJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100008,
+"name":"林迪",
+"pid":320100000,
+"code":"LN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100009,
+"name":"姆贝亚",
+"pid":320100000,
+"code":"MB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100010,
+"name":"桑给巴尔市和西",
+"pid":320100000,
+"code":"MM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100011,
+"name":"莫洛戈罗",
+"pid":320100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100012,
+"name":"马腊",
+"pid":320100000,
+"code":"MR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100013,
+"name":"姆特瓦拉",
+"pid":320100000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100014,
+"name":"姆万扎",
+"pid":320100000,
+"code":"MW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100015,
+"name":"曼亚拉",
+"pid":320100000,
+"code":"MY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100016,
+"name":"奔巴北",
+"pid":320100000,
+"code":"PN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100017,
+"name":"奔巴南",
+"pid":320100000,
+"code":"PS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100018,
+"name":"滨海",
+"pid":320100000,
+"code":"PW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100019,
+"name":"鲁夸",
+"pid":320100000,
+"code":"RK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100020,
+"name":"鲁伍马",
+"pid":320100000,
+"code":"RV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100021,
+"name":"欣延加",
+"pid":320100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100022,
+"name":"辛吉达",
+"pid":320100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100023,
+"name":"塔波拉",
+"pid":320100000,
+"code":"TB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100024,
+"name":"坦噶",
+"pid":320100000,
+"code":"TN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100025,
+"name":"桑给巴尔北",
+"pid":320100000,
+"code":"UN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100026,
+"name":"桑给巴尔南",
+"pid":320100000,
+"code":"US",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":320100027,
+"name":"桑给巴尔",
+"pid":320100000,
+"code":"ZN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321000000,
+"name":"乌干达",
+"pid":0,
+"code":"UGA",
+"pinyin":"Uganda",
+"ccode":"ug",
+"level":1
+},
+    {
+        "id":321100001,
+"name":"阿朱马尼",
+"pid":321100000,
+"code":"ADJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100002,
+"name":"阿帕克",
+"pid":321100000,
+"code":"APC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100003,
+"name":"阿鲁阿",
+"pid":321100000,
+"code":"ARU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100004,
+"name":"布谢尼",
+"pid":321100000,
+"code":"BSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100005,
+"name":"布吉里",
+"pid":321100000,
+"code":"BUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100006,
+"name":"本迪布焦",
+"pid":321100000,
+"code":"BUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100007,
+"name":"布西亚",
+"pid":321100000,
+"code":"BUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100008,
+"name":"古卢",
+"pid":321100000,
+"code":"GUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100009,
+"name":"霍伊马",
+"pid":321100000,
+"code":"HOI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100010,
+"name":"伊甘加",
+"pid":321100000,
+"code":"IGA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100011,
+"name":"金贾",
+"pid":321100000,
+"code":"JIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100012,
+"name":"卡贝拉马伊多",
+"pid":321100000,
+"code":"KAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100013,
+"name":"卡兰加拉",
+"pid":321100000,
+"code":"KAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100014,
+"name":"卡姆文盖",
+"pid":321100000,
+"code":"KAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100015,
+"name":"卡农古",
+"pid":321100000,
+"code":"KAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100016,
+"name":"卡巴罗莱",
+"pid":321100000,
+"code":"KAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100017,
+"name":"卡塞塞",
+"pid":321100000,
+"code":"KAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100018,
+"name":"卡永加",
+"pid":321100000,
+"code":"KAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100019,
+"name":"基巴莱",
+"pid":321100000,
+"code":"KBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100020,
+"name":"卡巴莱",
+"pid":321100000,
+"code":"KBL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100021,
+"name":"基博加",
+"pid":321100000,
+"code":"KIB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100022,
+"name":"基索罗",
+"pid":321100000,
+"code":"KIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100023,
+"name":"基特古姆",
+"pid":321100000,
+"code":"KIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100024,
+"name":"卡穆利",
+"pid":321100000,
+"code":"KML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100025,
+"name":"坎帕拉",
+"pid":321100000,
+"code":"KMP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100026,
+"name":"科蒂多",
+"pid":321100000,
+"code":"KOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100027,
+"name":"卡普乔鲁瓦",
+"pid":321100000,
+"code":"KPC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100028,
+"name":"卡塔奎",
+"pid":321100000,
+"code":"KTK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100029,
+"name":"库米",
+"pid":321100000,
+"code":"KUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100030,
+"name":"基恩乔乔",
+"pid":321100000,
+"code":"KYE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100031,
+"name":"利拉",
+"pid":321100000,
+"code":"LIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100032,
+"name":"卢韦罗",
+"pid":321100000,
+"code":"LUW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100033,
+"name":"马萨卡",
+"pid":321100000,
+"code":"MAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100034,
+"name":"马尤盖",
+"pid":321100000,
+"code":"MAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100035,
+"name":"姆巴莱",
+"pid":321100000,
+"code":"MBA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100036,
+"name":"姆巴拉拉",
+"pid":321100000,
+"code":"MBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100037,
+"name":"莫约",
+"pid":321100000,
+"code":"MOY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100038,
+"name":"姆皮吉",
+"pid":321100000,
+"code":"MPI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100039,
+"name":"莫罗托",
+"pid":321100000,
+"code":"MRT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100040,
+"name":"马辛迪",
+"pid":321100000,
+"code":"MSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100041,
+"name":"穆本德",
+"pid":321100000,
+"code":"MUB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100042,
+"name":"穆科诺",
+"pid":321100000,
+"code":"MUK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100043,
+"name":"纳卡皮里皮里特",
+"pid":321100000,
+"code":"NAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100044,
+"name":"内比",
+"pid":321100000,
+"code":"NEB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100045,
+"name":"纳卡松戈拉",
+"pid":321100000,
+"code":"NKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100046,
+"name":"恩通加莫",
+"pid":321100000,
+"code":"NTU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100047,
+"name":"帕德尔",
+"pid":321100000,
+"code":"PAD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100048,
+"name":"帕利萨",
+"pid":321100000,
+"code":"PAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100049,
+"name":"拉卡伊",
+"pid":321100000,
+"code":"RAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100050,
+"name":"鲁昆吉里",
+"pid":321100000,
+"code":"RUK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100051,
+"name":"森巴布莱",
+"pid":321100000,
+"code":"SEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100052,
+"name":"锡龙科",
+"pid":321100000,
+"code":"SIR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100053,
+"name":"索罗提",
+"pid":321100000,
+"code":"SOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100054,
+"name":"托罗罗",
+"pid":321100000,
+"code":"TOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100055,
+"name":"瓦基索",
+"pid":321100000,
+"code":"WAK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":321100056,
+"name":"永贝",
+"pid":321100000,
+"code":"YUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322000000,
+"name":"乌克兰",
+"pid":0,
+"code":"UKR",
+"pinyin":"Ukraine",
+"ccode":"ua",
+"level":1
+},
+    {
+        "id":322100001,
+"name":"第聂伯罗波得罗夫斯克",
+"pid":322100000,
+"code":"12",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100002,
+"name":"顿涅茨克",
+"pid":322100000,
+"code":"14",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100003,
+"name":"日托米尔",
+"pid":322100000,
+"code":"18",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100004,
+"name":"外喀尔巴阡",
+"pid":322100000,
+"code":"21",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100005,
+"name":"扎波罗热",
+"pid":322100000,
+"code":"23",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100006,
+"name":"伊万－弗兰科夫州",
+"pid":322100000,
+"code":"26",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100007,
+"name":"基辅",
+"pid":322100000,
+"code":"30",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100008,
+"name":"基洛夫格勒",
+"pid":322100000,
+"code":"35",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100009,
+"name":"克里米亚自治共和国",
+"pid":322100000,
+"code":"43",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100010,
+"name":"利沃夫",
+"pid":322100000,
+"code":"46",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100011,
+"name":"尼古拉耶夫",
+"pid":322100000,
+"code":"48",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100012,
+"name":"文尼察",
+"pid":322100000,
+"code":"5",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100013,
+"name":"敖德萨",
+"pid":322100000,
+"code":"51",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100014,
+"name":"波尔塔瓦",
+"pid":322100000,
+"code":"53",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100015,
+"name":"罗夫诺",
+"pid":322100000,
+"code":"56",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100016,
+"name":"苏梅",
+"pid":322100000,
+"code":"59",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100017,
+"name":"捷尔诺波尔",
+"pid":322100000,
+"code":"61",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100018,
+"name":"哈尔科夫",
+"pid":322100000,
+"code":"63",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100019,
+"name":"赫尔松州",
+"pid":322100000,
+"code":"65",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100020,
+"name":"赫梅利尼茨基",
+"pid":322100000,
+"code":"68",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100021,
+"name":"沃伦",
+"pid":322100000,
+"code":"7",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100022,
+"name":"切尔卡瑟",
+"pid":322100000,
+"code":"71",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100023,
+"name":"切尔尼戈夫",
+"pid":322100000,
+"code":"74",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100024,
+"name":"切尔诺夫策",
+"pid":322100000,
+"code":"77",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":322100025,
+"name":"卢甘斯克",
+"pid":322100000,
+"code":"9",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":323000000,
+"name":"塞尔维亚",
+"pid":0,
+"code":"SRB",
+"pinyin":"Serbia",
+"ccode":"rs",
+"level":1
+},
+    {
+        "id":324000000,
+"name":"乌拉圭",
+"pid":0,
+"code":"URY",
+"pinyin":"Uruguay",
+"ccode":"uy",
+"level":1
+},
+    {
+        "id":324100001,
+"name":"阿蒂加斯",
+"pid":324100000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100002,
+"name":"卡内洛内斯",
+"pid":324100000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100003,
+"name":"塞罗拉尔戈",
+"pid":324100000,
+"code":"CL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100004,
+"name":"科洛尼亚",
+"pid":324100000,
+"code":"CO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100005,
+"name":"杜拉斯诺",
+"pid":324100000,
+"code":"DU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100006,
+"name":"佛罗里达",
+"pid":324100000,
+"code":"FA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100007,
+"name":"弗洛雷斯",
+"pid":324100000,
+"code":"FS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100008,
+"name":"拉瓦耶哈",
+"pid":324100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100009,
+"name":"马尔多纳多",
+"pid":324100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100010,
+"name":"蒙得维的亚",
+"pid":324100000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100011,
+"name":"派桑杜",
+"pid":324100000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100012,
+"name":"内格罗河",
+"pid":324100000,
+"code":"RN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100013,
+"name":"罗恰",
+"pid":324100000,
+"code":"RO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100014,
+"name":"里韦拉",
+"pid":324100000,
+"code":"RV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100015,
+"name":"圣何塞",
+"pid":324100000,
+"code":"SJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100016,
+"name":"萨尔托",
+"pid":324100000,
+"code":"SL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100017,
+"name":"索里亚诺",
+"pid":324100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100018,
+"name":"塔夸伦博",
+"pid":324100000,
+"code":"TAW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":324100019,
+"name":"三十三人",
+"pid":324100000,
+"code":"TT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325000000,
+"name":"美国",
+"pid":0,
+"code":"USA",
+"pinyin":"United States",
+"ccode":"us",
+"level":1
+},
+    {
+        "id":325101000,
+"name":"阿拉斯加",
+"pid":325000000,
+"code":"AK",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325101001,
+"name":"安克雷奇",
+"pid":325101000,
+"code":"ANC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325101002,
+"name":"费尔班克斯",
+"pid":325101000,
+"code":"FAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325101003,
+"name":"朱诺",
+"pid":325101000,
+"code":"JNU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325102000,
+"name":"阿拉巴马",
+"pid":325000000,
+"code":"AL",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325102001,
+"name":"伯明罕",
+"pid":325102000,
+"code":"BHM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325102002,
+"name":"蒙哥马利",
+"pid":325102000,
+"code":"MGM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325102003,
+"name":"莫比尔",
+"pid":325102000,
+"code":"MOB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325103000,
+"name":"阿肯色",
+"pid":325000000,
+"code":"AR",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325103001,
+"name":"史密斯堡",
+"pid":325103000,
+"code":"FSM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325103002,
+"name":"费耶特维尔",
+"pid":325103000,
+"code":"FYV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325103003,
+"name":"小石城",
+"pid":325103000,
+"code":"LIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104000,
+"name":"亚利桑那",
+"pid":325000000,
+"code":"AZ",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325104001,
+"name":"格兰代尔",
+"pid":325104000,
+"code":"GDA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104002,
+"name":"梅萨",
+"pid":325104000,
+"code":"MQA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104003,
+"name":"凤凰城",
+"pid":325104000,
+"code":"PHX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104004,
+"name":"史卡兹代尔",
+"pid":325104000,
+"code":"STZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104005,
+"name":"坦普",
+"pid":325104000,
+"code":"TPE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104006,
+"name":"图森",
+"pid":325104000,
+"code":"TUC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325104007,
+"name":"优玛",
+"pid":325104000,
+"code":"YUM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325105000,
+"name":"加利福尼亚",
+"pid":325000000,
+"code":"CA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325105001,
+"name":"洛杉矶",
+"pid":325105000,
+"code":"LAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325105002,
+"name":"圣迭戈",
+"pid":325105000,
+"code":"SAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325105003,
+"name":"旧金山",
+"pid":325105000,
+"code":"SFO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325105004,
+"name":"圣何塞",
+"pid":325105000,
+"code":"SJC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106000,
+"name":"科罗拉多",
+"pid":325000000,
+"code":"CO",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325106001,
+"name":"阿斯彭",
+"pid":325106000,
+"code":"ASE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106002,
+"name":"奥罗拉",
+"pid":325106000,
+"code":"AUX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106003,
+"name":"科罗拉多斯普林斯",
+"pid":325106000,
+"code":"COS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106004,
+"name":"丹佛",
+"pid":325106000,
+"code":"DEN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106005,
+"name":"柯林斯堡",
+"pid":325106000,
+"code":"FNL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106006,
+"name":"大章克申",
+"pid":325106000,
+"code":"GJT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106007,
+"name":"韦尔",
+"pid":325106000,
+"code":"VAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325106008,
+"name":"博尔德",
+"pid":325106000,
+"code":"WBU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107000,
+"name":"康涅狄格",
+"pid":325000000,
+"code":"CT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325107001,
+"name":"布里奇波特",
+"pid":325107000,
+"code":"BDR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107002,
+"name":"达里恩",
+"pid":325107000,
+"code":"DAQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107003,
+"name":"格林尼治",
+"pid":325107000,
+"code":"GRH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107004,
+"name":"哈特福德",
+"pid":325107000,
+"code":"HFD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107005,
+"name":"纽黑文",
+"pid":325107000,
+"code":"HVN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107006,
+"name":"米德尔顿",
+"pid":325107000,
+"code":"XIN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107007,
+"name":"新不列颠",
+"pid":325107000,
+"code":"NWT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107008,
+"name":"沃特伯里",
+"pid":325107000,
+"code":"WAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325107009,
+"name":"韦斯特波特",
+"pid":325107000,
+"code":"WPT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325108000,
+"name":"哥伦比亚特区",
+"pid":325000000,
+"code":"DC",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325108001,
+"name":"华盛顿哥伦比亚特区",
+"pid":325108000,
+"code":"WAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325109000,
+"name":"特拉华",
+"pid":325000000,
+"code":"DE",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325109001,
+"name":"多佛",
+"pid":325109000,
+"code":"DOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325109002,
+"name":"威明顿",
+"pid":325109000,
+"code":"ILG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325109003,
+"name":"纽瓦克",
+"pid":325109000,
+"code":"NWK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110000,
+"name":"佛罗里达",
+"pid":325000000,
+"code":"FL",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325110001,
+"name":"卡纳维尔角",
+"pid":325110000,
+"code":"CPV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110002,
+"name":"基韦斯特",
+"pid":325110000,
+"code":"EYW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110003,
+"name":"罗德岱堡",
+"pid":325110000,
+"code":"FLL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110004,
+"name":"杰克逊维尔",
+"pid":325110000,
+"code":"JAX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110005,
+"name":"迈阿密",
+"pid":325110000,
+"code":"MIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110006,
+"name":"奥兰多",
+"pid":325110000,
+"code":"ORL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110007,
+"name":"圣彼德斯堡市",
+"pid":325110000,
+"code":"PIE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110008,
+"name":"塔拉哈西",
+"pid":325110000,
+"code":"TLH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325110009,
+"name":"坦帕",
+"pid":325110000,
+"code":"TPA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325111000,
+"name":"佐治亚",
+"pid":325000000,
+"code":"GA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325111001,
+"name":"奥古斯塔",
+"pid":325111000,
+"code":"AUT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325111002,
+"name":"哥伦布",
+"pid":325111000,
+"code":"CZX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325111003,
+"name":"梅肯",
+"pid":325111000,
+"code":"MCN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325111004,
+"name":"沙瓦纳",
+"pid":325111000,
+"code":"SAV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325111005,
+"name":"亚特兰大",
+"pid":325111000,
+"code":"TAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325112000,
+"name":"夏威夷",
+"pid":325000000,
+"code":"HI",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325112001,
+"name":"檀香山",
+"pid":325112000,
+"code":"HNL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325112002,
+"name":"希洛",
+"pid":325112000,
+"code":"ITO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325112003,
+"name":"凯卢阿",
+"pid":325112000,
+"code":"KHH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325113000,
+"name":"爱荷华",
+"pid":325000000,
+"code":"IA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325113001,
+"name":"锡达拉皮兹",
+"pid":325113000,
+"code":"CID",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325113002,
+"name":"得梅因",
+"pid":325113000,
+"code":"DSM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325113003,
+"name":"达文波特",
+"pid":325113000,
+"code":"DVN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114000,
+"name":"爱达荷",
+"pid":325000000,
+"code":"ID",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325114001,
+"name":"布莱克富特",
+"pid":325114000,
+"code":"BLK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114002,
+"name":"博伊西",
+"pid":325114000,
+"code":"BOI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114003,
+"name":"科达伦",
+"pid":325114000,
+"code":"COE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114004,
+"name":"爱达荷福尔斯",
+"pid":325114000,
+"code":"IDA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114005,
+"name":"岂彻姆",
+"pid":325114000,
+"code":"QKM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114006,
+"name":"刘易斯顿",
+"pid":325114000,
+"code":"LWS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114007,
+"name":"莫斯科",
+"pid":325114000,
+"code":"MJL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114008,
+"name":"楠帕",
+"pid":325114000,
+"code":"NPA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114009,
+"name":"波卡特洛",
+"pid":325114000,
+"code":"PIH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114010,
+"name":"森瓦利",
+"pid":325114000,
+"code":"SVY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114011,
+"name":"亚美利加瀑布城",
+"pid":325114000,
+"code":"YAF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325114012,
+"name":"墨菲",
+"pid":325114000,
+"code":"ZMU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115000,
+"name":"伊利诺斯",
+"pid":325000000,
+"code":"IL",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325115001,
+"name":"奥尔顿",
+"pid":325115000,
+"code":"ALN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115002,
+"name":"奥罗拉",
+"pid":325115000,
+"code":"AUZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115003,
+"name":"布卢明顿",
+"pid":325115000,
+"code":"BLO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115004,
+"name":"芝加哥",
+"pid":325115000,
+"code":"CHI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115005,
+"name":"厄巴纳-香槟",
+"pid":325115000,
+"code":"CMI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115006,
+"name":"森特勒利亚",
+"pid":325115000,
+"code":"CRA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115007,
+"name":"迪凯持",
+"pid":325115000,
+"code":"DEC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115008,
+"name":"迪卡尔布",
+"pid":325115000,
+"code":"DEK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115009,
+"name":"丹维尓",
+"pid":325115000,
+"code":"DVI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115010,
+"name":"东圣路易斯",
+"pid":325115000,
+"code":"ESL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115011,
+"name":"盖尔斯堡",
+"pid":325115000,
+"code":"GSU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115012,
+"name":"卡本代尔",
+"pid":325115000,
+"code":"MDH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115013,
+"name":"诺黙尔",
+"pid":325115000,
+"code":"NOM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115014,
+"name":"皮奥里亚",
+"pid":325115000,
+"code":"PLA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115015,
+"name":"罗克福德",
+"pid":325115000,
+"code":"RFD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115016,
+"name":"罗克艾兰",
+"pid":325115000,
+"code":"RKI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115017,
+"name":"斯普林菲尔德",
+"pid":325115000,
+"code":"SPI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325115018,
+"name":"沃其根",
+"pid":325115000,
+"code":"UGN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325116000,
+"name":"印第安那",
+"pid":325000000,
+"code":"IN",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325116001,
+"name":"埃文斯维尔",
+"pid":325116000,
+"code":"EVV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325116002,
+"name":"韦恩堡",
+"pid":325116000,
+"code":"FWA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325116003,
+"name":"印第安纳波利斯",
+"pid":325116000,
+"code":"IND",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117000,
+"name":"堪萨斯",
+"pid":325000000,
+"code":"KS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325117001,
+"name":"阿比林",
+"pid":325117000,
+"code":"ABZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117002,
+"name":"哈钦森",
+"pid":325117000,
+"code":"HCH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117003,
+"name":"莱文沃思",
+"pid":325117000,
+"code":"XIA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117004,
+"name":"威奇托",
+"pid":325117000,
+"code":"ICT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117005,
+"name":"堪萨斯城",
+"pid":325117000,
+"code":"KCK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117006,
+"name":"劳伦斯",
+"pid":325117000,
+"code":"LWC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117007,
+"name":"曼哈顿",
+"pid":325117000,
+"code":"MHK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117008,
+"name":"奥弗兰公园",
+"pid":325117000,
+"code":"OVL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325117009,
+"name":"托皮卡",
+"pid":325117000,
+"code":"TOP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325118000,
+"name":"肯塔基",
+"pid":325000000,
+"code":"KY",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325118001,
+"name":"列克星敦",
+"pid":325118000,
+"code":"LEX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325118002,
+"name":"路易斯维尔",
+"pid":325118000,
+"code":"LUI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325118003,
+"name":"欧文斯伯勒",
+"pid":325118000,
+"code":"OWB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325119000,
+"name":"路易斯安那",
+"pid":325000000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325119001,
+"name":"巴吞鲁日",
+"pid":325119000,
+"code":"BTR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325119002,
+"name":"新奥尔良",
+"pid":325119000,
+"code":"MSY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325119003,
+"name":"什里夫波特",
+"pid":325119000,
+"code":"SHV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325120000,
+"name":"马萨诸塞",
+"pid":325000000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325120001,
+"name":"波士顿",
+"pid":325120000,
+"code":"BZD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325120002,
+"name":"伍斯特",
+"pid":325120000,
+"code":"ORH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325120003,
+"name":"斯普林菲尔德",
+"pid":325120000,
+"code":"SFY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325121000,
+"name":"马里兰",
+"pid":325000000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325121001,
+"name":"巴尔的摩",
+"pid":325121000,
+"code":"BAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325121002,
+"name":"盖瑟斯堡",
+"pid":325121000,
+"code":"GAI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325121003,
+"name":"罗克维尔",
+"pid":325121000,
+"code":"RKV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325122000,
+"name":"缅因",
+"pid":325000000,
+"code":"ME",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325122001,
+"name":"班戈",
+"pid":325122000,
+"code":"BNQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325122002,
+"name":"刘易斯顿",
+"pid":325122000,
+"code":"QLW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325122003,
+"name":"波特兰",
+"pid":325122000,
+"code":"POL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123000,
+"name":"密歇根",
+"pid":325000000,
+"code":"MI",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325123001,
+"name":"安娜堡",
+"pid":325123000,
+"code":"ARB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123002,
+"name":"卡拉马袓",
+"pid":325123000,
+"code":"AZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123003,
+"name":"贝城",
+"pid":325123000,
+"code":"BCY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123004,
+"name":"巴特尔克里克",
+"pid":325123000,
+"code":"BTL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123005,
+"name":"迪尔伯恩",
+"pid":325123000,
+"code":"DEO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123006,
+"name":"底特律",
+"pid":325123000,
+"code":"DET",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123007,
+"name":"弗林特",
+"pid":325123000,
+"code":"FNT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123008,
+"name":"大急流城",
+"pid":325123000,
+"code":"GRR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123009,
+"name":"兰辛",
+"pid":325123000,
+"code":"LAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123010,
+"name":"马斯基根",
+"pid":325123000,
+"code":"MKG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123011,
+"name":"休伦港",
+"pid":325123000,
+"code":"PHN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123012,
+"name":"庞菷亚克",
+"pid":325123000,
+"code":"PTK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123013,
+"name":"萨吉诺",
+"pid":325123000,
+"code":"SGM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123014,
+"name":"苏圣玛丽",
+"pid":325123000,
+"code":"SSM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123015,
+"name":"沃伦",
+"pid":325123000,
+"code":"WAM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325123016,
+"name":"怀恩多特",
+"pid":325123000,
+"code":"WYD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325124000,
+"name":"明尼苏达",
+"pid":325000000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325124001,
+"name":"明尼阿波利斯",
+"pid":325124000,
+"code":"MES",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325124002,
+"name":"罗切斯特",
+"pid":325124000,
+"code":"RST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325124003,
+"name":"圣保罗",
+"pid":325124000,
+"code":"STP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325125000,
+"name":"密苏里",
+"pid":325000000,
+"code":"MO",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325125001,
+"name":"哥伦比亚",
+"pid":325125000,
+"code":"COV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325125002,
+"name":"杰佛逊市",
+"pid":325125000,
+"code":"JEF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325125003,
+"name":"堪萨斯城",
+"pid":325125000,
+"code":"MKC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325125004,
+"name":"斯普林菲尔德",
+"pid":325125000,
+"code":"SGF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325125005,
+"name":"圣路易斯",
+"pid":325125000,
+"code":"STL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126000,
+"name":"密西西比",
+"pid":325000000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325126001,
+"name":"比洛克西",
+"pid":325126000,
+"code":"BIX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126002,
+"name":"格林维尔",
+"pid":325126000,
+"code":"GLH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126003,
+"name":"格尔夫波特",
+"pid":325126000,
+"code":"GPT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126004,
+"name":"哈蒂斯堡",
+"pid":325126000,
+"code":"HBG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126005,
+"name":"杰克逊",
+"pid":325126000,
+"code":"JAN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126006,
+"name":"默里迪恩",
+"pid":325126000,
+"code":"MEI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325126007,
+"name":"维克斯堡",
+"pid":325126000,
+"code":"VKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325127000,
+"name":"蒙大拿",
+"pid":325000000,
+"code":"MT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325127001,
+"name":"比灵斯",
+"pid":325127000,
+"code":"BGS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325127002,
+"name":"大瀑布村",
+"pid":325127000,
+"code":"GTF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325127003,
+"name":"米苏拉",
+"pid":325127000,
+"code":"MSO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128000,
+"name":"北卡罗来纳",
+"pid":325000000,
+"code":"NC",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325128001,
+"name":"艾许维尔",
+"pid":325128000,
+"code":"AEV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128002,
+"name":"教堂山",
+"pid":325128000,
+"code":"CHE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128003,
+"name":"夏洛特",
+"pid":325128000,
+"code":"CRQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128004,
+"name":"杜罕",
+"pid":325128000,
+"code":"DHH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128005,
+"name":"格林斯伯勒",
+"pid":325128000,
+"code":"GBO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128006,
+"name":"罗利",
+"pid":325128000,
+"code":"RAG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325128007,
+"name":"洛利杜罕都会区",
+"pid":325128000,
+"code":"RDU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325129000,
+"name":"北达科他",
+"pid":325000000,
+"code":"ND",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325129001,
+"name":"俾斯麦",
+"pid":325129000,
+"code":"BIS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325129002,
+"name":"法戈",
+"pid":325129000,
+"code":"FAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325129003,
+"name":"大福克斯",
+"pid":325129000,
+"code":"GFK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325129004,
+"name":"迈诺特",
+"pid":325129000,
+"code":"MOT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325130000,
+"name":"内布拉斯加",
+"pid":325000000,
+"code":"NE",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325130001,
+"name":"贝尔维尤",
+"pid":325130000,
+"code":"XDE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325130002,
+"name":"林肯",
+"pid":325130000,
+"code":"LNK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325130003,
+"name":"奥马哈",
+"pid":325130000,
+"code":"OMA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325131000,
+"name":"新罕布什尔",
+"pid":325000000,
+"code":"NH",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325131001,
+"name":"纳舒厄",
+"pid":325131000,
+"code":"ASH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325131002,
+"name":"康科德",
+"pid":325131000,
+"code":"CON",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325131003,
+"name":"曼彻斯特",
+"pid":325131000,
+"code":"MHT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325132000,
+"name":"新泽西",
+"pid":325000000,
+"code":"NJ",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325132001,
+"name":"泽西城",
+"pid":325132000,
+"code":"JEC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325132002,
+"name":"纽瓦克",
+"pid":325132000,
+"code":"NRK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325132003,
+"name":"帕特森",
+"pid":325132000,
+"code":"PAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325133000,
+"name":"新墨西哥",
+"pid":325000000,
+"code":"NM",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325133001,
+"name":"阿尔伯克基",
+"pid":325133000,
+"code":"ABQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325133002,
+"name":"拉斯克鲁塞斯",
+"pid":325133000,
+"code":"LRU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325133003,
+"name":"罗斯韦尔",
+"pid":325133000,
+"code":"ROW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325133004,
+"name":"圣菲",
+"pid":325133000,
+"code":"SAF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134000,
+"name":"内华达",
+"pid":325000000,
+"code":"NV",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325134001,
+"name":"卡森城",
+"pid":325134000,
+"code":"CSN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134002,
+"name":"埃尔科",
+"pid":325134000,
+"code":"EKO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134003,
+"name":"亨德森",
+"pid":325134000,
+"code":"HNZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134004,
+"name":"拉斯维加斯",
+"pid":325134000,
+"code":"LAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134005,
+"name":"北拉斯维加斯",
+"pid":325134000,
+"code":"NVS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134006,
+"name":"里诺",
+"pid":325134000,
+"code":"RNO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134007,
+"name":"斯帕克斯",
+"pid":325134000,
+"code":"SPK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325134008,
+"name":"弗吉尼亚城",
+"pid":325134000,
+"code":"VGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325135000,
+"name":"纽约",
+"pid":325000000,
+"code":"NY",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325135001,
+"name":"布法罗",
+"pid":325135000,
+"code":"FFO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325135002,
+"name":"纽约市",
+"pid":325135000,
+"code":"QEE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325135003,
+"name":"罗切斯特",
+"pid":325135000,
+"code":"ROC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325136000,
+"name":"俄亥俄",
+"pid":325000000,
+"code":"OH",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325136001,
+"name":"克利夫兰",
+"pid":325136000,
+"code":"CLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325136002,
+"name":"辛辛那提",
+"pid":325136000,
+"code":"CVG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325136003,
+"name":"哥伦布",
+"pid":325136000,
+"code":"CZX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325136004,
+"name":"代顿",
+"pid":325136000,
+"code":"DYT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325136005,
+"name":"托莱多",
+"pid":325136000,
+"code":"TOL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325137000,
+"name":"俄克拉荷马",
+"pid":325000000,
+"code":"OK",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325137001,
+"name":"俄克拉荷马城",
+"pid":325137000,
+"code":"OKC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325137002,
+"name":"诺曼",
+"pid":325137000,
+"code":"OUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325137003,
+"name":"塔尔萨",
+"pid":325137000,
+"code":"TUL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138000,
+"name":"俄勒冈",
+"pid":325000000,
+"code":"OR",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325138001,
+"name":"本德",
+"pid":325138000,
+"code":"BZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138002,
+"name":"库斯贝",
+"pid":325138000,
+"code":"COB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138003,
+"name":"火山口湖",
+"pid":325138000,
+"code":"CTR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138004,
+"name":"达拉斯",
+"pid":325138000,
+"code":"DAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138005,
+"name":"达尔斯",
+"pid":325138000,
+"code":"DLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138006,
+"name":"尤金",
+"pid":325138000,
+"code":"EUG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138007,
+"name":"胡德里弗",
+"pid":325138000,
+"code":"HDX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138008,
+"name":"格兰茨帕斯",
+"pid":325138000,
+"code":"XFX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138009,
+"name":"梅德福",
+"pid":325138000,
+"code":"MFR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138010,
+"name":"波特兰",
+"pid":325138000,
+"code":"PDX",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138011,
+"name":"塞勒姆",
+"pid":325138000,
+"code":"SLE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138012,
+"name":"斯普林菲尔德",
+"pid":325138000,
+"code":"SPY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138013,
+"name":"圣海伦斯",
+"pid":325138000,
+"code":"STH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138014,
+"name":"蒂拉穆克",
+"pid":325138000,
+"code":"TLM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325138015,
+"name":"科瓦利斯",
+"pid":325138000,
+"code":"YCV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325139000,
+"name":"宾夕法尼亚",
+"pid":325000000,
+"code":"PA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325139001,
+"name":"阿伦敦",
+"pid":325139000,
+"code":"AEW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325139002,
+"name":"费城",
+"pid":325139000,
+"code":"PHL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325139003,
+"name":"匹兹堡",
+"pid":325139000,
+"code":"PIT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140000,
+"name":"罗德岛",
+"pid":325000000,
+"code":"RI",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325140001,
+"name":"克兰斯顿",
+"pid":325140000,
+"code":"CQH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140002,
+"name":"纽波特",
+"pid":325140000,
+"code":"NPO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140003,
+"name":"波塔基特",
+"pid":325140000,
+"code":"PAW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140004,
+"name":"普罗维登斯",
+"pid":325140000,
+"code":"PVD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140005,
+"name":"文索基特",
+"pid":325140000,
+"code":"SFN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140006,
+"name":"沃威克",
+"pid":325140000,
+"code":"UZO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325140007,
+"name":"韦斯特利",
+"pid":325140000,
+"code":"WST",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325141000,
+"name":"南卡罗来纳",
+"pid":325000000,
+"code":"SC",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325141001,
+"name":"查尔斯顿",
+"pid":325141000,
+"code":"CHS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325141002,
+"name":"哥伦比亚",
+"pid":325141000,
+"code":"COV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325141003,
+"name":"北查尔斯顿",
+"pid":325141000,
+"code":"NTS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325142000,
+"name":"南达科他",
+"pid":325000000,
+"code":"SD",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325142001,
+"name":"阿伯丁",
+"pid":325142000,
+"code":"ABK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325142002,
+"name":"苏福尔斯",
+"pid":325142000,
+"code":"FSD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325142003,
+"name":"拉皮德城",
+"pid":325142000,
+"code":"RAP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143000,
+"name":"德克萨斯",
+"pid":325000000,
+"code":"TX",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325143001,
+"name":"奥斯汀",
+"pid":325143000,
+"code":"AUS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143002,
+"name":"哥帕斯基斯蒂",
+"pid":325143000,
+"code":"CRP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143003,
+"name":"达拉斯",
+"pid":325143000,
+"code":"DAL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143004,
+"name":"埃尔帕索",
+"pid":325143000,
+"code":"ELP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143005,
+"name":"交维斯顿",
+"pid":325143000,
+"code":"GLS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143006,
+"name":"休斯敦",
+"pid":325143000,
+"code":"HOU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143007,
+"name":"拉雷多",
+"pid":325143000,
+"code":"LRD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143008,
+"name":"圣安东尼奥",
+"pid":325143000,
+"code":"SAT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325143009,
+"name":"麦亚伦",
+"pid":325143000,
+"code":"TXC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144000,
+"name":"田纳西",
+"pid":325000000,
+"code":"TN",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325144001,
+"name":"纳什维尔",
+"pid":325144000,
+"code":"BNA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144002,
+"name":"布利斯托",
+"pid":325144000,
+"code":"BSJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144003,
+"name":"查塔努加",
+"pid":325144000,
+"code":"CHA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144004,
+"name":"约翰逊城",
+"pid":325144000,
+"code":"JCY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144005,
+"name":"孟菲斯",
+"pid":325144000,
+"code":"MEM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144006,
+"name":"士麦那",
+"pid":325144000,
+"code":"MQY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144007,
+"name":"斯普林希尔",
+"pid":325144000,
+"code":"RGI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144008,
+"name":"金斯波特",
+"pid":325144000,
+"code":"TRI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144009,
+"name":"诺克斯维尔",
+"pid":325144000,
+"code":"TYS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325144010,
+"name":"三城区",
+"pid":325144000,
+"code":"YTC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145000,
+"name":"犹他",
+"pid":325000000,
+"code":"UT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325145001,
+"name":"雷登",
+"pid":325145000,
+"code":"LTJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145002,
+"name":"欧仁",
+"pid":325145000,
+"code":"OEU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145003,
+"name":"奥格登",
+"pid":325145000,
+"code":"OGD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145004,
+"name":"帕克城",
+"pid":325145000,
+"code":"PAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145005,
+"name":"普罗沃",
+"pid":325145000,
+"code":"PVU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145006,
+"name":"圣乔治",
+"pid":325145000,
+"code":"SGU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145007,
+"name":"盐湖城",
+"pid":325145000,
+"code":"SLC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325145008,
+"name":"西瓦利城",
+"pid":325145000,
+"code":"WVC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325146000,
+"name":"维吉尼亚",
+"pid":325000000,
+"code":"VA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325146001,
+"name":"切萨皮克",
+"pid":325146000,
+"code":"HTW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325146002,
+"name":"诺福克",
+"pid":325146000,
+"code":"ORF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325146003,
+"name":"弗吉尼亚比奇",
+"pid":325146000,
+"code":"VAB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325147000,
+"name":"佛蒙特",
+"pid":325000000,
+"code":"VT",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325147001,
+"name":"伯灵顿",
+"pid":325147000,
+"code":"BTV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325147002,
+"name":"拉特兰",
+"pid":325147000,
+"code":"RUT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325147003,
+"name":"南伯灵顿",
+"pid":325147000,
+"code":"ZBR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325148000,
+"name":"华盛顿",
+"pid":325000000,
+"code":"WA",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325148001,
+"name":"斯波坎",
+"pid":325148000,
+"code":"GEG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325148002,
+"name":"西雅图",
+"pid":325148000,
+"code":"SEA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325148003,
+"name":"塔科马",
+"pid":325148000,
+"code":"TTW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149000,
+"name":"威斯康星",
+"pid":325000000,
+"code":"WI",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325149001,
+"name":"阿普尓顿",
+"pid":325149000,
+"code":"ATW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149002,
+"name":"沃索",
+"pid":325149000,
+"code":"AUW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149003,
+"name":"欧克莱尓",
+"pid":325149000,
+"code":"EAU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149004,
+"name":"基诺沙",
+"pid":325149000,
+"code":"ENW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149005,
+"name":"格林贝",
+"pid":325149000,
+"code":"GBK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149006,
+"name":"迈迪逊",
+"pid":325149000,
+"code":"QMD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149007,
+"name":"拉克罗斯",
+"pid":325149000,
+"code":"LSE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149008,
+"name":"密尔沃基",
+"pid":325149000,
+"code":"MKE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149009,
+"name":"马尼托沃克",
+"pid":325149000,
+"code":"MTW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149010,
+"name":"奥什科什",
+"pid":325149000,
+"code":"OSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149011,
+"name":"拉辛",
+"pid":325149000,
+"code":"RAC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325149012,
+"name":"希博伊根",
+"pid":325149000,
+"code":"SBM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325150000,
+"name":"西佛吉尼亚",
+"pid":325000000,
+"code":"WV",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325150001,
+"name":"查尔斯顿",
+"pid":325150000,
+"code":"CRW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325150002,
+"name":"亨廷顿",
+"pid":325150000,
+"code":"HNU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325150003,
+"name":"帕克斯堡",
+"pid":325150000,
+"code":"PKB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151000,
+"name":"怀俄明",
+"pid":325000000,
+"code":"WY",
+"pinyin":null,
+"ccode":null,
+"level":2
+},
+    {
+        "id":325151001,
+"name":"卡斯珀",
+"pid":325151000,
+"code":"CPR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151002,
+"name":"夏延",
+"pid":325151000,
+"code":"CYS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151003,
+"name":"埃文斯顿",
+"pid":325151000,
+"code":"EVD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151004,
+"name":"拉勒米",
+"pid":325151000,
+"code":"LAR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151005,
+"name":"罗克斯普林斯",
+"pid":325151000,
+"code":"RKS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":325151006,
+"name":"谢里登",
+"pid":325151000,
+"code":"SHR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326000000,
+"name":"乌兹别克斯坦",
+"pid":0,
+"code":"UZB",
+"pinyin":"Uzbekistan",
+"ccode":"uz",
+"level":1
+},
+    {
+        "id":326100001,
+"name":"安集延",
+"pid":326100000,
+"code":"AN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100002,
+"name":"布哈拉",
+"pid":326100000,
+"code":"BU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100003,
+"name":"费尔干纳",
+"pid":326100000,
+"code":"FA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100004,
+"name":"花拉子模",
+"pid":326100000,
+"code":"XO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100005,
+"name":"吉扎克",
+"pid":326100000,
+"code":"JI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100006,
+"name":"卡什卡达里亚",
+"pid":326100000,
+"code":"QA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100007,
+"name":"卡拉卡尔帕克斯坦共和国",
+"pid":326100000,
+"code":"QR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100008,
+"name":"纳曼干",
+"pid":326100000,
+"code":"NG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100009,
+"name":"纳沃伊",
+"pid":326100000,
+"code":"NW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100010,
+"name":"撒马尔罕",
+"pid":326100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100011,
+"name":"锡尔河",
+"pid":326100000,
+"code":"SI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100012,
+"name":"苏尔汉河",
+"pid":326100000,
+"code":"SU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100013,
+"name":"塔什干",
+"pid":326100000,
+"code":"TK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":326100014,
+"name":"塔什干市",
+"pid":326100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":327000000,
+"name":"梵蒂冈",
+"pid":0,
+"code":"VAT",
+"pinyin":"Vatican City",
+"ccode":"va",
+"level":1
+},
+    {
+        "id":328000000,
+"name":"圣文森特和格林纳丁斯",
+"pid":0,
+"code":"VCT",
+"pinyin":"Saint Vincent and the Grenadines",
+"ccode":"vc",
+"level":1
+},
+    {
+        "id":329000000,
+"name":"委内瑞拉",
+"pid":0,
+"code":"VEN",
+"pinyin":"Venezuela",
+"ccode":"ve",
+"level":1
+},
+    {
+        "id":329100001,
+"name":"加拉加斯",
+"pid":329100000,
+"code":"A",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100002,
+"name":"安索阿特吉",
+"pid":329100000,
+"code":"B",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100003,
+"name":"阿普雷",
+"pid":329100000,
+"code":"C",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100004,
+"name":"阿拉瓜",
+"pid":329100000,
+"code":"D",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100005,
+"name":"巴里纳斯",
+"pid":329100000,
+"code":"E",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100006,
+"name":"玻利瓦尔",
+"pid":329100000,
+"code":"F",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100007,
+"name":"卡拉沃沃",
+"pid":329100000,
+"code":"G",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100008,
+"name":"科赫德斯",
+"pid":329100000,
+"code":"H",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100009,
+"name":"法尔孔",
+"pid":329100000,
+"code":"I",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100010,
+"name":"瓜里科",
+"pid":329100000,
+"code":"J",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100011,
+"name":"拉腊",
+"pid":329100000,
+"code":"K",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100012,
+"name":"梅里达",
+"pid":329100000,
+"code":"L",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100013,
+"name":"米兰达",
+"pid":329100000,
+"code":"M",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100014,
+"name":"莫纳加斯",
+"pid":329100000,
+"code":"N",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100015,
+"name":"新埃斯帕塔",
+"pid":329100000,
+"code":"O",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100016,
+"name":"波图格萨",
+"pid":329100000,
+"code":"P",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100017,
+"name":"苏克雷",
+"pid":329100000,
+"code":"R",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100018,
+"name":"塔奇拉",
+"pid":329100000,
+"code":"S",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100019,
+"name":"特鲁希略",
+"pid":329100000,
+"code":"T",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100020,
+"name":"亚拉奎",
+"pid":329100000,
+"code":"U",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100021,
+"name":"苏利亚",
+"pid":329100000,
+"code":"V",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100022,
+"name":"联邦属地",
+"pid":329100000,
+"code":"W",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100023,
+"name":"阿马库罗三角洲",
+"pid":329100000,
+"code":"Y",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":329100024,
+"name":"亚马孙",
+"pid":329100000,
+"code":"Z",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":330000000,
+"name":"英属维尔京群岛",
+"pid":0,
+"code":"VGB",
+"pinyin":"British Virgin Islands",
+"ccode":"vg",
+"level":1
+},
+    {
+        "id":331000000,
+"name":"美属维尔京群岛",
+"pid":0,
+"code":"VIR",
+"pinyin":"U.S. Virgin Islands",
+"ccode":"vi",
+"level":1
+},
+    {
+        "id":332000000,
+"name":"越南",
+"pid":0,
+"code":"VNM",
+"pinyin":"Vietnam",
+"ccode":"vn",
+"level":1
+},
+    {
+        "id":332100001,
+"name":"胡志明市",
+"pid":332100000,
+"code":"HC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":332100002,
+"name":"河内",
+"pid":332100000,
+"code":"HI",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":332100003,
+"name":"海防",
+"pid":332100000,
+"code":"HP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333000000,
+"name":"瓦努阿图",
+"pid":0,
+"code":"VUT",
+"pinyin":"Vanuatu",
+"ccode":"vu",
+"level":1
+},
+    {
+        "id":333100001,
+"name":"马朗帕",
+"pid":333100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333100002,
+"name":"彭纳马",
+"pid":333100000,
+"code":"PE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333100003,
+"name":"桑马",
+"pid":333100000,
+"code":"SA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333100004,
+"name":"谢法",
+"pid":333100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333100005,
+"name":"塔菲阿",
+"pid":333100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":333100006,
+"name":"托尔巴",
+"pid":333100000,
+"code":"TO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":334000000,
+"name":"瓦利斯和富图纳",
+"pid":0,
+"code":"WLF",
+"pinyin":"Wallis and Futuna",
+"ccode":"wf",
+"level":1
+},
+    {
+        "id":335000000,
+"name":"萨摩亚",
+"pid":0,
+"code":"WSM",
+"pinyin":"American Samoa",
+"ccode":"as",
+"level":1
+},
+    {
+        "id":336000000,
+"name":"也门",
+"pid":0,
+"code":"YEM",
+"pinyin":"Yemen",
+"ccode":"ye",
+"level":1
+},
+    {
+        "id":336100001,
+"name":"阿比扬",
+"pid":336100000,
+"code":"AB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100002,
+"name":"亚丁",
+"pid":336100000,
+"code":"AD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100003,
+"name":"阿姆兰",
+"pid":336100000,
+"code":"AM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100004,
+"name":"希赫尔",
+"pid":336100000,
+"code":"ASR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100005,
+"name":"贝达",
+"pid":336100000,
+"code":"BA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100006,
+"name":"达利",
+"pid":336100000,
+"code":"DA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100007,
+"name":"扎玛尔",
+"pid":336100000,
+"code":"DH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100008,
+"name":"赛文",
+"pid":336100000,
+"code":"GXF",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100009,
+"name":"哈德拉毛",
+"pid":336100000,
+"code":"HD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100010,
+"name":"哈杰",
+"pid":336100000,
+"code":"HJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100011,
+"name":"荷台达",
+"pid":336100000,
+"code":"HU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100012,
+"name":"伊卜",
+"pid":336100000,
+"code":"IB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100013,
+"name":"焦夫",
+"pid":336100000,
+"code":"JA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100014,
+"name":"拉赫季",
+"pid":336100000,
+"code":"LA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100015,
+"name":"马里卜",
+"pid":336100000,
+"code":"MA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100016,
+"name":"迈赫拉",
+"pid":336100000,
+"code":"MR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100017,
+"name":"迈赫维特",
+"pid":336100000,
+"code":"MW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100018,
+"name":"萨达",
+"pid":336100000,
+"code":"SD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100019,
+"name":"舍卜沃",
+"pid":336100000,
+"code":"SH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100020,
+"name":"萨那",
+"pid":336100000,
+"code":"SN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":336100021,
+"name":"塔伊兹",
+"pid":336100000,
+"code":"TA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337000000,
+"name":"南非",
+"pid":0,
+"code":"ZAF",
+"pinyin":"South Africa",
+"ccode":"za",
+"level":1
+},
+    {
+        "id":337100001,
+"name":"东巴克利",
+"pid":337100000,
+"code":"BAE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100002,
+"name":"布雷达斯多普",
+"pid":337100000,
+"code":"BDD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100003,
+"name":"西博福特",
+"pid":337100000,
+"code":"BEW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100004,
+"name":"布隆方丹",
+"pid":337100000,
+"code":"BFN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100005,
+"name":"布隆克斯特斯普利特",
+"pid":337100000,
+"code":"BHT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100006,
+"name":"比索",
+"pid":337100000,
+"code":"BIY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100007,
+"name":"开普敦",
+"pid":337100000,
+"code":"CPT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100008,
+"name":"德阿尔",
+"pid":337100000,
+"code":"DAA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100009,
+"name":"邓迪",
+"pid":337100000,
+"code":"DUN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100010,
+"name":"德班",
+"pid":337100000,
+"code":"DUR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100011,
+"name":"东伦敦",
+"pid":337100000,
+"code":"ELS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100012,
+"name":"格罗布莱斯达尔",
+"pid":337100000,
+"code":"GBD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100013,
+"name":"基雅尼",
+"pid":337100000,
+"code":"GIY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100014,
+"name":"乔治",
+"pid":337100000,
+"code":"GRJ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100015,
+"name":"特克索波",
+"pid":337100000,
+"code":"IXO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100016,
+"name":"约翰内斯堡",
+"pid":337100000,
+"code":"JNB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100017,
+"name":"克莱克斯多普",
+"pid":337100000,
+"code":"KXE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100018,
+"name":"金伯利",
+"pid":337100000,
+"code":"KIM",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100019,
+"name":"库鲁曼",
+"pid":337100000,
+"code":"KMH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100020,
+"name":"莱迪史密斯",
+"pid":337100000,
+"code":"LAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100021,
+"name":"艾利弗山",
+"pid":337100000,
+"code":"MAY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100022,
+"name":"米德尔堡",
+"pid":337100000,
+"code":"MDB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100023,
+"name":"穆里斯堡",
+"pid":337100000,
+"code":"MOO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100024,
+"name":"姆库泽",
+"pid":337100000,
+"code":"MZQ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100025,
+"name":"纽卡斯尔",
+"pid":337100000,
+"code":"NCS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100026,
+"name":"内尔斯普雷特",
+"pid":337100000,
+"code":"NLP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100027,
+"name":"尼尔斯特隆",
+"pid":337100000,
+"code":"NYL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100028,
+"name":"伊丽莎白港",
+"pid":337100000,
+"code":"PLZ",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100029,
+"name":"比勒陀利亚",
+"pid":337100000,
+"code":"PRY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100030,
+"name":"谢普斯通港",
+"pid":337100000,
+"code":"PSS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100031,
+"name":"彼德斯堡",
+"pid":337100000,
+"code":"PTG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100032,
+"name":"彼德马里茨堡",
+"pid":337100000,
+"code":"PZB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100033,
+"name":"理查兹湾",
+"pid":337100000,
+"code":"RCB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100034,
+"name":"兰德方丹",
+"pid":337100000,
+"code":"RFT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100035,
+"name":"利斯滕堡",
+"pid":337100000,
+"code":"RSB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100036,
+"name":"萨索尔堡",
+"pid":337100000,
+"code":"SAS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100037,
+"name":"跳羚",
+"pid":337100000,
+"code":"SBU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100038,
+"name":"托霍延杜",
+"pid":337100000,
+"code":"THY",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100039,
+"name":"图拉马哈谢",
+"pid":337100000,
+"code":"TLH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100040,
+"name":"特隆普斯堡",
+"pid":337100000,
+"code":"TPB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100041,
+"name":"乌伦迪",
+"pid":337100000,
+"code":"ULD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100042,
+"name":"阿平顿",
+"pid":337100000,
+"code":"UTN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100043,
+"name":"乌姆塔塔",
+"pid":337100000,
+"code":"UTT",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100044,
+"name":"昆士敦",
+"pid":337100000,
+"code":"UTW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100045,
+"name":"弗里尼欣",
+"pid":337100000,
+"code":"VGG",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100046,
+"name":"弗雷堡",
+"pid":337100000,
+"code":"VRU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100047,
+"name":"韦尔科姆",
+"pid":337100000,
+"code":"WEL",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100048,
+"name":"伍斯特",
+"pid":337100000,
+"code":"WOR",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100049,
+"name":"韦茨肖克",
+"pid":337100000,
+"code":"WSH",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":337100050,
+"name":"瑟孔达",
+"pid":337100000,
+"code":"ZEC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338000000,
+"name":"赞比亚",
+"pid":0,
+"code":"ZMB",
+"pinyin":"Zambia",
+"ccode":"zm",
+"level":1
+},
+    {
+        "id":338100001,
+"name":"铜带",
+"pid":338100000,
+"code":"CB",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100002,
+"name":"中央",
+"pid":338100000,
+"code":"CE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100003,
+"name":"东方",
+"pid":338100000,
+"code":"EA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100004,
+"name":"卢萨卡",
+"pid":338100000,
+"code":"LK",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100005,
+"name":"卢阿普拉",
+"pid":338100000,
+"code":"LP",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100006,
+"name":"北方",
+"pid":338100000,
+"code":"NO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100007,
+"name":"西北",
+"pid":338100000,
+"code":"NW",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100008,
+"name":"南方",
+"pid":338100000,
+"code":"SO",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":338100009,
+"name":"西方",
+"pid":338100000,
+"code":"WE",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339000000,
+"name":"津巴布韦",
+"pid":0,
+"code":"ZWE",
+"pinyin":"Zimbabwe",
+"ccode":"zw",
+"level":1
+},
+    {
+        "id":339100001,
+"name":"布拉瓦约",
+"pid":339100000,
+"code":"BU",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100002,
+"name":"哈拉雷",
+"pid":339100000,
+"code":"HA",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100003,
+"name":"中马绍纳兰",
+"pid":339100000,
+"code":"MC",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100004,
+"name":"中部",
+"pid":339100000,
+"code":"MD",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100005,
+"name":"东马绍纳兰",
+"pid":339100000,
+"code":"ME",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100006,
+"name":"马尼卡兰",
+"pid":339100000,
+"code":"ML",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100007,
+"name":"北马塔贝莱兰",
+"pid":339100000,
+"code":"MN",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100008,
+"name":"南马塔贝莱兰",
+"pid":339100000,
+"code":"MS",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100009,
+"name":"马斯温戈",
+"pid":339100000,
+"code":"MV",
+"pinyin":null,
+"ccode":null,
+"level":3
+},
+    {
+        "id":339100010,
+"name":"西马绍纳兰",
+"pid":339100000,
+"code":"MW",
+"pinyin":null,
+"ccode":null,
+"level":3
+}
+]
+EOT;
+
+    /**
+     * 获取地区数组
+     * @return mixed
+     */
+    public static function getAreas() {
+        return json_decode(self::$areas, true);
+    }
+}

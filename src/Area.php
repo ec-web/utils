@@ -5,7 +5,10 @@
  * @author Janson
  * @create 2017-07-14
  */
+
 namespace EC\Utils;
+
+use EC\Utils\AreaData;
 
 class Area {
     /**
@@ -322,6 +325,56 @@ class Area {
     ];
 
     /**
+     * 地区数组
+     * f_id,f_name,f_pid,f_code,f_pinyin,f_level
+     * @var array
+     */
+    private static $areas = [];
+
+    /**
+     * 读取地区配置
+     * @return array
+     */
+    private static function setAreas() {
+        if (!empty(self::$areas)) {
+            return [];
+        }
+        $data = AreaData::getAreas();
+        if (empty($data)) {
+            return [];
+        }
+        foreach ($data as $val) {
+            self::$areas[$val['id']] = $val;
+        }
+        return self::$areas;
+    }
+
+    /**
+     * 获取地区数组
+     *
+     * @return array
+     */
+    public static function getAreas() {
+        self::setAreas();
+        return self::$areas;
+    }
+
+
+    /**
+     * 根据ID获取地区名称
+     *
+     * @param $id
+     * @return string
+     */
+    public static function getAreaNameByID($id) {
+        self::setAreas();
+        if ($id && isset(self::$areas[$id])) {
+            return self::$areas[$id]['name'];
+        }
+        return '';
+    }
+
+    /**
      * 获取省份及城市
      *
      * @return array
@@ -330,7 +383,7 @@ class Area {
         $provinces = [];
 
         foreach (self::$cities as $id => $city) {
-            $pid = intval($id/10000) * 10000;
+            $pid = intval($id / 10000) * 10000;
 
             if (!isset($provinces[$pid])) {
                 $provinces[$pid] = ['id' => $pid, 'name' => self::$provinces[$pid]];
@@ -375,7 +428,7 @@ class Area {
      */
     public static function getProvinceByCity($id) {
         if (isset(self::$cities[$id])) {
-            $pid = intval($id/10000) * 10000;
+            $pid = intval($id / 10000) * 10000;
 
             if (isset(self::$provinces[$pid])) {
                 return self::$provinces[$pid];
@@ -464,5 +517,29 @@ class Area {
         }
 
         return strpos($code, '0') === 0 ? $code : '0' . $code;
+    }
+
+    /**
+     * 根据新旧数据获取最新的城市ID
+     * @param $area
+     * @return array
+     */
+    public static function getNewAreaId($area) {
+        if (!isset($area['province']) || !isset($area['city'])) {
+            return ['country' => 0, 'province' => 0, 'city' => 0, 'region' => 0];
+        }
+        $area['country'] = isset($area['country']) ? $area['country'] : '0';
+        $area['region'] = isset($area['region']) ? $area['region'] : '0';
+        if ($area['province'] && strlen($area['province']) == 6) {
+            $area['country'] = 100000;
+        }
+        //北京市 天津市 上海市 重庆市
+        if (in_array($area['province'], [110000, 120000, 310000, 500000])) {
+            if ($area['city']) {
+                $area['region'] = $area['city'];
+                $area['city'] = substr($area['province'], 0, 3) . '100';
+            }
+        }
+        return $area;
     }
 }
