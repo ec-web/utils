@@ -8,8 +8,6 @@
 
 namespace EC\Utils;
 
-use EC\Utils\AreaData;
-
 class Area {
     /**
      * 省份
@@ -339,13 +337,17 @@ class Area {
         if (!empty(self::$areas)) {
             return [];
         }
+
         $data = AreaData::getAreas();
+
         if (empty($data)) {
             return [];
         }
+
         foreach ($data as $val) {
             self::$areas[$val['id']] = $val;
         }
+
         return self::$areas;
     }
 
@@ -356,6 +358,7 @@ class Area {
      */
     public static function getAreas() {
         self::setAreas();
+
         return self::$areas;
     }
 
@@ -368,9 +371,11 @@ class Area {
      */
     public static function getAreaNameByID($id) {
         self::setAreas();
+
         if ($id && isset(self::$areas[$id])) {
             return self::$areas[$id]['name'];
         }
+
         return '';
     }
 
@@ -528,11 +533,14 @@ class Area {
         if (!isset($area['province']) || !isset($area['city'])) {
             return ['country' => 0, 'province' => 0, 'city' => 0, 'region' => 0];
         }
+
         $area['country'] = isset($area['country']) ? $area['country'] : '0';
         $area['region'] = isset($area['region']) ? $area['region'] : '0';
+
         if ($area['province'] && strlen($area['province']) == 6) {
             $area['country'] = 100000;
         }
+
         //北京市 天津市 上海市 重庆市
         if (in_array($area['province'], [110000, 120000, 310000, 500000])) {
             if ($area['city']) {
@@ -540,6 +548,7 @@ class Area {
                 $area['city'] = substr($area['province'], 0, 3) . '100';
             }
         }
+
         return $area;
     }
 }
