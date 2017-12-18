@@ -538,14 +538,14 @@ class Area {
         $area['region'] = isset($area['region']) ? $area['region'] : '0';
 
         if ($area['province'] && strlen($area['province']) == 6) {
-            $area['country'] = 100000;
+            $area['country'] = $area['country']?$area['country']:100000;
         }
 
         //北京市 天津市 上海市 重庆市
         if (in_array($area['province'], [110000, 120000, 310000, 500000])) {
             if ($area['city']) {
-                $area['region'] = $area['city'];
-                $area['city'] = substr($area['province'], 0, 3) . '100';
+                $area['region'] = $area['region']?$area['region']:$area['city'];
+                $area['city'] = $area['city']?$area['city']:substr($area['province'], 0, 3) . '100';
             }
         }
 
